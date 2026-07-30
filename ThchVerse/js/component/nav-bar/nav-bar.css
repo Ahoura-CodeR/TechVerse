@@ -1,0 +1,217 @@
+:root {
+    --text-color: #000;
+    --border-color: #ccc;
+    --primary-color: #FF5733;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "inter";
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-container {
+    display: flex;
+    flex-wrap: wrap; /* ← اضافه شد */
+    max-width: 1440px;
+    padding: 16px 160px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 16px; /* ← اضافه شد */
+}
+
+.left-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 3rem); /* ← به جای gap: 3rem */
+    flex-wrap: wrap; /* ← اضافه شد */
+}
+
+.box-search {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-nav {
+    padding: 12px 16px 12px 40px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    outline: none;
+    width: 200px;
+    transition: width 0.3s ease, border-color 0.3s ease;
+}
+
+.input-nav:focus {
+    border-color: var(--primary-color);
+    width: 240px;
+}
+
+.input-nav::placeholder {
+    color: #989898;
+}
+
+.svg-search {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* ← جلوگیری از کلیک روی آیکون */
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2rem); /* ← به جای gap: 2rem */
+    flex-wrap: wrap; /* ← اضافه شد */
+}
+
+.list-nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 3rem); /* ← به جای gap: 3rem */
+    padding: 0;
+    flex-wrap: wrap; /* ← اضافه شد */
+}
+
+.list-nav li a {
+    font-weight: 500;
+    transition: color 0.2s;
+    font-size: 16px;
+}
+
+.list-nav li a:hover {
+    color: var(--primary-color);
+}
+
+.icon-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 1.5rem); /* ← به جای gap: 1.5rem */
+}
+
+.icon-nav svg {
+    cursor: pointer;
+    transition: transform 0.2s, stroke 0.2s;
+    stroke: var(--text-color); /* ← به جای black */
+}
+
+.icon-nav svg:hover {
+    transform: scale(1.1);
+    stroke: var(--primary-color);
+}
+
+.link-nav{
+    opacity: 30%;
+}
+
+@media (max-width: 1200px) {
+    .nav-container {
+        padding: 16px 80px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .nav-container {
+        padding: 16px 40px;
+    }
+    .list-nav {
+        gap: 1.5rem;
+    }
+    .left-nav {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        padding: 16px 20px;
+        gap: 16px;
+    }
+    .left-nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    .right-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 0.8rem;
+    }
+    .list-nav {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .icon-nav {
+        gap: 12px;
+    }
+    .input-nav {
+        width: 160px;
+    }
+    .input-nav:focus {
+        width: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-container {
+        padding: 12px 16px;
+    }
+    .left-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+    .input-nav {
+        width: 140px;
+        padding: 10px 12px 10px 36px;
+        font-size: 14px;
+    }
+    .input-nav:focus {
+        width: 160px;
+    }
+    .svg-search {
+        left: 10px;
+        width: 16px;
+        height: 16px;
+    }
+    .list-nav li a {
+        font-size: 14px;
+    }
+    .icon-nav svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 10px 12px;
+    }
+    .input-nav {
+        width: 120px;
+        padding: 8px 10px 8px 32px;
+        font-size: 12px;
+    }
+    .input-nav:focus {
+        width: 140px;
+    }
+    .list-nav li a {
+        font-size: 12px;
+    }
+    .icon-nav svg {
+        width: 18px;
+        height: 18px;
+    }
+}
