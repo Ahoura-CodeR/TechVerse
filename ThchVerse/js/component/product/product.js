@@ -1,6 +1,6 @@
 const template = document.createElement('template')
 template.innerHTML = `
-  <link rel="stylesheet" href="/js/component/product/product.css">
+  <link rel="stylesheet" href="/ThchVerse/js/component/product/product.css">
   <div class="product-container">
   </div>
   

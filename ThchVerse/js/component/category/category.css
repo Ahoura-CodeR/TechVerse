@@ -1,330 +1,499 @@
-/* ==============================
-   category.css — فقط برای کامپوننت
-   ============================== */
+/* =========================================================
+   TECHVERSE — CATEGORY COMPONENT
+   Component: <category-component>
+   ========================================================= */
 
-/* منوی بالایی (Browse By Category) */
+:host {
+    display: block;
+    width: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN CATEGORY SECTION
+   ========================================================= */
+
+.category {
+    width: min(100% - 32px, 1440px);
+    margin: 80px auto 0;
+
+    color: #111;
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    animation: categoryReveal 700ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
 .menu-slide {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 160px;
+
+    margin-bottom: 32px;
 }
 
 .h2-main {
-    font-size: 24px;
-    font-weight: 700;
     margin: 0;
+
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+
+    color: #111;
 }
 
 .svg-menu-slide {
     display: flex;
-    gap: 12px;
+    align-items: center;
+    gap: 10px;
 }
 
 .svg-menu-slide svg {
+    width: 13px;
+    height: 24px;
+
+    padding: 5px;
+
+    box-sizing: content-box;
+
+    border-radius: 8px;
+
     cursor: pointer;
-    transition: transform 0.2s ease;
+
+    transition:
+        transform 250ms cubic-bezier(.22, 1, .36, 1),
+        background 200ms ease,
+        opacity 200ms ease;
 }
 
 .svg-menu-slide svg:hover {
-    transform: scale(1.1);
+    background: #f2f2f2;
 }
 
-/* ===== شبکه دسته‌بندی ===== */
-.select-category {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 0 160px;
-    flex-wrap: wrap;
+.svg-menu-slide svg:first-child:hover {
+    transform: translateX(-3px);
 }
+
+.svg-menu-slide svg:last-child:hover {
+    transform: translateX(3px);
+}
+
+.svg-menu-slide svg:active {
+    transform: scale(.9);
+}
+
+
+/* =========================================================
+   CATEGORY GRID
+   ========================================================= */
+
+.select-category {
+    display: grid;
+
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+
+    gap: 16px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   CATEGORY CARD
+   ========================================================= */
 
 .category-all {
+    min-height: 170px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 16px 20px;
-    border: 2px solid #e0e0e0;
-    border-radius: 12px;
+
+    gap: 18px;
+
+    padding: 24px 14px;
+
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid rgba(0, 0, 0, .07);
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #fafafa 100%
+        );
+
     cursor: pointer;
-    transition: all 0.3s ease;
-    background-color: #fff;
-    min-width: 90px;
-    min-height: 100px;
+
+    isolation: isolate;
+
+    transition:
+        transform 350ms cubic-bezier(.22, 1, .36, 1),
+        box-shadow 350ms ease,
+        border-color 250ms ease,
+        background 350ms ease;
 }
+
+
+/* soft glow */
+
+.category-all::before {
+    content: "";
+
+    position: absolute;
+    width: 130px;
+    height: 130px;
+
+    top: -65px;
+    right: -65px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, .035);
+
+    filter: blur(3px);
+
+    transition:
+        transform 500ms cubic-bezier(.22, 1, .36, 1),
+        opacity 300ms ease;
+}
+
+
+/* bottom shine */
+
+.category-all::after {
+    content: "";
+
+    position: absolute;
+
+    left: 10%;
+    right: 10%;
+    bottom: 0;
+
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: #111;
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition:
+        transform 350ms cubic-bezier(.22, 1, .36, 1);
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
 
 .category-all:hover {
-    border-color: #673AB7;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+
+    border-color: rgba(0, 0, 0, .13);
+
+    background: #fff;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, .08),
+        0 5px 15px rgba(0, 0, 0, .04);
 }
+
+.category-all:hover::before {
+    transform: scale(1.5);
+
+    opacity: .8;
+}
+
+.category-all:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   CATEGORY ICON
+   ========================================================= */
 
 .category-all svg {
-    width: 40px;
-    height: 40px;
+    width: 52px;
+    height: 52px;
+
+    position: relative;
+    z-index: 2;
+
+    transition:
+        transform 400ms cubic-bezier(.22, 1, .36, 1),
+        filter 300ms ease;
 }
+
+.category-all:hover svg {
+    transform:
+        translateY(-4px)
+        scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 7px 8px
+            rgba(0, 0, 0, .12)
+        );
+}
+
+
+/* =========================================================
+   CATEGORY TEXT
+   ========================================================= */
 
 .category-all p {
-    margin: 0;
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-    text-align: center;
-}
-
-/* ===== بخش مرتب‌سازی (Sort By) ===== */
-.sord-by {
-    display: flex;
-    align-items: center;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 20px 160px;
-    gap: 34px;
-}
-
-.p-sordby {
-    transition: all 120ms ease-in-out 10ms;
-}
-
-.p-sordby1,
-.p-sordby2,
-.p-sordby3 {
     position: relative;
-    cursor: pointer;
+    z-index: 2;
+
+    margin: 0;
+
+    color: #222;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+
+    text-align: center;
+
+    transition:
+        transform 300ms ease,
+        color 200ms ease;
 }
 
-.p-sordby3,
-.p-sordby2 {
-    color: #8B8B8B;
+.category-all:hover p {
+    transform: translateY(-2px);
+
+    color: #000;
 }
 
-.p-sordby1::after,
-.p-sordby2::after,
-.p-sordby3::after {
-    content: "";
-    width: 15px;
-    height: 5px;
-    background-color: gray;
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    transition: all 0.3s ease;
+
+/* =========================================================
+   INDIVIDUAL CARD STAGGER
+   ========================================================= */
+
+.category-1 {
+    animation: cardReveal 600ms 80ms cubic-bezier(.22, 1, .36, 1) both;
 }
 
-.p-sordby1:hover::after,
-.p-sordby2:hover::after,
-.p-sordby3:hover::after {
-    background-color: black;
-    width: 60px;
-}
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+.category-2 {
+    animation: cardReveal 600ms 140ms cubic-bezier(.22, 1, .36, 1) both;
 }
 
-/* بنر اصلی با گرادینت شعاعی دقیق */
-.banner-section {
-  position: relative;
-  width: 100%;
-  max-width: 1440px;
-  height: 448px;
-  margin: 0 auto;
-  
-  /* 🌟 گرادینت شعاعی واقعی برای ایجاد هاله نور در مرکز بنر */
-  background: radial-gradient(circle at 50% 50%, #353535 0%, #181818 60%, #121212 100%);
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  color: #ffffff;
+.category-3 {
+    animation: cardReveal 600ms 200ms cubic-bezier(.22, 1, .36, 1) both;
 }
 
-/* محتوای متنی وسط */
-.banner-content {
-  text-align: center;
-  z-index: 5; /* قرارگیری روی تصاویر */
-  max-width: 550px;
-  padding: 0 20px;
+.category-4 {
+    animation: cardReveal 600ms 260ms cubic-bezier(.22, 1, .36, 1) both;
 }
 
-.banner-title {
-  font-size: 58px;
-  font-weight: 300;
-  line-height: 1.15;
-  margin-bottom: 12px;
-  letter-spacing: -1px;
-  color: #f5f5f7;
+.category-5 {
+    animation: cardReveal 600ms 320ms cubic-bezier(.22, 1, .36, 1) both;
 }
 
-.banner-title .bold-text {
-  font-weight: 700;
-  color: #ffffff;
+.category-6 {
+    animation: cardReveal 600ms 380ms cubic-bezier(.22, 1, .36, 1) both;
 }
 
-.banner-desc {
-  font-size: 15px;
-  color: #9a9a9a;
-  margin-bottom: 32px;
-  font-weight: 400;
-  line-height: 1.5;
-}
 
-/* دکمه Shop Now */
-.banner-btn {
-  display: inline-block;
-  padding: 14px 52px;
-  border: 1px solid #ffffff;
-  border-radius: 6px;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(255, 255, 255, 0.05); /* شفافیت ملایم دکمه */
-  backdrop-filter: blur(4px);
-}
+/* =========================================================
+   TABLET
+   ========================================================= */
 
-.banner-btn:hover {
-  background-color: #ffffff;
-  color: #000000;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-}
+@media (max-width: 1050px) {
 
-/* 🖼️ استایل و موقعیت‌دهی تصاویر محصولات */
-.banner-img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
+    .category {
+        width: min(100% - 28px, 900px);
 
-/* ۱. تبلت بالا سمت چپ */
-.img-tablet-top {
-  position: absolute;
-  left: 20px;
-  top: -30px;
-  width: 320px;
-  transform: rotate(-12deg);
-  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.6));
-  z-index: 2;
-}
+        margin-top: 65px;
+    }
 
-/* ۲. تبلت پایین سمت چپ */
-.img-tablet-bottom {
-  position: absolute;
-  left: -20px;
-  bottom: -40px;
-  width: 350px;
-  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5));
-  z-index: 1;
-}
-
-/* ۳. آیفون بنفش سمت راست */
-.img-phone {
-  position: absolute;
-  right: -10px;
-  top: -20px;
-  width: 250px;
-  transform: rotate(5deg);
-  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.7));
-  z-index: 1;
-}
-
-/* ۴. اپل واچ سمت راست */
-.img-watch {
-  position: absolute;
-  right: 50px;
-  bottom: -50px;
-  width: 290px;
-  filter: drop-shadow(0 20px 35px rgba(0,0,0,0.8));
-  z-index: 3;
-}
-
-.category {
-    margin-bottom: 5rem;
-}
-/* ==========================================
-   📱 MEDIA QUERIES (ریسپانسیو کاملاً روان)
-   ========================================== */
-
-@media (max-width: 1200px) {
-  .img-tablet-top { width: 260px; left: 10px; }
-  .img-tablet-bottom { width: 290px; left: -10px; }
-  .img-phone { width: 200px; right: 0; }
-  .img-watch { width: 230px; right: 20px; }
-  .banner-title { font-size: 48px; }
-}
-
-@media (max-width: 900px) {
-  .banner-section {
-    height: auto;
-    padding: 80px 20px;
-  }
-  
-  /* محو کردن نسبی عکس‌ها در تبلت تا روی متن نیفتن */
-  .banner-img img {
-    opacity: 0.25;
-  }
-  
-  .banner-title { font-size: 40px; }
-}
-
-@media (max-width: 600px) {
-  .banner-img { display: none; } /* حذف عکس‌ها در موبایل جهت تمیزی */
-  .banner-title { font-size: 32px; }
-  .banner-desc { font-size: 13px; }
-  .banner-btn { padding: 12px 36px; font-size: 14px; }
-}
-
-/* ===== ریسپانسیو ===== */
-
-@media (max-width: 1080px) {
     .select-category {
-        flex-wrap: wrap;
-        gap: 32px;
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .category-all {
+        min-height: 155px;
     }
 }
 
-@media (max-width: 930px) {
-    .select-category,
-    .sord-by {
-        padding: 20px 60px;
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .category {
+        width: calc(100% - 24px);
+
+        margin-top: 55px;
     }
+
     .menu-slide {
-        padding: 80px 60px;
+        margin-bottom: 22px;
     }
-}
 
-@media (max-width: 768px) {
-    .select-category,
-    .sord-by {
-        padding: 20px 20px;
+    .h2-main {
+        font-size: 22px;
     }
-    .menu-slide {
-        padding: 80px 30px;
-    }
-}
 
-@media (max-width: 467px) {
+    .svg-menu-slide {
+        gap: 5px;
+    }
+
+    .svg-menu-slide svg {
+        width: 11px;
+        height: 20px;
+    }
+
     .select-category {
-        gap: 16px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding: 0 20px;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
     }
-    .sord-by {
+
+    .category-all {
+        min-height: 140px;
+
         padding: 20px 10px;
+
+        border-radius: 17px;
+
+        gap: 14px;
     }
-    .p-sordby {
-        font-size: 14px;
+
+    .category-all svg {
+        width: 46px;
+        height: 46px;
+    }
+
+    .category-all p {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .category {
+        width: calc(100% - 18px);
+    }
+
+    .select-category {
+        gap: 9px;
+    }
+
+    .category-all {
+        min-height: 125px;
+
+        padding: 16px 8px;
+
+        border-radius: 15px;
+
+        gap: 11px;
+    }
+
+    .category-all svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .category-all p {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.svg-menu-slide svg:focus-visible,
+.category-all:focus-visible {
+    outline: 2px solid #111;
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes categoryReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px)
+            scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
     }
 }

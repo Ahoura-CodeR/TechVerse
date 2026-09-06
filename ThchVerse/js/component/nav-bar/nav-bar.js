@@ -5,7 +5,7 @@ template.innerHTML = `
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-<link rel="stylesheet" href="/js/component/nav-bar/nav-bar.css">
+<link rel="stylesheet" href="/ThchVerse/js/component/nav-bar/nav-bar.css">
 </head>
 <nav class="nav-container">
   <section class="left-nav">

@@ -1,217 +1,485 @@
-:root {
-    --text-color: #000;
-    --border-color: #ccc;
-    --primary-color: #FF5733;
+/* =========================================================
+   TECHVERSE — NAVBAR
+   Component: <nav-bar>
+   ========================================================= */
+
+:host {
+    display: block;
+    width: 100%;
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "inter";
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 .nav-container {
+    width: min(100% - 32px, 1440px);
+    min-height: 72px;
+
+    margin: 18px auto 0;
+    padding: 12px 18px;
+
     display: flex;
-    flex-wrap: wrap; /* ← اضافه شد */
-    max-width: 1440px;
-    padding: 16px 160px;
     align-items: center;
     justify-content: space-between;
-    margin: 0 auto;
-    gap: 16px; /* ← اضافه شد */
+    gap: 28px;
+
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.06),
+        0 2px 8px rgba(0, 0, 0, 0.03);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    position: relative;
+    z-index: 100;
+
+    transition:
+        transform 300ms cubic-bezier(.22, 1, .36, 1),
+        box-shadow 300ms ease,
+        background 300ms ease;
+
+    animation: navReveal 700ms cubic-bezier(.22, 1, .36, 1) both;
 }
+
+.nav-container:hover {
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
 
 .left-nav {
     display: flex;
     align-items: center;
-    gap: clamp(1.5rem, 4vw, 3rem); /* ← به جای gap: 3rem */
-    flex-wrap: wrap; /* ← اضافه شد */
+    gap: clamp(20px, 3vw, 48px);
+
+    min-width: 0;
 }
+
+.left-nav > svg {
+    width: 66px;
+    height: auto;
+
+    flex: 0 0 auto;
+
+    transition:
+        transform 300ms cubic-bezier(.22, 1, .36, 1),
+        opacity 200ms ease;
+}
+
+.left-nav > svg:hover {
+    transform: translateY(-2px) scale(1.03);
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
 
 .box-search {
+    width: clamp(180px, 22vw, 300px);
+    height: 42px;
+
     display: flex;
     align-items: center;
-    position: relative;
+    gap: 10px;
+
+    padding: 0 14px;
+
+    background: rgba(245, 245, 245, 0.85);
+    border: 1px solid transparent;
+    border-radius: 13px;
+
+    transition:
+        width 350ms cubic-bezier(.22, 1, .36, 1),
+        background 250ms ease,
+        border-color 250ms ease,
+        box-shadow 250ms ease,
+        transform 250ms ease;
 }
 
-.input-nav {
-    padding: 12px 16px 12px 40px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    outline: none;
-    width: 200px;
-    transition: width 0.3s ease, border-color 0.3s ease;
+.box-search:hover {
+    background: #fff;
+    border-color: rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
 }
 
-.input-nav:focus {
-    border-color: var(--primary-color);
-    width: 240px;
-}
+.box-search:focus-within {
+    width: clamp(220px, 28vw, 360px);
 
-.input-nav::placeholder {
-    color: #989898;
+    background: #fff;
+
+    border-color: rgba(0, 0, 0, 0.13);
+
+    box-shadow:
+        0 0 0 4px rgba(0, 0, 0, 0.035),
+        0 8px 25px rgba(0, 0, 0, 0.06);
 }
 
 .svg-search {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none; /* ← جلوگیری از کلیک روی آیکون */
+    width: 18px;
+    height: 18px;
+
+    flex: 0 0 auto;
+
+    opacity: 0.65;
+
+    transition:
+        transform 250ms ease,
+        opacity 250ms ease;
 }
+
+.box-search:focus-within .svg-search {
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+.input-nav {
+    width: 100%;
+    min-width: 0;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: #111;
+    font: 500 14px/1.2 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    caret-color: #111;
+}
+
+.input-nav::placeholder {
+    color: #8f8f8f;
+    transition: opacity 200ms ease;
+}
+
+.input-nav:focus::placeholder {
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
 
 .right-nav {
     display: flex;
     align-items: center;
-    gap: clamp(1rem, 3vw, 2rem); /* ← به جای gap: 2rem */
-    flex-wrap: wrap; /* ← اضافه شد */
+    justify-content: flex-end;
+    gap: clamp(18px, 2.5vw, 36px);
+
+    flex: 1;
+    min-width: 0;
 }
 
 .list-nav {
-    list-style: none;
     display: flex;
     align-items: center;
-    gap: clamp(1.5rem, 4vw, 3rem); /* ← به جای gap: 3rem */
+    gap: clamp(16px, 2vw, 30px);
+
     padding: 0;
-    flex-wrap: wrap; /* ← اضافه شد */
+    margin: 0;
+
+    list-style: none;
 }
 
-.list-nav li a {
-    font-weight: 500;
-    transition: color 0.2s;
-    font-size: 16px;
+.list-nav li {
+    position: relative;
 }
 
-.list-nav li a:hover {
-    color: var(--primary-color);
+.list-nav a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 8px 2px;
+
+    color: #181818;
+    text-decoration: none;
+
+    font: 500 14px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    transition:
+        color 200ms ease,
+        transform 200ms ease;
 }
+
+.list-nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+
+    width: 100%;
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: #111;
+
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition:
+        transform 300ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.list-nav a:hover {
+    color: #000;
+    transform: translateY(-1px);
+}
+
+.list-nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+/* =========================================================
+   ICONS
+   ========================================================= */
 
 .icon-nav {
     display: flex;
     align-items: center;
-    gap: clamp(1rem, 2vw, 1.5rem); /* ← به جای gap: 1.5rem */
+    gap: 14px;
 }
 
 .icon-nav svg {
+    display: block;
+
     cursor: pointer;
-    transition: transform 0.2s, stroke 0.2s;
-    stroke: var(--text-color); /* ← به جای black */
+
+    flex: 0 0 auto;
+
+    transition:
+        transform 250ms cubic-bezier(.22, 1, .36, 1),
+        opacity 200ms ease,
+        filter 250ms ease;
 }
 
 .icon-nav svg:hover {
-    transform: scale(1.1);
-    stroke: var(--primary-color);
+    transform: translateY(-2px) scale(1.08);
+    opacity: 0.72;
 }
 
-.link-nav{
-    opacity: 30%;
+.icon-nav svg:active {
+    transform: scale(0.92);
 }
 
-@media (max-width: 1200px) {
+
+/* =========================================================
+   SUBTLE INTERACTION
+   ========================================================= */
+
+.nav-container::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0.55),
+            transparent 35%,
+            transparent 65%,
+            rgba(255, 255, 255, 0.3)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
     .nav-container {
-        padding: 16px 80px;
+        gap: 18px;
     }
-}
 
-@media (max-width: 1024px) {
-    .nav-container {
-        padding: 16px 40px;
-    }
-    .list-nav {
-        gap: 1.5rem;
-    }
     .left-nav {
-        gap: 1.5rem;
+        gap: 20px;
     }
-}
 
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        padding: 16px 20px;
+    .box-search {
+        width: 200px;
+    }
+
+    .box-search:focus-within {
+        width: 240px;
+    }
+
+    .list-nav {
         gap: 16px;
     }
-    .left-nav {
-        width: 100%;
-        justify-content: space-between;
-        gap: 1rem;
-    }
+
     .right-nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-        gap: 0.8rem;
+        gap: 18px;
     }
-    .list-nav {
-        gap: 16px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+
     .icon-nav {
+        gap: 10px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .nav-container {
+        width: calc(100% - 20px);
+
+        min-height: 64px;
+
+        margin-top: 10px;
+        padding: 10px 12px;
+
+        border-radius: 18px;
+
         gap: 12px;
     }
-    .input-nav {
-        width: 160px;
-    }
-    .input-nav:focus {
-        width: 180px;
-    }
-}
 
-@media (max-width: 600px) {
-    .nav-container {
-        padding: 12px 16px;
-    }
     .left-nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.8rem;
+        width: 100%;
+        gap: 12px;
     }
-    .input-nav {
-        width: 140px;
-        padding: 10px 12px 10px 36px;
-        font-size: 14px;
+
+    .left-nav > svg {
+        width: 54px;
     }
-    .input-nav:focus {
-        width: 160px;
+
+    .box-search {
+        width: 100%;
+        height: 40px;
     }
-    .svg-search {
-        left: 10px;
-        width: 16px;
-        height: 16px;
+
+    .box-search:focus-within {
+        width: 100%;
     }
-    .list-nav li a {
-        font-size: 14px;
+
+    .right-nav {
+        flex: 0 0 auto;
     }
-    .icon-nav svg {
-        width: 20px;
-        height: 20px;
+
+    .list-nav {
+        display: none;
+    }
+
+    .icon-nav {
+        gap: 9px;
+    }
+
+    .icon-nav svg:nth-child(1) {
+        display: none;
+    }
+
+    .icon-nav svg:nth-child(2) {
+        width: 23px;
+        height: 21px;
+    }
+
+    .icon-nav svg:nth-child(3) {
+        width: 18px;
+        height: 22px;
     }
 }
 
-@media (max-width: 480px) {
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
     .nav-container {
-        padding: 10px 12px;
+        width: calc(100% - 14px);
+        padding: 9px 10px;
     }
+
+    .left-nav > svg {
+        width: 48px;
+    }
+
+    .box-search {
+        height: 38px;
+        padding-inline: 11px;
+    }
+
     .input-nav {
-        width: 120px;
-        padding: 8px 10px 8px 32px;
-        font-size: 12px;
+        font-size: 13px;
     }
-    .input-nav:focus {
-        width: 140px;
+
+    .icon-nav {
+        gap: 7px;
     }
-    .list-nav li a {
-        font-size: 12px;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.list-nav a:focus-visible,
+.icon-nav svg:focus-visible,
+.input-nav:focus-visible {
+    outline: 2px solid #111;
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
-    .icon-nav svg {
-        width: 18px;
-        height: 18px;
+}
+
+
+/* =========================================================
+   ENTRY ANIMATION
+   ========================================================= */
+
+@keyframes navReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(-18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
