@@ -30,7 +30,6 @@ class isProducts extends HTMLElement {
     let fragment = document.createDocumentFragment()
     const product = await getProducts()
     const productContainer = this.shadowRoot.querySelector('.product-container')
-    console.log(product)
     product.forEach((item) => {
 
       const boxProduct = document.createElement('div')
@@ -47,7 +46,7 @@ class isProducts extends HTMLElement {
             <p class="price-products">
                 $${item.price}
             </p>
-            <button class="button-buy">
+            <button data-id="${item.id}" class="button-buy">
                 Buy Now
             </button>
         </div>
@@ -56,7 +55,17 @@ class isProducts extends HTMLElement {
       
     })
     productContainer.appendChild(fragment)
+
+    productContainer.addEventListener('click', event => {
+      if (event.target.closest('.button-buy')) {
+        const buttonTarget = event.target.closest('.button-buy')
+        console.log(event.target)
+        console.log(buttonTarget.dataset.id)
+        window.location.href = `../../../pages/products.html?id=${buttonTarget.dataset.id}`
+      }
+    })
+    
   }
 }
-
 export {isProducts, getProducts}
+

@@ -29,7 +29,7 @@ template.innerHTML = `
 
   <section class="right-nav">
       <ul class="list-nav">
-          <li><a href="#">Home</a></li>
+          <li><a href="../pages/home.html">Home</a></li>
           <li><a href="#" class="link-nav">About</a></li>
           <li><a href="#" class="link-nav">Contact Us</a></li>
           <li><a href="#" class="link-nav">Blog</a></li>

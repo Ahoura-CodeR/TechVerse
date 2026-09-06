@@ -6,3 +6,13 @@ window.customElements.define("footer-site", isFooter)
 window.customElements.define("product-data", isProducts)
 
 getProducts ()
+
+const buttonShop = document.querySelector('.button-header')
+const buttonShopTow = document.querySelector('.shop-btn')
+
+let isGoDetail = () => {
+  window.location.href = '../pages/products.html'
+}
+
+buttonShop.addEventListener('click', isGoDetail)
+buttonShopTow.addEventListener('click', isGoDetail)
