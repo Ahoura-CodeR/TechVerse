@@ -78,9 +78,7 @@ class isProducts extends HTMLElement {
     productContainer.addEventListener('click', event => {
       if (event.target.closest('.button-buy')) {
         const buttonTarget = event.target.closest('.button-buy')
-        console.log(event.target)
-        console.log(buttonTarget.dataset.id)
-        window.location.href = `/ThchVerse/pages/products.html?id=${buttonTarget.dataset.id}`
+        window.location.href = `/ThchVerse/pages/products-details.html?id=${buttonTarget.dataset.id}`
       }
     })
     

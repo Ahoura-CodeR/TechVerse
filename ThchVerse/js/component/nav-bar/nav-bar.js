@@ -30,9 +30,9 @@ template.innerHTML = `
   <section class="right-nav">
       <ul class="list-nav">
           <li><a href="../pages/home.html">Home</a></li>
-          <li><a href="#" class="link-nav">About</a></li>
-          <li><a href="#" class="link-nav">Contact Us</a></li>
-          <li><a href="#" class="link-nav">Blog</a></li>
+          <li><a href="/ThchVerse/pages/about.html" class="link-nav">About</a></li>
+          <li><a href="/ThchVerse/pages/contact.html" class="link-nav">Contact Us</a></li>
+          <li><a href="/ThchVerse/pages/about.html" class="link-nav">Blog</a></li>
       </ul>
       <div class="icon-nav">
           <!-- Heart Icon -->
