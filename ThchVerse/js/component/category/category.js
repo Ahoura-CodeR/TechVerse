@@ -16,7 +16,7 @@ template.innerHTML = `
           </div>
       </div>
       <div class="select-category">
-          <div class="category-1 category-all">
+          <div class="category-1 category-all" data-category="Phones">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_2603_1946)">
               <path d="M33.375 5.25H14.625C13.3306 5.25 12.2812 6.29933 12.2812 7.59375V40.4062C12.2812 41.7007 13.3306 42.75 14.625 42.75H33.375C34.6694 42.75 35.7188 41.7007 35.7188 40.4062V7.59375C35.7188 6.29933 34.6694 5.25 33.375 5.25Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -34,7 +34,7 @@ template.innerHTML = `
                   Phones
               </p>
           </div>
-          <div class="category-2 category-all">
+          <div class="category-2 category-all" data-category="SmartWatches">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_2603_1940)">
               <path d="M30 12H18C14.6863 12 12 14.6863 12 18V30C12 33.3137 14.6863 36 18 36H30C33.3137 36 36 33.3137 36 30V18C36 14.6863 33.3137 12 30 12Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -51,10 +51,10 @@ template.innerHTML = `
               </defs>
               </svg>
               <p class="">
-                  Smart Watches
+                  SmartWatches
               </p>
           </div>
-          <div class="category-3 category-all">
+          <div class="category-3 category-all" data-category="Cameras">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_2603_1937)">
               <path d="M10 14H12C13.0609 14 14.0783 13.5786 14.8284 12.8284C15.5786 12.0783 16 11.0609 16 10C16 9.46957 16.2107 8.96086 16.5858 8.58579C16.9609 8.21071 17.4696 8 18 8H30C30.5304 8 31.0391 8.21071 31.4142 8.58579C31.7893 8.96086 32 9.46957 32 10C32 11.0609 32.4214 12.0783 33.1716 12.8284C33.9217 13.5786 34.9391 14 36 14H38C39.0609 14 40.0783 14.4214 40.8284 15.1716C41.5786 15.9217 42 16.9391 42 18V36C42 37.0609 41.5786 38.0783 40.8284 38.8284C40.0783 39.5786 39.0609 40 38 40H10C8.93913 40 7.92172 39.5786 7.17157 38.8284C6.42143 38.0783 6 37.0609 6 36V18C6 16.9391 6.42143 15.9217 7.17157 15.1716C7.92172 14.4214 8.93913 14 10 14" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -70,7 +70,7 @@ template.innerHTML = `
                   Cameras
               </p>
           </div>
-          <div class="category-4 category-all">
+          <div class="category-4 category-all" data-category="Headphones">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_2603_1943)">
               <path d="M14 26H12C9.79086 26 8 27.7909 8 30V36C8 38.2091 9.79086 40 12 40H14C16.2091 40 18 38.2091 18 36V30C18 27.7909 16.2091 26 14 26Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -87,7 +87,7 @@ template.innerHTML = `
                   Headphones
               </p>
           </div>
-          <div class="category-5 category-all">
+          <div class="category-5 category-all" data-category="Computers">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_2603_1934)">
               <path d="M40 8H8C6.89543 8 6 8.89543 6 10V30C6 31.1046 6.89543 32 8 32H40C41.1046 32 42 31.1046 42 30V10C42 8.89543 41.1046 8 40 8Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -106,7 +106,7 @@ template.innerHTML = `
                   Computers
               </p>
           </div>
-          <div class="category-6 category-all">
+          <div class="category-6 category-all" data-category="Gaming">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_2603_1931)">
               <path d="M40 12H8C5.79086 12 4 13.7909 4 16V32C4 34.2091 5.79086 36 8 36H40C42.2091 36 44 34.2091 44 32V16C44 13.7909 42.2091 12 40 12Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -134,8 +134,24 @@ class isCategory extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true))    
   }
   connectedCallback() {
+    const CategoryProducts = this.shadowRoot.querySelector('.select-category')
     
-  }
+    CategoryProducts.addEventListener('click', event => {
+
+    const category = event.target.closest('[data-category]')
+
+    if (!category) {
+        return
+    }
+
+    const datasetCategory = category.dataset.category
+
+    window.location.href =
+        `/ThchVerse/pages/products.html?category=${datasetCategory}`
+})
+    }
 }
 
 export {isCategory}
+// let btn = document.getElementById('dfd')
+// btn.nextElementSibling()

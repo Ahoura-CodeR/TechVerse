@@ -18,8 +18,8 @@ template.innerHTML = `
 let getProducts = async () => {
   try {
     const res = await fetch('https://dummyjson.com/products/search?q=phone')
-    const data = await res.json()
     if (!res.ok) throw new Error('خطا در دریافت اطلاعات ')
+      const data = await res.json()
     return data.products || []
     
   } catch (error) {
