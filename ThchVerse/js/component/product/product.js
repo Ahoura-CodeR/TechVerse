@@ -61,7 +61,7 @@ class isProducts extends HTMLElement {
         const buttonTarget = event.target.closest('.button-buy')
         console.log(event.target)
         console.log(buttonTarget.dataset.id)
-        window.location.href = `../../../pages/products.html?id=${buttonTarget.dataset.id}`
+        window.location.href = `/ThchVerse/pages/products.html?id=${buttonTarget.dataset.id}`
       }
     })
     
