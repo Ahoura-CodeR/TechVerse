@@ -55,6 +55,8 @@ class productCategory extends HTMLElement {
         const buttonContainer = this.shadowRoot.querySelector('.products-grid')
 
         let renderProduct = (products) => {
+
+            productGrid.innerHTML = ''
             
             products.forEach(item => {
                 const div = document.createElement('div')
@@ -147,16 +149,17 @@ class productCategory extends HTMLElement {
         })
         
         if (categories != null) {
-            renderProduct(products)
-        } else {
             renderProduct(newProducts)
+        } else {
+            renderProduct(products)
         }
-        
+
         inputElem.addEventListener('input', event => {
             
-            let searchResult = products.filter(item => item.title.trim().toLowerCase().includes(inputElem.value.trim().toLowerCase()))
-            
-            console.log(searchResult);
+            const searchResult = products.filter(item => item.title.trim().toLowerCase().includes(inputElem.value.trim().toLowerCase()))
+            if (inputElem.value.length !== '') {
+                renderProduct(searchResult)
+            }
         })
 
     }
