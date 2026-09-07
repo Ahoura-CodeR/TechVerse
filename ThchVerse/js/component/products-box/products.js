@@ -51,10 +51,11 @@ class productCategory extends HTMLElement {
         })
         
         
-        const fragment = document.createDocumentFragment()
         const buttonContainer = this.shadowRoot.querySelector('.products-grid')
 
         let renderProduct = (products) => {
+            
+            const fragment = document.createDocumentFragment()
 
             productGrid.innerHTML = ''
             
@@ -148,17 +149,23 @@ class productCategory extends HTMLElement {
             }
         })
         
+        
         if (categories != null) {
             renderProduct(newProducts)
         } else {
             renderProduct(products)
         }
-
         inputElem.addEventListener('input', event => {
             
             const searchResult = products.filter(item => item.title.trim().toLowerCase().includes(inputElem.value.trim().toLowerCase()))
-            if (inputElem.value.length !== '') {
+            if (inputElem.value.trim().toLowerCase() !== '') {
                 renderProduct(searchResult)
+            } else {
+                if (categories != null) {
+                    renderProduct(newProducts)
+                } else {
+                    renderProduct(products)
+            }
             }
         })
 
