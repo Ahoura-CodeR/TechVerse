@@ -16,3 +16,13 @@ let isGoDetail = () => {
 
 buttonShop.addEventListener('click', isGoDetail)
 buttonShopTow.addEventListener('click', isGoDetail)
+
+const animationLoad = document.querySelector('.container')
+const pageLoader = document.querySelector('.page-loader')
+
+animationLoad.style.display = 'none'
+
+window.addEventListener('load', event => {
+  animationLoad.style.display = ''
+  pageLoader.style.display = 'none'
+})

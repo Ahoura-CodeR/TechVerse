@@ -447,6 +447,7 @@
 .input-nav:focus-visible {
     outline: 2px solid #111;
     outline-offset: 4px;
+    border-radius: 4px;
 }
 
 
@@ -482,4 +483,13 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+.svg-fav {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.svg-fav.liked {
+    fill: #5533ff;      /* رنگ پر شده */
+    stroke: #5533ff;    /* رنگ خط دور */
 }

@@ -1,5 +1,9 @@
 let template = document.createElement('template')
 
+let eventSvgHandler = (page) => {
+  window.location.href = `/ThchVerse/pages/${page}`
+}
+
 template.innerHTML = `
 <head>
 <meta charset="UTF-8">
@@ -36,15 +40,15 @@ template.innerHTML = `
       </ul>
       <div class="icon-nav">
           <!-- Heart Icon -->
-          <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="svg-fav" width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M5.75 0.75C2.989 0.75 0.75 2.966 0.75 5.7C0.75 7.907 1.625 13.145 10.238 18.44C10.3923 18.5339 10.5694 18.5835 10.75 18.5835C10.9306 18.5835 11.1077 18.5339 11.262 18.44C19.875 13.145 20.75 7.907 20.75 5.7C20.75 2.966 18.511 0.75 15.75 0.75C12.989 0.75 10.75 3.75 10.75 3.75C10.75 3.75 8.511 0.75 5.75 0.75Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <!-- Cart Icon -->
-          <svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="svg-buy-box" width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0.75 0.75H4.75L7.75 17.75H23.75M7.75 12.4167H23.34C23.4556 12.4167 23.5677 12.3767 23.6572 12.3035C23.7466 12.2302 23.8079 12.1282 23.8306 12.0148L25.6306 3.01479C25.6451 2.94222 25.6434 2.86733 25.6255 2.79552C25.6075 2.72372 25.5739 2.65679 25.5269 2.59956C25.48 2.54234 25.4209 2.49625 25.354 2.46462C25.2871 2.43299 25.214 2.41662 25.14 2.41667H5.75M9.75 21.75C9.75 22.3023 9.30228 22.75 8.75 22.75C8.19772 22.75 7.75 22.3023 7.75 21.75C7.75 21.1977 8.19772 20.75 8.75 20.75C9.30228 20.75 9.75 21.1977 9.75 21.75ZM23.75 21.75C23.75 22.3023 23.3023 22.75 22.75 22.75C22.1977 22.75 21.75 22.3023 21.75 21.75C21.75 21.1977 22.1977 20.75 22.75 20.75C23.3023 20.75 23.75 21.1977 23.75 21.75Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <!-- User Icon -->
-          <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="svg-profile" width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.75 22.75V20.0833C17.75 18.6688 17.2724 17.3123 16.4222 16.3121C15.5721 15.3119 14.419 14.75 13.2167 14.75H5.28333C4.08102 14.75 2.92795 15.3119 2.07778 16.3121C1.22762 17.3123 0.75 18.6688 0.75 20.0833V22.75M14.75 5.25C14.75 7.73528 12.7353 9.75 10.25 9.75C7.76472 9.75 5.75 7.73528 5.75 5.25C5.75 2.76472 7.76472 0.75 10.25 0.75C12.7353 0.75 14.75 2.76472 14.75 5.25Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
       </div>
@@ -59,7 +63,15 @@ class isNav extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true))
   }
   connectedCallback() {
-    
+    const favIcon = this.shadowRoot.querySelector('.svg-fav')
+    const buyIcon = this.shadowRoot.querySelector('.svg-buy-box')
+    const profileIcon = this.shadowRoot.querySelector('.svg-profile')
+
+    buyIcon.addEventListener('click', () => eventSvgHandler('products.html'))
+    profileIcon.addEventListener('click', () => eventSvgHandler('profile.html'))
+    favIcon.addEventListener('click', event => {
+      favIcon.classList.toggle('liked')
+    })
   }
 }
 

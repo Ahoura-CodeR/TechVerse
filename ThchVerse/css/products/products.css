@@ -1,0 +1,691 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-family: "Inter", sans-serif;
+    color: #000;
+    background: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background: #fff;
+    color: #000;
+
+    font-family: "Inter", sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+}
+
+.container {
+    width: 100%;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.products-page {
+    width: min(100% - 80px, 1320px);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   BREADCRUMB
+========================================= */
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 20px 0 39px;
+
+    font-size: 12px;
+
+    animation: fadeDown 0.45s ease both;
+}
+
+.breadcrumb a {
+    color: #a4a4a4;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: #111;
+
+    transform: translateX(2px);
+}
+
+.breadcrumb svg {
+    color: #aaa;
+}
+
+.breadcrumb span {
+    color: #000;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.products-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+
+    animation: fadeUp 0.45s ease 0.08s both;
+}
+
+.selected-products {
+    color: #777;
+
+    font-size: 13px;
+}
+
+.products-top > p {
+    color: #777;
+
+    font-size: 13px;
+}
+
+.products-top strong {
+    color: #000;
+
+    font-size: 17px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   SORT
+========================================= */
+
+.sort-box {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.sort-products {
+    appearance: none;
+
+    width: 130px;
+    height: 37px;
+
+    padding: 0 30px 0 13px;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+
+    outline: none;
+
+    background: #fff;
+
+    color: #111;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.sort-products:hover {
+    border-color: #cfcfcf;
+}
+
+.sort-products:focus {
+    border-color: #aaa;
+
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.035);
+}
+
+.sort-box svg {
+    position: absolute;
+
+    right: 12px;
+
+    pointer-events: none;
+
+    color: #999;
+
+    transition: transform 0.2s ease;
+}
+
+.sort-box:focus-within svg {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+.products-layout {
+    display: grid;
+
+    grid-template-columns: 190px minmax(0, 1fr);
+
+    gap: 29px;
+
+    animation: fadeUp 0.55s ease 0.12s both;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.filter-sidebar {
+    width: 100%;
+
+    align-self: start;
+}
+
+.filter-section {
+    border-bottom: 1px solid #e7e7e7;
+
+    overflow: hidden;
+}
+
+.filter-section:first-child {
+    border-top: 1px solid #e7e7e7;
+}
+
+
+/* =========================================
+   FILTER HEADER
+========================================= */
+
+.filter-heading {
+    width: 100%;
+    min-height: 47px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: transparent;
+
+    color: #111;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+.filter-heading:hover {
+    color: #777;
+
+    padding-left: 4px;
+}
+
+.filter-heading svg {
+    color: #111;
+
+    flex-shrink: 0;
+
+    transition:
+        transform 0.25s ease,
+        color 0.2s ease;
+}
+
+.filter-heading:hover svg {
+    color: #777;
+}
+
+.filter-section:not(.brand-section) .filter-heading:hover svg {
+    transform: translateY(2px);
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand-section {
+    padding-bottom: 10px;
+}
+
+.brand-section .filter-heading {
+    min-height: 43px;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.brand-search {
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 10px;
+
+    margin-bottom: 15px;
+
+    border-radius: 6px;
+
+    background: #f5f5f5;
+
+    color: #a5a5a5;
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.brand-search:hover {
+    background: #f1f1f1;
+}
+
+.brand-search:focus-within {
+    background: #f3f3f3;
+
+    box-shadow:
+        0 0 0 1px #ddd,
+        0 4px 14px rgba(0, 0, 0, 0.035);
+}
+
+.brand-search input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #222;
+
+    font-size: 11px;
+}
+
+.brand-search input::placeholder {
+    color: #aaa;
+}
+
+
+/* =========================================
+   BRANDS
+========================================= */
+
+.brand-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.brand-list label {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    min-height: 17px;
+
+    color: #111;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transition:
+        transform 0.18s ease,
+        color 0.18s ease;
+}
+
+.brand-list label:hover {
+    transform: translateX(3px);
+
+    color: #000;
+}
+
+.brand-list input {
+    appearance: none;
+
+    width: 14px;
+    height: 14px;
+
+    margin: 0;
+
+    border: 1px solid #ddd;
+    border-radius: 2px;
+
+    background: #fff;
+
+    cursor: pointer;
+
+    position: relative;
+
+    transition:
+        transform 0.15s ease,
+        border-color 0.15s ease,
+        background 0.15s ease;
+}
+
+.brand-list input:hover {
+    border-color: #999;
+
+    transform: scale(1.08);
+}
+
+.brand-list input:checked {
+    border-color: #000;
+
+    background: #000;
+}
+
+.brand-list input:checked::after {
+    content: "";
+
+    position: absolute;
+
+    width: 6px;
+    height: 3px;
+
+    left: 3px;
+    top: 3px;
+
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+
+    transform: rotate(-45deg);
+}
+
+.brand-list small {
+    margin-left: 1px;
+
+    color: #999;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   PRODUCTS AREA
+========================================= */
+
+.products-area {
+    min-width: 0;
+}
+
+
+/* =========================================
+   PRODUCTS GRID
+========================================= */
+
+.products-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+
+/*
+    IMPORTANT:
+
+    Product cards are NOT written here.
+
+    JavaScript will generate them
+    inside .products-grid.
+*/
+
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    margin-top: 27px;
+
+    padding-bottom: 35px;
+}
+
+.pagination-page,
+.pagination-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.pagination-page {
+    width: 24px;
+    height: 24px;
+
+    border-radius: 4px;
+
+    color: #777;
+
+    font-size: 10px;
+}
+
+.pagination-page:hover {
+    background: #f4f4f4;
+
+    color: #111;
+
+    transform: translateY(-2px);
+}
+
+.pagination-page.active {
+    background: #000;
+
+    color: #fff;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.pagination-page.active:hover {
+    background: #222;
+
+    color: #fff;
+}
+
+.pagination-arrow {
+    width: 24px;
+    height: 24px;
+
+    border-radius: 4px;
+
+    color: #888;
+}
+
+.pagination-arrow:hover {
+    background: #f5f5f5;
+
+    color: #111;
+}
+
+.pagination-arrow.previous:hover {
+    transform: translateX(-2px);
+}
+
+.pagination-arrow.next:hover {
+    transform: translateX(2px);
+}
+
+.pagination-dots {
+    color: #999;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   PAGE ANIMATIONS
+========================================= */
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .products-page {
+        width: min(100% - 40px, 900px);
+    }
+
+    .products-layout {
+        grid-template-columns: 170px minmax(0, 1fr);
+
+        gap: 20px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .products-page {
+        width: min(100% - 30px, 600px);
+    }
+
+    .products-layout {
+        display: block;
+    }
+
+    .filter-sidebar {
+        margin-bottom: 25px;
+    }
+
+    .brand-list {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .breadcrumb {
+        gap: 10px;
+
+        font-size: 10px;
+    }
+
+    .products-top {
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .sort-products {
+        width: 115px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

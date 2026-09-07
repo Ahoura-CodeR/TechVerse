@@ -153,5 +153,3 @@ class isCategory extends HTMLElement {
 }
 
 export {isCategory}
-// let btn = document.getElementById('dfd')
-// btn.nextElementSibling()

@@ -85,4 +85,3 @@ class isProducts extends HTMLElement {
   }
 }
 export {isProducts, getProducts}
-

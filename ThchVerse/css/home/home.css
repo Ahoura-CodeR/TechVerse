@@ -1477,3 +1477,478 @@ input {
             rotate(-3deg);
     }
 }
+
+/* ============================= */
+/*        PAGE LOADER             */
+/* ============================= */
+
+.page-loader {
+    position: fixed;
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #151515 0%,
+            #090909 45%,
+            #000000 100%
+        );
+
+    overflow: hidden;
+
+    animation: loaderFadeIn 0.6s ease forwards;
+}
+
+
+/* subtle grid */
+
+.page-loader::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image: radial-gradient(
+        circle,
+        black 0%,
+        transparent 75%
+    );
+
+    animation: gridMove 8s linear infinite;
+}
+
+
+/* center */
+
+.loader-content {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 2;
+}
+
+
+/* ============================= */
+/*           ORBITS               */
+/* ============================= */
+
+.loader-orbit {
+    position: relative;
+
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* orbit circles */
+
+.orbit {
+    position: absolute;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 50%;
+}
+
+
+/* first orbit */
+
+.orbit-1 {
+    width: 150px;
+    height: 150px;
+
+    border-top-color: rgba(255, 255, 255, 0.9);
+    border-right-color: transparent;
+
+    animation:
+        orbitRotate 2.5s linear infinite;
+}
+
+
+/* second orbit */
+
+.orbit-2 {
+    width: 115px;
+    height: 115px;
+
+    border-bottom-color: rgba(255, 255, 255, 0.8);
+    border-left-color: transparent;
+
+    animation:
+        orbitRotateReverse 2s linear infinite;
+}
+
+
+/* third orbit */
+
+.orbit-3 {
+    width: 80px;
+    height: 80px;
+
+    border-top-color: rgba(255, 255, 255, 0.6);
+    border-bottom-color: transparent;
+
+    animation:
+        orbitRotate 1.5s linear infinite;
+}
+
+
+/* ============================= */
+/*            CORE                */
+/* ============================= */
+
+.loader-core {
+    position: relative;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #050505;
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.15),
+        0 0 40px rgba(255, 255, 255, 0.08),
+        inset 0 0 20px rgba(255, 255, 255, 0.08);
+
+    animation: corePulse 2s ease-in-out infinite;
+}
+
+
+.loader-core::before {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 25px white;
+
+    animation: coreLight 1.5s ease-in-out infinite;
+}
+
+
+.loader-core span {
+    position: relative;
+
+    z-index: 2;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: white;
+
+    opacity: 0;
+
+    animation: logoAppear 1.5s ease forwards;
+}
+
+
+/* ============================= */
+/*            BRAND               */
+/* ============================= */
+
+.loader-brand {
+    margin-top: 32px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 23px;
+    font-weight: 800;
+
+    letter-spacing: 7px;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.25);
+
+    animation:
+        brandAppear 1s ease 0.3s both,
+        brandPulse 2.5s ease-in-out 1.3s infinite;
+}
+
+
+.loader-brand span {
+    opacity: 0.45;
+}
+
+
+/* ============================= */
+/*          STATUS                */
+/* ============================= */
+
+.loader-status {
+    margin-top: 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+
+.loader-line {
+    width: 35px;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    animation: linePulse 1.2s ease-in-out infinite;
+}
+
+
+.loader-text {
+    animation: statusBlink 1.5s ease-in-out infinite;
+}
+
+
+.loader-dots {
+    width: 18px;
+
+    animation: dotsAnimation 1.2s steps(4, end) infinite;
+}
+
+
+/* ============================= */
+/*          ANIMATIONS            */
+/* ============================= */
+
+@keyframes orbitRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes orbitRotateReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+@keyframes corePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+
+        box-shadow:
+            0 0 15px rgba(255, 255, 255, 0.15),
+            0 0 40px rgba(255, 255, 255, 0.08),
+            inset 0 0 20px rgba(255, 255, 255, 0.08);
+    }
+
+    50% {
+        transform: scale(1.08);
+
+        box-shadow:
+            0 0 25px rgba(255, 255, 255, 0.3),
+            0 0 65px rgba(255, 255, 255, 0.12),
+            inset 0 0 30px rgba(255, 255, 255, 0.15);
+    }
+
+}
+
+
+@keyframes coreLight {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+}
+
+
+@keyframes logoAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes brandAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes brandPulse {
+
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes linePulse {
+
+    0%,
+    100% {
+        width: 20px;
+        opacity: 0.3;
+    }
+
+    50% {
+        width: 40px;
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes statusBlink {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes dotsAnimation {
+
+    0% {
+        opacity: 0.2;
+    }
+
+    25% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    75%,
+    100% {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes gridMove {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(45px);
+    }
+
+}
+
+
+@keyframes loaderFadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
