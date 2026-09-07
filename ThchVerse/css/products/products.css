@@ -1,17 +1,11 @@
-/* =========================================
+/* =========================================================
    RESET
-========================================= */
+========================================================= */
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-:root {
-    font-family: "Inter", sans-serif;
-    color: #000;
-    background: #fff;
 }
 
 html {
@@ -19,124 +13,128 @@ html {
 }
 
 body {
-    min-height: 100vh;
-
+    margin: 0;
+    font-family: Inter, sans-serif;
     background: #fff;
-    color: #000;
-
-    font-family: "Inter", sans-serif;
-
-    -webkit-font-smoothing: antialiased;
+    color: #111;
 }
 
-button,
-input,
-select {
-    font-family: inherit;
-}
 
-button {
-    border: none;
-}
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
 
 .container {
     width: 100%;
+    min-height: 100vh;
 }
 
 
-/* =========================================
-   PAGE
-========================================= */
+/* =========================================================
+   PRODUCTS PAGE
+========================================================= */
 
 .products-page {
-    width: min(100% - 80px, 1320px);
-
+    width: min(1320px, calc(100% - 80px));
     margin: 0 auto;
 }
 
 
-/* =========================================
+/* =========================================================
    BREADCRUMB
-========================================= */
+========================================================= */
 
 .breadcrumb {
     display: flex;
     align-items: center;
-
     gap: 17px;
 
-    padding: 20px 0 39px;
+    padding: 20px 0 30px;
 
     font-size: 12px;
-
-    animation: fadeDown 0.45s ease both;
+    line-height: 1;
 }
 
 .breadcrumb a {
-    color: #a4a4a4;
-
+    color: #777;
     text-decoration: none;
 
     transition:
-        color 0.2s ease,
-        transform 0.2s ease;
+        color 0.2s ease;
 }
 
 .breadcrumb a:hover {
     color: #111;
-
-    transform: translateX(2px);
-}
-
-.breadcrumb svg {
-    color: #aaa;
 }
 
 .breadcrumb span {
-    color: #000;
-
-    font-weight: 500;
+    color: #111;
 }
 
 
-/* =========================================
+/* =========================================================
    TOP BAR
-========================================= */
+========================================================= */
 
 .products-top {
+    width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    margin-bottom: 12px;
+    min-height: 54px;
 
-    animation: fadeUp 0.45s ease 0.08s both;
+    padding: 8px 0;
+
+    margin-bottom: 14px;
+
+    background: #fff;
+
+    /*
+        Important:
+        The top bar stays visible while products scroll.
+    */
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
 }
 
-.selected-products {
-    color: #777;
+.products-top::after {
+    content: "";
 
-    font-size: 13px;
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 1px;
+
+    background: #eeeeee;
 }
 
 .products-top > p {
-    color: #777;
+    margin: 0;
 
     font-size: 13px;
+    color: #555;
 }
 
-.products-top strong {
-    color: #000;
+.products-top > p strong {
+    margin-left: 4px;
 
     font-size: 17px;
+    font-weight: 700;
 
-    font-weight: 500;
+    color: #111;
 }
 
 
-/* =========================================
+/* =========================================================
    SORT
-========================================= */
+========================================================= */
 
 .sort-box {
     position: relative;
@@ -146,25 +144,26 @@ button {
 }
 
 .sort-products {
-    appearance: none;
+    width: 140px;
+    height: 36px;
 
-    width: 130px;
-    height: 37px;
+    padding: 0 28px 0 12px;
 
-    padding: 0 30px 0 13px;
-
-    border: 1px solid #e5e5e5;
-    border-radius: 6px;
-
-    outline: none;
+    border: 1px solid #dedede;
+    border-radius: 5px;
 
     background: #fff;
 
-    color: #111;
+    color: #222;
 
+    font-family: inherit;
     font-size: 11px;
 
+    outline: none;
+
     cursor: pointer;
+
+    appearance: none;
 
     transition:
         border-color 0.2s ease,
@@ -172,172 +171,176 @@ button {
 }
 
 .sort-products:hover {
-    border-color: #cfcfcf;
+    border-color: #bdbdbd;
 }
 
 .sort-products:focus {
-    border-color: #aaa;
+    border-color: #111;
 
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.035);
+    box-shadow:
+        0 0 0 3px rgba(0, 0, 0, 0.05);
 }
 
 .sort-box svg {
     position: absolute;
 
-    right: 12px;
+    right: 11px;
 
     pointer-events: none;
 
-    color: #999;
-
-    transition: transform 0.2s ease;
-}
-
-.sort-box:focus-within svg {
-    transform: rotate(180deg);
+    color: #555;
 }
 
 
-/* =========================================
-   LAYOUT
-========================================= */
+/* =========================================================
+   MAIN PRODUCTS LAYOUT
+========================================================= */
 
 .products-layout {
+    width: 100%;
+
     display: grid;
 
     grid-template-columns: 190px minmax(0, 1fr);
 
-    gap: 29px;
+    column-gap: 29px;
 
-    animation: fadeUp 0.55s ease 0.12s both;
+    align-items: start;
 }
 
 
-/* =========================================
-   SIDEBAR
-========================================= */
+/* =========================================================
+   FILTER SIDEBAR
+========================================================= */
 
 .filter-sidebar {
-    width: 100%;
+    width: 190px;
+
+    /*
+        IMPORTANT:
+        Sticky keeps the sidebar in the layout.
+        It does NOT overlap the products.
+    */
+
+    position: sticky;
+
+    top: 72px;
 
     align-self: start;
+
+    max-height: calc(100vh - 92px);
+
+    overflow-y: auto;
+
+    padding-right: 3px;
+
+    scrollbar-width: thin;
 }
+
+.filter-sidebar::-webkit-scrollbar {
+    width: 3px;
+}
+
+.filter-sidebar::-webkit-scrollbar-thumb {
+    background: #d5d5d5;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   FILTER SECTIONS
+========================================================= */
 
 .filter-section {
-    border-bottom: 1px solid #e7e7e7;
+    width: 100%;
 
-    overflow: hidden;
+    padding: 0 0 18px;
+
+    margin-bottom: 18px;
+
+    border-bottom: 1px solid #eeeeee;
 }
 
-.filter-section:first-child {
-    border-top: 1px solid #e7e7e7;
+.filter-section:last-child {
+    margin-bottom: 0;
 }
 
 
-/* =========================================
-   FILTER HEADER
-========================================= */
+/* =========================================================
+   FILTER HEADING
+========================================================= */
 
 .filter-heading {
     width: 100%;
-    min-height: 47px;
+
+    min-height: 25px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
+    padding: 0;
+
+    border: none;
+
     background: transparent;
 
     color: #111;
 
+    font-family: inherit;
     font-size: 12px;
-
-    font-weight: 500;
-
-    text-align: left;
+    font-weight: 600;
 
     cursor: pointer;
 
-    transition:
-        color 0.2s ease,
-        padding-left 0.2s ease;
-}
-
-.filter-heading:hover {
-    color: #777;
-
-    padding-left: 4px;
+    text-align: left;
 }
 
 .filter-heading svg {
-    color: #111;
-
     flex-shrink: 0;
 
     transition:
-        transform 0.25s ease,
-        color 0.2s ease;
+        transform 0.25s ease;
 }
 
-.filter-heading:hover svg {
-    color: #777;
-}
-
-.filter-section:not(.brand-section) .filter-heading:hover svg {
-    transform: translateY(2px);
+.filter-heading:hover {
+    color: #555;
 }
 
 
-/* =========================================
-   BRAND
-========================================= */
-
-.brand-section {
-    padding-bottom: 10px;
-}
-
-.brand-section .filter-heading {
-    min-height: 43px;
-}
-
-
-/* =========================================
-   SEARCH
-========================================= */
+/* =========================================================
+   BRAND SEARCH
+========================================================= */
 
 .brand-search {
-    height: 36px;
+    width: 100%;
+    height: 32px;
 
     display: flex;
     align-items: center;
 
-    gap: 8px;
+    gap: 7px;
 
-    padding: 0 10px;
+    margin-top: 13px;
 
-    margin-bottom: 15px;
+    padding: 0 9px;
 
-    border-radius: 6px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
 
-    background: #f5f5f5;
-
-    color: #a5a5a5;
+    color: #999;
 
     transition:
-        background 0.2s ease,
+        border-color 0.2s ease,
         box-shadow 0.2s ease;
 }
 
-.brand-search:hover {
-    background: #f1f1f1;
-}
-
 .brand-search:focus-within {
-    background: #f3f3f3;
+    border-color: #111;
 
     box-shadow:
-        0 0 0 1px #ddd,
-        0 4px 14px rgba(0, 0, 0, 0.035);
+        0 0 0 3px rgba(0, 0, 0, 0.04);
 }
 
 .brand-search input {
@@ -348,9 +351,10 @@ button {
 
     background: transparent;
 
-    color: #222;
+    font-family: inherit;
+    font-size: 10px;
 
-    font-size: 11px;
+    color: #222;
 }
 
 .brand-search input::placeholder {
@@ -358,270 +362,163 @@ button {
 }
 
 
-/* =========================================
-   BRANDS
-========================================= */
+/* =========================================================
+   BRAND LIST
+========================================================= */
 
 .brand-list {
     display: flex;
+
     flex-direction: column;
 
-    gap: 10px;
+    gap: 11px;
+
+    margin-top: 14px;
 }
 
 .brand-list label {
-    display: flex;
+    display: grid;
+
+    grid-template-columns: 14px minmax(0, 1fr) auto;
+
     align-items: center;
 
-    gap: 7px;
+    column-gap: 7px;
 
     min-height: 17px;
 
-    color: #111;
+    font-size: 10px;
 
-    font-size: 11px;
+    color: #555;
 
     cursor: pointer;
 
-    user-select: none;
-
     transition:
-        transform 0.18s ease,
-        color 0.18s ease;
+        color 0.2s ease;
 }
 
 .brand-list label:hover {
-    transform: translateX(3px);
-
-    color: #000;
+    color: #111;
 }
 
 .brand-list input {
-    appearance: none;
-
-    width: 14px;
-    height: 14px;
+    width: 13px;
+    height: 13px;
 
     margin: 0;
 
-    border: 1px solid #ddd;
-    border-radius: 2px;
-
-    background: #fff;
+    accent-color: #111;
 
     cursor: pointer;
-
-    position: relative;
-
-    transition:
-        transform 0.15s ease,
-        border-color 0.15s ease,
-        background 0.15s ease;
 }
 
-.brand-list input:hover {
-    border-color: #999;
+.brand-list span {
+    overflow: hidden;
 
-    transform: scale(1.08);
-}
+    text-overflow: ellipsis;
 
-.brand-list input:checked {
-    border-color: #000;
-
-    background: #000;
-}
-
-.brand-list input:checked::after {
-    content: "";
-
-    position: absolute;
-
-    width: 6px;
-    height: 3px;
-
-    left: 3px;
-    top: 3px;
-
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-
-    transform: rotate(-45deg);
+    white-space: nowrap;
 }
 
 .brand-list small {
-    margin-left: 1px;
-
-    color: #999;
-
     font-size: 9px;
+
+    color: #aaa;
 }
 
 
-/* =========================================
+/* =========================================================
    PRODUCTS AREA
-========================================= */
+========================================================= */
 
 .products-area {
+    width: 100%;
     min-width: 0;
+
+    display: flex;
+    flex-direction: column;
 }
 
 
-/* =========================================
-   PRODUCTS GRID
-========================================= */
-
-.products-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 12px;
-}
-
-
-/*
-    IMPORTANT:
-
-    Product cards are NOT written here.
-
-    JavaScript will generate them
-    inside .products-grid.
-*/
-
-
-/* =========================================
+/* =========================================================
    PAGINATION
-========================================= */
+========================================================= */
 
 .pagination {
+    width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
-    gap: 5px;
+    gap: 7px;
 
-    margin-top: 27px;
-
-    padding-bottom: 35px;
+    padding: 35px 0 45px;
 }
 
-.pagination-page,
-.pagination-arrow {
+.pagination button {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: transparent;
+    width: 32px;
+    height: 32px;
+
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+
+    background: #fff;
+
+    color: #555;
+
+    font-family: inherit;
+    font-size: 11px;
 
     cursor: pointer;
 
     transition:
         background 0.2s ease,
         color 0.2s ease,
+        border-color 0.2s ease,
         transform 0.2s ease;
 }
 
-.pagination-page {
-    width: 24px;
-    height: 24px;
-
-    border-radius: 4px;
-
-    color: #777;
-
-    font-size: 10px;
-}
-
-.pagination-page:hover {
-    background: #f4f4f4;
+.pagination button:hover {
+    border-color: #111;
 
     color: #111;
 
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .pagination-page.active {
-    background: #000;
+    border-color: #111;
 
-    color: #fff;
-
-    box-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.12);
-}
-
-.pagination-page.active:hover {
-    background: #222;
+    background: #111;
 
     color: #fff;
 }
 
 .pagination-arrow {
-    width: 24px;
-    height: 24px;
-
-    border-radius: 4px;
-
-    color: #888;
-}
-
-.pagination-arrow:hover {
-    background: #f5f5f5;
-
-    color: #111;
-}
-
-.pagination-arrow.previous:hover {
-    transform: translateX(-2px);
-}
-
-.pagination-arrow.next:hover {
-    transform: translateX(2px);
+    padding: 0;
 }
 
 .pagination-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 25px;
+
     color: #999;
 
-    font-size: 10px;
+    font-size: 11px;
 }
 
 
-/* =========================================
-   PAGE ANIMATIONS
-========================================= */
-
-@keyframes fadeDown {
-
-    from {
-        opacity: 0;
-        transform: translateY(-7px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-@keyframes fadeUp {
-
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-
-/* =========================================
-   RESPONSIVE
-========================================= */
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
 
 @media (max-width: 1000px) {
 
@@ -632,60 +529,119 @@ button {
     .products-layout {
         grid-template-columns: 170px minmax(0, 1fr);
 
-        gap: 20px;
+        column-gap: 20px;
     }
 
+    .filter-sidebar {
+        width: 170px;
+    }
 }
 
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
 
 @media (max-width: 700px) {
 
     .products-page {
-        width: min(100% - 30px, 600px);
+        width: calc(100% - 28px);
     }
+
+    /*
+        On mobile the sidebar should NOT stay sticky.
+        Later we can turn it into a filter drawer.
+    */
 
     .products-layout {
         display: block;
     }
 
     .filter-sidebar {
-        margin-bottom: 25px;
+        position: static;
+
+        width: 100%;
+
+        max-height: none;
+
+        overflow: visible;
+
+        margin-bottom: 20px;
+
+        padding: 0;
     }
 
-    .brand-list {
-        display: grid;
+    .products-top {
+        top: 0;
 
-        grid-template-columns: repeat(2, 1fr);
+        min-height: 50px;
     }
 
-    .products-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+    .sort-products {
+        width: 125px;
     }
-
 }
 
 
-@media (max-width: 450px) {
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .products-page {
+        width: calc(100% - 20px);
+    }
 
     .breadcrumb {
         gap: 10px;
 
+        padding-top: 15px;
+        padding-bottom: 22px;
+
         font-size: 10px;
     }
 
-    .products-top {
-        align-items: flex-start;
+    .products-top > p {
+        font-size: 11px;
+    }
 
-        gap: 10px;
+    .products-top > p strong {
+        font-size: 14px;
     }
 
     .sort-products {
         width: 115px;
+
+        font-size: 10px;
     }
 
-    .products-grid {
-        grid-template-columns: 1fr;
+    .pagination {
+        gap: 4px;
+
+        padding-bottom: 30px;
     }
 
+    .pagination button {
+        width: 29px;
+        height: 29px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
 }

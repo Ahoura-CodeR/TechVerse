@@ -1,0 +1,4217 @@
+{
+  "store": {
+    "name": "TechVerse",
+    "currency": "USD",
+    "totalProducts": 210,
+    "categories": [
+      "phones",
+      "smartwatches",
+      "cameras",
+      "headphones",
+      "computers",
+      "gaming"
+    ]
+  },
+  "products": [
+    {
+      "id": 1,
+      "title": "Nova X 1A",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 599,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "phones",
+      "subcategory": "flagship",
+      "stock": 10,
+      "images": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"
+      ],
+      "specifications": {
+        "display": "6.1 inch AMOLED",
+        "storage": "256 GB",
+        "ram": "12 GB",
+        "battery": "4200 mAh"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Vertex Pro 2B",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 679,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "phones",
+      "subcategory": "mid-range",
+      "stock": 23,
+      "images": [
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800"
+      ],
+      "specifications": {
+        "display": "6.3 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "4500 mAh"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Titan Ultra 3C",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 759,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "phones",
+      "subcategory": "budget",
+      "stock": 36,
+      "images": [
+        "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800"
+      ],
+      "specifications": {
+        "display": "6.5 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "4800 mAh"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Aero 5G 4A",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 839,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "phones",
+      "subcategory": "flagship",
+      "stock": 49,
+      "images": [
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800"
+      ],
+      "specifications": {
+        "display": "6.7 inch AMOLED",
+        "storage": "256 GB",
+        "ram": "8 GB",
+        "battery": "5100 mAh"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Zenith S 5B",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 919,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "phones",
+      "subcategory": "mid-range",
+      "stock": 62,
+      "images": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"
+      ],
+      "specifications": {
+        "display": "6.1 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "12 GB",
+        "battery": "5400 mAh"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Orbit One 6C",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 999,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "phones",
+      "subcategory": "budget",
+      "stock": 75,
+      "images": [
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800"
+      ],
+      "specifications": {
+        "display": "6.3 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "4200 mAh"
+      }
+    },
+    {
+      "id": 7,
+      "title": "Core Max 7A",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1079,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "phones",
+      "subcategory": "flagship",
+      "stock": 88,
+      "images": [
+        "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800"
+      ],
+      "specifications": {
+        "display": "6.5 inch AMOLED",
+        "storage": "256 GB",
+        "ram": "8 GB",
+        "battery": "4500 mAh"
+      }
+    },
+    {
+      "id": 8,
+      "title": "Fusion Note 8B",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1159,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "phones",
+      "subcategory": "mid-range",
+      "stock": 11,
+      "images": [
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800"
+      ],
+      "specifications": {
+        "display": "6.7 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "4800 mAh"
+      }
+    },
+    {
+      "id": 9,
+      "title": "Nova X 9C",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1239,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "phones",
+      "subcategory": "budget",
+      "stock": 24,
+      "images": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"
+      ],
+      "specifications": {
+        "display": "6.1 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "12 GB",
+        "battery": "5100 mAh"
+      }
+    },
+    {
+      "id": 10,
+      "title": "Vertex Pro 1A",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1319,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "phones",
+      "subcategory": "flagship",
+      "stock": 37,
+      "images": [
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800"
+      ],
+      "specifications": {
+        "display": "6.3 inch AMOLED",
+        "storage": "256 GB",
+        "ram": "8 GB",
+        "battery": "5400 mAh"
+      }
+    },
+    {
+      "id": 11,
+      "title": "Titan Ultra 2B",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 624,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "phones",
+      "subcategory": "mid-range",
+      "stock": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800"
+      ],
+      "specifications": {
+        "display": "6.5 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "4200 mAh"
+      }
+    },
+    {
+      "id": 12,
+      "title": "Aero 5G 3C",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 704,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "phones",
+      "subcategory": "budget",
+      "stock": 63,
+      "images": [
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800"
+      ],
+      "specifications": {
+        "display": "6.7 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "4500 mAh"
+      }
+    },
+    {
+      "id": 13,
+      "title": "Zenith S 4A",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 784,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "phones",
+      "subcategory": "flagship",
+      "stock": 76,
+      "images": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"
+      ],
+      "specifications": {
+        "display": "6.1 inch AMOLED",
+        "storage": "256 GB",
+        "ram": "12 GB",
+        "battery": "4800 mAh"
+      }
+    },
+    {
+      "id": 14,
+      "title": "Orbit One 5B",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 864,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "phones",
+      "subcategory": "mid-range",
+      "stock": 89,
+      "images": [
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800"
+      ],
+      "specifications": {
+        "display": "6.3 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "5100 mAh"
+      }
+    },
+    {
+      "id": 15,
+      "title": "Core Max 6C",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 944,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "phones",
+      "subcategory": "budget",
+      "stock": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800"
+      ],
+      "specifications": {
+        "display": "6.5 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "5400 mAh"
+      }
+    },
+    {
+      "id": 16,
+      "title": "Fusion Note 7A",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1024,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "phones",
+      "subcategory": "flagship",
+      "stock": 25,
+      "images": [
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800"
+      ],
+      "specifications": {
+        "display": "6.7 inch AMOLED",
+        "storage": "256 GB",
+        "ram": "8 GB",
+        "battery": "4200 mAh"
+      }
+    },
+    {
+      "id": 17,
+      "title": "Nova X 8B",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1104,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "phones",
+      "subcategory": "mid-range",
+      "stock": 38,
+      "images": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"
+      ],
+      "specifications": {
+        "display": "6.1 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "12 GB",
+        "battery": "4500 mAh"
+      }
+    },
+    {
+      "id": 18,
+      "title": "Vertex Pro 9C",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1184,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "phones",
+      "subcategory": "budget",
+      "stock": 51,
+      "images": [
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800"
+      ],
+      "specifications": {
+        "display": "6.3 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "4800 mAh"
+      }
+    },
+    {
+      "id": 19,
+      "title": "Titan Ultra 1A",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1264,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "phones",
+      "subcategory": "flagship",
+      "stock": 64,
+      "images": [
+        "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800"
+      ],
+      "specifications": {
+        "display": "6.5 inch AMOLED",
+        "storage": "256 GB",
+        "ram": "8 GB",
+        "battery": "5100 mAh"
+      }
+    },
+    {
+      "id": 20,
+      "title": "Aero 5G 2B",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1344,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "phones",
+      "subcategory": "mid-range",
+      "stock": 77,
+      "images": [
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800"
+      ],
+      "specifications": {
+        "display": "6.7 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "5400 mAh"
+      }
+    },
+    {
+      "id": 21,
+      "title": "Zenith S 3C",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 649,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "phones",
+      "subcategory": "budget",
+      "stock": 90,
+      "images": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"
+      ],
+      "specifications": {
+        "display": "6.1 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "12 GB",
+        "battery": "4200 mAh"
+      }
+    },
+    {
+      "id": 22,
+      "title": "Orbit One 4A",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 729,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "phones",
+      "subcategory": "flagship",
+      "stock": 13,
+      "images": [
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800"
+      ],
+      "specifications": {
+        "display": "6.3 inch AMOLED",
+        "storage": "256 GB",
+        "ram": "8 GB",
+        "battery": "4500 mAh"
+      }
+    },
+    {
+      "id": 23,
+      "title": "Core Max 5B",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 809,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "phones",
+      "subcategory": "mid-range",
+      "stock": 26,
+      "images": [
+        "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800"
+      ],
+      "specifications": {
+        "display": "6.5 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "4800 mAh"
+      }
+    },
+    {
+      "id": 24,
+      "title": "Fusion Note 6C",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 889,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "phones",
+      "subcategory": "budget",
+      "stock": 39,
+      "images": [
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800"
+      ],
+      "specifications": {
+        "display": "6.7 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "5100 mAh"
+      }
+    },
+    {
+      "id": 25,
+      "title": "Nova X 7A",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 969,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "phones",
+      "subcategory": "flagship",
+      "stock": 52,
+      "images": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"
+      ],
+      "specifications": {
+        "display": "6.1 inch AMOLED",
+        "storage": "256 GB",
+        "ram": "12 GB",
+        "battery": "5400 mAh"
+      }
+    },
+    {
+      "id": 26,
+      "title": "Vertex Pro 8B",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1049,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "phones",
+      "subcategory": "mid-range",
+      "stock": 65,
+      "images": [
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800"
+      ],
+      "specifications": {
+        "display": "6.3 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "4200 mAh"
+      }
+    },
+    {
+      "id": 27,
+      "title": "Titan Ultra 9C",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1129,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "phones",
+      "subcategory": "budget",
+      "stock": 78,
+      "images": [
+        "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800"
+      ],
+      "specifications": {
+        "display": "6.5 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "4500 mAh"
+      }
+    },
+    {
+      "id": 28,
+      "title": "Aero 5G 1A",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1209,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "phones",
+      "subcategory": "flagship",
+      "stock": 91,
+      "images": [
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800"
+      ],
+      "specifications": {
+        "display": "6.7 inch AMOLED",
+        "storage": "256 GB",
+        "ram": "8 GB",
+        "battery": "4800 mAh"
+      }
+    },
+    {
+      "id": 29,
+      "title": "Zenith S 2B",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1289,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "phones",
+      "subcategory": "mid-range",
+      "stock": 14,
+      "images": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"
+      ],
+      "specifications": {
+        "display": "6.1 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "12 GB",
+        "battery": "5100 mAh"
+      }
+    },
+    {
+      "id": 30,
+      "title": "Orbit One 3C",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1369,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "phones",
+      "subcategory": "budget",
+      "stock": 27,
+      "images": [
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800"
+      ],
+      "specifications": {
+        "display": "6.3 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "5400 mAh"
+      }
+    },
+    {
+      "id": 31,
+      "title": "Core Max 4A",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 674,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "phones",
+      "subcategory": "flagship",
+      "stock": 40,
+      "images": [
+        "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800"
+      ],
+      "specifications": {
+        "display": "6.5 inch AMOLED",
+        "storage": "256 GB",
+        "ram": "8 GB",
+        "battery": "4200 mAh"
+      }
+    },
+    {
+      "id": 32,
+      "title": "Fusion Note 5B",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 754,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "phones",
+      "subcategory": "mid-range",
+      "stock": 53,
+      "images": [
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800"
+      ],
+      "specifications": {
+        "display": "6.7 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "4500 mAh"
+      }
+    },
+    {
+      "id": 33,
+      "title": "Nova X 6C",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 834,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "phones",
+      "subcategory": "budget",
+      "stock": 66,
+      "images": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"
+      ],
+      "specifications": {
+        "display": "6.1 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "12 GB",
+        "battery": "4800 mAh"
+      }
+    },
+    {
+      "id": 34,
+      "title": "Vertex Pro 7A",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 914,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "phones",
+      "subcategory": "flagship",
+      "stock": 79,
+      "images": [
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800"
+      ],
+      "specifications": {
+        "display": "6.3 inch AMOLED",
+        "storage": "256 GB",
+        "ram": "8 GB",
+        "battery": "5100 mAh"
+      }
+    },
+    {
+      "id": 35,
+      "title": "Titan Ultra 8B",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 994,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "phones",
+      "subcategory": "mid-range",
+      "stock": 92,
+      "images": [
+        "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800"
+      ],
+      "specifications": {
+        "display": "6.5 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "5400 mAh"
+      }
+    },
+    {
+      "id": 36,
+      "title": "Aero 5G 9C",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1074,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "phones",
+      "subcategory": "budget",
+      "stock": 15,
+      "images": [
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800"
+      ],
+      "specifications": {
+        "display": "6.7 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "4200 mAh"
+      }
+    },
+    {
+      "id": 37,
+      "title": "Zenith S 1A",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1154,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "phones",
+      "subcategory": "flagship",
+      "stock": 28,
+      "images": [
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"
+      ],
+      "specifications": {
+        "display": "6.1 inch AMOLED",
+        "storage": "256 GB",
+        "ram": "12 GB",
+        "battery": "4500 mAh"
+      }
+    },
+    {
+      "id": 38,
+      "title": "Orbit One 2B",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1234,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "phones",
+      "subcategory": "mid-range",
+      "stock": 41,
+      "images": [
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800"
+      ],
+      "specifications": {
+        "display": "6.3 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "4800 mAh"
+      }
+    },
+    {
+      "id": 39,
+      "title": "Core Max 3C",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1314,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "phones",
+      "subcategory": "budget",
+      "stock": 54,
+      "images": [
+        "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800"
+      ],
+      "specifications": {
+        "display": "6.5 inch AMOLED",
+        "storage": "128 GB",
+        "ram": "8 GB",
+        "battery": "5100 mAh"
+      }
+    },
+    {
+      "id": 40,
+      "title": "Fusion Note 4A",
+      "description": "5G smartphone with an AMOLED display, advanced camera system and fast charging.",
+      "price": 1394,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "phones",
+      "subcategory": "flagship",
+      "stock": 67,
+      "images": [
+        "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800"
+      ],
+      "specifications": {
+        "display": "6.7 inch AMOLED",
+        "storage": "256 GB",
+        "ram": "8 GB",
+        "battery": "5400 mAh"
+      }
+    },
+    {
+      "id": 41,
+      "title": "Chrono 1A",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 129,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "smartwatches",
+      "subcategory": "fitness",
+      "stock": 10,
+      "images": [
+        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800"
+      ],
+      "specifications": {
+        "display": "1.6 inch AMOLED",
+        "storage": "8 GB",
+        "battery": "5 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 42,
+      "title": "Pulse 2B",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 164,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "smartwatches",
+      "subcategory": "premium",
+      "stock": 23,
+      "images": [
+        "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800"
+      ],
+      "specifications": {
+        "display": "1.7 inch AMOLED",
+        "storage": "16 GB",
+        "battery": "6 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 43,
+      "title": "Aero Watch 3C",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 199,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "smartwatches",
+      "subcategory": "outdoor",
+      "stock": 36,
+      "images": [
+        "https://images.unsplash.com/photo-1579586337278-3f436f25d4d6?w=800"
+      ],
+      "specifications": {
+        "display": "1.8 inch AMOLED",
+        "storage": "24 GB",
+        "battery": "7 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 44,
+      "title": "Titan Watch 4A",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 234,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "smartwatches",
+      "subcategory": "fitness",
+      "stock": 49,
+      "images": [
+        "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=800"
+      ],
+      "specifications": {
+        "display": "1.6 inch AMOLED",
+        "storage": "8 GB",
+        "battery": "8 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 45,
+      "title": "Nova Fit 5B",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 269,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "smartwatches",
+      "subcategory": "premium",
+      "stock": 62,
+      "images": [
+        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800"
+      ],
+      "specifications": {
+        "display": "1.7 inch AMOLED",
+        "storage": "16 GB",
+        "battery": "9 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 46,
+      "title": "Vertex Watch 6C",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 304,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "smartwatches",
+      "subcategory": "outdoor",
+      "stock": 75,
+      "images": [
+        "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800"
+      ],
+      "specifications": {
+        "display": "1.8 inch AMOLED",
+        "storage": "24 GB",
+        "battery": "10 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 47,
+      "title": "Orbit Active 7A",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 339,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "smartwatches",
+      "subcategory": "fitness",
+      "stock": 88,
+      "images": [
+        "https://images.unsplash.com/photo-1579586337278-3f436f25d4d6?w=800"
+      ],
+      "specifications": {
+        "display": "1.6 inch AMOLED",
+        "storage": "8 GB",
+        "battery": "5 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 48,
+      "title": "Chrono 8B",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 374,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "smartwatches",
+      "subcategory": "premium",
+      "stock": 11,
+      "images": [
+        "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=800"
+      ],
+      "specifications": {
+        "display": "1.7 inch AMOLED",
+        "storage": "16 GB",
+        "battery": "6 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 49,
+      "title": "Pulse 9C",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 409,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "smartwatches",
+      "subcategory": "outdoor",
+      "stock": 24,
+      "images": [
+        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800"
+      ],
+      "specifications": {
+        "display": "1.8 inch AMOLED",
+        "storage": "24 GB",
+        "battery": "7 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 50,
+      "title": "Aero Watch 1A",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 444,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "smartwatches",
+      "subcategory": "fitness",
+      "stock": 37,
+      "images": [
+        "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800"
+      ],
+      "specifications": {
+        "display": "1.6 inch AMOLED",
+        "storage": "8 GB",
+        "battery": "8 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 51,
+      "title": "Titan Watch 2B",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 154,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "smartwatches",
+      "subcategory": "premium",
+      "stock": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1579586337278-3f436f25d4d6?w=800"
+      ],
+      "specifications": {
+        "display": "1.7 inch AMOLED",
+        "storage": "16 GB",
+        "battery": "9 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 52,
+      "title": "Nova Fit 3C",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 189,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "smartwatches",
+      "subcategory": "outdoor",
+      "stock": 63,
+      "images": [
+        "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=800"
+      ],
+      "specifications": {
+        "display": "1.8 inch AMOLED",
+        "storage": "24 GB",
+        "battery": "10 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 53,
+      "title": "Vertex Watch 4A",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 224,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "smartwatches",
+      "subcategory": "fitness",
+      "stock": 76,
+      "images": [
+        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800"
+      ],
+      "specifications": {
+        "display": "1.6 inch AMOLED",
+        "storage": "8 GB",
+        "battery": "5 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 54,
+      "title": "Orbit Active 5B",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 259,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "smartwatches",
+      "subcategory": "premium",
+      "stock": 89,
+      "images": [
+        "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800"
+      ],
+      "specifications": {
+        "display": "1.7 inch AMOLED",
+        "storage": "16 GB",
+        "battery": "6 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 55,
+      "title": "Chrono 6C",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 294,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "smartwatches",
+      "subcategory": "outdoor",
+      "stock": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1579586337278-3f436f25d4d6?w=800"
+      ],
+      "specifications": {
+        "display": "1.8 inch AMOLED",
+        "storage": "24 GB",
+        "battery": "7 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 56,
+      "title": "Pulse 7A",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 329,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "smartwatches",
+      "subcategory": "fitness",
+      "stock": 25,
+      "images": [
+        "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=800"
+      ],
+      "specifications": {
+        "display": "1.6 inch AMOLED",
+        "storage": "8 GB",
+        "battery": "8 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 57,
+      "title": "Aero Watch 8B",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 364,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "smartwatches",
+      "subcategory": "premium",
+      "stock": 38,
+      "images": [
+        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800"
+      ],
+      "specifications": {
+        "display": "1.7 inch AMOLED",
+        "storage": "16 GB",
+        "battery": "9 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 58,
+      "title": "Titan Watch 9C",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 399,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "smartwatches",
+      "subcategory": "outdoor",
+      "stock": 51,
+      "images": [
+        "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800"
+      ],
+      "specifications": {
+        "display": "1.8 inch AMOLED",
+        "storage": "24 GB",
+        "battery": "10 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 59,
+      "title": "Nova Fit 1A",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 434,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "smartwatches",
+      "subcategory": "fitness",
+      "stock": 64,
+      "images": [
+        "https://images.unsplash.com/photo-1579586337278-3f436f25d4d6?w=800"
+      ],
+      "specifications": {
+        "display": "1.6 inch AMOLED",
+        "storage": "8 GB",
+        "battery": "5 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 60,
+      "title": "Vertex Watch 2B",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 469,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "smartwatches",
+      "subcategory": "premium",
+      "stock": 77,
+      "images": [
+        "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=800"
+      ],
+      "specifications": {
+        "display": "1.7 inch AMOLED",
+        "storage": "16 GB",
+        "battery": "6 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 61,
+      "title": "Orbit Active 3C",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 179,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "smartwatches",
+      "subcategory": "outdoor",
+      "stock": 90,
+      "images": [
+        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800"
+      ],
+      "specifications": {
+        "display": "1.8 inch AMOLED",
+        "storage": "24 GB",
+        "battery": "7 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 62,
+      "title": "Chrono 4A",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 214,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "smartwatches",
+      "subcategory": "fitness",
+      "stock": 13,
+      "images": [
+        "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800"
+      ],
+      "specifications": {
+        "display": "1.6 inch AMOLED",
+        "storage": "8 GB",
+        "battery": "8 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 63,
+      "title": "Pulse 5B",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 249,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "smartwatches",
+      "subcategory": "premium",
+      "stock": 26,
+      "images": [
+        "https://images.unsplash.com/photo-1579586337278-3f436f25d4d6?w=800"
+      ],
+      "specifications": {
+        "display": "1.7 inch AMOLED",
+        "storage": "16 GB",
+        "battery": "9 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 64,
+      "title": "Aero Watch 6C",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 284,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "smartwatches",
+      "subcategory": "outdoor",
+      "stock": 39,
+      "images": [
+        "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=800"
+      ],
+      "specifications": {
+        "display": "1.8 inch AMOLED",
+        "storage": "24 GB",
+        "battery": "10 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 65,
+      "title": "Titan Watch 7A",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 319,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "smartwatches",
+      "subcategory": "fitness",
+      "stock": 52,
+      "images": [
+        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800"
+      ],
+      "specifications": {
+        "display": "1.6 inch AMOLED",
+        "storage": "8 GB",
+        "battery": "5 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 66,
+      "title": "Nova Fit 8B",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 354,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "smartwatches",
+      "subcategory": "premium",
+      "stock": 65,
+      "images": [
+        "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800"
+      ],
+      "specifications": {
+        "display": "1.7 inch AMOLED",
+        "storage": "16 GB",
+        "battery": "6 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 67,
+      "title": "Vertex Watch 9C",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 389,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "smartwatches",
+      "subcategory": "outdoor",
+      "stock": 78,
+      "images": [
+        "https://images.unsplash.com/photo-1579586337278-3f436f25d4d6?w=800"
+      ],
+      "specifications": {
+        "display": "1.8 inch AMOLED",
+        "storage": "24 GB",
+        "battery": "7 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 68,
+      "title": "Orbit Active 1A",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 424,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "smartwatches",
+      "subcategory": "fitness",
+      "stock": 91,
+      "images": [
+        "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=800"
+      ],
+      "specifications": {
+        "display": "1.6 inch AMOLED",
+        "storage": "8 GB",
+        "battery": "8 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 69,
+      "title": "Chrono 2B",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 459,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "smartwatches",
+      "subcategory": "premium",
+      "stock": 14,
+      "images": [
+        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800"
+      ],
+      "specifications": {
+        "display": "1.7 inch AMOLED",
+        "storage": "16 GB",
+        "battery": "9 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 70,
+      "title": "Pulse 3C",
+      "description": "Smartwatch with fitness tracking, health sensors, notifications and long battery life.",
+      "price": 494,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "smartwatches",
+      "subcategory": "outdoor",
+      "stock": 27,
+      "images": [
+        "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800"
+      ],
+      "specifications": {
+        "display": "1.8 inch AMOLED",
+        "storage": "24 GB",
+        "battery": "10 days",
+        "protection": "5 ATM"
+      }
+    },
+    {
+      "id": 71,
+      "title": "Vision 1A",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 399,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "cameras",
+      "subcategory": "mirrorless",
+      "stock": 10,
+      "images": [
+        "https://images.unsplash.com/photo-1606986628253-3d7d1d5f1d72?w=800"
+      ],
+      "specifications": {
+        "sensor": "24 MP",
+        "video": "6K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 72,
+      "title": "NovaCam 2B",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 519,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "cameras",
+      "subcategory": "dslr",
+      "stock": 23,
+      "images": [
+        "https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=800"
+      ],
+      "specifications": {
+        "sensor": "28 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 73,
+      "title": "AeroShot 3C",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 639,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "cameras",
+      "subcategory": "action",
+      "stock": 36,
+      "images": [
+        "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800"
+      ],
+      "specifications": {
+        "sensor": "32 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 74,
+      "title": "PixelShot 4A",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 759,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "cameras",
+      "subcategory": "mirrorless",
+      "stock": 49,
+      "images": [
+        "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=800"
+      ],
+      "specifications": {
+        "sensor": "36 MP",
+        "video": "6K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 75,
+      "title": "Titan DSLR 5B",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 879,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "cameras",
+      "subcategory": "dslr",
+      "stock": 62,
+      "images": [
+        "https://images.unsplash.com/photo-1606986628253-3d7d1d5f1d72?w=800"
+      ],
+      "specifications": {
+        "sensor": "40 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 76,
+      "title": "Vertex Zoom 6C",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 999,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "cameras",
+      "subcategory": "action",
+      "stock": 75,
+      "images": [
+        "https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=800"
+      ],
+      "specifications": {
+        "sensor": "24 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 77,
+      "title": "Orbit Cam 7A",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 1119,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "cameras",
+      "subcategory": "mirrorless",
+      "stock": 88,
+      "images": [
+        "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800"
+      ],
+      "specifications": {
+        "sensor": "28 MP",
+        "video": "6K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 78,
+      "title": "Vision 8B",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 1239,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "cameras",
+      "subcategory": "dslr",
+      "stock": 11,
+      "images": [
+        "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=800"
+      ],
+      "specifications": {
+        "sensor": "32 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 79,
+      "title": "NovaCam 9C",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 1359,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "cameras",
+      "subcategory": "action",
+      "stock": 24,
+      "images": [
+        "https://images.unsplash.com/photo-1606986628253-3d7d1d5f1d72?w=800"
+      ],
+      "specifications": {
+        "sensor": "36 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 80,
+      "title": "AeroShot 1A",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 1479,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "cameras",
+      "subcategory": "mirrorless",
+      "stock": 37,
+      "images": [
+        "https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=800"
+      ],
+      "specifications": {
+        "sensor": "40 MP",
+        "video": "6K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 81,
+      "title": "PixelShot 2B",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 424,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "cameras",
+      "subcategory": "dslr",
+      "stock": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800"
+      ],
+      "specifications": {
+        "sensor": "24 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 82,
+      "title": "Titan DSLR 3C",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 544,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "cameras",
+      "subcategory": "action",
+      "stock": 63,
+      "images": [
+        "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=800"
+      ],
+      "specifications": {
+        "sensor": "28 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 83,
+      "title": "Vertex Zoom 4A",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 664,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "cameras",
+      "subcategory": "mirrorless",
+      "stock": 76,
+      "images": [
+        "https://images.unsplash.com/photo-1606986628253-3d7d1d5f1d72?w=800"
+      ],
+      "specifications": {
+        "sensor": "32 MP",
+        "video": "6K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 84,
+      "title": "Orbit Cam 5B",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 784,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "cameras",
+      "subcategory": "dslr",
+      "stock": 89,
+      "images": [
+        "https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=800"
+      ],
+      "specifications": {
+        "sensor": "36 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 85,
+      "title": "Vision 6C",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 904,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "cameras",
+      "subcategory": "action",
+      "stock": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800"
+      ],
+      "specifications": {
+        "sensor": "40 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 86,
+      "title": "NovaCam 7A",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 1024,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "cameras",
+      "subcategory": "mirrorless",
+      "stock": 25,
+      "images": [
+        "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=800"
+      ],
+      "specifications": {
+        "sensor": "24 MP",
+        "video": "6K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 87,
+      "title": "AeroShot 8B",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 1144,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "cameras",
+      "subcategory": "dslr",
+      "stock": 38,
+      "images": [
+        "https://images.unsplash.com/photo-1606986628253-3d7d1d5f1d72?w=800"
+      ],
+      "specifications": {
+        "sensor": "28 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 88,
+      "title": "PixelShot 9C",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 1264,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "cameras",
+      "subcategory": "action",
+      "stock": 51,
+      "images": [
+        "https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=800"
+      ],
+      "specifications": {
+        "sensor": "32 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 89,
+      "title": "Titan DSLR 1A",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 1384,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "cameras",
+      "subcategory": "mirrorless",
+      "stock": 64,
+      "images": [
+        "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800"
+      ],
+      "specifications": {
+        "sensor": "36 MP",
+        "video": "6K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 90,
+      "title": "Vertex Zoom 2B",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 1504,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "cameras",
+      "subcategory": "dslr",
+      "stock": 77,
+      "images": [
+        "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=800"
+      ],
+      "specifications": {
+        "sensor": "40 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 91,
+      "title": "Orbit Cam 3C",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 449,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "cameras",
+      "subcategory": "action",
+      "stock": 90,
+      "images": [
+        "https://images.unsplash.com/photo-1606986628253-3d7d1d5f1d72?w=800"
+      ],
+      "specifications": {
+        "sensor": "24 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 92,
+      "title": "Vision 4A",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 569,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "cameras",
+      "subcategory": "mirrorless",
+      "stock": 13,
+      "images": [
+        "https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=800"
+      ],
+      "specifications": {
+        "sensor": "28 MP",
+        "video": "6K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 93,
+      "title": "NovaCam 5B",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 689,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "cameras",
+      "subcategory": "dslr",
+      "stock": 26,
+      "images": [
+        "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800"
+      ],
+      "specifications": {
+        "sensor": "32 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 94,
+      "title": "AeroShot 6C",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 809,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "cameras",
+      "subcategory": "action",
+      "stock": 39,
+      "images": [
+        "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=800"
+      ],
+      "specifications": {
+        "sensor": "36 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 95,
+      "title": "PixelShot 7A",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 929,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "cameras",
+      "subcategory": "mirrorless",
+      "stock": 52,
+      "images": [
+        "https://images.unsplash.com/photo-1606986628253-3d7d1d5f1d72?w=800"
+      ],
+      "specifications": {
+        "sensor": "40 MP",
+        "video": "6K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 96,
+      "title": "Titan DSLR 8B",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 1049,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "cameras",
+      "subcategory": "dslr",
+      "stock": 65,
+      "images": [
+        "https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=800"
+      ],
+      "specifications": {
+        "sensor": "24 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 97,
+      "title": "Vertex Zoom 9C",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 1169,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "cameras",
+      "subcategory": "action",
+      "stock": 78,
+      "images": [
+        "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800"
+      ],
+      "specifications": {
+        "sensor": "28 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 98,
+      "title": "Orbit Cam 1A",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 1289,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "cameras",
+      "subcategory": "mirrorless",
+      "stock": 91,
+      "images": [
+        "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=800"
+      ],
+      "specifications": {
+        "sensor": "32 MP",
+        "video": "6K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 99,
+      "title": "Vision 2B",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 1409,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "cameras",
+      "subcategory": "dslr",
+      "stock": 14,
+      "images": [
+        "https://images.unsplash.com/photo-1606986628253-3d7d1d5f1d72?w=800"
+      ],
+      "specifications": {
+        "sensor": "36 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 100,
+      "title": "NovaCam 3C",
+      "description": "Digital camera with high-resolution imaging, fast autofocus and high-quality video recording.",
+      "price": 1529,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "cameras",
+      "subcategory": "action",
+      "stock": 27,
+      "images": [
+        "https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=800"
+      ],
+      "specifications": {
+        "sensor": "40 MP",
+        "video": "4K",
+        "lens_mount": "Universal",
+        "stabilization": "Optical"
+      }
+    },
+    {
+      "id": 101,
+      "title": "Sonic 1A",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 79,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "headphones",
+      "subcategory": "over-ear",
+      "stock": 10,
+      "images": [
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"
+      ],
+      "specifications": {
+        "type": "over-ear",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Passive",
+        "battery": "18 hours"
+      }
+    },
+    {
+      "id": 102,
+      "title": "Nova Buds 2B",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 109,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "headphones",
+      "subcategory": "earbuds",
+      "stock": 23,
+      "images": [
+        "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800"
+      ],
+      "specifications": {
+        "type": "earbuds",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "21 hours"
+      }
+    },
+    {
+      "id": 103,
+      "title": "Titan Studio 3C",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 139,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "headphones",
+      "subcategory": "studio",
+      "stock": 36,
+      "images": [
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800"
+      ],
+      "specifications": {
+        "type": "studio",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "24 hours"
+      }
+    },
+    {
+      "id": 104,
+      "title": "Pulse Air 4A",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 169,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "headphones",
+      "subcategory": "over-ear",
+      "stock": 49,
+      "images": [
+        "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800"
+      ],
+      "specifications": {
+        "type": "over-ear",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Passive",
+        "battery": "27 hours"
+      }
+    },
+    {
+      "id": 105,
+      "title": "AeroPods 5B",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 199,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "headphones",
+      "subcategory": "earbuds",
+      "stock": 62,
+      "images": [
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"
+      ],
+      "specifications": {
+        "type": "earbuds",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "30 hours"
+      }
+    },
+    {
+      "id": 106,
+      "title": "Vertex ANC 6C",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 229,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "headphones",
+      "subcategory": "studio",
+      "stock": 75,
+      "images": [
+        "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800"
+      ],
+      "specifications": {
+        "type": "studio",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "33 hours"
+      }
+    },
+    {
+      "id": 107,
+      "title": "Zenith Audio 7A",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 259,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "headphones",
+      "subcategory": "over-ear",
+      "stock": 88,
+      "images": [
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800"
+      ],
+      "specifications": {
+        "type": "over-ear",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Passive",
+        "battery": "36 hours"
+      }
+    },
+    {
+      "id": 108,
+      "title": "Sonic 8B",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 289,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "headphones",
+      "subcategory": "earbuds",
+      "stock": 11,
+      "images": [
+        "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800"
+      ],
+      "specifications": {
+        "type": "earbuds",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "39 hours"
+      }
+    },
+    {
+      "id": 109,
+      "title": "Nova Buds 9C",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 319,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "headphones",
+      "subcategory": "studio",
+      "stock": 24,
+      "images": [
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"
+      ],
+      "specifications": {
+        "type": "studio",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "18 hours"
+      }
+    },
+    {
+      "id": 110,
+      "title": "Titan Studio 1A",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 349,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "headphones",
+      "subcategory": "over-ear",
+      "stock": 37,
+      "images": [
+        "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800"
+      ],
+      "specifications": {
+        "type": "over-ear",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Passive",
+        "battery": "21 hours"
+      }
+    },
+    {
+      "id": 111,
+      "title": "Pulse Air 2B",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 104,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "headphones",
+      "subcategory": "earbuds",
+      "stock": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800"
+      ],
+      "specifications": {
+        "type": "earbuds",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "24 hours"
+      }
+    },
+    {
+      "id": 112,
+      "title": "AeroPods 3C",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 134,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "headphones",
+      "subcategory": "studio",
+      "stock": 63,
+      "images": [
+        "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800"
+      ],
+      "specifications": {
+        "type": "studio",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "27 hours"
+      }
+    },
+    {
+      "id": 113,
+      "title": "Vertex ANC 4A",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 164,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "headphones",
+      "subcategory": "over-ear",
+      "stock": 76,
+      "images": [
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"
+      ],
+      "specifications": {
+        "type": "over-ear",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Passive",
+        "battery": "30 hours"
+      }
+    },
+    {
+      "id": 114,
+      "title": "Zenith Audio 5B",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 194,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "headphones",
+      "subcategory": "earbuds",
+      "stock": 89,
+      "images": [
+        "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800"
+      ],
+      "specifications": {
+        "type": "earbuds",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "33 hours"
+      }
+    },
+    {
+      "id": 115,
+      "title": "Sonic 6C",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 224,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "headphones",
+      "subcategory": "studio",
+      "stock": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800"
+      ],
+      "specifications": {
+        "type": "studio",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "36 hours"
+      }
+    },
+    {
+      "id": 116,
+      "title": "Nova Buds 7A",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 254,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "headphones",
+      "subcategory": "over-ear",
+      "stock": 25,
+      "images": [
+        "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800"
+      ],
+      "specifications": {
+        "type": "over-ear",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Passive",
+        "battery": "39 hours"
+      }
+    },
+    {
+      "id": 117,
+      "title": "Titan Studio 8B",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 284,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "headphones",
+      "subcategory": "earbuds",
+      "stock": 38,
+      "images": [
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"
+      ],
+      "specifications": {
+        "type": "earbuds",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "18 hours"
+      }
+    },
+    {
+      "id": 118,
+      "title": "Pulse Air 9C",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 314,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "headphones",
+      "subcategory": "studio",
+      "stock": 51,
+      "images": [
+        "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800"
+      ],
+      "specifications": {
+        "type": "studio",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "21 hours"
+      }
+    },
+    {
+      "id": 119,
+      "title": "AeroPods 1A",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 344,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "headphones",
+      "subcategory": "over-ear",
+      "stock": 64,
+      "images": [
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800"
+      ],
+      "specifications": {
+        "type": "over-ear",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Passive",
+        "battery": "24 hours"
+      }
+    },
+    {
+      "id": 120,
+      "title": "Vertex ANC 2B",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 374,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "headphones",
+      "subcategory": "earbuds",
+      "stock": 77,
+      "images": [
+        "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800"
+      ],
+      "specifications": {
+        "type": "earbuds",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "27 hours"
+      }
+    },
+    {
+      "id": 121,
+      "title": "Zenith Audio 3C",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 129,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "headphones",
+      "subcategory": "studio",
+      "stock": 90,
+      "images": [
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"
+      ],
+      "specifications": {
+        "type": "studio",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "30 hours"
+      }
+    },
+    {
+      "id": 122,
+      "title": "Sonic 4A",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 159,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "headphones",
+      "subcategory": "over-ear",
+      "stock": 13,
+      "images": [
+        "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800"
+      ],
+      "specifications": {
+        "type": "over-ear",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Passive",
+        "battery": "33 hours"
+      }
+    },
+    {
+      "id": 123,
+      "title": "Nova Buds 5B",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 189,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "headphones",
+      "subcategory": "earbuds",
+      "stock": 26,
+      "images": [
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800"
+      ],
+      "specifications": {
+        "type": "earbuds",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "36 hours"
+      }
+    },
+    {
+      "id": 124,
+      "title": "Titan Studio 6C",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 219,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "headphones",
+      "subcategory": "studio",
+      "stock": 39,
+      "images": [
+        "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800"
+      ],
+      "specifications": {
+        "type": "studio",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "39 hours"
+      }
+    },
+    {
+      "id": 125,
+      "title": "Pulse Air 7A",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 249,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "headphones",
+      "subcategory": "over-ear",
+      "stock": 52,
+      "images": [
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"
+      ],
+      "specifications": {
+        "type": "over-ear",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Passive",
+        "battery": "18 hours"
+      }
+    },
+    {
+      "id": 126,
+      "title": "AeroPods 8B",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 279,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "headphones",
+      "subcategory": "earbuds",
+      "stock": 65,
+      "images": [
+        "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800"
+      ],
+      "specifications": {
+        "type": "earbuds",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "21 hours"
+      }
+    },
+    {
+      "id": 127,
+      "title": "Vertex ANC 9C",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 309,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "headphones",
+      "subcategory": "studio",
+      "stock": 78,
+      "images": [
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800"
+      ],
+      "specifications": {
+        "type": "studio",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "24 hours"
+      }
+    },
+    {
+      "id": 128,
+      "title": "Zenith Audio 1A",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 339,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "headphones",
+      "subcategory": "over-ear",
+      "stock": 91,
+      "images": [
+        "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800"
+      ],
+      "specifications": {
+        "type": "over-ear",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Passive",
+        "battery": "27 hours"
+      }
+    },
+    {
+      "id": 129,
+      "title": "Sonic 2B",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 369,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "headphones",
+      "subcategory": "earbuds",
+      "stock": 14,
+      "images": [
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"
+      ],
+      "specifications": {
+        "type": "earbuds",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "30 hours"
+      }
+    },
+    {
+      "id": 130,
+      "title": "Nova Buds 3C",
+      "description": "Wireless audio device with clear sound, comfortable fit and long battery life.",
+      "price": 399,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "headphones",
+      "subcategory": "studio",
+      "stock": 27,
+      "images": [
+        "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800"
+      ],
+      "specifications": {
+        "type": "studio",
+        "connection": "Bluetooth 5.3",
+        "noise_cancellation": "Active",
+        "battery": "33 hours"
+      }
+    },
+    {
+      "id": 131,
+      "title": "NovaBook 1A",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 599,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "computers",
+      "subcategory": "laptop",
+      "stock": 10,
+      "images": [
+        "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=800"
+      ],
+      "specifications": {
+        "screen": "14 inch",
+        "ram": "32 GB",
+        "storage": "1000 GB SSD",
+        "processor": "Core X5"
+      }
+    },
+    {
+      "id": 132,
+      "title": "VertexBook 2B",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 739,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "computers",
+      "subcategory": "ultrabook",
+      "stock": 23,
+      "images": [
+        "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800"
+      ],
+      "specifications": {
+        "screen": "15 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X6"
+      }
+    },
+    {
+      "id": 133,
+      "title": "Titan Gaming 3C",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 879,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "computers",
+      "subcategory": "workstation",
+      "stock": 36,
+      "images": [
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800"
+      ],
+      "specifications": {
+        "screen": "16 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X7"
+      }
+    },
+    {
+      "id": 134,
+      "title": "CoreBook 4A",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1019,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "computers",
+      "subcategory": "gaming",
+      "stock": 49,
+      "images": [
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800"
+      ],
+      "specifications": {
+        "screen": "17 inch",
+        "ram": "32 GB",
+        "storage": "1000 GB SSD",
+        "processor": "Core X8"
+      }
+    },
+    {
+      "id": 135,
+      "title": "AeroBook 5B",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1159,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "computers",
+      "subcategory": "laptop",
+      "stock": 62,
+      "images": [
+        "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=800"
+      ],
+      "specifications": {
+        "screen": "14 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X5"
+      }
+    },
+    {
+      "id": 136,
+      "title": "Zenith Workstation 6C",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1299,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "computers",
+      "subcategory": "ultrabook",
+      "stock": 75,
+      "images": [
+        "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800"
+      ],
+      "specifications": {
+        "screen": "15 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X6"
+      }
+    },
+    {
+      "id": 137,
+      "title": "OrbitBook 7A",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1439,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "computers",
+      "subcategory": "workstation",
+      "stock": 88,
+      "images": [
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800"
+      ],
+      "specifications": {
+        "screen": "16 inch",
+        "ram": "32 GB",
+        "storage": "1000 GB SSD",
+        "processor": "Core X7"
+      }
+    },
+    {
+      "id": 138,
+      "title": "Fusion Creator 8B",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1579,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "computers",
+      "subcategory": "gaming",
+      "stock": 11,
+      "images": [
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800"
+      ],
+      "specifications": {
+        "screen": "17 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X8"
+      }
+    },
+    {
+      "id": 139,
+      "title": "NovaBook 9C",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1719,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "computers",
+      "subcategory": "laptop",
+      "stock": 24,
+      "images": [
+        "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=800"
+      ],
+      "specifications": {
+        "screen": "14 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X5"
+      }
+    },
+    {
+      "id": 140,
+      "title": "VertexBook 1A",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1859,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "computers",
+      "subcategory": "ultrabook",
+      "stock": 37,
+      "images": [
+        "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800"
+      ],
+      "specifications": {
+        "screen": "15 inch",
+        "ram": "32 GB",
+        "storage": "1000 GB SSD",
+        "processor": "Core X6"
+      }
+    },
+    {
+      "id": 141,
+      "title": "Titan Gaming 2B",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 624,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "computers",
+      "subcategory": "workstation",
+      "stock": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800"
+      ],
+      "specifications": {
+        "screen": "16 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X7"
+      }
+    },
+    {
+      "id": 142,
+      "title": "CoreBook 3C",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 764,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "computers",
+      "subcategory": "gaming",
+      "stock": 63,
+      "images": [
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800"
+      ],
+      "specifications": {
+        "screen": "17 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X8"
+      }
+    },
+    {
+      "id": 143,
+      "title": "AeroBook 4A",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 904,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "computers",
+      "subcategory": "laptop",
+      "stock": 76,
+      "images": [
+        "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=800"
+      ],
+      "specifications": {
+        "screen": "14 inch",
+        "ram": "32 GB",
+        "storage": "1000 GB SSD",
+        "processor": "Core X5"
+      }
+    },
+    {
+      "id": 144,
+      "title": "Zenith Workstation 5B",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1044,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "computers",
+      "subcategory": "ultrabook",
+      "stock": 89,
+      "images": [
+        "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800"
+      ],
+      "specifications": {
+        "screen": "15 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X6"
+      }
+    },
+    {
+      "id": 145,
+      "title": "OrbitBook 6C",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1184,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "computers",
+      "subcategory": "workstation",
+      "stock": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800"
+      ],
+      "specifications": {
+        "screen": "16 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X7"
+      }
+    },
+    {
+      "id": 146,
+      "title": "Fusion Creator 7A",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1324,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "computers",
+      "subcategory": "gaming",
+      "stock": 25,
+      "images": [
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800"
+      ],
+      "specifications": {
+        "screen": "17 inch",
+        "ram": "32 GB",
+        "storage": "1000 GB SSD",
+        "processor": "Core X8"
+      }
+    },
+    {
+      "id": 147,
+      "title": "NovaBook 8B",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1464,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "computers",
+      "subcategory": "laptop",
+      "stock": 38,
+      "images": [
+        "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=800"
+      ],
+      "specifications": {
+        "screen": "14 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X5"
+      }
+    },
+    {
+      "id": 148,
+      "title": "VertexBook 9C",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1604,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "computers",
+      "subcategory": "ultrabook",
+      "stock": 51,
+      "images": [
+        "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800"
+      ],
+      "specifications": {
+        "screen": "15 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X6"
+      }
+    },
+    {
+      "id": 149,
+      "title": "Titan Gaming 1A",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1744,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "computers",
+      "subcategory": "workstation",
+      "stock": 64,
+      "images": [
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800"
+      ],
+      "specifications": {
+        "screen": "16 inch",
+        "ram": "32 GB",
+        "storage": "1000 GB SSD",
+        "processor": "Core X7"
+      }
+    },
+    {
+      "id": 150,
+      "title": "CoreBook 2B",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1884,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "computers",
+      "subcategory": "gaming",
+      "stock": 77,
+      "images": [
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800"
+      ],
+      "specifications": {
+        "screen": "17 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X8"
+      }
+    },
+    {
+      "id": 151,
+      "title": "AeroBook 3C",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 649,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "computers",
+      "subcategory": "laptop",
+      "stock": 90,
+      "images": [
+        "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=800"
+      ],
+      "specifications": {
+        "screen": "14 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X5"
+      }
+    },
+    {
+      "id": 152,
+      "title": "Zenith Workstation 4A",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 789,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "computers",
+      "subcategory": "ultrabook",
+      "stock": 13,
+      "images": [
+        "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800"
+      ],
+      "specifications": {
+        "screen": "15 inch",
+        "ram": "32 GB",
+        "storage": "1000 GB SSD",
+        "processor": "Core X6"
+      }
+    },
+    {
+      "id": 153,
+      "title": "OrbitBook 5B",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 929,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "computers",
+      "subcategory": "workstation",
+      "stock": 26,
+      "images": [
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800"
+      ],
+      "specifications": {
+        "screen": "16 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X7"
+      }
+    },
+    {
+      "id": 154,
+      "title": "Fusion Creator 6C",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1069,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "computers",
+      "subcategory": "gaming",
+      "stock": 39,
+      "images": [
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800"
+      ],
+      "specifications": {
+        "screen": "17 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X8"
+      }
+    },
+    {
+      "id": 155,
+      "title": "NovaBook 7A",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1209,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "computers",
+      "subcategory": "laptop",
+      "stock": 52,
+      "images": [
+        "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=800"
+      ],
+      "specifications": {
+        "screen": "14 inch",
+        "ram": "32 GB",
+        "storage": "1000 GB SSD",
+        "processor": "Core X5"
+      }
+    },
+    {
+      "id": 156,
+      "title": "VertexBook 8B",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1349,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "computers",
+      "subcategory": "ultrabook",
+      "stock": 65,
+      "images": [
+        "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800"
+      ],
+      "specifications": {
+        "screen": "15 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X6"
+      }
+    },
+    {
+      "id": 157,
+      "title": "Titan Gaming 9C",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1489,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "computers",
+      "subcategory": "workstation",
+      "stock": 78,
+      "images": [
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800"
+      ],
+      "specifications": {
+        "screen": "16 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X7"
+      }
+    },
+    {
+      "id": 158,
+      "title": "CoreBook 1A",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1629,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "computers",
+      "subcategory": "gaming",
+      "stock": 91,
+      "images": [
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800"
+      ],
+      "specifications": {
+        "screen": "17 inch",
+        "ram": "32 GB",
+        "storage": "1000 GB SSD",
+        "processor": "Core X8"
+      }
+    },
+    {
+      "id": 159,
+      "title": "AeroBook 2B",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1769,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "computers",
+      "subcategory": "laptop",
+      "stock": 14,
+      "images": [
+        "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=800"
+      ],
+      "specifications": {
+        "screen": "14 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X5"
+      }
+    },
+    {
+      "id": 160,
+      "title": "Zenith Workstation 3C",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1909,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "computers",
+      "subcategory": "ultrabook",
+      "stock": 27,
+      "images": [
+        "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800"
+      ],
+      "specifications": {
+        "screen": "15 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X6"
+      }
+    },
+    {
+      "id": 161,
+      "title": "OrbitBook 4A",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 674,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "computers",
+      "subcategory": "workstation",
+      "stock": 40,
+      "images": [
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800"
+      ],
+      "specifications": {
+        "screen": "16 inch",
+        "ram": "32 GB",
+        "storage": "1000 GB SSD",
+        "processor": "Core X7"
+      }
+    },
+    {
+      "id": 162,
+      "title": "Fusion Creator 5B",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 814,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "computers",
+      "subcategory": "gaming",
+      "stock": 53,
+      "images": [
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800"
+      ],
+      "specifications": {
+        "screen": "17 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X8"
+      }
+    },
+    {
+      "id": 163,
+      "title": "NovaBook 6C",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 954,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "computers",
+      "subcategory": "laptop",
+      "stock": 66,
+      "images": [
+        "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=800"
+      ],
+      "specifications": {
+        "screen": "14 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X5"
+      }
+    },
+    {
+      "id": 164,
+      "title": "VertexBook 7A",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1094,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "computers",
+      "subcategory": "ultrabook",
+      "stock": 79,
+      "images": [
+        "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800"
+      ],
+      "specifications": {
+        "screen": "15 inch",
+        "ram": "32 GB",
+        "storage": "1000 GB SSD",
+        "processor": "Core X6"
+      }
+    },
+    {
+      "id": 165,
+      "title": "Titan Gaming 8B",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1234,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "computers",
+      "subcategory": "workstation",
+      "stock": 92,
+      "images": [
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800"
+      ],
+      "specifications": {
+        "screen": "16 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X7"
+      }
+    },
+    {
+      "id": 166,
+      "title": "CoreBook 9C",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1374,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "computers",
+      "subcategory": "gaming",
+      "stock": 15,
+      "images": [
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800"
+      ],
+      "specifications": {
+        "screen": "17 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X8"
+      }
+    },
+    {
+      "id": 167,
+      "title": "AeroBook 1A",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1514,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "computers",
+      "subcategory": "laptop",
+      "stock": 28,
+      "images": [
+        "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=800"
+      ],
+      "specifications": {
+        "screen": "14 inch",
+        "ram": "32 GB",
+        "storage": "1000 GB SSD",
+        "processor": "Core X5"
+      }
+    },
+    {
+      "id": 168,
+      "title": "Zenith Workstation 2B",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1654,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "computers",
+      "subcategory": "ultrabook",
+      "stock": 41,
+      "images": [
+        "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800"
+      ],
+      "specifications": {
+        "screen": "15 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X6"
+      }
+    },
+    {
+      "id": 169,
+      "title": "OrbitBook 3C",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1794,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "computers",
+      "subcategory": "workstation",
+      "stock": 54,
+      "images": [
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800"
+      ],
+      "specifications": {
+        "screen": "16 inch",
+        "ram": "16 GB",
+        "storage": "512 GB SSD",
+        "processor": "Core X7"
+      }
+    },
+    {
+      "id": 170,
+      "title": "Fusion Creator 4A",
+      "description": "High-performance computer designed for productivity, development, creative work and everyday use.",
+      "price": 1934,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "computers",
+      "subcategory": "gaming",
+      "stock": 67,
+      "images": [
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800"
+      ],
+      "specifications": {
+        "screen": "17 inch",
+        "ram": "32 GB",
+        "storage": "1000 GB SSD",
+        "processor": "Core X8"
+      }
+    },
+    {
+      "id": 171,
+      "title": "Titan Gaming 1A",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 49,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "gaming",
+      "subcategory": "keyboard",
+      "stock": 10,
+      "images": [
+        "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "None",
+        "warranty": "1 years"
+      }
+    },
+    {
+      "id": 172,
+      "title": "Nova RGB 2B",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 104,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "gaming",
+      "subcategory": "mouse",
+      "stock": 23,
+      "images": [
+        "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "2 years"
+      }
+    },
+    {
+      "id": 173,
+      "title": "Vertex Pro 3C",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 159,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "gaming",
+      "subcategory": "monitor",
+      "stock": 36,
+      "images": [
+        "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "3 years"
+      }
+    },
+    {
+      "id": 174,
+      "title": "Aero Game 4A",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 214,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "gaming",
+      "subcategory": "controller",
+      "stock": 49,
+      "images": [
+        "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "None",
+        "warranty": "1 years"
+      }
+    },
+    {
+      "id": 175,
+      "title": "Core Gaming 5B",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 269,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "gaming",
+      "subcategory": "headset",
+      "stock": 62,
+      "images": [
+        "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "2 years"
+      }
+    },
+    {
+      "id": 176,
+      "title": "Zenith RGB 6C",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 324,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "gaming",
+      "subcategory": "desktop",
+      "stock": 75,
+      "images": [
+        "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "3 years"
+      }
+    },
+    {
+      "id": 177,
+      "title": "Orbit Gaming 7A",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 379,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "gaming",
+      "subcategory": "keyboard",
+      "stock": 88,
+      "images": [
+        "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "None",
+        "warranty": "1 years"
+      }
+    },
+    {
+      "id": 178,
+      "title": "Fusion Stream 8B",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 434,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "gaming",
+      "subcategory": "mouse",
+      "stock": 11,
+      "images": [
+        "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "2 years"
+      }
+    },
+    {
+      "id": 179,
+      "title": "Titan Gaming 9C",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 489,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "gaming",
+      "subcategory": "monitor",
+      "stock": 24,
+      "images": [
+        "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "3 years"
+      }
+    },
+    {
+      "id": 180,
+      "title": "Nova RGB 1A",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 544,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "gaming",
+      "subcategory": "controller",
+      "stock": 37,
+      "images": [
+        "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "None",
+        "warranty": "1 years"
+      }
+    },
+    {
+      "id": 181,
+      "title": "Vertex Pro 2B",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 74,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "gaming",
+      "subcategory": "headset",
+      "stock": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "2 years"
+      }
+    },
+    {
+      "id": 182,
+      "title": "Aero Game 3C",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 129,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "gaming",
+      "subcategory": "desktop",
+      "stock": 63,
+      "images": [
+        "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "3 years"
+      }
+    },
+    {
+      "id": 183,
+      "title": "Core Gaming 4A",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 184,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "gaming",
+      "subcategory": "keyboard",
+      "stock": 76,
+      "images": [
+        "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "None",
+        "warranty": "1 years"
+      }
+    },
+    {
+      "id": 184,
+      "title": "Zenith RGB 5B",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 239,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "gaming",
+      "subcategory": "mouse",
+      "stock": 89,
+      "images": [
+        "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "2 years"
+      }
+    },
+    {
+      "id": 185,
+      "title": "Orbit Gaming 6C",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 294,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "gaming",
+      "subcategory": "monitor",
+      "stock": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "3 years"
+      }
+    },
+    {
+      "id": 186,
+      "title": "Fusion Stream 7A",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 349,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "gaming",
+      "subcategory": "controller",
+      "stock": 25,
+      "images": [
+        "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "None",
+        "warranty": "1 years"
+      }
+    },
+    {
+      "id": 187,
+      "title": "Titan Gaming 8B",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 404,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "gaming",
+      "subcategory": "headset",
+      "stock": 38,
+      "images": [
+        "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "2 years"
+      }
+    },
+    {
+      "id": 188,
+      "title": "Nova RGB 9C",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 459,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "gaming",
+      "subcategory": "desktop",
+      "stock": 51,
+      "images": [
+        "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "3 years"
+      }
+    },
+    {
+      "id": 189,
+      "title": "Vertex Pro 1A",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 514,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "gaming",
+      "subcategory": "keyboard",
+      "stock": 64,
+      "images": [
+        "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "None",
+        "warranty": "1 years"
+      }
+    },
+    {
+      "id": 190,
+      "title": "Aero Game 2B",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 569,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "gaming",
+      "subcategory": "mouse",
+      "stock": 77,
+      "images": [
+        "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "2 years"
+      }
+    },
+    {
+      "id": 191,
+      "title": "Core Gaming 3C",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 99,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "gaming",
+      "subcategory": "monitor",
+      "stock": 90,
+      "images": [
+        "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "3 years"
+      }
+    },
+    {
+      "id": 192,
+      "title": "Zenith RGB 4A",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 154,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "gaming",
+      "subcategory": "controller",
+      "stock": 13,
+      "images": [
+        "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "None",
+        "warranty": "1 years"
+      }
+    },
+    {
+      "id": 193,
+      "title": "Orbit Gaming 5B",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 209,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "gaming",
+      "subcategory": "headset",
+      "stock": 26,
+      "images": [
+        "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "2 years"
+      }
+    },
+    {
+      "id": 194,
+      "title": "Fusion Stream 6C",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 264,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "gaming",
+      "subcategory": "desktop",
+      "stock": 39,
+      "images": [
+        "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "3 years"
+      }
+    },
+    {
+      "id": 195,
+      "title": "Titan Gaming 7A",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 319,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "gaming",
+      "subcategory": "keyboard",
+      "stock": 52,
+      "images": [
+        "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "None",
+        "warranty": "1 years"
+      }
+    },
+    {
+      "id": 196,
+      "title": "Nova RGB 8B",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 374,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "gaming",
+      "subcategory": "mouse",
+      "stock": 65,
+      "images": [
+        "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "2 years"
+      }
+    },
+    {
+      "id": 197,
+      "title": "Vertex Pro 9C",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 429,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "gaming",
+      "subcategory": "monitor",
+      "stock": 78,
+      "images": [
+        "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "3 years"
+      }
+    },
+    {
+      "id": 198,
+      "title": "Aero Game 1A",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 484,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "gaming",
+      "subcategory": "controller",
+      "stock": 91,
+      "images": [
+        "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "None",
+        "warranty": "1 years"
+      }
+    },
+    {
+      "id": 199,
+      "title": "Core Gaming 2B",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 539,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "gaming",
+      "subcategory": "headset",
+      "stock": 14,
+      "images": [
+        "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "2 years"
+      }
+    },
+    {
+      "id": 200,
+      "title": "Zenith RGB 3C",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 594,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "gaming",
+      "subcategory": "desktop",
+      "stock": 27,
+      "images": [
+        "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "3 years"
+      }
+    },
+    {
+      "id": 201,
+      "title": "Orbit Gaming 4A",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 124,
+      "rating": 4.0,
+      "brand": "Nova",
+      "category": "gaming",
+      "subcategory": "keyboard",
+      "stock": 40,
+      "images": [
+        "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "None",
+        "warranty": "1 years"
+      }
+    },
+    {
+      "id": 202,
+      "title": "Fusion Stream 5B",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 179,
+      "rating": 4.7,
+      "brand": "Vertex",
+      "category": "gaming",
+      "subcategory": "mouse",
+      "stock": 53,
+      "images": [
+        "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "2 years"
+      }
+    },
+    {
+      "id": 203,
+      "title": "Titan Gaming 6C",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 234,
+      "rating": 4.4,
+      "brand": "Titan",
+      "category": "gaming",
+      "subcategory": "monitor",
+      "stock": 66,
+      "images": [
+        "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "3 years"
+      }
+    },
+    {
+      "id": 204,
+      "title": "Nova RGB 7A",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 289,
+      "rating": 4.1,
+      "brand": "Aero",
+      "category": "gaming",
+      "subcategory": "controller",
+      "stock": 79,
+      "images": [
+        "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "None",
+        "warranty": "1 years"
+      }
+    },
+    {
+      "id": 205,
+      "title": "Vertex Pro 8B",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 344,
+      "rating": 4.8,
+      "brand": "Zenith",
+      "category": "gaming",
+      "subcategory": "headset",
+      "stock": 92,
+      "images": [
+        "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "2 years"
+      }
+    },
+    {
+      "id": 206,
+      "title": "Aero Game 9C",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 399,
+      "rating": 4.5,
+      "brand": "Orbit",
+      "category": "gaming",
+      "subcategory": "desktop",
+      "stock": 15,
+      "images": [
+        "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "3 years"
+      }
+    },
+    {
+      "id": 207,
+      "title": "Core Gaming 1A",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 454,
+      "rating": 4.2,
+      "brand": "Core",
+      "category": "gaming",
+      "subcategory": "keyboard",
+      "stock": 28,
+      "images": [
+        "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "None",
+        "warranty": "1 years"
+      }
+    },
+    {
+      "id": 208,
+      "title": "Zenith RGB 2B",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 509,
+      "rating": 4.9,
+      "brand": "Fusion",
+      "category": "gaming",
+      "subcategory": "mouse",
+      "stock": 41,
+      "images": [
+        "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "2 years"
+      }
+    },
+    {
+      "id": 209,
+      "title": "Orbit Gaming 3C",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 564,
+      "rating": 4.6,
+      "brand": "PixelCore",
+      "category": "gaming",
+      "subcategory": "monitor",
+      "stock": 54,
+      "images": [
+        "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800"
+      ],
+      "specifications": {
+        "connection": "USB-C",
+        "compatibility": "PC / Console",
+        "lighting": "RGB",
+        "warranty": "3 years"
+      }
+    },
+    {
+      "id": 210,
+      "title": "Fusion Stream 4A",
+      "description": "Gaming hardware designed for responsive performance, comfort and competitive gameplay.",
+      "price": 619,
+      "rating": 4.3,
+      "brand": "Edge",
+      "category": "gaming",
+      "subcategory": "controller",
+      "stock": 67,
+      "images": [
+        "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=800"
+      ],
+      "specifications": {
+        "connection": "Wireless",
+        "compatibility": "PC / Console",
+        "lighting": "None",
+        "warranty": "1 years"
+      }
+    }
+  ]
+}
