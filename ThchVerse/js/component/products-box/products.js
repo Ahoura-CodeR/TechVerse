@@ -5,22 +5,22 @@ template.innerHTML = `
     <div class="products-grid"></div>
 `
 const categoryMap = {
-    Camera: 'cameras',
-    Phone: 'phones',
-    SmartWatch: 'smartwatches',
-    Headphone: 'headphones',
-    Computer: 'computers',
+    Cameras: 'cameras',
+    Phones: 'phones',
+    SmartWatches: 'smartwatches',
+    Headphones: 'headphones',
+    Computers: 'computers',
     Gaming: 'gaming'
 }
 
 const params = new URLSearchParams(window.location.search)
-let category = params.get("category")
+const categories = params.get("category")
+const newCategory = categoryMap[categories]
+
 
 const getProducts = async () => {
 
     try {
-        console.log(category);
-        
         const res = await fetch(`/ThchVerse/Data/products.json`)
         if (!res.ok) throw new Error('خطا در دریافت اطلاعات ')
         const data = await res.json()
@@ -43,16 +43,19 @@ class productCategory extends HTMLElement {
 
         const productGrid = this.shadowRoot.querySelector('.products-grid')
         const products = await getProducts()
-        console.log(products);
-
+        
+        const newProducts = products.filter(item => {
+            
+            return item.category === newCategory
+        })
+        console.log(newProducts);
         
         
         const fragment = document.createDocumentFragment()
         
-        products.forEach(item => {
+        newProducts.forEach(item => {
             const div = document.createElement('div')
             div.classList.add('product-card')
-            console.log(item);
             const ratingPercent = (item.rating / 5) * 100
 
 div.innerHTML = `

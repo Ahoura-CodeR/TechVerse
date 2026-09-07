@@ -6,6 +6,20 @@
 :host {
     display: block;
     width: 100%;
+
+    --font-family: "Inter", sans-serif;
+
+    --font-xs: 11px;
+    --font-sm: 12px;
+    --font-md: 14px;
+    --font-lg: 16px;
+    --font-xl: 20px;
+    --font-2xl: 26px;
+
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
 }
 
 *,
@@ -30,13 +44,7 @@
 
     gap: 22px;
 
-    font-family:
-        Inter,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
+    font-family: var(--font-family);
 }
 
 
@@ -249,8 +257,8 @@
 
     color: #252525;
 
-    font-size: 14px;
-    font-weight: 500;
+    font-size: var(--font-md);
+    font-weight: var(--weight-medium);
     line-height: 1.55;
 
     text-align: center;
@@ -276,13 +284,10 @@
 
     color: #111;
 
-    font-size: clamp(21px, 2vw, 26px);
-    font-weight: 750;
-
+    font-size: clamp(var(--font-xl), 2vw, var(--font-2xl));
+    font-weight: var(--weight-bold);
     line-height: 1;
-
     letter-spacing: -0.03em;
-
     position: relative;
     z-index: 2;
 
@@ -317,14 +322,10 @@
     background: #111;
     color: #fff;
 
-    font:
-        600 14px/1
-        Inter,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
+    font-family: var(--font-family);
+    font-size: var(--font-md);
+    font-weight: var(--weight-semibold);
+    line-height: 1;
 
     cursor: pointer;
 
@@ -508,7 +509,7 @@
 
         border-radius: 11px;
 
-        font-size: 12.5px;
+        font-size: var(--font-sm);
     }
 
     .svg-fav {
@@ -678,8 +679,11 @@
 .loader-container p {
     margin: 0;
 
-    font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-family: var(--font-family);
+    font-size: var(--font-md);
+    font-weight: var(--weight-regular);
+    line-height: 1.4;
+
     color: #777;
 
     animation: textPulse 1s infinite ease-in-out;
