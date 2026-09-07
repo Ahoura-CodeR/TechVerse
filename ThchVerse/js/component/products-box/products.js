@@ -48,14 +48,19 @@ class productCategory extends HTMLElement {
             
             return item.category === newCategory
         })
-        console.log(newProducts);
         
         
         const fragment = document.createDocumentFragment()
         
+        if (params === undefined) {
+            
+        }
+        
         newProducts.forEach(item => {
             const div = document.createElement('div')
+            const buttonContainer = this.shadowRoot.querySelector('.products-grid')
             div.classList.add('product-card')
+            div.dataset.id = item.id
             const ratingPercent = (item.rating / 5) * 100
 
 div.innerHTML = `
@@ -128,6 +133,13 @@ div.innerHTML = `
     </button>
 `
             fragment.appendChild(div)
+            buttonContainer.addEventListener('click', event => {
+                if (event.target.closest('.product-button')) {
+                    window.location.href = `/ThchVerse/pages/products-details.html?id=${item.id}`
+                    
+                }
+            })
+
         });
 
         productGrid.appendChild(fragment)
