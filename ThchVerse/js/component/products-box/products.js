@@ -45,16 +45,15 @@ class productCategory extends HTMLElement {
         const productGrid = this.shadowRoot.querySelector('.products-grid')
         const products = await getProducts()
         
-        let newProducts = products.filter(item => {
+        const newProducts = products.filter(item => {
             
             return item.category === newCategory
         })
         
         
-        const buttonContainer = this.shadowRoot.querySelector('.products-grid')
 
         let renderProduct = (products) => {
-            
+
             const fragment = document.createDocumentFragment()
 
             productGrid.innerHTML = ''
@@ -140,7 +139,7 @@ class productCategory extends HTMLElement {
             productGrid.appendChild(fragment)
         }
         
-        buttonContainer.addEventListener('click', event => {
+        productGrid.addEventListener('click', event => {
             
             if (event.target.closest('.product-button')) {
 
