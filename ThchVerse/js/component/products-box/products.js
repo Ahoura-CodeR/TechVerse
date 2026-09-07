@@ -41,109 +41,123 @@ class productCategory extends HTMLElement {
     }
     async connectedCallback () {
 
+        const inputElem = document.querySelector('.input-search')
         const productGrid = this.shadowRoot.querySelector('.products-grid')
         const products = await getProducts()
         
-        const newProducts = products.filter(item => {
+        let newProducts = products.filter(item => {
             
             return item.category === newCategory
         })
         
         
         const fragment = document.createDocumentFragment()
-        
-        if (params === undefined) {
+        const buttonContainer = this.shadowRoot.querySelector('.products-grid')
+
+        let renderProduct = (products) => {
             
+            products.forEach(item => {
+                const div = document.createElement('div')
+                div.classList.add('product-card')
+                const ratingPercent = (item.rating / 5) * 100
+    
+    div.innerHTML = `
+        <div class="product-image-wrapper">
+            <img
+                class="product-image"
+                src="${item.images[0]}"
+                alt="${item.title}"
+            >
+        </div>
+    
+        <h3 class="product-title">
+            ${item.title}
+        </h3>
+    
+        <p class="product-description">
+            ${item.description}
+        </p>
+    
+        <div class="product-meta">
+        
+        <div class="product-rating">
+        
+        <svg
+        class="rating-star"
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="none"
+                >
+                    <defs>
+                        <linearGradient
+                            id="rating-${item.id}"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="0%"
+                        >
+                            <stop
+                                offset="${ratingPercent}%"
+                                stop-color="#F5B301"
+                            />
+                            <stop
+                                offset="${ratingPercent}%"
+                                stop-color="#D9D9D9"
+                            />
+                        </linearGradient>
+                    </defs>
+    
+                    <path
+                        d="M12 2.5L14.95 8.45L21.5 9.4L16.75 14L17.9 20.5L12 17.4L6.1 20.5L7.25 14L2.5 9.4L9.05 8.45Z"
+                        fill="url(#rating-${item.id})"
+                    />
+                </svg>
+    
+                <span class="rating-value">
+                    ${item.rating}
+                    </span>
+    
+            </div>
+    
+            <span class="product-price">
+                $${item.price}
+            </span>
+    
+        </div>
+    
+        <button data-id="${item.id}" class="product-button">
+            Buy Now
+        </button>
+        `
+                fragment.appendChild(div)
+                
+            });
+            
+            productGrid.appendChild(fragment)
         }
         
-        newProducts.forEach(item => {
-            const div = document.createElement('div')
-            const buttonContainer = this.shadowRoot.querySelector('.products-grid')
-            div.classList.add('product-card')
-            div.dataset.id = item.id
-            const ratingPercent = (item.rating / 5) * 100
+        buttonContainer.addEventListener('click', event => {
+            
+            if (event.target.closest('.product-button')) {
 
-div.innerHTML = `
-    <div class="product-image-wrapper">
-        <img
-            class="product-image"
-            src="${item.images[0]}"
-            alt="${item.title}"
-        >
-    </div>
-
-    <h3 class="product-title">
-        ${item.title}
-    </h3>
-
-    <p class="product-description">
-        ${item.description}
-    </p>
-
-    <div class="product-meta">
-
-        <div class="product-rating">
-
-            <svg
-                class="rating-star"
-                width="15"
-                height="15"
-                viewBox="0 0 24 24"
-                fill="none"
-            >
-                <defs>
-                    <linearGradient
-                        id="rating-${item.id}"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="0%"
-                    >
-                        <stop
-                            offset="${ratingPercent}%"
-                            stop-color="#F5B301"
-                        />
-                        <stop
-                            offset="${ratingPercent}%"
-                            stop-color="#D9D9D9"
-                        />
-                    </linearGradient>
-                </defs>
-
-                <path
-                    d="M12 2.5L14.95 8.45L21.5 9.4L16.75 14L17.9 20.5L12 17.4L6.1 20.5L7.25 14L2.5 9.4L9.05 8.45Z"
-                    fill="url(#rating-${item.id})"
-                />
-            </svg>
-
-            <span class="rating-value">
-                ${item.rating}
-            </span>
-
-        </div>
-
-        <span class="product-price">
-            $${item.price}
-        </span>
-
-    </div>
-
-    <button class="product-button">
-        Buy Now
-    </button>
-`
-            fragment.appendChild(div)
-            buttonContainer.addEventListener('click', event => {
-                if (event.target.closest('.product-button')) {
-                    window.location.href = `/ThchVerse/pages/products-details.html?id=${item.id}`
-                    
-                }
-            })
-
-        });
-
-        productGrid.appendChild(fragment)
+                const idBtn = event.target.dataset.id
+                window.location.href = `/ThchVerse/pages/products-details.html?id=${idBtn}`
+            }
+        })
         
+        if (categories != null) {
+            renderProduct(products)
+        } else {
+            renderProduct(newProducts)
+        }
+        
+        inputElem.addEventListener('input', event => {
+            
+            let searchResult = products.filter(item => item.title.trim().toLowerCase().includes(inputElem.value.trim().toLowerCase()))
+            
+            console.log(searchResult);
+        })
 
     }
 }
