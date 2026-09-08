@@ -231,9 +231,16 @@ let renderProductPage = () => {
         if (event.target.closest('.pagination-page')) {
         
             let newRenderProduct = renderInformPage(currentPage)
-            console.log(currentPage);
+            renderProduct(newRenderProduct)
 
-            
+        } else if (event.target.closest('.previous')) {
+
+            let newRenderProduct = renderInformPage(currentPage)
+            renderProduct(newRenderProduct)
+
+        } else if (event.target.closest('.next')) {
+
+            let newRenderProduct = renderInformPage(currentPage)
             renderProduct(newRenderProduct)
         }
     })
