@@ -45,13 +45,15 @@ class productCategory extends HTMLElement {
         const productGrid = this.shadowRoot.querySelector('.products-grid')
         const products = await getProducts()
         
-        const newProducts = products.filter(item => {
+        let newProducts = products.filter(item => {
             
             return item.category === newCategory
         })
         
+        let justCategoryProduct = newProducts.filter(item => {
+            return item.category === newCategory
+        })
         
-
         let renderProduct = (products) => {
 
             const fragment = document.createDocumentFragment()
@@ -150,18 +152,18 @@ class productCategory extends HTMLElement {
         
         
         if (categories != null) {
-            renderProduct(newProducts)
+            renderProduct(justCategoryProduct)
         } else {
             renderProduct(products)
         }
         inputElem.addEventListener('input', event => {
             
-            const searchResult = products.filter(item => item.title.trim().toLowerCase().includes(inputElem.value.trim().toLowerCase()))
+            const searchResult = justCategoryProduct.filter(item => item.title.trim().toLowerCase().includes(inputElem.value.trim().toLowerCase()))
             if (inputElem.value.trim().toLowerCase() !== '') {
                 renderProduct(searchResult)
             } else {
                 if (categories != null) {
-                    renderProduct(newProducts)
+                    renderProduct(justCategoryProduct)
                 } else {
                     renderProduct(products)
             }

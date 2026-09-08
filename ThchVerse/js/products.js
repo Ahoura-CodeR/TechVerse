@@ -20,107 +20,224 @@ const getProducts = async () => {
 window.customElements.define('product-category', productCategory)
 window.customElements.define("footer-site", isFooter)
 
-
-let currentPage = 1;
-const itemPerPage = 10;
-let totalPage = 0;
-let allItems = [];
-
-// ۱. دریافت محصولات
-allItems = await getProducts();
-totalPage = Math.ceil(allItems.length / itemPerPage);
-
-console.log('📦 تعداد کل محصولات:', allItems.length);
-console.log('📄 تعداد کل صفحات:', totalPage);
-
-// ۲. تابع رندر کردن صفحه
-function renderPage(page) {
-    const startIndex = (page - 1) * itemPerPage;
-    const endIndex = startIndex + itemPerPage;
-    const currentItems = allItems.slice(startIndex, endIndex);
-    
-    console.log(`📄 صفحه ${page}: آیتم‌های ${startIndex} تا ${endIndex}`);
-    // اینجا currentItems رو رندر کن
-    // renderProducts(currentItems);
+const categoryMap = {
+    Cameras: 'cameras',
+    Phones: 'phones',
+    SmartWatches: 'smartwatches',
+    Headphones: 'headphones',
+    Computers: 'computers',
+    Gaming: 'gaming'
 }
 
-// ۳. ساختن دکمه‌های صفحه‌بندی
-function createPaginationButtons() {
-    const paginationContainer = document.querySelector('.pagination');
-    paginationContainer.innerHTML = ''; // پاک کردن قبلی‌ها
+const params = new URLSearchParams(window.location.search)
+const categories = params.get("category")
+const newCategory = categoryMap[categories]
 
-    // دکمه قبلی
-    const prevBtn = document.createElement('button');
-    prevBtn.className = 'pagination-arrow previous';
-    prevBtn.textContent = '‹';
-    paginationContainer.appendChild(prevBtn);
+let newProducts = await getProducts()
+newProducts = newProducts.filter(item => {
+    return item.category === newCategory
+})
 
-    // دکمه‌های صفحه
+let currentPage = 1
+let itemPrePage = 10
+let totalPage = 0
+
+
+let renderInformPage = (page) => {
+
+    const startIndex = (page - 1) * itemPrePage
+    const endIndex = startIndex + itemPrePage
+    return newProducts.slice(startIndex, endIndex)
+}
+
+totalPage = Math.ceil(newProducts.length / itemPrePage)
+
+const nextButtonPagination = document.querySelector('.next')
+const navPagination = document.querySelector('.pagination')
+
+let renderButtonPagination = () => {
+
+    const parentButtonPagination = document.querySelectorAll('.pagination-page')
+    
+    parentButtonPagination.forEach(item => {
+        item.remove()
+    })
+    
+    
     for (let i = 1; i <= totalPage; i++) {
-        const pageBtn = document.createElement('button');
-        pageBtn.className = 'pagination-page' + (i === currentPage ? ' active' : '');
-        pageBtn.textContent = i;
-        paginationContainer.appendChild(pageBtn);
+                
+        const buttonPagination = document.createElement('button')
+        buttonPagination.classList.add('pagination-page')
+        buttonPagination.textContent = i
+        navPagination.insertBefore(buttonPagination, nextButtonPagination)
+    
+        if (buttonPagination.textContent === '1') {
+            
+            buttonPagination.classList.add('active')
+        }
     }
 
-    // دکمه بعدی
-    const nextBtn = document.createElement('button');
-    nextBtn.className = 'pagination-arrow next';
-    nextBtn.textContent = '›';
-    paginationContainer.appendChild(nextBtn);
+    navPagination.addEventListener('click', event => {
+            if (event.target.closest('.pagination-page')) {
 
-    // ذخیره دکمه‌ها برای استفاده بعدی
-    window.pageButtons = paginationContainer.querySelectorAll('.pagination-page');
+                const parentButtonPagination = document.querySelectorAll('.pagination-page')
+                const itemActive = Array.from(parentButtonPagination).filter(item => {
+                
+                    return item.classList.contains('active')
+                })
+
+                itemActive[0].classList.remove('active')
+                event.target.closest('.pagination-page').classList.add('active')
+                currentPage = Number(event.target.textContent)
+                
+            } else if (event.target.closest('.previous')) {
+
+                const parentButtonPagination = document.querySelectorAll('.pagination-page')
+                const itemActive = Array.from(parentButtonPagination).filter(item => {
+                
+                    return item.classList.contains('active')
+                })
+
+                if (Number(itemActive[0].textContent) === 1) {
+                    
+                    return
+                } else {
+
+                    itemActive[0].classList.remove('active')
+                    itemActive[0].previousElementSibling.classList.add('active')
+                    currentPage = Number(itemActive[0].previousElementSibling.textContent)
+                } 
+            } else if (event.target.closest('.next')) {
+
+                const parentButtonPagination = document.querySelectorAll('.pagination-page')
+                const itemActive = Array.from(parentButtonPagination).filter(item => {
+                
+                    return item.classList.contains('active')
+                })
+                
+                if (Number(itemActive[0].textContent) === totalPage) {
+                    
+                    return
+                } else {
+
+                    itemActive[0].classList.remove('active')
+                    itemActive[0].nextElementSibling.classList.add('active')
+                    currentPage = Number(itemActive[0].nextElementSibling.textContent)
+                } 
+                
+            }
+        })
+    
 }
 
-// ۴. رویدادهای صفحه‌بندی
-const paginationContainer = document.querySelector('.pagination');
 
-paginationContainer.addEventListener('click', (event) => {
-    // کلیک روی دکمه صفحه
-    if (event.target.closest('.pagination-page')) {
-        const page = event.target.closest('.pagination-page');
-        currentPage = parseInt(page.textContent.trim());
+renderButtonPagination()
+
+const productForShado = document.querySelector('product-category')
+const shadowRootP = productForShado.shadowRoot
+const productGrid = shadowRootP.querySelector('.products-grid')
+
+let renderProduct = (products) => {
+
+    const fragment = document.createDocumentFragment()
+        productGrid.innerHTML = ''
         
-        // به‌روزرسانی کلاس‌ها
-        document.querySelectorAll('.pagination-page').forEach(btn => btn.classList.remove('active'));
-        page.classList.add('active');
-        
-        renderPage(currentPage);
-        console.log(`📄 رفت به صفحه ${currentPage}`);
-    }
+        products.forEach(item => {
+            const div = document.createElement('div')
+            div.classList.add('product-card')
+            const ratingPercent = (item.rating / 5) * 100
     
-    // کلیک روی قبلی/بعدی
-    if (event.target.closest('.pagination-arrow')) {
-        const isPrevious = event.target.closest('.previous');
-        const activePage = document.querySelector('.pagination-page.active');
-        if (!activePage) return;
+    div.innerHTML = `
+        <div class="product-image-wrapper">
+            <img
+                class="product-image"
+                src="${item.images[0]}"
+                alt="${item.title}"
+            >
+        </div>
+    
+        <h3 class="product-title">
+            ${item.title}
+        </h3>
+    
+        <p class="product-description">
+            ${item.description}
+        </p>
+    
+        <div class="product-meta">
+        
+        <div class="product-rating">
+        
+        <svg
+        class="rating-star"
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="none"
+                >
+                    <defs>
+                        <linearGradient
+                            id="rating-${item.id}"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="0%"
+                        >
+                            <stop
+                                offset="${ratingPercent}%"
+                                stop-color="#F5B301"
+                            />
+                            <stop
+                                offset="${ratingPercent}%"
+                                stop-color="#D9D9D9"
+                            />
+                        </linearGradient>
+                    </defs>
+    
+                    <path
+                        d="M12 2.5L14.95 8.45L21.5 9.4L16.75 14L17.9 20.5L12 17.4L6.1 20.5L7.25 14L2.5 9.4L9.05 8.45Z"
+                        fill="url(#rating-${item.id})"
+                    />
+                </svg>
+    
+                <span class="rating-value">
+                    ${item.rating}
+                    </span>
+    
+            </div>
+    
+            <span class="product-price">
+                $${item.price}
+            </span>
+    
+        </div>
+    
+        <button data-id="${item.id}" class="product-button">
+            Buy Now
+        </button>
+        `
+        fragment.appendChild(div)
+    });        
+    productGrid.appendChild(fragment)
+}
 
-        if (isPrevious) {
-            if (currentPage > 1) {
-                currentPage--;
-                const prevPage = activePage.previousElementSibling;
-                if (prevPage) {
-                    activePage.classList.remove('active');
-                    prevPage.classList.add('active');
-                    renderPage(currentPage);
-                }
-            }
-        } else {
-            if (currentPage < totalPage) {
-                currentPage++;
-                const nextPage = activePage.nextElementSibling;
-                if (nextPage) {
-                    activePage.classList.remove('active');
-                    nextPage.classList.add('active');
-                    renderPage(currentPage);
-                }
-            }
+let renderProductPage = () => {
+
+    productGrid.innerHTML = ''
+    let renderProductsPage = renderInformPage(currentPage)
+    renderProduct(renderProductsPage)
+
+    navPagination.addEventListener('click', event => {
+        if (event.target.closest('.pagination-page')) {
+        
+            let newRenderProduct = renderInformPage(currentPage)
+            console.log(currentPage);
+
+            
+            renderProduct(newRenderProduct)
         }
-        console.log(`📄 رفت به صفحه ${currentPage}`);
-    }
-});
+    })
 
-// ۵. اجرا
-renderPage(currentPage);
-createPaginationButtons();
+}
+
+renderProductPage()
