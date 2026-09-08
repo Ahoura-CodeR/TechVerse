@@ -258,3 +258,7 @@ let renderProductPage = () => {
 }
 
 renderProductPage()
+
+
+
+export { finallyProduct }

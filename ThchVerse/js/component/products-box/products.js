@@ -1,3 +1,5 @@
+// import {finallyProduct} from '/ThchVerse/js/products'
+
 const template = document.createElement('template')
 
 template.innerHTML = `
