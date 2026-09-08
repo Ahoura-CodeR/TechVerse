@@ -146,7 +146,7 @@ class productCategory extends HTMLElement {
             if (event.target.closest('.product-button')) {
 
                 const idBtn = event.target.dataset.id
-                // window.location.href = `/ThchVerse/pages/products-details.html?id=${idBtn}`
+                window.location.href = `/ThchVerse/pages/products-details.html?id=${idBtn}`
             }
         })
         

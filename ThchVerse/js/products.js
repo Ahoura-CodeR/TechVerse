@@ -34,7 +34,7 @@ const categories = params.get("category")
 const newCategory = categoryMap[categories]
 
 let newProducts = await getProducts()
-newProducts = newProducts.filter(item => {
+let filterProduct = newProducts.filter(item => {
     return item.category === newCategory
 })
 
@@ -43,15 +43,22 @@ let itemPrePage = 10
 let totalPage = 0
 
 
-let renderInformPage = (page) => {
+let renderInformPage = (page, item) => {
 
     const startIndex = (page - 1) * itemPrePage
     const endIndex = startIndex + itemPrePage
-    return newProducts.slice(startIndex, endIndex)
+    return item.slice(startIndex, endIndex)
 }
 
-totalPage = Math.ceil(newProducts.length / itemPrePage)
+let finallyProduct
 
+if (newCategory === undefined) {
+    finallyProduct = newProducts
+} else {
+    finallyProduct = filterProduct
+}
+
+totalPage = Math.ceil(finallyProduct.length / itemPrePage)
 const nextButtonPagination = document.querySelector('.next')
 const navPagination = document.querySelector('.pagination')
 
@@ -221,26 +228,29 @@ let renderProduct = (products) => {
     productGrid.appendChild(fragment)
 }
 
-let renderProductPage = () => {
 
+
+let renderProductPage = () => {
+    
     productGrid.innerHTML = ''
-    let renderProductsPage = renderInformPage(currentPage)
+
+    let renderProductsPage = renderInformPage(currentPage, finallyProduct)
     renderProduct(renderProductsPage)
 
     navPagination.addEventListener('click', event => {
         if (event.target.closest('.pagination-page')) {
         
-            let newRenderProduct = renderInformPage(currentPage)
+            let newRenderProduct = renderInformPage(currentPage, finallyProduct)
             renderProduct(newRenderProduct)
 
         } else if (event.target.closest('.previous')) {
 
-            let newRenderProduct = renderInformPage(currentPage)
+            let newRenderProduct = renderInformPage(currentPage, finallyProduct)
             renderProduct(newRenderProduct)
 
         } else if (event.target.closest('.next')) {
 
-            let newRenderProduct = renderInformPage(currentPage)
+            let newRenderProduct = renderInformPage(currentPage, finallyProduct)
             renderProduct(newRenderProduct)
         }
     })
