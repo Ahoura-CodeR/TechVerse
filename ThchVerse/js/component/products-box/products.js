@@ -213,7 +213,6 @@ class productCategory extends HTMLElement {
             }
             }
         })
-
     }
 }
 
