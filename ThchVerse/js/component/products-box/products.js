@@ -4,6 +4,48 @@ const template = document.createElement('template')
 template.innerHTML = `
     <link rel="stylesheet" href="/ThchVerse/js/component/products-box/products.css">
     <div class="products-grid"></div>
+    <div class="no-products" aria-live="polite">
+            <div class="no-products-icon">
+                <svg
+                    width="64"
+                    height="64"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M10.5 18.5C14.9183 18.5 18.5 14.9183 18.5 10.5C18.5 6.08172 14.9183 2.5 10.5 2.5C6.08172 2.5 2.5 6.08172 2.5 10.5C2.5 14.9183 6.08172 18.5 10.5 18.5Z"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                    />
+                    <path
+                        d="M16.5 16.5L21 21"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                    />
+                    <path
+                        d="M7.5 10.5H13.5"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </div>
+        
+            <h2 class="no-products-title">
+                No products found
+            </h2>
+        
+            <p class="no-products-description">
+                We couldn't find any products matching your search.
+                Try using different keywords.
+            </p>
+        
+            <button class="no-products-reset" type="button">
+                Clear Search
+            </button>
+        </div>
 `
 const categoryMap = {
     Cameras: 'cameras',
@@ -68,49 +110,6 @@ class productCategory extends HTMLElement {
                 const ratingPercent = (item.rating / 5) * 100
     
     div.innerHTML = `
-        
-        <div class="no-products" aria-live="polite">
-            <div class="no-products-icon">
-                <svg
-                    width="64"
-                    height="64"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    aria-hidden="true"
-                >
-                    <path
-                        d="M10.5 18.5C14.9183 18.5 18.5 14.9183 18.5 10.5C18.5 6.08172 14.9183 2.5 10.5 2.5C6.08172 2.5 2.5 6.08172 2.5 10.5C2.5 14.9183 6.08172 18.5 10.5 18.5Z"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                    />
-                    <path
-                        d="M16.5 16.5L21 21"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                    />
-                    <path
-                        d="M7.5 10.5H13.5"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                    />
-                </svg>
-            </div>
-        
-            <h2 class="no-products-title">
-                No products found
-            </h2>
-        
-            <p class="no-products-description">
-                We couldn't find any products matching your search.
-                Try using different keywords.
-            </p>
-        
-            <button class="no-products-reset" type="button">
-                Clear Search
-            </button>
-        </div>
         <div class="product-image-wrapper">
             <img
                 class="product-image"
