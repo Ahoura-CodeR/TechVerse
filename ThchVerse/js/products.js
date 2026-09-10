@@ -305,4 +305,35 @@ buttonReset.addEventListener('click', event => {
 
 renderProductPage()
 
+const sordSelect = document.querySelector('.sort-products')
+
+sordSelect.addEventListener('change', () => {
+    
+    const sordProduct = [...finallyProduct]
+    const valueOption = sordSelect.value
+    let renderSord;
+    if (valueOption === 'By rating') {
+        renderSord = sordProduct.sort((a, b) => {
+            return b.rating - a.rating
+        })
+    } else if (valueOption === 'Price: Low to High') {
+        renderSord = sordProduct.sort((a, b) => {
+            return a.price - b.price
+        })
+    } else if (valueOption === 'Price: High to Low') {
+        renderSord = sordProduct.sort((a, b) => {
+            return b.price - a.price
+        })
+    } else if (valueOption === 'By name') {
+        renderSord = sordProduct.sort((a, b) => {
+            return a.title.localeCompare(b.title)
+        })
+    } else if (valueOption === 'Sort By') {
+        renderSord = finallyProduct
+    }
+
+    let renderProductsPage = renderInformPage(currentPage, renderSord)
+    renderProduct(renderProductsPage)
+
+})
 
