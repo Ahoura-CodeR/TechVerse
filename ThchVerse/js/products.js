@@ -66,6 +66,7 @@ const navPagination = document.querySelector('.pagination')
 const productForShado = document.querySelector('product-category')
 const shadowRootP = productForShado.shadowRoot
 const productGrid = shadowRootP.querySelector('.products-grid')
+const noProduct = shadowRootP.querySelector('.no-products')
 
 let renderProduct = (products) => {
 
@@ -268,6 +269,14 @@ inputElem.addEventListener('input', event => {
         currentPage = 1 
         totalPage = Math.ceil(filterSearch.length / itemPrePage)
         const searchResult =  renderInformPage(currentPage, filterSearch)
+        
+        if (filterSearch.length === 0) {
+            
+            noProduct.classList.add('show')
+        } else {
+            noProduct.classList.remove('show')
+        }
+        
         renderButtonPagination()
         renderProduct(searchResult)
         
@@ -278,9 +287,9 @@ inputElem.addEventListener('input', event => {
         const newRenderProduct = renderInformPage(currentPage, finallyProduct)
         renderButtonPagination()
         renderProduct(newRenderProduct)
+        noProduct.classList.remove('show')
     
-    }
-    
+    }    
 })
 
 renderProductPage()
