@@ -62,83 +62,6 @@ totalPage = Math.ceil(finallyProduct.length / itemPrePage)
 const nextButtonPagination = document.querySelector('.next')
 const navPagination = document.querySelector('.pagination')
 
-let renderButtonPagination = () => {
-
-    const parentButtonPagination = document.querySelectorAll('.pagination-page')
-    
-    parentButtonPagination.forEach(item => {
-        item.remove()
-    })
-    
-    
-    for (let i = 1; i <= totalPage; i++) {
-                
-        const buttonPagination = document.createElement('button')
-        buttonPagination.classList.add('pagination-page')
-        buttonPagination.textContent = i
-        navPagination.insertBefore(buttonPagination, nextButtonPagination)
-    
-        if (buttonPagination.textContent === '1') {
-            
-            buttonPagination.classList.add('active')
-        }
-    }
-
-    navPagination.addEventListener('click', event => {
-            if (event.target.closest('.pagination-page')) {
-
-                const parentButtonPagination = document.querySelectorAll('.pagination-page')
-                const itemActive = Array.from(parentButtonPagination).filter(item => {
-                
-                    return item.classList.contains('active')
-                })
-
-                itemActive[0].classList.remove('active')
-                event.target.closest('.pagination-page').classList.add('active')
-                currentPage = Number(event.target.textContent)
-                
-            } else if (event.target.closest('.previous')) {
-
-                const parentButtonPagination = document.querySelectorAll('.pagination-page')
-                const itemActive = Array.from(parentButtonPagination).filter(item => {
-                
-                    return item.classList.contains('active')
-                })
-
-                if (Number(itemActive[0].textContent) === 1) {
-                    
-                    return
-                } else {
-
-                    itemActive[0].classList.remove('active')
-                    itemActive[0].previousElementSibling.classList.add('active')
-                    currentPage = Number(itemActive[0].previousElementSibling.textContent)
-                } 
-            } else if (event.target.closest('.next')) {
-
-                const parentButtonPagination = document.querySelectorAll('.pagination-page')
-                const itemActive = Array.from(parentButtonPagination).filter(item => {
-                
-                    return item.classList.contains('active')
-                })
-                
-                if (Number(itemActive[0].textContent) === totalPage) {
-                    
-                    return
-                } else {
-
-                    itemActive[0].classList.remove('active')
-                    itemActive[0].nextElementSibling.classList.add('active')
-                    currentPage = Number(itemActive[0].nextElementSibling.textContent)
-                } 
-                
-            }
-        })
-    
-}
-
-
-renderButtonPagination()
 
 const productForShado = document.querySelector('product-category')
 const shadowRootP = productForShado.shadowRoot
@@ -229,36 +152,137 @@ let renderProduct = (products) => {
 }
 
 
+let renderButtonPagination = () => {
+
+    const parentButtonPagination = document.querySelectorAll('.pagination-page')
+    
+    parentButtonPagination.forEach(item => {
+        item.remove()
+    })
+    
+    
+    for (let i = 1; i <= totalPage; i++) {
+                
+        const buttonPagination = document.createElement('button')
+        buttonPagination.classList.add('pagination-page')
+        buttonPagination.textContent = i
+        navPagination.insertBefore(buttonPagination, nextButtonPagination)
+    
+        if (buttonPagination.textContent === '1') {
+            
+            buttonPagination.classList.add('active')
+        }
+    }
+
+    
+}
+
+const inputElem = document.querySelector('.input-search')
+
+navPagination.addEventListener('click', event => {
+
+    let filterSearch = finallyProduct.filter(item => item.title.trim().toLowerCase().includes(inputElem.value.trim().toLowerCase()))
+
+        if (event.target.closest('.pagination-page')) {
+
+            const parentButtonPagination = document.querySelectorAll('.pagination-page')
+            const itemActive = Array.from(parentButtonPagination).filter(item => {
+            
+                return item.classList.contains('active')
+            })
+
+            itemActive[0].classList.remove('active')
+            event.target.closest('.pagination-page').classList.add('active')
+            currentPage = Number(event.target.textContent)
+
+            let newRenderProduct = renderInformPage(currentPage, filterSearch)
+            renderProduct(newRenderProduct)
+            
+        } else if (event.target.closest('.previous')) {
+
+            const parentButtonPagination = document.querySelectorAll('.pagination-page')
+            const itemActive = Array.from(parentButtonPagination).filter(item => {
+            
+                return item.classList.contains('active')
+            })
+
+            
+            if (Number(itemActive[0].textContent) === 1) {
+                
+                return
+            } else {
+                
+                currentPage = Number(itemActive[0].previousElementSibling.textContent)
+                let newRenderProduct = renderInformPage(currentPage, filterSearch)
+                itemActive[0].classList.remove('active')
+                itemActive[0].previousElementSibling.classList.add('active')
+                renderProduct(newRenderProduct)
+
+
+            } 
+        } else if (event.target.closest('.next')) {
+
+            const parentButtonPagination = document.querySelectorAll('.pagination-page')
+            const itemActive = Array.from(parentButtonPagination).filter(item => {
+            
+                return item.classList.contains('active')
+            })
+
+            
+            if (Number(itemActive[0].textContent) === totalPage) {
+                
+                return
+            } else {
+                
+                currentPage = Number(itemActive[0].nextElementSibling.textContent)
+                itemActive[0].classList.remove('active')
+                itemActive[0].nextElementSibling.classList.add('active')
+                let newRenderProduct = renderInformPage(currentPage, filterSearch)
+                renderProduct(newRenderProduct)
+            } 
+            
+        }
+    })
+
+renderButtonPagination()
+
 
 let renderProductPage = () => {
     
     productGrid.innerHTML = ''
-
+    
     let renderProductsPage = renderInformPage(currentPage, finallyProduct)
     renderProduct(renderProductsPage)
-
-    navPagination.addEventListener('click', event => {
-        if (event.target.closest('.pagination-page')) {
-        
-            let newRenderProduct = renderInformPage(currentPage, finallyProduct)
-            renderProduct(newRenderProduct)
-
-        } else if (event.target.closest('.previous')) {
-
-            let newRenderProduct = renderInformPage(currentPage, finallyProduct)
-            renderProduct(newRenderProduct)
-
-        } else if (event.target.closest('.next')) {
-
-            let newRenderProduct = renderInformPage(currentPage, finallyProduct)
-            renderProduct(newRenderProduct)
-        }
-    })
-
+    
 }
+
+
+inputElem.addEventListener('input', event => {
+
+    
+    
+    let filterSearch = finallyProduct.filter(item => item.title.trim().toLowerCase().includes(inputElem.value.trim().toLowerCase()))
+    
+    if (inputElem.value.trim().toLowerCase() !== '') {
+        
+        currentPage = 1 
+        totalPage = Math.ceil(filterSearch.length / itemPrePage)
+        const searchResult =  renderInformPage(currentPage, filterSearch)
+        renderButtonPagination()
+        renderProduct(searchResult)
+        
+    } else {
+        
+        currentPage = 1 
+        totalPage = Math.ceil(finallyProduct.length / itemPrePage)
+        const newRenderProduct = renderInformPage(currentPage, finallyProduct)
+        renderButtonPagination()
+        renderProduct(newRenderProduct)
+    
+    }
+    
+})
 
 renderProductPage()
 
 
-
-export { finallyProduct }

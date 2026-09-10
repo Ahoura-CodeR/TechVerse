@@ -1,4 +1,3 @@
-// import {finallyProduct} from '/ThchVerse/js/products'
 
 const template = document.createElement('template')
 
@@ -36,6 +35,7 @@ const getProducts = async () => {
 }
 
 class productCategory extends HTMLElement {
+
     constructor () {
         super()
         this.attachShadow({mode: "open"})
