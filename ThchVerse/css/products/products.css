@@ -503,6 +503,7 @@ body {
     gap: 7px;
 
     padding: 35px 0 45px;
+    flex-wrap: wrap;
 }
 
 .pagination button {
