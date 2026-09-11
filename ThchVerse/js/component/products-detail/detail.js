@@ -1,5 +1,4 @@
 import { getProducts } from '/ThchVerse/js/component/products-box/products.js'
-
 const template = document.createElement('template')
 
 template.innerHTML = `
