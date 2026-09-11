@@ -17,7 +17,7 @@ template.innerHTML = `
 
 let getProducts = async () => {
   try {
-    const res = await fetch('https://dummyjson.com/products/search?q=phone')
+    const res = await fetch('/ThchVerse/Data/products.json')
     if (!res.ok) throw new Error('خطا در دریافت اطلاعات ')
       const data = await res.json()
     return data.products || []
@@ -57,7 +57,7 @@ class isProducts extends HTMLElement {
               <p class="price-products">
                   $${item.price}
               </p>
-              <button data-id="${item.id}" class="button-buy">
+              <button data-category="${item.category}" data-id="${item.id}" class="button-buy">
                   Buy Now
               </button>
           </div>
@@ -78,7 +78,7 @@ class isProducts extends HTMLElement {
     productContainer.addEventListener('click', event => {
       if (event.target.closest('.button-buy')) {
         const buttonTarget = event.target.closest('.button-buy')
-        window.location.href = `/ThchVerse/pages/products-details.html?id=${buttonTarget.dataset.id}`
+        window.location.href = `/ThchVerse/pages/products-details.html?category=${buttonTarget.dataset.category}&id=${buttonTarget.dataset.id}`
       }
     })
     

@@ -743,6 +743,14 @@ input:focus-visible,
     outline-offset: 3px;
 }
 
+.details-subtitle {
+    margin-top: 45px;
+    margin-bottom: 18px;
+    font-size: 1.35rem;
+}
+
+
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

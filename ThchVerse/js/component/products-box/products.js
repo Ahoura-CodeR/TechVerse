@@ -187,10 +187,11 @@ class productCategory extends HTMLElement {
         
         productGrid.addEventListener('click', event => {
             
-            if (event.target.closest('.product-button')) {
+            const button = event.target.closest('.product-button')
+            if (button) {
 
                 const idBtn = event.target.dataset.id
-                window.location.href = `/ThchVerse/pages/products-details.html?id=${idBtn}`
+                window.location.href = `/ThchVerse/pages/products-details.html?category=${newCategory}&id=${idBtn}`
             }
         })
         
