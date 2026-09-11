@@ -28,6 +28,61 @@ class productsDetail extends HTMLElement {
         
         const product = await getProducts()
         const boxProduct = this.shadowRoot.querySelector('.box-container')
+        const gamingSpecs = {
+    'Gaming Monitor': [
+        ['Display', 'display'],
+        ['Resolution', 'resolution'],
+        ['Refresh Rate', 'refresh_rate'],
+        ['Response Time', 'response_time'],
+        ['Panel Type', 'panel_type'],
+        ['HDR', 'hdr']
+    ],
+
+    'Gaming Keyboard': [
+        ['Type', 'type'],
+        ['Connection', 'connection'],
+        ['Switches', 'switches'],
+        ['Layout', 'layout'],
+        ['Compatibility', 'compatibility'],
+        ['Lighting', 'lighting']
+    ],
+
+    'Gaming Mouse': [
+        ['Connection', 'connection'],
+        ['Sensor', 'sensor'],
+        ['DPI', 'dpi'],
+        ['Buttons', 'buttons'],
+        ['Polling Rate', 'polling_rate'],
+        ['Battery', 'battery']
+    ],
+
+    'Gaming Headset': [
+        ['Connection', 'connection'],
+        ['Compatibility', 'compatibility'],
+        ['Microphone', 'microphone'],
+        ['Noise Cancellation', 'noise_cancellation'],
+        ['Battery', 'battery'],
+        ['Lighting', 'lighting']
+    ],
+
+    'Game Controller': [
+        ['Connection', 'connection'],
+        ['Compatibility', 'compatibility'],
+        ['Battery', 'battery'],
+        ['Buttons', 'buttons'],
+        ['Vibration', 'vibration'],
+        ['Wireless Range', 'wireless_range']
+    ],
+
+    'Gaming Desktop': [
+        ['Processor', 'processor'],
+        ['Cores', 'cores'],
+        ['RAM', 'ram'],
+        ['Storage', 'storage'],
+        ['GPU', 'gpu'],
+        ['GPU Memory', 'gpu_memory']
+    ]
+}
         const showProduct = product.find(item => {
             return item.id === urlId
         })
@@ -1804,465 +1859,422 @@ class productsDetail extends HTMLElement {
 </section>
             `
         } else if (urlCategory === 'gaming') {
-            
-            const specs = product.specifications
-        const deviceType = specs.device_type
-        
-        let heroSpecs = []
-        let detailSpecs = []
-        
-        if (deviceType === 'Gaming Monitor') {
-        
-            heroSpecs = [
-                ['Display', specs.display],
-                ['Resolution', specs.resolution],
-                ['Refresh Rate', specs.refresh_rate],
-                ['Response Time', specs.response_time],
-                ['Panel Type', specs.panel_type],
-                ['HDR', specs.hdr]
-            ]
-        
-            detailSpecs = [
-                ['Display', specs.display],
-                ['Resolution', specs.resolution],
-                ['Refresh Rate', specs.refresh_rate],
-                ['Response Time', specs.response_time],
-                ['Panel Type', specs.panel_type],
-                ['HDR', specs.hdr],
-                ['Connectivity', specs.connectivity],
-                ['Lighting', specs.lighting]
-            ]
-        
-        } else if (deviceType === 'Gaming Keyboard') {
-        
-            heroSpecs = [
-                ['Type', specs.type],
-                ['Connection', specs.connection],
-                ['Switches', specs.switches],
-                ['Layout', specs.layout],
-                ['Compatibility', specs.compatibility],
-                ['Lighting', specs.lighting]
-            ]
-        
-            detailSpecs = [
-                ['Type', specs.type],
-                ['Connection', specs.connection],
-                ['Switches', specs.switches],
-                ['Layout', specs.layout],
-                ['Compatibility', specs.compatibility],
-                ['Lighting', specs.lighting],
-                ['Polling Rate', specs.polling_rate],
-                ['Warranty', product.warranty]
-            ]
-        
-        } else if (deviceType === 'Gaming Mouse') {
-        
-            heroSpecs = [
-                ['Connection', specs.connection],
-                ['Sensor', specs.sensor],
-                ['DPI', specs.dpi],
-                ['Buttons', specs.buttons],
-                ['Polling Rate', specs.polling_rate],
-                ['Battery', specs.battery]
-            ]
-        
-            detailSpecs = [
-                ['Connection', specs.connection],
-                ['Sensor', specs.sensor],
-                ['DPI', specs.dpi],
-                ['Buttons', specs.buttons],
-                ['Polling Rate', specs.polling_rate],
-                ['Compatibility', specs.compatibility],
-                ['Lighting', specs.lighting],
-                ['Battery', specs.battery]
-            ]
-        
-        } else if (deviceType === 'Gaming Headset') {
-        
-            heroSpecs = [
-                ['Connection', specs.connection],
-                ['Compatibility', specs.compatibility],
-                ['Microphone', specs.microphone],
-                ['Noise Cancellation', specs.noise_cancellation],
-                ['Battery', specs.battery],
-                ['Lighting', specs.lighting]
-            ]
-        
-            detailSpecs = [
-                ['Connection', specs.connection],
-                ['Compatibility', specs.compatibility],
-                ['Microphone', specs.microphone],
-                ['Noise Cancellation', specs.noise_cancellation],
-                ['Battery', specs.battery],
-                ['Lighting', specs.lighting],
-                ['Warranty', product.warranty]
-            ]
-        
-        } else if (deviceType === 'Game Controller') {
-        
-            heroSpecs = [
-                ['Connection', specs.connection],
-                ['Compatibility', specs.compatibility],
-                ['Battery', specs.battery],
-                ['Buttons', specs.buttons],
-                ['Vibration', specs.vibration],
-                ['Wireless Range', specs.wireless_range]
-            ]
-        
-            detailSpecs = [
-                ['Connection', specs.connection],
-                ['Compatibility', specs.compatibility],
-                ['Battery', specs.battery],
-                ['Buttons', specs.buttons],
-                ['Vibration', specs.vibration],
-                ['Wireless Range', specs.wireless_range],
-                ['Lighting', specs.lighting],
-                ['Warranty', product.warranty]
-            ]
-        
-        } else if (deviceType === 'Gaming Desktop') {
-        
-            heroSpecs = [
-                ['Processor', specs.processor],
-                ['Cores', specs.cores],
-                ['RAM', specs.ram],
-                ['Storage', specs.storage],
-                ['GPU', specs.gpu],
-                ['GPU Memory', specs.gpu_memory]
-            ]
-        
-            detailSpecs = [
-                ['Processor', specs.processor],
-                ['Cores', specs.cores],
-                ['RAM', specs.ram],
-                ['Storage', specs.storage],
-                ['GPU', specs.gpu],
-                ['GPU Memory', specs.gpu_memory],
-                ['Power Supply', specs.power_supply],
-                ['Operating System', specs.operating_system],
-                ['Connectivity', specs.connectivity]
-            ]
-            }
 
-            boxProduct.innerHTML = `
+    const specs = showProduct.specifications
+    const deviceType = specs.device_type
 
-<style>
+    let heroSpecs = []
+    let detailSpecs = []
 
-    :host {
-        box-sizing: border-box;
+    if (deviceType === 'Gaming Monitor') {
+
+        heroSpecs = [
+            ['🖥️', 'Display', specs.display],
+            ['📐', 'Resolution', specs.resolution],
+            ['⚡', 'Refresh Rate', specs.refresh_rate],
+            ['⏱️', 'Response Time', specs.response_time],
+            ['🎨', 'Panel Type', specs.panel_type],
+            ['✨', 'HDR', specs.hdr]
+        ]
+
+        detailSpecs = [
+            ['🖥️', 'Display', specs.display],
+            ['📐', 'Resolution', specs.resolution],
+            ['⚡', 'Refresh Rate', specs.refresh_rate],
+            ['⏱️', 'Response Time', specs.response_time],
+            ['🎨', 'Panel Type', specs.panel_type],
+            ['✨', 'HDR', specs.hdr],
+            ['🔌', 'Connectivity', specs.connectivity],
+            ['💡', 'Lighting', specs.lighting]
+        ]
+
+    } else if (deviceType === 'Gaming Keyboard') {
+
+        heroSpecs = [
+            ['⌨️', 'Type', specs.type],
+            ['🔌', 'Connection', specs.connection],
+            ['⌨️', 'Switches', specs.switches],
+            ['🔤', 'Layout', specs.layout],
+            ['💻', 'Compatibility', specs.compatibility],
+            ['💡', 'Lighting', specs.lighting]
+        ]
+
+        detailSpecs = [
+            ['⌨️', 'Type', specs.type],
+            ['🔌', 'Connection', specs.connection],
+            ['⌨️', 'Switches', specs.switches],
+            ['🔤', 'Layout', specs.layout],
+            ['💻', 'Compatibility', specs.compatibility],
+            ['💡', 'Lighting', specs.lighting],
+            ['⚡', 'Polling Rate', specs.polling_rate],
+            ['🛡️', 'Warranty', showProduct.warranty]
+        ]
+
+    } else if (deviceType === 'Gaming Mouse') {
+
+        heroSpecs = [
+            ['🔌', 'Connection', specs.connection],
+            ['🎯', 'Sensor', specs.sensor],
+            ['🎚️', 'DPI', specs.dpi],
+            ['🔘', 'Buttons', specs.buttons],
+            ['⚡', 'Polling Rate', specs.polling_rate],
+            ['🔋', 'Battery', specs.battery]
+        ]
+
+        detailSpecs = [
+            ['🔌', 'Connection', specs.connection],
+            ['🎯', 'Sensor', specs.sensor],
+            ['🎚️', 'DPI', specs.dpi],
+            ['🔘', 'Buttons', specs.buttons],
+            ['⚡', 'Polling Rate', specs.polling_rate],
+            ['💻', 'Compatibility', specs.compatibility],
+            ['💡', 'Lighting', specs.lighting],
+            ['🔋', 'Battery', specs.battery]
+        ]
+
+    } else if (deviceType === 'Gaming Headset') {
+
+        heroSpecs = [
+            ['🔌', 'Connection', specs.connection],
+            ['💻', 'Compatibility', specs.compatibility],
+            ['🎙️', 'Microphone', specs.microphone],
+            ['🔇', 'Noise Cancellation', specs.noise_cancellation],
+            ['🔋', 'Battery', specs.battery],
+            ['💡', 'Lighting', specs.lighting]
+        ]
+
+        detailSpecs = [
+            ['🔌', 'Connection', specs.connection],
+            ['💻', 'Compatibility', specs.compatibility],
+            ['🎙️', 'Microphone', specs.microphone],
+            ['🔇', 'Noise Cancellation', specs.noise_cancellation],
+            ['🔋', 'Battery', specs.battery],
+            ['💡', 'Lighting', specs.lighting],
+            ['🛡️', 'Warranty', showProduct.warranty]
+        ]
+
+    } else if (deviceType === 'Game Controller') {
+
+        heroSpecs = [
+            ['🔌', 'Connection', specs.connection],
+            ['💻', 'Compatibility', specs.compatibility],
+            ['🔋', 'Battery', specs.battery],
+            ['🔘', 'Buttons', specs.buttons],
+            ['〰️', 'Vibration', specs.vibration],
+            ['📡', 'Wireless Range', specs.wireless_range]
+        ]
+
+        detailSpecs = [
+            ['🔌', 'Connection', specs.connection],
+            ['💻', 'Compatibility', specs.compatibility],
+            ['🔋', 'Battery', specs.battery],
+            ['🔘', 'Buttons', specs.buttons],
+            ['〰️', 'Vibration', specs.vibration],
+            ['📡', 'Wireless Range', specs.wireless_range],
+            ['💡', 'Lighting', specs.lighting],
+            ['🛡️', 'Warranty', showProduct.warranty]
+        ]
+
+    } else if (deviceType === 'Gaming Desktop') {
+
+        heroSpecs = [
+            ['⚙️', 'Processor', specs.processor],
+            ['🧩', 'Cores', specs.cores],
+            ['🧠', 'RAM', specs.ram],
+            ['💾', 'Storage', specs.storage],
+            ['🎮', 'GPU', specs.gpu],
+            ['🧠', 'GPU Memory', specs.gpu_memory]
+        ]
+
+        detailSpecs = [
+            ['⚙️', 'Processor', specs.processor],
+            ['🧩', 'Cores', specs.cores],
+            ['🧠', 'RAM', specs.ram],
+            ['💾', 'Storage', specs.storage],
+            ['🎮', 'GPU', specs.gpu],
+            ['🧠', 'GPU Memory', specs.gpu_memory],
+            ['🔌', 'Power Supply', specs.power_supply],
+            ['🪟', 'Operating System', specs.operating_system],
+            ['🌐', 'Connectivity', specs.connectivity]
+        ]
     }
 
-    :host *,
-    :host *::before,
-    :host *::after {
-        box-sizing: inherit;
-    }
 
-    button,
-    input {
-        font: inherit;
-    }
+    boxProduct.innerHTML = `
 
-    img {
-        display: block;
-        max-width: 100%;
-    }
+        <section class="product-hero">
 
-</style>
+            <div class="product-gallery">
 
+                <div class="thumbnails">
 
-<!-- ============================== -->
-<!-- PRODUCT HERO -->
-<!-- ============================== -->
+                    ${showProduct.images.map((image, index) => `
+                        <button
+                            class="thumb ${index === 0 ? 'active' : ''}"
+                            type="button"
+                        >
+                            <img
+                                src="${image}"
+                                alt="${showProduct.title}"
+                            >
+                        </button>
+                    `).join('')}
 
-<section class="product-hero">
+                </div>
 
 
-    <!-- GALLERY -->
+                <div class="main-image-wrapper">
 
-    <div class="product-gallery">
-
-        <div class="thumbnails">
-
-            ${product.images.map((image, index) => `
-                <button
-                    class="thumb ${index === 0 ? 'active' : ''}"
-                    type="button"
-                >
                     <img
-                        src="${image}"
-                        alt="${product.title}"
+                        class="main-image"
+                        src="${showProduct.images[0]}"
+                        alt="${showProduct.title}"
                     >
-                </button>
-            `).join('')}
 
-        </div>
-
-
-        <div class="main-image-wrapper">
-
-            <img
-                class="main-image"
-                src="${product.images[0]}"
-                alt="${product.title}"
-            >
-
-        </div>
-
-    </div>
-
-
-    <!-- PRODUCT INFORMATION -->
-
-    <div class="product-info">
-
-
-        <h1 class="product-title">
-            ${product.title}
-        </h1>
-
-
-        <div class="price-container">
-
-            <span class="current-price">
-                $${product.price}
-            </span>
-
-        </div>
-
-
-        <!-- COLOR -->
-
-        <div class="color-selection">
-
-            <h3>Color</h3>
-
-            <div class="color-options">
-
-                ${product.colors.map(color => `
-                    <button
-                        class="color-dot"
-                        type="button"
-                        title="${color}"
-                        aria-label="${color}"
-                    ></button>
-                `).join('')}
+                </div>
 
             </div>
 
-        </div>
+
+            <div class="product-info">
+
+                <h1 class="product-title">
+                    ${showProduct.title}
+                </h1>
 
 
-        <!-- HERO SPECS -->
+                <div class="price-container">
 
-        <div class="specs-grid">
+                    <span class="current-price">
+                        $${showProduct.price}
+                    </span>
 
-            ${heroSpecs.map(([name, value]) => `
+                </div>
 
-                <div class="spec-card">
 
-                    <div class="spec-icon">
-                        ◈
+                <div class="color-selection">
+
+                    <label>
+                        Select color:
+                    </label>
+
+                    <div class="color-options">
+
+                        ${showProduct.colors.map((color, index) => `
+                            <button
+                                class="color-dot ${index === 0 ? 'active' : ''}"
+                                type="button"
+                                title="${color}"
+                                aria-label="${color}"
+                                style="--dot-color: ${color};"
+                            ></button>
+                        `).join('')}
+
                     </div>
 
-                    <div>
+                </div>
 
-                        <span>
-                            ${name}
+
+                <div class="specs-grid">
+
+                    ${heroSpecs.map(([icon, name, value]) => `
+
+                        <div class="spec-card">
+
+                            <div class="spec-icon">
+                                ${icon}
+                            </div>
+
+                            <div>
+
+                                <small>
+                                    ${name}
+                                </small>
+
+                                <strong>
+                                    ${value}
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    `).join('')}
+
+                </div>
+
+
+                <div class="product-description">
+
+                    <h3>
+                        Description
+                    </h3>
+
+                    <p>
+                        ${showProduct.description}
+                    </p>
+
+                </div>
+
+
+                <div class="action-buttons">
+
+                    <button
+                        class="btn btn-wishlist"
+                        type="button"
+                    >
+                        ♡ Add to Wishlist
+                    </button>
+
+                    <button
+                        class="btn btn-cart"
+                        type="button"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+                <div class="delivery-info">
+
+                    <div class="delivery-item">
+
+                        <span class="icon">
+                            🚚
                         </span>
 
-                        <strong>
-                            ${value}
-                        </strong>
+                        <div>
+
+                            <small>
+                                Free Delivery
+                            </small>
+
+                            <strong>
+                                1-2 business days
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="delivery-item">
+
+                        <span class="icon">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <small>
+                                In Stock
+                            </small>
+
+                            <strong>
+                                ${showProduct.stock > 0
+                                    ? `${showProduct.stock} available`
+                                    : 'Currently unavailable'
+                                }
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="delivery-item">
+
+                        <span class="icon">
+                            🛡️
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Warranty
+                            </small>
+
+                            <strong>
+                                ${showProduct.warranty}
+                            </strong>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            `).join('')}
+            </div>
 
-        </div>
-
-
-        <!-- DESCRIPTION -->
-
-        <div class="product-description">
-
-            <h3>Description</h3>
-
-            <p>
-                ${product.description}
-            </p>
-
-        </div>
+        </section>
 
 
-        <!-- ACTIONS -->
+        <section class="product-details-section">
 
-        <div class="action-buttons">
+            <div class="details-container">
 
-            <button
-                class="btn btn-wishlist"
-                type="button"
-            >
-                ♡ Add to Wishlist
-            </button>
+                <h2>
+                    Product Details
+                </h2>
 
-            <button
-                class="btn btn-cart"
-                type="button"
-            >
-                Add to Cart
-            </button>
-
-        </div>
+                <p class="details-intro">
+                    Detailed specifications and technical information
+                    about this ${deviceType.toLowerCase()}.
+                </p>
 
 
-        <!-- DELIVERY -->
+                <h3 class="details-subtitle">
+                    Technical Specifications
+                </h3>
 
-        <div class="delivery-info">
+
+                <div class="specs-table">
+
+                    ${detailSpecs.map(([icon, name, value]) => `
+
+                        <div class="table-row">
+
+                            <span>
+                                ${icon} ${name}
+                            </span>
+
+                            <span class="text-right">
+                                ${value}
+                            </span>
+
+                        </div>
+
+                    `).join('')}
+
+                </div>
 
 
-            <div class="delivery-item">
+                <div class="view-more-wrapper">
 
-                <span>🚚</span>
+                    <button
+                        class="btn-view-more"
+                        type="button"
+                    >
+                        View More
 
-                <div>
+                        <span class="arrow-icon">
+                            →
+                        </span>
 
-                    <strong>
-                        Free Delivery
-                    </strong>
-
-                    <p>
-                        1-2 business days
-                    </p>
+                    </button>
 
                 </div>
 
             </div>
 
+        </section>
 
-            <div class="delivery-item">
+    `
+}
+        
 
-                <span>✓</span>
-
-                <div>
-
-                    <strong>
-                        In Stock
-                    </strong>
-
-                    <p>
-                        ${product.stock > 0
-                            ? 'Available now'
-                            : 'Out of stock'}
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="delivery-item">
-
-                <span>🛡</span>
-
-                <div>
-
-                    <strong>
-                        Warranty
-                    </strong>
-
-                    <p>
-                        ${product.warranty}
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================== -->
-<!-- PRODUCT DETAILS -->
-<!-- ============================== -->
-
-<section class="product-details-section">
-
-
-    <div class="details-container">
-
-
-        <h2>
-            Product Details
-        </h2>
-
-
-        <p class="details-intro">
-            Detailed specifications and technical information
-            about this gaming product.
-        </p>
-
-
-        <h3 class="details-subtitle">
-            Technical Specifications
-        </h3>
-
-
-        <div class="specs-table">
-
-            ${detailSpecs.map(([name, value]) => `
-
-                <div class="table-row">
-
-                    <span>
-                        ${name}
-                    </span>
-
-                    <span class="text-right">
-                        ${value}
-                    </span>
-
-                </div>
-
-            `).join('')}
-
-        </div>
-
-
-        <div class="view-more-wrapper">
-
-            <button
-                class="btn-view-more"
-                type="button"
-            >
-
-                View More
-
-                <span class="arrow-icon">
-                    →
-                </span>
-
-            </button>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-`
-
-        }            
-                
+        
     }
 }
 
