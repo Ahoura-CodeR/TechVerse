@@ -2270,9 +2270,30 @@ class productsDetail extends HTMLElement {
         </section>
 
     `
-}
-        
+} else if (urlCategory === null || urlCategory === "undefined" || urlId === 0) {
 
+    
+    const sectionComment = document.querySelector('.reviews-section')
+    sectionComment.style.display = 'none'
+    
+    boxProduct.innerHTML = `
+        
+    <div class="product-not-found">
+    <div class="not-found-icon">🔍</div>
+
+    <h2>Product Not Found</h2>
+
+    <p>
+        We couldn't find the product you're looking for.
+        The product may have been removed or the link may be invalid.
+    </p>
+
+    <a href="/ThchVerse/pages/products.html" class="back-to-products">
+        Back to Products
+    </a>
+</div>
+    `
+}        
         
     }
 }

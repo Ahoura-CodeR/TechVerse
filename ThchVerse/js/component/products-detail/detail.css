@@ -911,6 +911,65 @@ input:focus-visible,
     font-size: 1.35rem;
 }
 
+.product-not-found {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.not-found-icon {
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 36px;
+
+    border-radius: 50%;
+    background: #f5f5f5;
+
+    margin-bottom: 24px;
+}
+
+.product-not-found h2 {
+    margin: 0 0 12px;
+    font-size: 28px;
+}
+
+.product-not-found p {
+    max-width: 500px;
+    margin: 0 0 28px;
+
+    color: #666;
+    line-height: 1.6;
+}
+
+.back-to-products {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 24px;
+
+    border-radius: 8px;
+
+    background: #111;
+    color: #fff;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.back-to-products:hover {
+    opacity: 0.85;
+}
 
 /* =========================================================
    REDUCED MOTION

@@ -85,18 +85,17 @@ class productCategory extends HTMLElement {
     }
     async connectedCallback () {
 
+        const normalizedCategory = newCategory?.toLowerCase() || null
         const inputElem = document.querySelector('.input-search')
         const productGrid = this.shadowRoot.querySelector('.products-grid')
         const products = await getProducts()
         
-        let newProducts = products.filter(item => {
-            
-            return item.category === newCategory
-        })
         
-        let justCategoryProduct = newProducts.filter(item => {
-            return item.category === newCategory
-        })
+        let justCategoryProduct = categories
+            ? products.filter(item =>
+                item.category.toLowerCase() === normalizedCategory
+            )
+            : products
         
         let renderProduct = (products) => {
 
@@ -108,7 +107,7 @@ class productCategory extends HTMLElement {
                 const div = document.createElement('div')
                 div.classList.add('product-card')
                 const ratingPercent = (item.rating / 5) * 100
-    
+
     div.innerHTML = `
         <div class="product-image-wrapper">
             <img
@@ -174,12 +173,11 @@ class productCategory extends HTMLElement {
     
         </div>
     
-        <button data-id="${item.id}" class="product-button">
+        <button data-id="${item.id}" data-category="${item.category}" class="product-button">
             Buy Now
         </button>
         `
                 fragment.appendChild(div)
-                
             });
             
             productGrid.appendChild(fragment)
@@ -188,30 +186,27 @@ class productCategory extends HTMLElement {
         productGrid.addEventListener('click', event => {
             
             const button = event.target.closest('.product-button')
-            if (button) {
 
-                const idBtn = event.target.dataset.id
-                window.location.href = `/ThchVerse/pages/products-details.html?category=${newCategory}&id=${idBtn}`
+            if (button) {
+                const idBtn = button.dataset.id
+                const categoryButton = button.dataset.category
+                console.log(categoryButton + "    " + idBtn);
+                
+                // window.location.href = `/ThchVerse/pages/products-details.html?category=${categoryBtn}&id=${idBtn}`
             }
         })
         
         
-        if (categories != null) {
-            renderProduct(justCategoryProduct)
-        } else {
-            renderProduct(products)
-        }
+        renderProduct(justCategoryProduct)
+
         inputElem.addEventListener('input', event => {
             
             const searchResult = justCategoryProduct.filter(item => item.title.trim().toLowerCase().includes(inputElem.value.trim().toLowerCase()))
             if (inputElem.value.trim().toLowerCase() !== '') {
                 renderProduct(searchResult)
             } else {
-                if (categories != null) {
-                    renderProduct(justCategoryProduct)
-                } else {
-                    renderProduct(products)
-            }
+
+                renderProduct(justCategoryProduct)
             }
         })
     }
