@@ -337,3 +337,17 @@ sordSelect.addEventListener('change', () => {
 
 })
 
+
+const animationLoad = document.querySelector('.container');
+const pageLoader = document.querySelector('.page-loader');
+
+animationLoad.style.display = 'none';
+console.log('pageLoader:', pageLoader);
+console.log('animationLoad:', animationLoad);
+
+window.addEventListener('load', () => {
+    
+    pageLoader.setAttribute('display', 'none')
+    
+    animationLoad.setAttribute('display', '')
+});
