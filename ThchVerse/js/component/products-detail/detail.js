@@ -198,118 +198,354 @@ class productsDetail extends HTMLElement {
                 </section>
             
                 <!-- ================= SECTION 2: DETAILS ================= -->
-                <section class="product-details-section animate-slide-up">
+<section class="product-details-section animate-slide-up">
   <div class="details-container">
 
-    <h2>Details</h2>
+    <div class="details-heading">
+      <span class="section-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 3v18M3 12h18"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          />
+        </svg>
+      </span>
 
-    <p class="details-intro">
-      + ${showProduct.description}
-    </p>
-
-    <!-- Display -->
-    <h3>Display</h3>
-    <table class="specs-table">
-      <tr class="table-row">
-        <td>Screen diagonal</td>
-        <td class="text-right">${showProduct.specifications.display}</td>
-      </tr>
-      <tr class="table-row">
-        <td>Screen resolution</td>
-        <td class="text-right">${showProduct.specifications.resolution}</td>
-      </tr>
-      <tr class="table-row">
-        <td>Refresh rate</td>
-        <td class="text-right">${showProduct.specifications.refresh_rate}</td>
-      </tr>
-      <tr class="table-row">
-        <td>Screen type</td>
-        <td class="text-right">${showProduct.specifications.screen_type}</td>
-      </tr>
-    </table>
+      <div>
+        <h2>Details</h2>
+        <p class="details-intro">
+          ${showProduct.description}
+        </p>
+      </div>
+    </div>
 
 
-    <!-- Performance -->
+    <!-- ================= DISPLAY ================= -->
+    <div class="details-group">
+
+      <div class="details-group-title">
+        <span class="group-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect
+              x="3"
+              y="5"
+              width="18"
+              height="14"
+              rx="2"
+              stroke="currentColor"
+              stroke-width="1.7"
+            />
+            <path
+              d="M8 21h8M12 19v2"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+            />
+          </svg>
+        </span>
+
+        <h3>Display</h3>
+      </div>
+
+      <table class="specs-table">
+
+        <tr class="table-row">
+          <td>Screen diagonal</td>
+          <td class="text-right spec-value">
+            ${showProduct.specifications.display}
+          </td>
+        </tr>
+
+        <tr class="table-row">
+          <td>Screen resolution</td>
+          <td class="text-right spec-value">
+            ${showProduct.specifications.resolution}
+          </td>
+        </tr>
+
+        <tr class="table-row">
+          <td>Refresh rate</td>
+          <td class="text-right spec-value">
+            ${showProduct.specifications.refresh_rate}
+          </td>
+        </tr>
+
+        <tr class="table-row">
+          <td>Screen type</td>
+          <td class="text-right spec-value">
+            ${showProduct.specifications.screen_type}
+          </td>
+        </tr>
+
+      </table>
+    </div>
+
+
+    <!-- ================= EXTRA DETAILS ================= -->
     <div class="details-extra">
 
-      <h3>Performance</h3>
-      <table class="specs-table">
-        <tr class="table-row">
-          <td>Processor</td>
-          <td class="text-right">${showProduct.specifications.processor}</td>
-        </tr>
-        <tr class="table-row">
-          <td>Number of cores</td>
-          <td class="text-right">${showProduct.specifications.cores}</td>
-        </tr>
-        <tr class="table-row">
-          <td>RAM</td>
-          <td class="text-right">${showProduct.specifications.ram}</td>
-        </tr>
-        <tr class="table-row">
-          <td>Storage</td>
-          <td class="text-right">${showProduct.specifications.storage}</td>
-        </tr>
-        <tr class="table-row">
-          <td>Operating system</td>
-          <td class="text-right">${showProduct.specifications.operating_system}</td>
-        </tr>
-      </table>
+
+      <!-- ================= PERFORMANCE ================= -->
+      <div class="details-group">
+
+        <div class="details-group-title">
+          <span class="group-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 3v4M12 17v4M3 12h4M17 12h4"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="5"
+                stroke="currentColor"
+                stroke-width="1.7"
+              />
+            </svg>
+          </span>
+
+          <h3>Performance</h3>
+        </div>
+
+        <table class="specs-table">
+
+          <tr class="table-row">
+            <td>Processor</td>
+            <td class="text-right spec-value">
+              ${showProduct.specifications.processor}
+            </td>
+          </tr>
+
+          <tr class="table-row">
+            <td>Number of cores</td>
+            <td class="text-right spec-value">
+              ${showProduct.specifications.cores}
+            </td>
+          </tr>
+
+          <tr class="table-row">
+            <td>RAM</td>
+            <td class="text-right spec-value">
+              ${showProduct.specifications.ram}
+            </td>
+          </tr>
+
+          <tr class="table-row">
+            <td>Storage</td>
+            <td class="text-right spec-value">
+              ${showProduct.specifications.storage}
+            </td>
+          </tr>
+
+          <tr class="table-row">
+            <td>Operating system</td>
+            <td class="text-right spec-value">
+              ${showProduct.specifications.operating_system}
+            </td>
+          </tr>
+
+        </table>
+      </div>
 
 
-      <!-- Camera -->
-      <h3>Camera</h3>
-      <table class="specs-table">
-        <tr class="table-row">
-          <td>Main camera</td>
-          <td class="text-right">${showProduct.specifications.main_camera}</td>
-        </tr>
-        <tr class="table-row">
-          <td>Front camera</td>
-          <td class="text-right">${showProduct.specifications.front_camera}</td>
-        </tr>
-      </table>
+      <!-- ================= CAMERA ================= -->
+      <div class="details-group">
+
+        <div class="details-group-title">
+          <span class="group-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M4 7h4l1.5-2h5L16 7h4v12H4V7Z"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linejoin="round"
+              />
+              <circle
+                cx="12"
+                cy="13"
+                r="3.5"
+                stroke="currentColor"
+                stroke-width="1.7"
+              />
+            </svg>
+          </span>
+
+          <h3>Camera</h3>
+        </div>
+
+        <table class="specs-table">
+
+          <tr class="table-row">
+            <td>Main camera</td>
+            <td class="text-right spec-value">
+              ${showProduct.specifications.main_camera}
+            </td>
+          </tr>
+
+          <tr class="table-row">
+            <td>Front camera</td>
+            <td class="text-right spec-value">
+              ${showProduct.specifications.front_camera}
+            </td>
+          </tr>
+
+        </table>
+      </div>
 
 
-      <!-- Battery & Charging -->
-      <h3>Battery & Charging</h3>
-      <table class="specs-table">
-        <tr class="table-row">
-          <td>Battery capacity</td>
-          <td class="text-right">${showProduct.specifications.battery}</td>
-        </tr>
-        <tr class="table-row">
-          <td>Charging</td>
-          <td class="text-right">${showProduct.specifications.charging}</td>
-        </tr>
-      </table>
+      <!-- ================= BATTERY ================= -->
+      <div class="details-group">
+
+        <div class="details-group-title">
+          <span class="group-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect
+                x="4"
+                y="7"
+                width="15"
+                height="10"
+                rx="2"
+                stroke="currentColor"
+                stroke-width="1.7"
+              />
+              <path
+                d="M19 10h2v4h-2M11 9l-2 3h3l-2 3"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+
+          <h3>Battery & Charging</h3>
+        </div>
+
+        <table class="specs-table">
+
+          <tr class="table-row">
+            <td>Battery capacity</td>
+            <td class="text-right spec-value">
+              ${showProduct.specifications.battery}
+            </td>
+          </tr>
+
+          <tr class="table-row">
+            <td>Charging</td>
+            <td class="text-right spec-value">
+              ${showProduct.specifications.charging}
+            </td>
+          </tr>
+
+        </table>
+      </div>
 
 
-      <!-- Connectivity -->
-      <h3>Connectivity</h3>
-      <table class="specs-table">
-        <tr class="table-row">
-          <td>Network</td>
-          <td class="text-right">${showProduct.specifications.network}</td>
-        </tr>
-      </table>
+      <!-- ================= CONNECTIVITY ================= -->
+      <div class="details-group">
+
+        <div class="details-group-title">
+          <span class="group-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M5 9a10 10 0 0 1 14 0M8 12a6 6 0 0 1 8 0M11 15a2 2 0 0 1 2 0"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+              <circle
+                cx="12"
+                cy="18"
+                r="1"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+
+          <h3>Connectivity</h3>
+        </div>
+
+        <table class="specs-table">
+
+          <tr class="table-row">
+            <td>Network</td>
+            <td class="text-right spec-value">
+              ${showProduct.specifications.network}
+            </td>
+          </tr>
+
+        </table>
+      </div>
 
 
-      <!-- Protection -->
-      <h3>Protection</h3>
-      <table class="specs-table">
-        <tr class="table-row">
-          <td>Protection class</td>
-          <td class="text-right">${showProduct.specifications.protection}</td>
-        </tr>
-      </table>
+      <!-- ================= PROTECTION ================= -->
+      <div class="details-group">
+
+        <div class="details-group-title">
+          <span class="group-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 3l7 3v5c0 4.5-2.8 7.8-7 10-4.2-2.2-7-5.5-7-10V6l7-3Z"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linejoin="round"
+              />
+              <path
+                d="m9 12 2 2 4-4"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+
+          <h3>Protection</h3>
+        </div>
+
+        <table class="specs-table">
+
+          <tr class="table-row">
+            <td>Protection class</td>
+            <td class="text-right spec-value">
+              ${showProduct.specifications.protection}
+            </td>
+          </tr>
+
+        </table>
+      </div>
 
     </div>
 
+
+    <!-- ================= VIEW MORE ================= -->
     <div class="view-more-wrapper">
+
       <button class="btn-view-more" type="button">
-        View More <span class="arrow-icon">∨</span>
+
+        <span class="view-more-text">
+          View More
+        </span>
+
+        <span class="arrow-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path
+              d="m6 9 6 6 6-6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+
       </button>
+
     </div>
 
   </div>
@@ -569,8 +805,6 @@ class productsDetail extends HTMLElement {
 
 </section>
 
-
-
 <!-- =========================================================
      SECTION 2: SMARTWATCH DETAILS
      ========================================================= -->
@@ -579,153 +813,295 @@ class productsDetail extends HTMLElement {
 
     <div class="details-container">
 
-        <h2>Details</h2>
 
+        <!-- ================= DETAILS HEADER ================= -->
 
-        <p class="details-intro">
-            ${showProduct.description}
-        </p>
+        <div class="details-heading">
+
+            <span class="section-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M12 3v18M3 12h18"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </span>
+
+            <div>
+                <h2>Details</h2>
+
+                <p class="details-intro">
+                    ${showProduct.description}
+                </p>
+            </div>
+
+        </div>
 
 
         <!-- ================= DISPLAY ================= -->
-        <h3>Display</h3>
 
-        <table class="specs-table">
+        <div class="details-group">
 
-            <tr class="table-row">
-                <td>Display</td>
+            <div class="details-group-title">
 
-                <td class="text-right">
-                    ${showProduct.specifications.display}
-                </td>
-            </tr>
+                <span class="group-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <rect
+                            x="3"
+                            y="5"
+                            width="18"
+                            height="14"
+                            rx="2"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                        />
 
+                        <path
+                            d="M8 21h8M12 19v2"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+                    </svg>
+                </span>
 
-            <tr class="table-row">
-                <td>Resolution</td>
+                <h3>Display</h3>
 
-                <td class="text-right">
-                    ${showProduct.specifications.resolution}
-                </td>
-            </tr>
-
-
-            <tr class="table-row">
-                <td>Screen type</td>
-
-                <td class="text-right">
-                    ${showProduct.specifications.screen_type}
-                </td>
-            </tr>
-
-
-            <tr class="table-row">
-                <td>Protection</td>
-
-                <td class="text-right">
-                    ${showProduct.specifications.protection}
-                </td>
-            </tr>
-
-        </table>
+            </div>
 
 
-        <!-- ================= HEALTH & CONNECTIVITY ================= -->
-        <h3 class="details-subtitle">
-            Health & Connectivity
-        </h3>
+            <table class="specs-table">
 
-        <table class="specs-table">
+                <tr class="table-row">
+                    <td>Display</td>
 
-            <tr class="table-row">
-                <td>Sensors</td>
-
-                <td class="text-right">
-                    ${showProduct.specifications.sensors}
-                </td>
-            </tr>
+                    <td class="text-right spec-value">
+                        ${showProduct.specifications.display}
+                    </td>
+                </tr>
 
 
-            <tr class="table-row">
-                <td>Health features</td>
+                <tr class="table-row">
+                    <td>Resolution</td>
 
-                <td class="text-right">
-                    ${showProduct.specifications.health_features}
-                </td>
-            </tr>
-
-
-            <tr class="table-row">
-                <td>GPS</td>
-
-                <td class="text-right">
-                    ${showProduct.specifications.gps}
-                </td>
-            </tr>
+                    <td class="text-right spec-value">
+                        ${showProduct.specifications.resolution}
+                    </td>
+                </tr>
 
 
-            <tr class="table-row">
-                <td>Connectivity</td>
+                <tr class="table-row">
+                    <td>Screen type</td>
 
-                <td class="text-right">
-                    ${showProduct.specifications.connection}
-                </td>
-            </tr>
-
-
-            <tr class="table-row">
-                <td>Compatibility</td>
-
-                <td class="text-right">
-                    ${showProduct.specifications.compatibility}
-                </td>
-            </tr>
-
-        </table>
+                    <td class="text-right spec-value">
+                        ${showProduct.specifications.screen_type}
+                    </td>
+                </tr>
 
 
-        <!-- ================= BATTERY ================= -->
-        <h3 class="details-subtitle">
-            Battery & Charging
-        </h3>
+                <tr class="table-row">
+                    <td>Protection</td>
 
-        <table class="specs-table">
+                    <td class="text-right spec-value">
+                        ${showProduct.specifications.protection}
+                    </td>
+                </tr>
 
-            <tr class="table-row">
-                <td>Battery</td>
+            </table>
 
-                <td class="text-right">
-                    ${showProduct.specifications.battery}
-                </td>
-            </tr>
+        </div>
 
 
-            <tr class="table-row">
-                <td>Charging</td>
+        <!-- ================= EXTRA DETAILS ================= -->
 
-                <td class="text-right">
-                    ${showProduct.specifications.charging}
-                </td>
-            </tr>
+        <div class="details-extra">
 
 
-            <tr class="table-row">
-                <td>Storage</td>
+            <!-- ================= HEALTH & CONNECTIVITY ================= -->
 
-                <td class="text-right">
-                    ${showProduct.specifications.storage}
-                </td>
-            </tr>
+            <div class="details-group">
 
-        </table>
+                <div class="details-group-title">
+
+                    <span class="group-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+
+                            <path
+                                d="M12 21s-7-4.4-7-10V5l7-2 7 2v6c0 5.6-7 10-7 10Z"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M9 12h6M12 9v6"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                            />
+
+                        </svg>
+                    </span>
+
+                    <h3>Health & Connectivity</h3>
+
+                </div>
+
+
+                <table class="specs-table">
+
+                    <tr class="table-row">
+                        <td>Sensors</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.sensors}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>Health features</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.health_features}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>GPS</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.gps}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>Connectivity</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.connectivity}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>Compatibility</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.compatibility}
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <!-- ================= BATTERY & CHARGING ================= -->
+
+            <div class="details-group">
+
+                <div class="details-group-title">
+
+                    <span class="group-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+
+                            <rect
+                                x="4"
+                                y="7"
+                                width="15"
+                                height="10"
+                                rx="2"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                            />
+
+                            <path
+                                d="M19 10h2v4h-2M11 9l-2 3h3l-2 3"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+                    </span>
+
+                    <h3>Battery & Charging</h3>
+
+                </div>
+
+
+                <table class="specs-table">
+
+                    <tr class="table-row">
+                        <td>Battery</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.battery}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>Charging</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.charging}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>Storage</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.storage}
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
 
 
         <!-- ================= VIEW MORE ================= -->
+
         <div class="view-more-wrapper">
 
-            <button class="btn-view-more">
-                View More
-                <span class="arrow-icon">∨</span>
+            <button
+                class="btn-view-more"
+                type="button"
+                aria-expanded="false"
+            >
+
+                <span class="view-more-text">
+                    View More
+                </span>
+
+                <span
+                    class="arrow-icon"
+                    aria-hidden="true"
+                >
+
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="m6 9 6 6 6-6"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+
+                </span>
+
             </button>
 
         </div>
@@ -733,6 +1109,9 @@ class productsDetail extends HTMLElement {
     </div>
 
 </section>
+
+
+
             `
         } else if (urlCategory === 'cameras') {
 
@@ -992,7 +1371,6 @@ class productsDetail extends HTMLElement {
 
 </section>
 
-
 <!-- =========================================================
      SECTION 2: CAMERA DETAILS
      ========================================================= -->
@@ -1001,161 +1379,307 @@ class productsDetail extends HTMLElement {
 
     <div class="details-container">
 
-        <h2>Details</h2>
 
-        <p class="details-intro">
-            ${showProduct.description}
-        </p>
+        <!-- ================= DETAILS HEADER ================= -->
 
+        <div class="details-heading">
 
-        <!-- ================= SENSOR & IMAGE ================= -->
-        <h3>Image & Sensor</h3>
+            <span class="section-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M12 3v18M3 12h18"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </span>
 
-        <table class="specs-table">
+            <div>
+                <h2>Details</h2>
 
-            <tr class="table-row">
-                <td>Sensor</td>
+                <p class="details-intro">
+                    ${showProduct.description}
+                </p>
+            </div>
 
-                <td class="text-right">
-                    ${showProduct.specifications.sensor}
-                </td>
-            </tr>
-
-
-            <tr class="table-row">
-                <td>Resolution</td>
-
-                <td class="text-right">
-                    ${showProduct.specifications.resolution}
-                </td>
-            </tr>
+        </div>
 
 
-            <tr class="table-row">
-                <td>Lens mount</td>
+        <!-- ================= IMAGE & SENSOR ================= -->
 
-                <td class="text-right">
-                    ${showProduct.specifications.lens_mount}
-                </td>
-            </tr>
+        <div class="details-group">
 
+            <div class="details-group-title">
 
-            <tr class="table-row">
-                <td>Lens</td>
+                <span class="group-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
 
-                <td class="text-right">
-                    ${showProduct.specifications.lens}
-                </td>
-            </tr>
+                        <path
+                            d="M4 7h4l1.5-2h5L16 7h4v12H4V7Z"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linejoin="round"
+                        />
 
+                        <circle
+                            cx="12"
+                            cy="13"
+                            r="3.5"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                        />
 
-            <tr class="table-row">
-                <td>Stabilization</td>
+                    </svg>
+                </span>
 
-                <td class="text-right">
-                    ${showProduct.specifications.stabilization}
-                </td>
-            </tr>
+                <h3>Image & Sensor</h3>
 
-
-            <tr class="table-row">
-                <td>Autofocus</td>
-
-                <td class="text-right">
-                    ${showProduct.specifications.autofocus}
-                </td>
-            </tr>
-
-        </table>
+            </div>
 
 
-        <!-- ================= VIDEO & EXPOSURE ================= -->
-        <h3 class="details-subtitle">
-            Video & Exposure
-        </h3>
+            <table class="specs-table">
 
-        <table class="specs-table">
+                <tr class="table-row">
+                    <td>Sensor</td>
 
-            <tr class="table-row">
-                <td>Video</td>
-
-                <td class="text-right">
-                    ${showProduct.specifications.video}
-                </td>
-            </tr>
+                    <td class="text-right spec-value">
+                        ${showProduct.specifications.sensor}
+                    </td>
+                </tr>
 
 
-            <tr class="table-row">
-                <td>ISO range</td>
+                <tr class="table-row">
+                    <td>Resolution</td>
 
-                <td class="text-right">
-                    ${showProduct.specifications.iso_range}
-                </td>
-            </tr>
-
-
-            <tr class="table-row">
-                <td>Shutter speed</td>
-
-                <td class="text-right">
-                    ${showProduct.specifications.shutter_speed}
-                </td>
-            </tr>
+                    <td class="text-right spec-value">
+                        ${showProduct.specifications.resolution}
+                    </td>
+                </tr>
 
 
-            <tr class="table-row">
-                <td>Screen</td>
+                <tr class="table-row">
+                    <td>Lens mount</td>
 
-                <td class="text-right">
-                    ${showProduct.specifications.screen}
-                </td>
-            </tr>
-
-        </table>
+                    <td class="text-right spec-value">
+                        ${showProduct.specifications.lens_mount}
+                    </td>
+                </tr>
 
 
-        <!-- ================= BATTERY & CONNECTIVITY ================= -->
-        <h3 class="details-subtitle">
-            Battery & Connectivity
-        </h3>
+                <tr class="table-row">
+                    <td>Lens</td>
 
-        <table class="specs-table">
-
-            <tr class="table-row">
-                <td>Battery</td>
-
-                <td class="text-right">
-                    ${showProduct.specifications.battery}
-                </td>
-            </tr>
+                    <td class="text-right spec-value">
+                        ${showProduct.specifications.lens}
+                    </td>
+                </tr>
 
 
-            <tr class="table-row">
-                <td>Connectivity</td>
+                <tr class="table-row">
+                    <td>Stabilization</td>
 
-                <td class="text-right">
-                    ${showProduct.specifications.connection}
-                </td>
-            </tr>
+                    <td class="text-right spec-value">
+                        ${showProduct.specifications.stabilization}
+                    </td>
+                </tr>
 
 
-            <tr class="table-row">
-                <td>Weight</td>
+                <tr class="table-row">
+                    <td>Autofocus</td>
 
-                <td class="text-right">
-                    ${showProduct.specifications.weight}
-                </td>
-            </tr>
+                    <td class="text-right spec-value">
+                        ${showProduct.specifications.autofocus}
+                    </td>
+                </tr>
 
-        </table>
+            </table>
+
+        </div>
+
+
+        <!-- ================= EXTRA DETAILS ================= -->
+
+        <div class="details-extra">
+
+
+            <!-- ================= VIDEO & EXPOSURE ================= -->
+
+            <div class="details-group">
+
+                <div class="details-group-title">
+
+                    <span class="group-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+
+                            <rect
+                                x="3"
+                                y="6"
+                                width="14"
+                                height="12"
+                                rx="2"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                            />
+
+                            <path
+                                d="m17 10 4-2v8l-4-2"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+                    </span>
+
+                    <h3>Video & Exposure</h3>
+
+                </div>
+
+
+                <table class="specs-table">
+
+                    <tr class="table-row">
+                        <td>Video</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.video}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>ISO range</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.iso_range}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>Shutter speed</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.shutter_speed}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>Screen</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.screen}
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <!-- ================= BATTERY & CONNECTIVITY ================= -->
+
+            <div class="details-group">
+
+                <div class="details-group-title">
+
+                    <span class="group-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+
+                            <rect
+                                x="4"
+                                y="7"
+                                width="15"
+                                height="10"
+                                rx="2"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                            />
+
+                            <path
+                                d="M19 10h2v4h-2M11 9l-2 3h3l-2 3"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+                    </span>
+
+                    <h3>Battery & Connectivity</h3>
+
+                </div>
+
+
+                <table class="specs-table">
+
+                    <tr class="table-row">
+                        <td>Battery</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.battery}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>Connectivity</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.connectivity}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>Weight</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.weight}
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
 
 
         <!-- ================= VIEW MORE ================= -->
+
         <div class="view-more-wrapper">
 
-            <button class="btn-view-more">
-                View More
-                <span class="arrow-icon">∨</span>
+            <button
+                class="btn-view-more"
+                type="button"
+                aria-expanded="false"
+            >
+
+                <span class="view-more-text">
+                    View More
+                </span>
+
+                <span
+                    class="arrow-icon"
+                    aria-hidden="true"
+                >
+
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="m6 9 6 6 6-6"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+
+                </span>
+
             </button>
 
         </div>
@@ -1163,6 +1687,8 @@ class productsDetail extends HTMLElement {
     </div>
 
 </section>
+
+
             `
         } else if (urlCategory === 'headphones') {
 
@@ -1382,127 +1908,294 @@ class productsDetail extends HTMLElement {
 
 </section>
 
-
-
-<!-- ================= SECTION 2: DETAILS ================= -->
+<!-- =========================================================
+     SECTION 2: HEADPHONES DETAILS
+     ========================================================= -->
 
 <section class="product-details-section animate-slide-up">
 
     <div class="details-container">
 
-        <h2>Details</h2>
 
-        <p class="details-intro">
-            ${showProduct.description}
-        </p>
+        <!-- ================= DETAILS HEADER ================= -->
+
+        <div class="details-heading">
+
+            <span class="section-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M12 3v18M3 12h18"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </span>
+
+            <div>
+                <h2>Details</h2>
+
+                <p class="details-intro">
+                    ${showProduct.description}
+                </p>
+            </div>
+
+        </div>
 
 
         <!-- ================= AUDIO ================= -->
-        <h3>Audio</h3>
 
-        <table class="specs-table">
+        <div class="details-group">
 
-            <tr class="table-row">
-                <td>Type</td>
-                <td class="text-right">
-                    ${showProduct.specifications.type}
-                </td>
-            </tr>
+            <div class="details-group-title">
 
-            <tr class="table-row">
-                <td>Driver</td>
-                <td class="text-right">
-                    ${showProduct.specifications.driver}
-                </td>
-            </tr>
+                <span class="group-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
 
-            <tr class="table-row">
-                <td>Frequency Response</td>
-                <td class="text-right">
-                    ${showProduct.specifications.frequency_response}
-                </td>
-            </tr>
+                        <path
+                            d="M4 13v-1a8 8 0 0 1 16 0v1"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
 
-            <tr class="table-row">
-                <td>Noise Cancellation</td>
-                <td class="text-right">
-                    ${showProduct.specifications.noise_cancellation}
-                </td>
-            </tr>
+                        <path
+                            d="M4 13h3v6H5a1 1 0 0 1-1-1v-5ZM20 13h-3v6h2a1 1 0 0 0 1-1v-5Z"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linejoin="round"
+                        />
 
-        </table>
+                    </svg>
+                </span>
+
+                <h3>Audio</h3>
+
+            </div>
 
 
-        <!-- ================= CONNECTIVITY ================= -->
-        <h3 class="details-subtitle">Connectivity</h3>
+            <table class="specs-table">
 
-        <table class="specs-table">
+                <tr class="table-row">
+                    <td>Type</td>
 
-            <tr class="table-row">
-                <td>Connectivity</td>
-                <td class="text-right">
-                    ${showProduct.specifications.connection}
-                </td>
-            </tr>
-
-            <tr class="table-row">
-                <td>Bluetooth Version</td>
-                <td class="text-right">
-                    ${showProduct.specifications.connection}
-                </td>
-            </tr>
-
-            <tr class="table-row">
-                <td>Codec</td>
-                <td class="text-right">
-                    ${showProduct.specifications.codec}
-                </td>
-            </tr>
-
-        </table>
+                    <td class="text-right spec-value">
+                        ${showProduct.specifications.type}
+                    </td>
+                </tr>
 
 
-        <!-- ================= BATTERY ================= -->
-        <h3 class="details-subtitle">Battery & Design</h3>
+                <tr class="table-row">
+                    <td>Driver</td>
 
-        <table class="specs-table">
+                    <td class="text-right spec-value">
+                        ${showProduct.specifications.driver}
+                    </td>
+                </tr>
 
-            <tr class="table-row">
-                <td>Battery Life</td>
-                <td class="text-right">
-                    ${showProduct.specifications.battery}
-                </td>
-            </tr>
 
-            <tr class="table-row">
-                <td>Charging Port</td>
-                <td class="text-right">
-                    ${showProduct.specifications.charging}
-                </td>
-            </tr>
+                <tr class="table-row">
+                    <td>Frequency Response</td>
 
-            <tr class="table-row">
-                <td>Weight</td>
-                <td class="text-right">
-                    ${showProduct.specifications.weight}
-                </td>
-            </tr>
+                    <td class="text-right spec-value">
+                        ${showProduct.specifications.frequency_response}
+                    </td>
+                </tr>
 
-            <tr class="table-row">
-                <td>Water Resistance</td>
-                <td class="text-right">
-                    ${showProduct.specifications.water_resistance}
-                </td>
-            </tr>
 
-        </table>
+                <tr class="table-row">
+                    <td>Noise Cancellation</td>
 
+                    <td class="text-right spec-value">
+                        ${showProduct.specifications.noise_cancellation}
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <!-- ================= EXTRA DETAILS ================= -->
+
+        <div class="details-extra">
+
+
+            <!-- ================= CONNECTIVITY ================= -->
+
+            <div class="details-group">
+
+                <div class="details-group-title">
+
+                    <span class="group-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+
+                            <path
+                                d="M7 12h10"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M9 8.5 5.5 12 9 15.5M15 8.5l3.5 3.5-3.5 3.5"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+                    </span>
+
+                    <h3>Connectivity</h3>
+
+                </div>
+
+
+                <table class="specs-table">
+
+                    <tr class="table-row">
+                        <td>Connectivity</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.connection}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>Codec</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.codec}
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <!-- ================= BATTERY & DESIGN ================= -->
+
+            <div class="details-group">
+
+                <div class="details-group-title">
+
+                    <span class="group-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+
+                            <rect
+                                x="4"
+                                y="7"
+                                width="15"
+                                height="10"
+                                rx="2"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                            />
+
+                            <path
+                                d="M19 10h2v4h-2M11 9l-2 3h3l-2 3"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+                    </span>
+
+                    <h3>Battery & Design</h3>
+
+                </div>
+
+
+                <table class="specs-table">
+
+                    <tr class="table-row">
+                        <td>Battery</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.battery}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>Charging</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.charging}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>Weight</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.weight}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>Water Resistance</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.water_resistance}
+                        </td>
+                    </tr>
+
+
+                    <tr class="table-row">
+                        <td>Microphone</td>
+
+                        <td class="text-right spec-value">
+                            ${showProduct.specifications.microphone}
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= VIEW MORE ================= -->
 
         <div class="view-more-wrapper">
 
-            <button class="btn-view-more">
-                View More
-                <span class="arrow-icon">∨</span>
+            <button
+                class="btn-view-more"
+                type="button"
+                aria-expanded="false"
+            >
+
+                <span class="view-more-text">
+                    View More
+                </span>
+
+                <span
+                    class="arrow-icon"
+                    aria-hidden="true"
+                >
+
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="m6 9 6 6 6-6"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+
+                </span>
+
             </button>
 
         </div>
@@ -1771,8 +2464,6 @@ class productsDetail extends HTMLElement {
 
 </section>
 
-
-
 <!-- =========================================================
      SECTION 2: COMPUTER DETAILS
      ========================================================= -->
@@ -1781,7 +2472,27 @@ class productsDetail extends HTMLElement {
 
     <div class="details-container">
 
-        <h2>Details</h2>
+        <!-- ================= HEADER ================= -->
+
+        <h2 class="details-heading">
+
+            <svg
+                class="details-heading-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                aria-hidden="true"
+            >
+                <rect x="3" y="4" width="18" height="13" rx="2"/>
+                <path d="M8 21h8"/>
+                <path d="M12 17v4"/>
+            </svg>
+
+            Details
+
+        </h2>
+
 
         <p class="details-intro">
             ${showProduct.description}
@@ -1789,162 +2500,285 @@ class productsDetail extends HTMLElement {
 
 
         <!-- ================= DISPLAY ================= -->
-        <h3>Display</h3>
 
-        <table class="specs-table">
+        <div class="details-group">
 
-            <tr class="table-row">
-                <td>Screen</td>
+            <h3 class="details-group-title">
 
-                <td class="text-right">
-                    ${showProduct.specifications.screen}
-                </td>
-            </tr>
+                <svg
+                    class="group-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    aria-hidden="true"
+                >
+                    <rect x="3" y="4" width="18" height="13" rx="2"/>
+                    <path d="M8 21h8"/>
+                    <path d="M12 17v4"/>
+                </svg>
 
+                Display
 
-            <tr class="table-row">
-                <td>Resolution</td>
-
-                <td class="text-right">
-                    ${showProduct.specifications.resolution}
-                </td>
-            </tr>
-
-
-            <tr class="table-row">
-                <td>Refresh rate</td>
-
-                <td class="text-right">
-                    ${showProduct.specifications.refresh_rate}
-                </td>
-            </tr>
-
-        </table>
+            </h3>
 
 
-        <!-- ================= PERFORMANCE ================= -->
-        <h3 class="details-subtitle">
-            Performance
-        </h3>
+            <table class="specs-table">
 
-        <table class="specs-table">
+                <tr class="table-row">
 
-            <tr class="table-row">
-                <td>Processor</td>
+                    <td>Screen</td>
 
-                <td class="text-right">
-                    ${showProduct.specifications.processor}
-                </td>
-            </tr>
+                    <td class="text-right">
+                        ${showProduct.specifications.screen}
+                    </td>
+
+                </tr>
 
 
-            <tr class="table-row">
-                <td>CPU Cores</td>
+                <tr class="table-row">
 
-                <td class="text-right">
-                    ${showProduct.specifications.cores}
-                </td>
-            </tr>
+                    <td>Resolution</td>
 
+                    <td class="text-right">
+                        ${showProduct.specifications.resolution}
+                    </td>
 
-            <tr class="table-row">
-                <td>RAM</td>
-
-                <td class="text-right">
-                    ${showProduct.specifications.ram}
-                </td>
-            </tr>
+                </tr>
 
 
-            <tr class="table-row">
-                <td>Storage</td>
+                <tr class="table-row">
 
-                <td class="text-right">
-                    ${showProduct.specifications.storage}
-                </td>
-            </tr>
+                    <td>Refresh Rate</td>
 
+                    <td class="text-right">
+                        ${showProduct.specifications.refresh_rate}
+                    </td>
 
-            <tr class="table-row">
-                <td>GPU</td>
+                </tr>
 
-                <td class="text-right">
-                    ${showProduct.specifications.gpu}
-                </td>
-            </tr>
+            </table>
+
+        </div>
 
 
-            <tr class="table-row">
-                <td>GPU Memory</td>
+        <!-- ================= EXTRA DETAILS ================= -->
 
-                <td class="text-right">
-                    ${showProduct.specifications.gpu_memory}
-                </td>
-            </tr>
-
-        </table>
+        <div class="details-extra">
 
 
-        <!-- ================= SYSTEM & CONNECTIVITY ================= -->
-        <h3 class="details-subtitle">
-            System & Connectivity
-        </h3>
+            <!-- ================= PERFORMANCE ================= -->
 
-        <table class="specs-table">
+            <div class="details-group">
 
-            <tr class="table-row">
-                <td>Operating System</td>
+                <h3 class="details-group-title">
 
-                <td class="text-right">
-                    ${showProduct.specifications.operating_system}
-                </td>
-            </tr>
+                    <svg
+                        class="group-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        aria-hidden="true"
+                    >
+                        <path d="M9 3h6"/>
+                        <path d="M10 3v4"/>
+                        <path d="M14 3v4"/>
+                        <rect x="4" y="7" width="16" height="14" rx="2"/>
+                        <path d="M8 11h8"/>
+                        <path d="M8 15h3"/>
+                        <path d="M13 15h3"/>
+                        <path d="M8 18h8"/>
+                    </svg>
 
+                    Performance
 
-            <tr class="table-row">
-                <td>Ports</td>
-
-                <td class="text-right">
-                    ${showProduct.specifications.ports}
-                </td>
-            </tr>
-
-
-            <tr class="table-row">
-                <td>Connectivity</td>
-
-                <td class="text-right">
-                    ${showProduct.specifications.connectivity}
-                </td>
-            </tr>
+                </h3>
 
 
-            <tr class="table-row">
-                <td>Battery</td>
+                <table class="specs-table">
 
-                <td class="text-right">
-                    ${showProduct.specifications.battery}
-                </td>
-            </tr>
+                    <tr class="table-row">
+
+                        <td>Processor</td>
+
+                        <td class="text-right">
+                            ${showProduct.specifications.processor}
+                        </td>
+
+                    </tr>
 
 
-            <tr class="table-row">
-                <td>Weight</td>
+                    <tr class="table-row">
 
-                <td class="text-right">
-                    ${showProduct.specifications.weight}
-                </td>
-            </tr>
+                        <td>CPU Cores</td>
 
-        </table>
+                        <td class="text-right">
+                            ${showProduct.specifications.cores}
+                        </td>
+
+                    </tr>
+
+
+                    <tr class="table-row">
+
+                        <td>RAM</td>
+
+                        <td class="text-right">
+                            ${showProduct.specifications.ram}
+                        </td>
+
+                    </tr>
+
+
+                    <tr class="table-row">
+
+                        <td>Storage</td>
+
+                        <td class="text-right">
+                            ${showProduct.specifications.storage}
+                        </td>
+
+                    </tr>
+
+
+                    <tr class="table-row">
+
+                        <td>GPU</td>
+
+                        <td class="text-right">
+                            ${showProduct.specifications.gpu}
+                        </td>
+
+                    </tr>
+
+
+                    <tr class="table-row">
+
+                        <td>GPU Memory</td>
+
+                        <td class="text-right">
+                            ${showProduct.specifications.gpu_memory}
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <!-- ================= SYSTEM & CONNECTIVITY ================= -->
+
+            <div class="details-group">
+
+                <h3 class="details-group-title">
+
+                    <svg
+                        class="group-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        aria-hidden="true"
+                    >
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.5 1.5-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5v.2h-2.1v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1-1.5-1.5.1-.1A1.7 1.7 0 0 0 9.1 15a1.7 1.7 0 0 0-1.5-1H7.4v-2.1h.2a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1 1.5-1.5.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5v-.2h2.1v.2a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1 1.5 1.5-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1h.2V14h-.2a1.7 1.7 0 0 0-1.5 1z"/>
+                    </svg>
+
+                    System & Connectivity
+
+                </h3>
+
+
+                <table class="specs-table">
+
+                    <tr class="table-row">
+
+                        <td>Operating System</td>
+
+                        <td class="text-right">
+                            ${showProduct.specifications.operating_system}
+                        </td>
+
+                    </tr>
+
+
+                    <tr class="table-row">
+
+                        <td>Ports</td>
+
+                        <td class="text-right">
+                            ${showProduct.specifications.ports}
+                        </td>
+
+                    </tr>
+
+
+                    <tr class="table-row">
+
+                        <td>Connectivity</td>
+
+                        <td class="text-right">
+                            ${showProduct.specifications.connectivity}
+                        </td>
+
+                    </tr>
+
+
+                    <tr class="table-row">
+
+                        <td>Battery</td>
+
+                        <td class="text-right">
+                            ${showProduct.specifications.battery}
+                        </td>
+
+                    </tr>
+
+
+                    <tr class="table-row">
+
+                        <td>Weight</td>
+
+                        <td class="text-right">
+                            ${showProduct.specifications.weight}
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
 
 
         <!-- ================= VIEW MORE ================= -->
+
         <div class="view-more-wrapper">
 
-            <button class="btn-view-more">
+            <button
+                class="btn-view-more"
+                aria-expanded="false"
+            >
+
                 View More
-                <span class="arrow-icon">∨</span>
+
+                <span class="arrow-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                    >
+                        <path d="m6 9 6 6 6-6"/>
+                    </svg>
+
+                </span>
+
             </button>
 
         </div>
@@ -1952,6 +2786,7 @@ class productsDetail extends HTMLElement {
     </div>
 
 </section>
+
             `
         } else if (urlCategory === 'gaming') {
 
@@ -2305,13 +3140,33 @@ class productsDetail extends HTMLElement {
         </section>
 
 
-        <section class="product-details-section">
+                <section class="product-details-section">
 
             <div class="details-container">
 
-                <h2>
-                    Product Details
+                <!-- ================= HEADER ================= -->
+
+                <h2 class="details-heading">
+
+                    <svg
+                        class="details-heading-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        aria-hidden="true"
+                    >
+                        <path d="M7 8h10a5 5 0 0 1 4.8 6.4l-1 3.2a2.5 2.5 0 0 1-4.6.4l-.7-1.4H8.5l-.7 1.4a2.5 2.5 0 0 1-4.6-.4l-1-3.2A5 5 0 0 1 7 8Z"/>
+                        <path d="M8 12v4"/>
+                        <path d="M6 14h4"/>
+                        <circle cx="16.5" cy="13" r=".8"/>
+                        <circle cx="18.5" cy="15" r=".8"/>
+                    </svg>
+
+                    Details
+
                 </h2>
+
 
                 <p class="details-intro">
                     Detailed specifications and technical information
@@ -2319,42 +3174,81 @@ class productsDetail extends HTMLElement {
                 </p>
 
 
-                <h3 class="details-subtitle">
-                    Technical Specifications
-                </h3>
+                <!-- ================= TECHNICAL SPECIFICATIONS ================= -->
+
+                <div class="details-group">
+
+                    <h3 class="details-group-title">
+
+                        <svg
+                            class="group-icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            aria-hidden="true"
+                        >
+                            <path d="M12 3v18"/>
+                            <path d="M3 12h18"/>
+                            <circle cx="12" cy="12" r="8"/>
+                        </svg>
+
+                        Technical Specifications
+
+                    </h3>
 
 
-                <div class="specs-table">
+                    <table class="specs-table">
 
-                    ${detailSpecs.map(([icon, name, value]) => `
+                        ${detailSpecs.map(([icon, name, value]) => `
 
-                        <div class="table-row">
+                            <tr class="table-row">
 
-                            <span>
-                                ${icon} ${name}
-                            </span>
+                                <td>
+                                    <span class="spec-label-icon">
+                                        ${icon}
+                                    </span>
 
-                            <span class="text-right">
-                                ${value}
-                            </span>
+                                    ${name}
+                                </td>
 
-                        </div>
+                                <td class="text-right">
+                                    ${value}
+                                </td>
 
-                    `).join('')}
+                            </tr>
+
+                        `).join('')}
+
+                    </table>
 
                 </div>
 
+
+                <!-- ================= VIEW MORE ================= -->
 
                 <div class="view-more-wrapper">
 
                     <button
                         class="btn-view-more"
                         type="button"
+                        aria-expanded="false"
                     >
+
                         View More
 
                         <span class="arrow-icon">
-                            →
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                aria-hidden="true"
+                            >
+                                <path d="m6 9 6 6 6-6"/>
+                            </svg>
+
                         </span>
 
                     </button>
