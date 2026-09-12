@@ -3345,6 +3345,22 @@ class productsDetail extends HTMLElement {
             })
         
         }
+
+        const galleryContainer = this.shadowRoot.querySelector('.product-gallery');
+        const mainImage = this.shadowRoot.querySelector('.main-image-wrapper img'); // ← خود img
+        
+        galleryContainer.addEventListener('click', event => {
+            
+            const thumbnails = event.target.closest('.thumbnails');
+            if (!thumbnails) return;
+        
+            const clickedImg = event.target.closest('img');
+            if (!clickedImg) return;
+        
+            if (mainImage) {
+                mainImage.src = clickedImg.src;
+            }
+        });
     }
 }
 
