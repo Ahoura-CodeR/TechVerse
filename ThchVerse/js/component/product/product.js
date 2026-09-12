@@ -57,7 +57,7 @@ class isProducts extends HTMLElement {
               <p class="price-products">
                   $${item.price}
               </p>
-              <button data-category="${item.category}" data-id="${item.id}" class="button-buy">
+              <button data-id="${item.id}" class="button-buy">
                   Buy Now
               </button>
           </div>
@@ -78,7 +78,7 @@ class isProducts extends HTMLElement {
     productContainer.addEventListener('click', event => {
       if (event.target.closest('.button-buy')) {
         const buttonTarget = event.target.closest('.button-buy')
-        window.location.href = `/ThchVerse/pages/products-details.html?category=${buttonTarget.dataset.category}&id=${buttonTarget.dataset.id}`
+        window.location.href = `/ThchVerse/pages/products-details.html?id=${buttonTarget.dataset.id}`
       }
     })
     

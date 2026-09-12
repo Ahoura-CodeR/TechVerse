@@ -12,7 +12,6 @@ template.innerHTML = `
 
 const param = new URLSearchParams(window.location.search)
 const urlId = Number(param.get('id'))
-const urlCategory = param.get('category')
 
 
 class productsDetail extends HTMLElement {
@@ -26,6 +25,12 @@ class productsDetail extends HTMLElement {
     async connectedCallback () {
         
         const product = await getProducts()
+        let urlCategory = product.find(item => {
+            return item.id === urlId
+        })
+        urlCategory = urlCategory.category
+        
+
         const boxProduct = this.shadowRoot.querySelector('.box-container')
         const gamingSpecs = {
     'Gaming Monitor': [
@@ -85,8 +90,6 @@ class productsDetail extends HTMLElement {
         const showProduct = product.find(item => {
             return item.id === urlId
         })
-
-        console.log(urlCategory);
 
         if (urlCategory === 'phones') {
 
@@ -196,28 +199,121 @@ class productsDetail extends HTMLElement {
             
                 <!-- ================= SECTION 2: DETAILS ================= -->
                 <section class="product-details-section animate-slide-up">
-                  <div class="details-container">
-                    <h2>Details</h2>
-                    <p class="details-intro">
-                       + ${showProduct.description}
-                    </p>
-            
-                    <h3>Screen</h3>
-                    <table class="specs-table">
-                      <tr class="table-row"><td>Screen diagonal</td><td class="text-right">${showProduct.specifications.display}</td></tr>
-                      <tr class="table-row"><td>The screen resolution</td><td class="text-right">${showProduct.specifications.resolution}</td></tr>
-                      <tr class="table-row"><td>The screen refresh rate</td><td class="text-right">${showProduct.specifications.refresh_rate}</td></tr>
-                      <tr class="table-row"><td>The pixel density</td><td class="text-right">460 ppi</td></tr>
-                      <tr class="table-row"><td>Screen type</td><td class="text-right">${showProduct.specifications.screen_type}</td></tr>
-                    </table>
-            
-                    <div class="view-more-wrapper">
-                      <button class="btn-view-more">
-                        View More <span class="arrow-icon">∨</span>
-                      </button>
-                    </div>
-                  </div>
-                </section>
+  <div class="details-container">
+
+    <h2>Details</h2>
+
+    <p class="details-intro">
+      + ${showProduct.description}
+    </p>
+
+    <!-- Display -->
+    <h3>Display</h3>
+    <table class="specs-table">
+      <tr class="table-row">
+        <td>Screen diagonal</td>
+        <td class="text-right">${showProduct.specifications.display}</td>
+      </tr>
+      <tr class="table-row">
+        <td>Screen resolution</td>
+        <td class="text-right">${showProduct.specifications.resolution}</td>
+      </tr>
+      <tr class="table-row">
+        <td>Refresh rate</td>
+        <td class="text-right">${showProduct.specifications.refresh_rate}</td>
+      </tr>
+      <tr class="table-row">
+        <td>Screen type</td>
+        <td class="text-right">${showProduct.specifications.screen_type}</td>
+      </tr>
+    </table>
+
+
+    <!-- Performance -->
+    <div class="details-extra">
+
+      <h3>Performance</h3>
+      <table class="specs-table">
+        <tr class="table-row">
+          <td>Processor</td>
+          <td class="text-right">${showProduct.specifications.processor}</td>
+        </tr>
+        <tr class="table-row">
+          <td>Number of cores</td>
+          <td class="text-right">${showProduct.specifications.cores}</td>
+        </tr>
+        <tr class="table-row">
+          <td>RAM</td>
+          <td class="text-right">${showProduct.specifications.ram}</td>
+        </tr>
+        <tr class="table-row">
+          <td>Storage</td>
+          <td class="text-right">${showProduct.specifications.storage}</td>
+        </tr>
+        <tr class="table-row">
+          <td>Operating system</td>
+          <td class="text-right">${showProduct.specifications.operating_system}</td>
+        </tr>
+      </table>
+
+
+      <!-- Camera -->
+      <h3>Camera</h3>
+      <table class="specs-table">
+        <tr class="table-row">
+          <td>Main camera</td>
+          <td class="text-right">${showProduct.specifications.main_camera}</td>
+        </tr>
+        <tr class="table-row">
+          <td>Front camera</td>
+          <td class="text-right">${showProduct.specifications.front_camera}</td>
+        </tr>
+      </table>
+
+
+      <!-- Battery & Charging -->
+      <h3>Battery & Charging</h3>
+      <table class="specs-table">
+        <tr class="table-row">
+          <td>Battery capacity</td>
+          <td class="text-right">${showProduct.specifications.battery}</td>
+        </tr>
+        <tr class="table-row">
+          <td>Charging</td>
+          <td class="text-right">${showProduct.specifications.charging}</td>
+        </tr>
+      </table>
+
+
+      <!-- Connectivity -->
+      <h3>Connectivity</h3>
+      <table class="specs-table">
+        <tr class="table-row">
+          <td>Network</td>
+          <td class="text-right">${showProduct.specifications.network}</td>
+        </tr>
+      </table>
+
+
+      <!-- Protection -->
+      <h3>Protection</h3>
+      <table class="specs-table">
+        <tr class="table-row">
+          <td>Protection class</td>
+          <td class="text-right">${showProduct.specifications.protection}</td>
+        </tr>
+      </table>
+
+    </div>
+
+    <div class="view-more-wrapper">
+      <button class="btn-view-more" type="button">
+        View More <span class="arrow-icon">∨</span>
+      </button>
+    </div>
+
+  </div>
+</section>
             `
         } else if (urlCategory === 'smartwatches') {
             
@@ -2270,7 +2366,7 @@ class productsDetail extends HTMLElement {
         </section>
 
     `
-} else if (urlCategory === null || urlCategory === "undefined" || urlId === 0) {
+} else if (urlId === 0) {
 
     
     const sectionComment = document.querySelector('.reviews-section')
@@ -2278,23 +2374,29 @@ class productsDetail extends HTMLElement {
     
     boxProduct.innerHTML = `
         
-    <div class="product-not-found">
-    <div class="not-found-icon">🔍</div>
-
-    <h2>Product Not Found</h2>
-
-    <p>
-        We couldn't find the product you're looking for.
-        The product may have been removed or the link may be invalid.
-    </p>
-
-    <a href="/ThchVerse/pages/products.html" class="back-to-products">
-        Back to Products
-    </a>
-</div>
-    `
-}        
+        <div class="product-not-found">
+            <div class="not-found-icon">🔍</div>
         
+            <h2>Product Not Found</h2>
+        
+            <p>
+                We couldn't find the product you're looking for.
+                The product may have been removed or the link may be invalid.
+            </p>
+        
+            <a href="/ThchVerse/pages/products.html" class="back-to-products">
+                Back to Products
+            </a>
+        </div>
+            `
+        }        
+        
+        const buttonShowMore = this.shadowRoot.querySelector('.btn-view-more')
+        const detailsSection = this.shadowRoot.querySelector('.product-details-section')
+        
+        buttonShowMore.addEventListener('click', () => {
+            detailsSection.classList.toggle('expanded')
+        })
     }
 }
 

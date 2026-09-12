@@ -173,7 +173,7 @@ class productCategory extends HTMLElement {
     
         </div>
     
-        <button data-id="${item.id}" data-category="${item.category}" class="product-button">
+        <button data-id="${item.id}" class="product-button">
             Buy Now
         </button>
         `
@@ -189,10 +189,7 @@ class productCategory extends HTMLElement {
 
             if (button) {
                 const idBtn = button.dataset.id
-                const categoryButton = button.dataset.category
-                console.log(categoryButton + "    " + idBtn);
-                
-                // window.location.href = `/ThchVerse/pages/products-details.html?category=${categoryBtn}&id=${idBtn}`
+                window.location.href = `/ThchVerse/pages/products-details.html?id=${idBtn}`
             }
         })
         
