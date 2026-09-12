@@ -3,6 +3,24 @@ const template = document.createElement('template')
 
 template.innerHTML = `
     <link rel="stylesheet" href="/ThchVerse/js/component/products-box/products.css">
+    <div class="product-loader">
+        <div class="loader-orbit">
+            <div class="loader-core"></div>
+    
+            <span class="loader-dot loader-dot-1"></span>
+            <span class="loader-dot loader-dot-2"></span>
+            <span class="loader-dot loader-dot-3"></span>
+        </div>
+    
+        <div class="loader-text">
+            <span>Loading products</span>
+            <span class="loader-dots">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </div>
     <div class="products-grid"></div>
     <div class="no-products" aria-live="polite">
             <div class="no-products-icon">
@@ -88,6 +106,8 @@ class productCategory extends HTMLElement {
         const normalizedCategory = newCategory?.toLowerCase() || null
         const inputElem = document.querySelector('.input-search')
         const productGrid = this.shadowRoot.querySelector('.products-grid')
+        const loader = this.shadowRoot.querySelector('.product-loader')
+        loader.style.display = ''
         const products = await getProducts()
         
         
@@ -195,6 +215,7 @@ class productCategory extends HTMLElement {
         
         
         renderProduct(justCategoryProduct)
+        loader.style.display = 'none'
 
         inputElem.addEventListener('input', event => {
             

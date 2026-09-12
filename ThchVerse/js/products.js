@@ -85,7 +85,7 @@ const buttonReset = shadowRootP.querySelector('.no-products-reset')
 let renderProduct = (products) => {
 
     const fragment = document.createDocumentFragment()
-        productGrid.innerHTML = ''
+        productGrid.innerHTML = ``
         
         products.forEach(item => {
             const div = document.createElement('div')
