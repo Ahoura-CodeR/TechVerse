@@ -2930,6 +2930,10 @@ class productsDetail extends HTMLElement {
     }
 
 
+    const visibleSpecs = detailSpecs.slice(0, 6)
+    const extraSpecs = detailSpecs.slice(6)
+
+
     boxProduct.innerHTML = `
 
         <section class="product-hero">
@@ -3140,11 +3144,10 @@ class productsDetail extends HTMLElement {
         </section>
 
 
-                <section class="product-details-section">
+        <section class="product-details-section">
 
             <div class="details-container">
 
-                <!-- ================= HEADER ================= -->
 
                 <h2 class="details-heading">
 
@@ -3174,8 +3177,6 @@ class productsDetail extends HTMLElement {
                 </p>
 
 
-                <!-- ================= TECHNICAL SPECIFICATIONS ================= -->
-
                 <div class="details-group">
 
                     <h3 class="details-group-title">
@@ -3200,60 +3201,101 @@ class productsDetail extends HTMLElement {
 
                     <table class="specs-table">
 
-                        ${detailSpecs.map(([icon, name, value]) => `
+                        <tbody>
 
-                            <tr class="table-row">
+                            ${visibleSpecs.map(([icon, name, value]) => `
 
-                                <td>
-                                    <span class="spec-label-icon">
-                                        ${icon}
-                                    </span>
+                                <tr class="table-row">
 
-                                    ${name}
-                                </td>
+                                    <td>
+                                        <span class="spec-label-icon">
+                                            ${icon}
+                                        </span>
 
-                                <td class="text-right">
-                                    ${value}
-                                </td>
+                                        ${name}
+                                    </td>
 
-                            </tr>
+                                    <td class="text-right">
+                                        ${value}
+                                    </td>
 
-                        `).join('')}
+                                </tr>
+
+                            `).join('')}
+
+                        </tbody>
 
                     </table>
 
                 </div>
 
 
-                <!-- ================= VIEW MORE ================= -->
+                ${
+                    extraSpecs.length > 0
+                        ? `
+                            <div class="details-extra">
 
-                <div class="view-more-wrapper">
+                                <table class="specs-table">
 
-                    <button
-                        class="btn-view-more"
-                        type="button"
-                        aria-expanded="false"
-                    >
+                                    <tbody>
 
-                        View More
+                                        ${extraSpecs.map(([icon, name, value]) => `
 
-                        <span class="arrow-icon">
+                                            <tr class="table-row">
 
-                            <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                aria-hidden="true"
-                            >
-                                <path d="m6 9 6 6 6-6"/>
-                            </svg>
+                                                <td>
+                                                    <span class="spec-label-icon">
+                                                        ${icon}
+                                                    </span>
 
-                        </span>
+                                                    ${name}
+                                                </td>
 
-                    </button>
+                                                <td class="text-right">
+                                                    ${value}
+                                                </td>
 
-                </div>
+                                            </tr>
+
+                                        `).join('')}
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+
+                            <div class="view-more-wrapper">
+
+                                <button
+                                    class="btn-view-more"
+                                    type="button"
+                                    aria-expanded="false"
+                                >
+
+                                    View More
+
+                                    <span class="arrow-icon">
+
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            aria-hidden="true"
+                                        >
+                                            <path d="m6 9 6 6 6-6"/>
+                                        </svg>
+
+                                    </span>
+
+                                </button>
+
+                            </div>
+                        `
+                        : ''
+                }
 
             </div>
 
@@ -3288,9 +3330,21 @@ class productsDetail extends HTMLElement {
         const buttonShowMore = this.shadowRoot.querySelector('.btn-view-more')
         const detailsSection = this.shadowRoot.querySelector('.product-details-section')
         
-        buttonShowMore.addEventListener('click', () => {
-            detailsSection.classList.toggle('expanded')
-        })
+        if (buttonShowMore && detailsSection) {
+        
+            buttonShowMore.addEventListener('click', () => {
+        
+                const isExpanded =
+                    detailsSection.classList.toggle('expanded')
+        
+                buttonShowMore.setAttribute(
+                    'aria-expanded',
+                    String(isExpanded)
+                )
+        
+            })
+        
+        }
     }
 }
 
