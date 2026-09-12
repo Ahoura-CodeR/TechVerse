@@ -3361,6 +3361,39 @@ class productsDetail extends HTMLElement {
                 mainImage.src = clickedImg.src;
             }
         });
+
+        const buttonStorage = this.shadowRoot.querySelector('.storage-selection')
+        const colorContainer = this.shadowRoot.querySelector('.color-options')
+
+        colorContainer.addEventListener('click', event => {
+
+            const button = event.target.closest('.color-dot')
+
+            if (!button) return
+            
+            if (button.classList.contains('active')) return;
+            
+            const allButton = this.shadowRoot.querySelectorAll('.color-dot')
+            allButton.forEach(item => item.classList.remove('active'))
+            
+            button.classList.add('active')
+        })
+
+        buttonStorage.addEventListener('click', event => {
+
+            const button = event.target.closest('.storage-btn')
+            if (!button) return
+            
+            if (button.classList.contains('disabled')) return
+            
+            if (button.classList.contains('active')) return;
+            
+            const allButton = this.shadowRoot.querySelectorAll('.storage-btn')
+            allButton.forEach(item => item.classList.remove('active'))
+            
+            button.classList.add('active')
+            
+        })
     }
 }
 
