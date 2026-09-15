@@ -110,7 +110,12 @@ template.innerHTML = `
                 Account
             </a>
         </li>
-
+        
+        <li>
+            <a href="/ThchVerse/pages/login.html">
+                Login
+            </a>
+        </li>
 
     </ul>
 

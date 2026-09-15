@@ -1,128 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
+    <title>Login | TechVerse</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/ThchVerse/css/login/login.css" />
+  </head>
 
-<title>Login | TechVerse</title>
+  <body>
+    <main class="auth-container">
+      <div class="auth-card">
+        <div class="brand">TECH<span>VERSE</span></div>
 
-<link rel="stylesheet" href="/ThchVerse/css/login/login.css">
+        <h1>Welcome Back</h1>
 
-</head>
+        <p class="subtitle">Login to continue your journey</p>
 
+        <form class="auth-form">
+          <div class="input-group">
+            <label> Email </label>
 
-<body>
+            <input type="email" placeholder="example@email.com" />
+          </div>
 
+          <div class="input-group">
+            <label>Password</label>
 
-<main class="auth-container">
+            <div class="password-wrapper">
+              <input type="password" placeholder="••••••••" />
 
+              <button
+                type="button"
+                class="password-toggle"
+                aria-label="Show password"
+              >
+                👁
+              </button>
+            </div>
+          </div>
 
-<div class="auth-card">
+          <button class="auth-btn">Login</button>
+        </form>
 
+        <div class="divider">
+          <span> OR </span>
+        </div>
 
-<div class="brand">
+        <button class="fake-login">Continue with Google 🚀</button>
 
-TECH<span>VERSE</span>
+        <p class="switch">
+          Don't have an account?
 
-</div>
+          <a href="register.html"> Create one </a>
+        </p>
+      </div>
+    </main>
 
-
-
-<h1>
-Welcome Back
-</h1>
-
-
-<p class="subtitle">
-Login to continue your journey
-</p>
-
-
-
-<form class="auth-form">
-
-
-<div class="input-group">
-
-<label>
-Email
-</label>
-
-<input 
-type="email"
-placeholder="example@email.com"
->
-
-</div>
-
-
-
-<div class="input-group">
-
-<label>
-Password
-</label>
-
-<input 
-type="password"
-placeholder="••••••••"
->
-
-</div>
-
-
-
-<button class="auth-btn">
-
-Login
-
-</button>
-
-
-</form>
-
-
-
-<div class="divider">
-
-<span>
-OR
-</span>
-
-</div>
-
-
-
-<button class="fake-login">
-
-Continue with Google 🚀
-
-</button>
-
-
-
-<p class="switch">
-
-Don't have an account?
-
-<a href="register.html">
-Create one
-</a>
-
-</p>
-
-
-
-</div>
-
-
-</main>
-
-
-<script src="../js/auth.js"></script>
-
-</body>
-
+    <script src="../js/auth.js"></script>
+  </body>
 </html>
