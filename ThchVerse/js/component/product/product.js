@@ -2,29 +2,91 @@ const template = document.createElement("template");
 
 template.innerHTML = `
 
+
 <link rel="stylesheet" href="/ThchVerse/css/variables.css">
 <link rel="stylesheet" href="/ThchVerse/css/global.css">
 <link rel="stylesheet" href="/ThchVerse/css/animations.css">
 <link rel="stylesheet" href="/ThchVerse/js/component/product/product.css">
 
 
-<section class="product-container">
 
-    <div class="loader-container">
+<section class="product-wrapper">
 
-        <div class="loader-core">
 
-            <span></span>
-            <span></span>
-            <span></span>
+<div class="loader-container">
 
-        </div>
 
-        <p>
-            Loading Products...
-        </p>
+<div class="cyber-loader">
 
-    </div>
+<div class="loader-ring ring-one"></div>
+<div class="loader-ring ring-two"></div>
+<div class="loader-ring ring-three"></div>
+
+
+<div class="loader-core">
+TV
+</div>
+
+
+</div>
+
+
+
+<div class="loader-text">
+
+INITIALIZING PRODUCTS
+<span class="dots">...</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="product-container">
+
+</div>
+
+
+
+
+
+<nav class="pagination">
+
+
+<button class="pagination-arrow previous">
+
+<svg viewBox="0 0 24 24">
+<path d="M15 18L9 12L15 6"/>
+</svg>
+
+</button>
+
+
+
+
+<div class="page-number"></div>
+
+
+
+
+
+<button class="pagination-arrow next">
+
+<svg viewBox="0 0 24 24">
+<path d="M9 18L15 12L9 6"/>
+</svg>
+
+
+</button>
+
+
+
+</nav>
+
 
 
 </section>
@@ -56,33 +118,72 @@ class isProducts extends HTMLElement {
     });
 
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+    this.state = {
+      products: [],
+
+      filteredProducts: [],
+
+      currentPage: 1,
+
+      itemsPerPage: 12,
+    };
   }
 
   async connectedCallback() {
+    const loader = this.shadowRoot.querySelector(".loader-container");
+
+    loader.classList.add("show");
+
+    this.state.products = await getProducts();
+
+    this.state.filteredProducts = this.state.products;
+
+    this.totalPages = Math.ceil(
+      this.state.filteredProducts.length / this.state.itemsPerPage,
+    );
+
+    this.renderProducts();
+
+    this.renderPagination();
+
+    this.setupEvents();
+
+    loader.classList.remove("show");
+  }
+
+  renderProducts() {
     const container = this.shadowRoot.querySelector(".product-container");
 
-    const loader = this.shadowRoot.querySelector(".loader-container");
+    container.innerHTML = "";
+
+    const start = (this.state.currentPage - 1) * this.state.itemsPerPage;
+
+    const end = start + this.state.itemsPerPage;
+
+    const products = this.state.filteredProducts.slice(start, end);
 
     const fragment = document.createDocumentFragment();
 
-    try {
-      loader.classList.add("show");
+    products.forEach((product) => {
+      fragment.appendChild(this.createCard(product));
+    });
 
-      const products = await getProducts();
+    container.appendChild(fragment);
+  }
 
-      products.forEach((product) => {
-        const card = document.createElement("article");
+  createCard(product) {
+    const card = document.createElement("article");
 
-        card.className = "product-card";
+    card.className = "product-card";
 
-        card.innerHTML = `
+    card.innerHTML = `
+
 
 <div class="product-image-box">
 
 
-<button 
-class="wishlist-btn"
-aria-label="wishlist">
+<button class="wishlist-btn">
 
 
 <svg viewBox="0 0 24 24">
@@ -102,7 +203,7 @@ C23 12.7 23.8 7.7 20.8 4.6Z"/>
 
 
 
-<img 
+<img
 src="${product.images[0]}"
 alt="${product.title}"
 loading="lazy">
@@ -124,10 +225,9 @@ ${product.category || "Technology"}
 
 
 <h3>
-
 ${product.title}
-
 </h3>
+
 
 
 
@@ -151,9 +251,7 @@ $${product.price}
 class="product-btn"
 data-id="${product.id}">
 
-
 View Product
-
 
 </button>
 
@@ -161,27 +259,56 @@ View Product
 
 </div>
 
+
 `;
 
-        fragment.appendChild(card);
-      });
+    return card;
+  }
 
-      container.appendChild(fragment);
-    } finally {
-      loader.classList.remove("show");
-    }
+  renderPagination() {
+    const page = this.shadowRoot.querySelector(".page-number");
+
+    page.textContent = `${this.state.currentPage} / ${this.totalPages}`;
+  }
+
+  setupEvents() {
+    const container = this.shadowRoot.querySelector(".product-container");
 
     container.addEventListener("click", (event) => {
-      const button = event.target.closest(".product-btn");
+      const productBtn = event.target.closest(".product-btn");
 
-      if (button) {
-        window.location.href = `/ThchVerse/pages/products-details.html?id=${button.dataset.id}`;
+      if (productBtn) {
+        window.location.href = `/ThchVerse/pages/products-details.html?id=${productBtn.dataset.id}`;
       }
 
-      const fav = event.target.closest(".wishlist-btn");
+      const wishlist = event.target.closest(".wishlist-btn");
 
-      if (fav) {
-        fav.classList.toggle("active");
+      if (wishlist) {
+        wishlist.classList.toggle("active");
+      }
+    });
+
+    const next = this.shadowRoot.querySelector(".next");
+
+    const previous = this.shadowRoot.querySelector(".previous");
+
+    next.addEventListener("click", () => {
+      if (this.state.currentPage < this.totalPages) {
+        this.state.currentPage++;
+
+        this.renderProducts();
+
+        this.renderPagination();
+      }
+    });
+
+    previous.addEventListener("click", () => {
+      if (this.state.currentPage > 1) {
+        this.state.currentPage--;
+
+        this.renderProducts();
+
+        this.renderPagination();
       }
     });
   }

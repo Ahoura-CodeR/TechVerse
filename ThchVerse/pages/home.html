@@ -1,108 +1,135 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="preconnect" href="https://rsms.me/">
-	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-	<link rel="stylesheet" href="/ThchVerse/css/home/home.css">
-</head>
-<body>
-    <div class="page-loader">
+  <head>
+    <meta charset="UTF-8" />
 
-        <div class="loader-content">
-    
-            <div class="loader-orbit">
-                <div class="orbit orbit-1"></div>
-                <div class="orbit orbit-2"></div>
-                <div class="orbit orbit-3"></div>
-    
-                <div class="loader-core">
-                    <span>TV</span>
-                </div>
-            </div>
-    
-            <div class="loader-brand">
-                TECH<span>VERSE</span>
-            </div>
-    
-            <div class="loader-status">
-                <span class="loader-line"></span>
-                <span class="loader-text">INITIALIZING SYSTEM</span>
-                <span class="loader-dots">...</span>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>TechVerse</title>
+
+    <link rel="preconnect" href="https://rsms.me/" />
+
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <link rel="stylesheet" href="/ThchVerse/css/variables.css" />
+
+    <link rel="stylesheet" href="/ThchVerse/css/global.css" />
+
+    <link rel="stylesheet" href="/ThchVerse/css/animations.css" />
+
+    <link rel="stylesheet" href="/ThchVerse/css/home/home.css" />
+  </head>
+
+  <body>
+    <div class="loader-container">
+      <div class="cyber-loader">
+        <div class="loader-ring ring-one"></div>
+        <div class="loader-ring ring-two"></div>
+        <div class="loader-ring ring-three"></div>
+
+        <div class="loader-core">
+          <span> TV </span>
+        </div>
+      </div>
+
+      <div class="loader-text">
+        INITIALIZING PRODUCTS
+
+        <span class="dots"> ... </span>
+      </div>
+    </div>
+
+    <div class="container">
+      <nav-bar></nav-bar>
+
+      <header class="hero">
+        <div class="hero-bg">
+          <div class="glow glow-one"></div>
+
+          <div class="glow glow-two"></div>
         </div>
 
+        <div class="hero-content">
+          <span class="hero-tag"> NEXT GENERATION TECHNOLOGY </span>
+
+          <h1>
+            BUILD THE
+
+            <span> FUTURE </span>
+
+            WITH TECHNOLOGY
+          </h1>
+
+          <p>
+            Explore smartphones, computers, gaming devices and smart hardware
+            designed for tomorrow.
+          </p>
+
+          <div class="hero-buttons">
+            <button class="primary-btn">Explore Products</button>
+
+            <button class="secondary-btn">View Collection</button>
+          </div>
+        </div>
+
+        <div class="hero-device">
+          <div class="device-ring"></div>
+
+          <img
+            src="/ThchVerse/assets/images/Iphone Image.webp"
+            alt="Tech device"
+          />
+        </div>
+      </header>
+
+      <section class="category-wrapper">
+        <category-component></category-component>
+      </section>
+
+      <section class="products-section">
+        <div class="section-header">
+          <div>
+            <span> FEATURED </span>
+
+            <h2>Latest Products</h2>
+          </div>
+
+          <div class="product-tabs">
+            <button class="active">New Arrival</button>
+
+            <button>Best Seller</button>
+
+            <button>Featured</button>
+          </div>
+        </div>
+
+        <product-data></product-data>
+        
+      </section>
+
+      <section class="sale-banner">
+        <div class="sale-content">
+          <span> LIMITLESS DEALS </span>
+
+          <h2>Upgrade Your Digital World</h2>
+
+          <p>Premium technology. Powerful devices. Future experience.</p>
+
+          <button>Shop Now</button>
+        </div>
+
+        <div class="sale-images">
+          <img src="/ThchVerse/assets/images/Iphone 14 pro 1.webp" />
+
+          <img src="/ThchVerse/assets/images/fsggwsg.webp" />
+        </div>
+      </section>
+
+      <footer-site></footer-site>
     </div>
 
-    </div>
-    <div class="container">
-        <section>
-            <nav-bar></nav-bar>
-        </section>
-        <header class="header">
-            <div class="header-container">
-                <div class="left-head">
-                    <h2 class="h2-header">
-                        Pro.Beyond.
-                    </h2>
-                    <p class="p-header">
-                        IPhone 14 <span class="span-header"> Pro</span>
-                    </p>
-                    <p class="p2-header">
-                        Created to change everything for the better. For everyone
-                    </p>
-                    <Button class="button-header">
-                        Shop Now
-                    </Button>
-                </div>
-                <div class="right-header">
-                    <img class="img-header" src="/ThchVerse/assets/images/Iphone Image.webp" alt="image-iphone~">
-                </div>
-            </div>
-        </header>
-        <main class="main">
-            <category-component></category-component>
-            <div class="product">
-                <div class="sord-by">
-                    <p class="p-sordby1 p-sordby">
-                        New Arrival
-                    </p>
-                    <p class="p-sordby2 p-sordby">
-                        Bestseller
-                    </p>
-                    <p class="p-sordby3 p-sordby">
-                        Featured Products
-                    </p>
-                </div>
-                <product-data></product-data>
-            </div>
-            <div class="container-hero">
-                <section class="hero">
-             
-                <div class="hero-images hero-images-left">
-                    <img src="/ThchVerse/assets/images/pngtree-latest-realistic-tablet-in-contemporary-design-on-a-dark-background-with-png-image_10422632.webp" class="hero-img tablet-1" alt="tablet device">
-                    <img src="/ThchVerse/assets/images/Iphone Image.webp" class="hero-img tablet-2" alt="tablet device with lock screen">
-                </div>
-             
-                <div class="hero-content">
-                    <h1>Big Summer <span>Sale</span></h1>
-                    <p>Commodo fames vitae vitae leo mauris in. Eu consequat.</p>
-                    <button class="shop-btn">Shop Now</button>
-                </div>
-                <div class="hero-images hero-images-right">
-                    <img src="/ThchVerse/assets/images/fsggwsg.webp" class="hero-img phone-1" alt="smartphone device">
-                    <img src="/ThchVerse/assets/images/Iphone 14 pro 1.webp" class="hero-img watch-1" alt="smartwatch device">
-                </div>
-                </section>
-            </div>
-        </main>
-        <section class="footer">
-        <footer-site></footer-site>
-        </section>
-    </div>
-    <script type="module" defer src="/ThchVerse//js/nav.js"></script>
-    <script type="module" defer src="/ThchVerse/js/home.js"></script>
-</body>
+    <script type="module" src="/ThchVerse/js/nav.js"></script>
+
+    <script type="module" src="/ThchVerse/js/home.js"></script>
+  </body>
 </html>
-
