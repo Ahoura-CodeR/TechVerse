@@ -26,8 +26,9 @@ class productsDetail extends HTMLElement {
         
         const product = await getProducts()
         let urlCategory = product.find(item => {
-            return item.id === urlId
+            return item.id == urlId
         })
+
         urlCategory = urlCategory.category
         
 
@@ -3302,7 +3303,7 @@ class productsDetail extends HTMLElement {
         </section>
 
     `
-} else if (urlId === 0) {
+} else if (!urlId || isNaN(urlId) || !urlCategory) {
 
     
     const sectionComment = document.querySelector('.reviews-section')
@@ -3392,6 +3393,67 @@ class productsDetail extends HTMLElement {
             allButton.forEach(item => item.classList.remove('active'))
             
             button.classList.add('active')
+            
+        })
+        
+        const inputComment = document.querySelector('.comment-input')
+        const buttonSubmit = document.querySelector('.send-btn')
+        
+        
+        buttonSubmit.addEventListener('click', event => {
+
+            const now = new Date();
+            const formatted = new Intl.DateTimeFormat('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            }).format(now);
+            
+            
+            const valueInput = inputComment.value
+            if (valueInput.trim()  === '') return
+            
+            const boxCom = document.createElement('div')
+            boxCom.classList.add('comment-card')
+            boxCom.innerHTML = `
+            <div class="comment-header">
+        
+                <div class="user-info">
+        
+                    <img
+                        src="..."
+                        alt="Anonymous User"
+                        class="avatar"
+                    >
+        
+                    <div>
+                        <strong class="user-name">
+                            Anonymous User
+                        </strong>
+        
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                    </div>
+        
+                </div>
+        
+                <span class="comment-date">
+                    ${formatted}
+                </span>
+        
+            </div>
+        
+            <p class="comment-text">
+                
+            </p>
+            `
+        
+            const userComment = boxCom.querySelector('.comment-text')
+            const boxDiv = document.querySelector('.comments-list')
+            userComment.textContent = valueInput
+        
+            boxDiv.appendChild(boxCom)
             
         })
     }
