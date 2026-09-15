@@ -1,15 +1,14 @@
-.products-component {
+.products-wrapper {
   width: 100%;
   position: relative;
 }
 
-/* =========================
-   Loader
-========================= */
+/* =====================
+LOADER
+===================== */
 
 .product-loader {
   position: absolute;
-
   inset: 0;
 
   min-height: 400px;
@@ -17,16 +16,14 @@
   display: none;
 
   justify-content: center;
-
   align-items: center;
-
   flex-direction: column;
 
   gap: 25px;
 
-  background: rgba(7, 7, 17, 0.75);
+  background: rgba(5, 5, 15, 0.7);
 
-  backdrop-filter: var(--blur);
+  backdrop-filter: blur(12px);
 
   z-index: 10;
 }
@@ -37,7 +34,6 @@
 
 .cyber-loader {
   width: 110px;
-
   height: 110px;
 
   position: relative;
@@ -45,7 +41,6 @@
 
 .loader-ring {
   position: absolute;
-
   inset: 0;
 
   border-radius: 50%;
@@ -80,13 +75,12 @@
 
   inset: 38px;
 
+  border-radius: 50%;
+
   display: flex;
 
-  align-items: center;
-
   justify-content: center;
-
-  border-radius: 50%;
+  align-items: center;
 
   background: var(--gradient-main);
 
@@ -100,20 +94,14 @@
 .loader-text {
   color: var(--text-secondary);
 
-  letter-spacing: 4px;
-
   font-size: 12px;
 
-  font-weight: 600;
+  letter-spacing: 4px;
 }
 
-.loader-text span {
-  color: var(--secondary);
-}
-
-/* =========================
-   Grid
-========================= */
+/* =====================
+GRID
+===================== */
 
 .products-grid {
   display: grid;
@@ -123,9 +111,9 @@
   gap: 28px;
 }
 
-/* =========================
-   Card
-========================= */
+/* =====================
+CARD
+===================== */
 
 .product-card {
   position: relative;
@@ -145,6 +133,14 @@
   transition: var(--transition);
 }
 
+.product-card:hover {
+  transform: translateY(-8px);
+
+  border-color: var(--primary);
+
+  box-shadow: var(--shadow-purple);
+}
+
 .product-card::before {
   content: "";
 
@@ -154,61 +150,55 @@
 
   background: linear-gradient(
     135deg,
-    rgba(139, 92, 246, 0.18),
+    rgba(139, 92, 246, 0.2),
     transparent,
-    rgba(34, 211, 238, 0.12)
+    rgba(34, 211, 238, 0.15)
   );
 
   opacity: 0;
 
-  transition: var(--transition);
-}
-
-.product-card:hover {
-  transform: translateY(-10px);
-
-  border-color: var(--border-glow);
-
-  box-shadow: var(--shadow-purple);
+  transition: 0.3s;
 }
 
 .product-card:hover::before {
   opacity: 1;
 }
 
-/* =========================
- Image
-========================= */
+/* =====================
+IMAGE
+===================== */
 
-.product-image {
+.product-image-wrapper {
   height: 230px;
+
+  position: relative;
 
   display: flex;
 
   justify-content: center;
 
   align-items: center;
-
-  position: relative;
 }
 
-.product-image img {
+.product-image-wrapper img {
   width: 100%;
 
   height: 100%;
 
   object-fit: contain;
 
-  transition: var(--transition);
+  transition: 0.4s;
 }
 
 .product-card:hover img {
   transform: scale(1.08);
 }
 
-/* Wishlist */
+/* =====================
+WISHLIST
+===================== */
 
-.wishlist {
+.wishlist-btn {
   position: absolute;
 
   top: 10px;
@@ -221,9 +211,9 @@
 
   border-radius: 50%;
 
-  border: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.05);
 
-  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-light);
 
   color: var(--text-secondary);
 
@@ -235,104 +225,71 @@
 
   cursor: pointer;
 
-  transition: var(--transition);
+  z-index: 2;
 }
 
-.wishlist svg {
+.wishlist-btn svg {
   width: 20px;
 
   fill: none;
 
   stroke: currentColor;
-
-  stroke-width: 1.5;
 }
 
-.wishlist:hover,
-.wishlist.active {
+.wishlist-btn.active {
   color: var(--accent-pink);
 
-  box-shadow: 0 0 20px rgba(236, 72, 153, 0.45);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
 }
 
-/* =========================
- Info
-========================= */
+/* =====================
+TEXT
+===================== */
 
-.product-info {
+.product-card h3 {
   position: relative;
 
   z-index: 2;
-}
 
-.category {
-  display: inline-block;
-
-  font-size: 12px;
-
-  color: var(--secondary);
-
-  letter-spacing: 1px;
-
-  text-transform: uppercase;
-
-  margin-bottom: 10px;
-}
-
-.product-info h3 {
-  color: var(--text-primary);
+  color: white;
 
   font-size: 18px;
 
-  margin: 8px 0;
-}
+  margin: 18px 0;
 
-.product-info p {
-  color: var(--text-secondary);
-
-  font-size: 14px;
-
-  line-height: 1.6;
-
-  height: 45px;
-
-  overflow: hidden;
-}
-
-.meta {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  margin: 20px 0;
+  min-height: 45px;
 }
 
 .rating {
   color: #f5b301;
 
   font-weight: 700;
+
+  margin-bottom: 15px;
 }
 
-.meta strong {
+.product-card strong {
+  display: block;
+
   color: white;
 
   font-size: 20px;
+
+  margin-bottom: 20px;
 }
 
-/* =========================
- Button
-========================= */
+/* =====================
+BUTTON
+===================== */
 
-.view-product {
+.product-button {
   width: 100%;
 
   padding: 14px;
 
-  border-radius: var(--radius-md);
-
   border: none;
+
+  border-radius: var(--radius-md);
 
   cursor: pointer;
 
@@ -340,22 +297,20 @@
 
   font-weight: 700;
 
-  letter-spacing: 1px;
-
   background: var(--gradient-main);
 
   transition: var(--transition);
 }
 
-.view-product:hover {
+.product-button:hover {
   transform: translateY(-3px);
 
   box-shadow: var(--neon-glow);
 }
 
-/* =========================
- Pagination
-========================= */
+/* =====================
+PAGINATION
+===================== */
 
 .pagination {
   margin-top: 50px;
@@ -375,7 +330,7 @@
   gap: 10px;
 }
 
-.page-number,
+.pagination-page,
 .page-arrow {
   width: 40px;
 
@@ -390,57 +345,41 @@
   color: var(--text-secondary);
 
   cursor: pointer;
-
-  transition: var(--transition);
 }
 
-.page-number:hover,
-.page-number.active,
+.pagination-page.active,
+.pagination-page:hover,
 .page-arrow:hover {
   color: white;
 
   border-color: var(--primary);
 
-  box-shadow: var(--shadow-purple);
-
   background: rgba(139, 92, 246, 0.25);
+
+  box-shadow: var(--shadow-purple);
 }
 
-.page-arrow svg {
-  width: 18px;
+/* =====================
+EMPTY
+===================== */
 
-  fill: none;
-
-  stroke: currentColor;
-
-  stroke-width: 2;
-}
-
-/* =========================
- Empty State
-========================= */
-
-.empty-state {
+.no-products {
   display: none;
 
   text-align: center;
 
-  padding: 80px;
+  padding: 70px;
 }
 
-.empty-state.show {
+.no-products.show {
   display: block;
 }
 
-.empty-icon {
-  color: var(--secondary);
-}
-
-.empty-state h3 {
+.no-products h2 {
   color: white;
 }
 
-.empty-state p {
+.no-products p {
   color: var(--text-secondary);
 }
 
@@ -449,18 +388,16 @@
 
   padding: 12px 25px;
 
-  border-radius: var(--radius-md);
-
   border: none;
+
+  border-radius: var(--radius-md);
 
   background: var(--gradient-purple);
 
   color: white;
 }
 
-/* =========================
- Responsive
-========================= */
+/* RESPONSIVE */
 
 @media (max-width: 1000px) {
   .products-grid {

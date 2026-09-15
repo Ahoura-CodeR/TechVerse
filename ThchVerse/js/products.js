@@ -1,353 +1,255 @@
 import { isFooter } from "./component/footer/footer.js";
-import { productCategory } from "/ThchVerse/js/component/products-box/products.js"
 
+import { productCategory } from "./component/products-box/products.js";
 
-const getProducts = async () => {
+window.customElements.define("product-category", productCategory);
 
-    try {
-        const res = await fetch(`/ThchVerse/Data/products.json`)
-        if (!res.ok) throw new Error('خطا در دریافت اطلاعات ')
-        const data = await res.json()
-        return data.products || []
-    } catch (error) {
-        console.log('your error ==> ' + error);
-        return []
-        
-    }
+window.customElements.define("footer-site", isFooter);
 
+async function getProducts() {
+  try {
+    const response = await fetch("/ThchVerse/Data/products.json");
+
+    if (!response.ok) throw new Error("Products not found");
+
+    const data = await response.json();
+
+    return data.products || [];
+  } catch (error) {
+    console.log(error);
+
+    return [];
+  }
 }
 
-window.customElements.define('product-category', productCategory)
-window.customElements.define("footer-site", isFooter)
+// -----------------------------
+// PAGE LOADER
+// -----------------------------
 
-const animationLoad = document.querySelector('.container');
-const pageLoader = document.querySelector('.page-loader');
+const container = document.querySelector(".container");
 
-animationLoad.style.display = 'none';
+const pageLoader = document.querySelector(".page-loader");
 
+container.style.display = "none";
 
-window.addEventListener('load', () => {
-    
-    pageLoader.style.display = 'none';
-    
-    animationLoad.style.display = '';
+window.addEventListener("load", () => {
+  pageLoader.style.display = "none";
+
+  container.style.display = "";
 });
 
+// -----------------------------
+// CATEGORY
+// -----------------------------
+
 const categoryMap = {
-    Cameras: 'cameras',
-    Phones: 'phones',
-    SmartWatches: 'smartwatches',
-    Headphones: 'headphones',
-    Computers: 'computers',
-    Gaming: 'gaming'
+  Cameras: "cameras",
+
+  Phones: "phones",
+
+  SmartWatches: "smartwatches",
+
+  Headphones: "headphones",
+
+  Computers: "computers",
+
+  Gaming: "gaming",
+};
+
+const params = new URLSearchParams(window.location.search);
+
+const category = params.get("category");
+
+const selectedCategory = categoryMap[category];
+
+// -----------------------------
+// STATE
+// -----------------------------
+
+const state = {
+  products: [],
+
+  filteredProducts: [],
+
+  currentPage: 1,
+
+  itemsPerPage: 9,
+
+  search: "",
+
+  sort: "",
+};
+
+// -----------------------------
+// ELEMENTS
+// -----------------------------
+
+const productComponent = document.querySelector("product-category");
+
+const pagination = document.querySelector(".pagination");
+
+const pages = document.querySelector(".pages");
+
+const next = document.querySelector(".next");
+
+const previous = document.querySelector(".previous");
+
+const searchInput = document.querySelector(".input-search");
+
+const sortSelect = document.querySelector(".sort-products");
+
+// -----------------------------
+// FILTER
+// -----------------------------
+
+function applyFilters() {
+  let result = [...state.products];
+
+  // category
+
+  if (selectedCategory) {
+    result = result.filter(
+      (item) => item.category.toLowerCase() === selectedCategory,
+    );
+  }
+
+  // search
+
+  if (state.search) {
+    result = result.filter((item) =>
+      item.title.toLowerCase().includes(state.search),
+    );
+  }
+
+  // sort
+
+  switch (state.sort) {
+    case "By rating":
+      result.sort((a, b) => b.rating - a.rating);
+
+      break;
+
+    case "Price: Low to High":
+      result.sort((a, b) => a.price - b.price);
+
+      break;
+
+    case "Price: High to Low":
+      result.sort((a, b) => b.price - a.price);
+
+      break;
+
+    case "By name":
+      result.sort((a, b) => a.title.localeCompare(b.title));
+
+      break;
+  }
+
+  state.filteredProducts = result;
+
+  state.currentPage = 1;
+
+  render();
 }
 
-const params = new URLSearchParams(window.location.search)
-const categories = params.get("category")
-const newCategory = categoryMap[categories]
+// -----------------------------
+// PAGINATION
+// -----------------------------
 
-let newProducts = await getProducts()
-let filterProduct = newProducts.filter(item => {
-    return item.category === newCategory
-})
-
-let currentPage = 1
-let itemPrePage = 10
-let totalPage = 0
-
-
-let renderInformPage = (page, item) => {
-
-    const startIndex = (page - 1) * itemPrePage
-    const endIndex = startIndex + itemPrePage
-    return item.slice(startIndex, endIndex)
+function totalPages() {
+  return Math.ceil(state.filteredProducts.length / state.itemsPerPage);
 }
 
-let finallyProduct
+function getCurrentProducts() {
+  const start = (state.currentPage - 1) * state.itemsPerPage;
 
-if (newCategory === undefined) {
-    finallyProduct = newProducts
-} else {
-    finallyProduct = filterProduct
+  const end = start + state.itemsPerPage;
+
+  return state.filteredProducts.slice(start, end);
 }
 
-totalPage = Math.ceil(finallyProduct.length / itemPrePage)
-const nextButtonPagination = document.querySelector('.next')
-const navPagination = document.querySelector('.pagination')
+function renderPagination() {
+  pages.innerHTML = "";
 
+  const total = totalPages();
 
-const productForShado = document.querySelector('product-category')
-const shadowRootP = productForShado.shadowRoot
-const productGrid = shadowRootP.querySelector('.products-grid')
-const noProduct = shadowRootP.querySelector('.no-products')
-const buttonReset = shadowRootP.querySelector('.no-products-reset')
+  for (let i = 1; i <= total; i++) {
+    const button = document.createElement("button");
 
-let renderProduct = (products) => {
+    button.className = "pagination-page";
 
-    const fragment = document.createDocumentFragment()
-        productGrid.innerHTML = ``
-        
-        products.forEach(item => {
-            const div = document.createElement('div')
-            div.classList.add('product-card')
-            const ratingPercent = (item.rating / 5) * 100
-    
-    div.innerHTML = `
-        <div class="product-image-wrapper">
-            <img
-                class="product-image"
-                src="${item.images[0]}"
-                alt="${item.title}"
-            >
-        </div>
-    
-        <h3 class="product-title">
-            ${item.title}
-        </h3>
-    
-        <p class="product-description">
-            ${item.description}
-        </p>
-    
-        <div class="product-meta">
-        
-        <div class="product-rating">
-        
-        <svg
-        class="rating-star"
-        width="15"
-        height="15"
-        viewBox="0 0 24 24"
-        fill="none"
-                >
-                    <defs>
-                        <linearGradient
-                            id="rating-${item.id}"
-                            x1="0%"
-                            y1="0%"
-                            x2="100%"
-                            y2="0%"
-                        >
-                            <stop
-                                offset="${ratingPercent}%"
-                                stop-color="#F5B301"
-                            />
-                            <stop
-                                offset="${ratingPercent}%"
-                                stop-color="#D9D9D9"
-                            />
-                        </linearGradient>
-                    </defs>
-    
-                    <path
-                        d="M12 2.5L14.95 8.45L21.5 9.4L16.75 14L17.9 20.5L12 17.4L6.1 20.5L7.25 14L2.5 9.4L9.05 8.45Z"
-                        fill="url(#rating-${item.id})"
-                    />
-                </svg>
-    
-                <span class="rating-value">
-                    ${item.rating}
-                    </span>
-    
-            </div>
-    
-            <span class="product-price">
-                $${item.price}
-            </span>
-    
-        </div>
-    
-        <button data-id="${item.id}" class="product-button">
-            Buy Now
-        </button>
-        `
-        fragment.appendChild(div)
-    });        
-    productGrid.appendChild(fragment)
+    button.textContent = i;
+
+    button.dataset.page = i;
+
+    if (i === state.currentPage) button.classList.add("active");
+
+    pages.appendChild(button);
+  }
 }
 
+// -----------------------------
+// RENDER
+// -----------------------------
 
-let renderButtonPagination = () => {
+function render() {
+  productComponent.setProducts(getCurrentProducts());
 
-    const parentButtonPagination = document.querySelectorAll('.pagination-page')
-    
-    parentButtonPagination.forEach(item => {
-        item.remove()
-    })
-    
-    
-    for (let i = 1; i <= totalPage; i++) {
-                
-        const buttonPagination = document.createElement('button')
-        buttonPagination.classList.add('pagination-page')
-        buttonPagination.textContent = i
-        navPagination.insertBefore(buttonPagination, nextButtonPagination)
-    
-        if (buttonPagination.textContent === '1') {
-            
-            buttonPagination.classList.add('active')
-        }
+  renderPagination();
+}
+
+// -----------------------------
+// EVENTS
+// -----------------------------
+
+searchInput.addEventListener("input", () => {
+  state.search = searchInput.value.trim().toLowerCase();
+
+  applyFilters();
+});
+
+sortSelect.addEventListener("change", () => {
+  state.sort = sortSelect.value;
+
+  applyFilters();
+});
+
+pagination.addEventListener("click", (event) => {
+  const page = event.target.closest(".pagination-page");
+
+  if (page) {
+    state.currentPage = Number(page.dataset.page);
+
+    render();
+  }
+
+  if (event.target.closest(".next")) {
+    if (state.currentPage < totalPages()) {
+      state.currentPage++;
+
+      render();
     }
+  }
 
-    
-}
+  if (event.target.closest(".previous")) {
+    if (state.currentPage > 1) {
+      state.currentPage--;
 
-const inputElem = document.querySelector('.input-search')
-
-navPagination.addEventListener('click', event => {
-
-    let filterSearch = finallyProduct.filter(item => item.title.trim().toLowerCase().includes(inputElem.value.trim().toLowerCase()))
-
-        if (event.target.closest('.pagination-page')) {
-
-            const parentButtonPagination = document.querySelectorAll('.pagination-page')
-            const itemActive = Array.from(parentButtonPagination).filter(item => {
-            
-                return item.classList.contains('active')
-            })
-
-            itemActive[0].classList.remove('active')
-            event.target.closest('.pagination-page').classList.add('active')
-            currentPage = Number(event.target.textContent)
-
-            let newRenderProduct = renderInformPage(currentPage, filterSearch)
-            renderProduct(newRenderProduct)
-            
-        } else if (event.target.closest('.previous')) {
-
-            const parentButtonPagination = document.querySelectorAll('.pagination-page')
-            const itemActive = Array.from(parentButtonPagination).filter(item => {
-            
-                return item.classList.contains('active')
-            })
-
-            
-            if (Number(itemActive[0].textContent) === 1) {
-                
-                return
-            } else {
-                
-                currentPage = Number(itemActive[0].previousElementSibling.textContent)
-                let newRenderProduct = renderInformPage(currentPage, filterSearch)
-                itemActive[0].classList.remove('active')
-                itemActive[0].previousElementSibling.classList.add('active')
-                renderProduct(newRenderProduct)
-
-
-            } 
-        } else if (event.target.closest('.next')) {
-
-            const parentButtonPagination = document.querySelectorAll('.pagination-page')
-            const itemActive = Array.from(parentButtonPagination).filter(item => {
-            
-                return item.classList.contains('active')
-            })
-
-            
-            if (Number(itemActive[0].textContent) === totalPage) {
-                
-                return
-            } else {
-                
-                currentPage = Number(itemActive[0].nextElementSibling.textContent)
-                itemActive[0].classList.remove('active')
-                itemActive[0].nextElementSibling.classList.add('active')
-                let newRenderProduct = renderInformPage(currentPage, filterSearch)
-                renderProduct(newRenderProduct)
-            } 
-            
-        }
-    })
-
-renderButtonPagination()
-
-
-let renderProductPage = () => {
-    
-    productGrid.innerHTML = ''
-    
-    let renderProductsPage = renderInformPage(currentPage, finallyProduct)
-    renderProduct(renderProductsPage)
-    
-}
-
-
-inputElem.addEventListener('input', event => {
-
-    
-    
-    let filterSearch = finallyProduct.filter(item => item.title.trim().toLowerCase().includes(inputElem.value.trim().toLowerCase()))
-    
-    if (inputElem.value.trim().toLowerCase() !== '') {
-        
-        currentPage = 1 
-        totalPage = Math.ceil(filterSearch.length / itemPrePage)
-        const searchResult =  renderInformPage(currentPage, filterSearch)
-        
-        if (filterSearch.length === 0) {
-            
-            noProduct.classList.add('show')
-        } else {
-            noProduct.classList.remove('show')
-        }
-
-        renderButtonPagination()
-        renderProduct(searchResult)
-        
-    } else {
-        
-        currentPage = 1 
-        totalPage = Math.ceil(finallyProduct.length / itemPrePage)
-        const newRenderProduct = renderInformPage(currentPage, finallyProduct)
-        renderButtonPagination()
-        renderProduct(newRenderProduct)
-        noProduct.classList.remove('show')
-    
-    }    
-})
-
-buttonReset.addEventListener('click', event => {
-    inputElem.value = ''
-    currentPage = 1 
-    totalPage = Math.ceil(finallyProduct.length / itemPrePage)
-    const newRenderProduct = renderInformPage(currentPage, finallyProduct)
-    renderButtonPagination()
-    renderProduct(newRenderProduct)
-    noProduct.classList.remove('show')
-})
-
-renderProductPage()
-
-const sordSelect = document.querySelector('.sort-products')
-
-sordSelect.addEventListener('change', () => {
-    
-    const sordProduct = [...finallyProduct]
-    const valueOption = sordSelect.value
-    let renderSord;
-    if (valueOption === 'By rating') {
-        renderSord = sordProduct.sort((a, b) => {
-            return b.rating - a.rating
-        })
-    } else if (valueOption === 'Price: Low to High') {
-        renderSord = sordProduct.sort((a, b) => {
-            return a.price - b.price
-        })
-    } else if (valueOption === 'Price: High to Low') {
-        renderSord = sordProduct.sort((a, b) => {
-            return b.price - a.price
-        })
-    } else if (valueOption === 'By name') {
-        renderSord = sordProduct.sort((a, b) => {
-            return a.title.localeCompare(b.title)
-        })
-    } else if (valueOption === 'Sort By') {
-        renderSord = finallyProduct
+      render();
     }
+  }
+});
 
-    let renderProductsPage = renderInformPage(currentPage, renderSord)
-    renderProduct(renderProductsPage)
+// -----------------------------
+// START
+// -----------------------------
 
-})
+async function init() {
+  state.products = await getProducts();
 
+  state.filteredProducts = [...state.products];
 
+  render();
+}
+
+init();
