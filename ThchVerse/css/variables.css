@@ -1,0 +1,145 @@
+:root {
+  /* =====================
+       Background Colors
+    ====================== */
+
+  --bg-primary: #070711;
+  --bg-secondary: #0d0d1a;
+  --bg-tertiary: #121226;
+
+  --bg-card: rgba(255, 255, 255, 0.06);
+
+  --bg-card-hover: rgba(255, 255, 255, 0.1);
+
+  /* =====================
+       Brand Colors
+    ====================== */
+
+  --primary: #8b5cf6;
+  --primary-light: #a78bfa;
+  --primary-dark: #6d28d9;
+
+  --secondary: #22d3ee;
+  --secondary-dark: #0891b2;
+
+  /* extra neon accent */
+
+  --accent-pink: #ec4899;
+
+  --accent-blue: #38bdf8;
+
+  /* =====================
+       Gradient System
+    ====================== */
+
+  --gradient-main: linear-gradient(135deg, var(--primary), var(--secondary));
+
+  --gradient-purple: linear-gradient(135deg, #8b5cf6, #ec4899);
+
+  --gradient-dark: linear-gradient(180deg, #111122, #070711);
+
+  /* =====================
+       Text
+    ====================== */
+
+  --text-primary: #ffffff;
+
+  --text-secondary: #b4b4c7;
+
+  --text-muted: #71717a;
+
+  /* =====================
+       Borders
+    ====================== */
+
+  --border-light: rgba(255, 255, 255, 0.12);
+
+  --border-glow: rgba(139, 92, 246, 0.5);
+
+  --border-cyan: rgba(34, 211, 238, 0.45);
+
+  /* =====================
+       Shadows
+    ====================== */
+
+  --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.25);
+
+  --shadow-md: 0 15px 40px rgba(0, 0, 0, 0.4);
+
+  --shadow-lg: 0 25px 80px rgba(0, 0, 0, 0.55);
+
+  --shadow-purple: 0 0 30px rgba(139, 92, 246, 0.35);
+
+  --shadow-cyan: 0 0 35px rgba(34, 211, 238, 0.3);
+
+  --neon-glow:
+    0 0 25px rgba(139, 92, 246, 0.45), 0 0 60px rgba(34, 211, 238, 0.2);
+
+  /* =====================
+       Radius
+    ====================== */
+
+  --radius-sm: 10px;
+
+  --radius-md: 18px;
+
+  --radius-lg: 28px;
+
+  --radius-xl: 40px;
+
+  /* =====================
+       Glass Effect
+    ====================== */
+
+  --glass: rgba(255, 255, 255, 0.06);
+
+  --glass-heavy: rgba(255, 255, 255, 0.1);
+
+  --blur: blur(20px);
+
+  /* =====================
+       Animation
+    ====================== */
+
+  --transition-fast: 0.2s ease;
+
+  --transition: 0.35s ease;
+
+  --transition-slow: 0.6s ease;
+
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* =====================
+       Layout
+    ====================== */
+
+  --container: 1200px;
+
+  --section-space: 100px;
+
+  /* =====================
+       Layer System
+    ====================== */
+
+  --z-background: -1;
+
+  --z-default: 1;
+
+  --z-nav: 100;
+
+  --z-modal: 1000;
+
+  /* =====================
+       Scrollbar
+    ====================== */
+
+  --scrollbar-bg: #080812;
+
+  --scrollbar-thumb: #8b5cf6;
+
+  /* =====================
+       Selection
+    ====================== */
+
+  --selection-bg: rgba(139, 92, 246, 0.35);
+}
