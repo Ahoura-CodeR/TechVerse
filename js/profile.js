@@ -40,7 +40,7 @@ class ProfilePage {
       this.backButton.classList.add("clicked");
 
       setTimeout(() => {
-        window.location.href = "/index.html";
+        window.location.href = "../index.html";
       }, 180);
     });
   }

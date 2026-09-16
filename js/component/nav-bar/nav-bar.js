@@ -1,8 +1,8 @@
-import { getProducts } from "/js/component/product/product.js";
+import { getProducts } from "../../../js/component/product/product.js";
 let template = document.createElement("template");
 
 let eventSvgHandler = (page) => {
-  window.location.href = `/pages/${page}`;
+  window.location.href = `../../../pages/${page}`;
 };
 
 template.innerHTML = `
@@ -10,7 +10,7 @@ template.innerHTML = `
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-<link rel="stylesheet" href="/js/component/nav-bar/nav-bar.css">
+<link rel="stylesheet" href="../../../js/component/nav-bar/nav-bar.css">
 </head>
 <nav class="nav-container">
 
@@ -111,34 +111,34 @@ template.innerHTML = `
 
 
         <li>
-            <a href="/index.html">
+            <a href="../../..index.html">
                 Home
             </a>
         </li>
 
 
         <li>
-            <a href="/pages/products.html">
+            <a href="../../../pages/products.html">
                 Products
             </a>
         </li>
 
 
         <li>
-            <a href="/pages/card.html">
+            <a href="../../../pages/card.html">
                 Store
             </a>
         </li>
 
 
         <li>
-            <a href="/pages/profile.html">
+            <a href="../../../pages/profile.html">
                 Account
             </a>
         </li>
         
         <li>
-            <a href="/pages/login.html">
+            <a href="../../../pages/login.html">
                 Login
             </a>
         </li>
@@ -283,7 +283,7 @@ class isNav extends HTMLElement {
         const button = event.target.closest(".search-product-btn");
 
         if (button) {
-          location.href = `/pages/products-details.html?id=${button.dataset.id}`;
+          location.href = `../../../pages/products-details.html?id=${button.dataset.id}`;
         }
       });
   }

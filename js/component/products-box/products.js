@@ -2,7 +2,7 @@ const template = document.createElement("template");
 
 template.innerHTML = `
 
-<link rel="stylesheet" href="/js/component/products-box/products.css">
+<link rel="stylesheet" href="../../../js/component/products-box/products.css">
 
 
 <div class="product-loader">
@@ -294,7 +294,7 @@ class productCategory extends HTMLElement {
       const product = event.target.closest(".product-button");
 
       if (product) {
-        location.href = `/pages/products-details.html?id=${product.dataset.id}`;
+        location.href = `../../../pages/products-details.html?id=${product.dataset.id}`;
       }
     });
 
