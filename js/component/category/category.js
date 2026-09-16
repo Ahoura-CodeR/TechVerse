@@ -144,7 +144,7 @@ class isCategory extends HTMLElement {
       if (!card) return;
 
       const category = card.dataset.category;
-      window.location.href = `/ThchVerse/pages/products.html?category=${category}`;
+      window.location.href = `/pages/products.html?category=${category}`;
     });
   }
 }

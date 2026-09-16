@@ -1,33 +1,117 @@
 # 🚀 TechVerse
 
-**TechVerse** is a modern technology-focused e-commerce website built as a frontend project with **HTML, CSS, and JavaScript**.
+TechVerse is a frontend e-commerce project focused on technology products. It was built from the ground up with **HTML, CSS, and Vanilla JavaScript**, with an emphasis on component-based architecture, data-driven rendering, responsive UI, and understanding how the pieces of a real frontend application fit together.
 
-The project focuses on building a structured, component-based frontend for a technology store, with reusable UI components, product pages, categories, user-related pages, and interactive elements.
+The project is intentionally frontend-only for this stage. Authentication, persistent cart/wishlist data, orders, reviews, payments, and other server-side features are left for a future backend phase.
 
 ---
 
 ## ✨ Features
 
-- 🛍️ Product listing and product detail pages
-- 📦 Product information and specifications
-- 🏷️ Product categories
-- 🛒 Shopping cart interface
-- ❤️ Wishlist interface
-- 👤 Login, registration, and profile pages
-- 📱 Responsive layout
-- 🧩 Reusable UI components
-- ⚡ Dynamic rendering with JavaScript
-- 🌐 Multi-page frontend architecture
-- 🎨 Modern and responsive UI design
-- 🖼️ Organized project assets
+### 🏠 Home
+
+- Responsive hero section and technology-focused landing page
+- Reusable navigation, category, product, and footer components
+- Category navigation to the product catalog
+- Featured product presentation
+- Animated page/product loading states
+
+### 🛍️ Product Catalog
+
+- Data-driven product rendering from `Data/products.json`
+- Six product categories:
+  - Phones
+  - Smartwatches
+  - Cameras
+  - Headphones
+  - Computers
+  - Gaming
+- Product search
+- Sorting by:
+  - Rating
+  - Price: Low to High
+  - Price: High to Low
+  - Name
+- Dynamic sidebar filters generated from the available product data
+- Pagination
+- Empty-search state and reset functionality
+- Wishlist UI interaction
+- Product navigation through URL query parameters
+
+### 📦 Product Details
+
+Product details are rendered dynamically from the selected product rather than being hard-coded into separate pages.
+
+The product ID is read from the URL, the corresponding product is found in the dataset, and its category determines which detail structure is rendered.
+
+Supported categories:
+
+- Phones
+- Smartwatches
+- Cameras
+- Headphones
+- Computers
+- Gaming
+
+Gaming products additionally use `specifications.device_type` to support multiple product types through a shared rendering system, including:
+
+- Gaming Monitor
+- Gaming Keyboard
+- Gaming Mouse
+- Gaming Headset
+- Game Controller
+- Gaming Desktop
+
+Product-detail interactions include:
+
+- Image gallery / thumbnail switching
+- Color selection
+- Storage selection where supported
+- Wishlist interaction
+- Add-to-cart demo interaction
+- Expandable technical details
+- Product-not-found state
+
+### 🛒 Cart
+
+The cart page currently provides a frontend/demo experience with:
+
+- Quantity controls
+- Item removal
+- Clear cart interaction
+- Price recalculation
+- Order summary
+- Empty-cart state
+- Checkout placeholder
+
+Cart persistence and real checkout are intentionally deferred to the backend stage.
+
+### 👤 Authentication & Profile
+
+The project includes frontend interfaces for:
+
+- Login
+- Registration
+- Profile
+- Password visibility controls
+- Form validation
+- Demo authentication feedback
+
+There is currently no real authentication service or persistent user account system.
+
+### 💬 Reviews
+
+The product page contains a review/comment interface for frontend interaction testing. Comments are currently handled in the browser only and are not persisted.
+
+A real review system will require authenticated users, persistent storage, and eventually a relationship between users, products, and orders.
 
 ---
 
-## 🧩 Component Architecture
+## 🧩 Architecture
 
-TechVerse uses a component-oriented structure built with **Vanilla JavaScript** and **Web Components / Custom Elements**.
+TechVerse uses a component-oriented architecture built with **Vanilla JavaScript, ES Modules, Custom Elements, and Shadow DOM**.
 
-Examples include:
+Reusable components include:
 
 ```text
 js/
@@ -35,19 +119,76 @@ js/
     ├── category/
     ├── footer/
     ├── nav-bar/
-    └── product/
+    ├── product/
+    ├── products-box/
+    └── products-detail/
 ```
 
-Components are registered as custom HTML elements and then used directly inside pages:
+Examples of custom elements used by the application:
 
 ```html
 <nav-bar></nav-bar>
 <category-component></category-component>
-<product-data></product-data>
+<product-category></product-category>
+<products-detail></products-detail>
 <footer-site></footer-site>
 ```
 
-This approach helps keep the UI modular and makes individual parts of the website easier to reuse and maintain.
+The product-detail system follows a data-driven flow:
+
+```text
+URL ?id=...
+      ↓
+Find product by ID
+      ↓
+Read product category
+      ↓
+Select category-specific renderer
+      ↓
+Render shared product-detail structure
+      ↓
+Bind interactions
+```
+
+Gaming products add one more layer:
+
+```text
+Product
+  ↓
+category = gaming
+  ↓
+specifications.device_type
+  ↓
+Gaming-specific configuration
+  ↓
+Shared renderer
+```
+
+This keeps the page structure reusable while allowing different product categories to expose different specifications.
+
+---
+
+## 🔄 Product Catalog Data Flow
+
+The catalog follows a state-driven flow rather than using the DOM as the source of truth:
+
+```text
+products.json
+     ↓
+products state
+     ↓
+search / filters / sort
+     ↓
+filteredProducts
+     ↓
+currentPage
+     ↓
+visible products
+     ↓
+render
+```
+
+When search, sorting, or filters change, the current page is reset and the visible product list is rendered again.
 
 ---
 
@@ -57,51 +198,73 @@ This approach helps keep the UI modular and makes individual parts of the websit
 
 - HTML5
 - CSS3
-- JavaScript
-- DOM API
+- Vanilla JavaScript
 - ES Modules
-- Web Components / Custom Elements
+- DOM API
+- Custom Elements
+- Web Components
+- Shadow DOM
 
-### Development Tools
+### Tooling
 
 - Git
 - GitHub
 - Vite
+- npm
+
+### Data
+
+- Local JSON product dataset
+- 600 product records
+- Six product categories
 
 ---
 
 ## 📁 Project Structure
 
 ```text
-TechVerse/
+ThchVerse/
+│
+├── Data/
+│   └── products.json
 │
 ├── assets/
-│   ├── images/
-│   ├── fonts/
-│   └── icons/
+│   └── images/
 │
 ├── css/
-│   └── home/
+│   ├── card/
+│   ├── home/
+│   ├── login/
+│   ├── products/
+│   ├── products-details/
+│   ├── profile/
+│   ├── animations.css
+│   ├── global.css
+│   └── variables.css
 │
 ├── js/
 │   ├── component/
 │   │   ├── category/
 │   │   ├── footer/
 │   │   ├── nav-bar/
-│   │   └── product/
+│   │   ├── product/
+│   │   ├── products-box/
+│   │   └── products-detail/
 │   │
+│   ├── auth.js
+│   ├── card.js
 │   ├── home.js
-│   └── nav.js
+│   ├── nav.js
+│   ├── products-detail.js
+│   ├── products.js
+│   └── profile.js
 │
 ├── pages/
-│   ├── 404.html
-│   ├── about.html
 │   ├── card.html
-│   ├── contact.html
 │   ├── home.html
 │   ├── login.html
-│   ├── products.html
 │   ├── products-details.html
+│   ├── products.html
 │   ├── profile.html
 │   └── register.html
 │
@@ -109,57 +272,107 @@ TechVerse/
 │   ├── favicon.svg
 │   └── icons.svg
 │
-├── src/
-│   └── ...
-│
-├── index.html
-└── package.json
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
 ---
 
-## 🎯 Project Goals
+## ▶️ Running the Project
 
-TechVerse is being developed incrementally.
+Install dependencies:
 
-The current focus is on building a strong frontend foundation and understanding how the different parts of a real-world web application interact.
+```bash
+npm install
+```
 
-Future development may include:
+Start the Vite development server:
 
-- 🔌 Backend integration
-- 🗄️ Database integration
-- 🔐 Authentication and authorization
-- 🛒 Persistent shopping cart
-- 📦 Real product data
-- 💳 Payment integration
-- 📊 User and product management
-- 🔎 Advanced product search and filtering
-- ⚙️ API-based architecture
+```bash
+npm run dev
+```
 
----
+The application pages are located under the `pages/` directory.
 
-## 📌 Current Status
+If the project is kept inside the repository's `ThchVerse/` directory, the application uses paths such as:
 
-> 🚧 **Active Development**
-
-The project is currently focused on the frontend architecture and functionality. Backend services and persistent data management are planned for later stages.
+```text
+/ThchVerse/pages/home.html
+/ThchVerse/pages/products.html
+/ThchVerse/pages/products-details.html?id=1
+```
 
 ---
 
-## 🧠 What This Project Is About
+## 🎯 Project Scope
 
-TechVerse is not only a UI project.
+The goal of this project was not simply to reproduce an e-commerce UI. It was built as a practical environment for learning and applying frontend engineering concepts:
 
-It is also a practical environment for exploring:
+- Component-based UI architecture
+- Web Components and Shadow DOM
+- Dynamic rendering
+- State-driven interfaces
+- URL-driven application state
+- Search, filtering, sorting, and pagination
+- Data-driven product detail pages
+- Event delegation
+- Modular JavaScript
+- Responsive CSS architecture
+- Loading and empty states
+- Git/GitHub workflow
+- Separating UI concerns from product data
 
-- Component-based architecture
-- DOM manipulation
-- JavaScript modules
-- Web Components
-- UI/data separation
-- Reusable frontend architecture
-- Git-based development
-- Building a multi-page web application from the ground up
+---
+
+## 🚧 Current Limitations
+
+TechVerse is a **frontend project**, not a complete production e-commerce system yet.
+
+The following features are intentionally deferred to a future backend phase:
+
+- Real authentication and authorization
+- Persistent user accounts
+- Database integration
+- Persistent cart and wishlist
+- Orders and order history
+- Real product management
+- Persistent reviews and ratings
+- Payment processing
+- Server-side validation
+- API-based product data
+
+The current demo interactions are therefore designed to demonstrate frontend behavior and architecture rather than production persistence.
+
+---
+
+## 🔮 Future Development
+
+The planned evolution of TechVerse is:
+
+```text
+Vanilla JavaScript Frontend
+          ↓
+      React
+          ↓
+    TypeScript
+          ↓
+   Node.js / Backend
+          ↓
+       Database
+          ↓
+ Authentication / Cart / Orders / Reviews
+```
+
+The current frontend will serve as the foundation for a later full-stack version rather than being discarded and rebuilt from zero.
+
+---
+
+## 📌 Project Status
+
+> ✅ **Frontend phase completed**
+
+The current stage represents the completion of the main Vanilla JavaScript frontend implementation. The next learning phase is **React**, followed later by backend development and persistent application features.
 
 ---
 

@@ -1,7 +1,7 @@
 let template = document.createElement("template");
 
 let eventSvgHandler = (page) => {
-  window.location.href = `/ThchVerse/pages/${page}`;
+  window.location.href = `/pages/${page}`;
 };
 
 template.innerHTML = `
@@ -9,7 +9,7 @@ template.innerHTML = `
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-<link rel="stylesheet" href="/ThchVerse/js/component/nav-bar/nav-bar.css">
+<link rel="stylesheet" href="/js/component/nav-bar/nav-bar.css">
 </head>
 <nav class="nav-container">
 
@@ -92,27 +92,27 @@ template.innerHTML = `
 
 
         <li>
-            <a href="/ThchVerse/pages/products.html">
+            <a href="/pages/products.html">
                 Products
             </a>
         </li>
 
 
         <li>
-            <a href="/ThchVerse/pages/card.html">
+            <a href="/pages/card.html">
                 Store
             </a>
         </li>
 
 
         <li>
-            <a href="/ThchVerse/pages/profile.html">
+            <a href="/pages/profile.html">
                 Account
             </a>
         </li>
         
         <li>
-            <a href="/ThchVerse/pages/login.html">
+            <a href="/pages/login.html">
                 Login
             </a>
         </li>

@@ -7,9 +7,10 @@ window.customElements.define("footer-site", isFooter);
 const animationLoad = document.querySelector(".container");
 const pageLoader = document.querySelector(".page-loader");
 
-animationLoad.style.display = "none";
+// animationLoad.style.display = "none";
 
-window.addEventListener("load", (event) => {
-  animationLoad.style.display = "";
-  pageLoader.style.display = "none";
-});
+// window.addEventListener("load", (event) => {
+//   animationLoad.style.display = "";
+//   pageLoader.style.display = "none";
+// });
+pageLoader.style.display = 'none'

@@ -24,7 +24,7 @@ template.innerHTML = `
         <div class="footer-brand">
 
 
-            <a href="/ThchVerse/pages/home.html" class="footer-logo">
+            <a href="/pages/home.html" class="footer-logo">
 
                 <span class="logo-tech">TECH</span>
                 <span class="logo-verse">VERSE</span>
@@ -102,25 +102,25 @@ template.innerHTML = `
             <ul>
 
                 <li>
-                    <a href="/ThchVerse/pages/home.html">
+                    <a href="/pages/home.html">
                         Home
                     </a>
                 </li>
 
                 <li>
-                    <a href="/ThchVerse/pages/products.html">
+                    <a href="/pages/products.html">
                         Products
                     </a>
                 </li>
 
                 <li>
-                    <a href="/ThchVerse/pages/profile.html">
+                    <a href="/pages/profile.html">
                         Profile
                     </a>
                 </li>
 
                 <li>
-                    <a href="/ThchVerse/pages/card.html">
+                    <a href="/pages/card.html">
                         Shopping Cart
                     </a>
                 </li>
@@ -139,37 +139,37 @@ template.innerHTML = `
             <ul>
 
                 <li>
-                    <a href="/ThchVerse/pages/products.html?category=Phones">
+                    <a href="/pages/products.html?category=Phones">
                         Phones
                     </a>
                 </li>
 
                 <li>
-                    <a href="/ThchVerse/pages/products.html?category=SmartWatches">
+                    <a href="/pages/products.html?category=SmartWatches">
                         Smart Watches
                     </a>
                 </li>
 
                 <li>
-                    <a href="/ThchVerse/pages/products.html?category=Cameras">
+                    <a href="/pages/products.html?category=Cameras">
                         Cameras
                     </a>
                 </li>
 
                 <li>
-                    <a href="/ThchVerse/pages/products.html?category=Headphones">
+                    <a href="/pages/products.html?category=Headphones">
                         Headphones
                     </a>
                 </li>
 
                 <li>
-                    <a href="/ThchVerse/pages/products.html?category=Computers">
+                    <a href="/pages/products.html?category=Computers">
                         Computers
                     </a>
                 </li>
 
                 <li>
-                    <a href="/ThchVerse/pages/products.html?category=Gaming">
+                    <a href="/pages/products.html?category=Gaming">
                         Gaming
                     </a>
                 </li>
@@ -188,13 +188,13 @@ template.innerHTML = `
             <ul>
 
                 <li>
-                    <a href="/ThchVerse/pages/about.html">
+                    <a href="/pages/about.html">
                         About Us
                     </a>
                 </li>
 
                 <li>
-                    <a href="/ThchVerse/pages/contact.html">
+                    <a href="/pages/contact.html">
                         Contact
                     </a>
                 </li>
