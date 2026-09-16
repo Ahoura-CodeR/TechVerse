@@ -52,64 +52,60 @@ window.addEventListener("load", () => {
 });
 
 const categoryMap = {
-    Cameras: 'cameras',
-    Phones: 'phones',
-    SmartWatches: 'smartwatches',
-    Headphones: 'headphones',
-    Computers: 'computers',
-    Gaming: 'gaming'
-}
+  Cameras: "cameras",
+  Phones: "phones",
+  SmartWatches: "smartwatches",
+  Headphones: "headphones",
+  Computers: "computers",
+  Gaming: "gaming",
+};
 
-const params = new URLSearchParams(window.location.search)
-const categories = params.get("category")
-const newCategory = categoryMap[categories]
+const params = new URLSearchParams(window.location.search);
+const categories = params.get("category");
+const newCategory = categoryMap[categories];
 
-let newProducts = await getProducts()
-let filterProduct = newProducts.filter(item => {
-    return item.category === newCategory
-})
+let newProducts = await getProducts();
+let filterProduct = newProducts.filter((item) => {
+  return item.category === newCategory;
+});
 
-let currentPage = 1
-let itemPrePage = 10
-let totalPage = 0
-
+let currentPage = 1;
+let itemPrePage = 10;
+let totalPage = 0;
 
 let renderInformPage = (page, item) => {
+  const startIndex = (page - 1) * itemPrePage;
+  const endIndex = startIndex + itemPrePage;
+  return item.slice(startIndex, endIndex);
+};
 
-    const startIndex = (page - 1) * itemPrePage
-    const endIndex = startIndex + itemPrePage
-    return item.slice(startIndex, endIndex)
-}
-
-let finallyProduct
+let finallyProduct;
 
 if (newCategory === undefined) {
-    finallyProduct = newProducts
+  finallyProduct = newProducts;
 } else {
-    finallyProduct = filterProduct
+  finallyProduct = filterProduct;
 }
 
-totalPage = Math.ceil(finallyProduct.length / itemPrePage)
-const nextButtonPagination = document.querySelector('.next')
-const navPagination = document.querySelector('.pagination')
+totalPage = Math.ceil(finallyProduct.length / itemPrePage);
+const nextButtonPagination = document.querySelector(".next");
+const navPagination = document.querySelector(".pagination");
 
-
-const productForShado = document.querySelector('product-category')
-const shadowRootP = productForShado.shadowRoot
-const productGrid = shadowRootP.querySelector('.products-grid')
-const noProduct = shadowRootP.querySelector('.no-products')
-const buttonReset = shadowRootP.querySelector('.no-products-reset')
+const productForShado = document.querySelector("product-category");
+const shadowRootP = productForShado.shadowRoot;
+const productGrid = shadowRootP.querySelector(".products-grid");
+const noProduct = shadowRootP.querySelector(".no-products");
+const buttonReset = shadowRootP.querySelector(".no-products-reset");
 
 let renderProduct = (products) => {
+  const fragment = document.createDocumentFragment();
+  productGrid.innerHTML = ``;
 
-    const fragment = document.createDocumentFragment()
-        productGrid.innerHTML = ``
-        
-        products.forEach(item => {
-            const div = document.createElement('div')
-            div.classList.add('product-card')
-            const ratingPercent = (item.rating / 5) * 100
-    
+  products.forEach((item) => {
+    const div = document.createElement("div");
+    div.classList.add("product-card");
+    const ratingPercent = (item.rating / 5) * 100;
+
     div.innerHTML = `
         <div class="product-image-wrapper">
             <img
@@ -178,192 +174,167 @@ let renderProduct = (products) => {
         <button data-id="${item.id}" class="product-button">
             Buy Now
         </button>
-        `
-        fragment.appendChild(div)
-    });        
-    productGrid.appendChild(fragment)
-}
-
+        `;
+    fragment.appendChild(div);
+  });
+  productGrid.appendChild(fragment);
+};
 
 let renderButtonPagination = () => {
+  const parentButtonPagination = document.querySelectorAll(".pagination-page");
 
-    const parentButtonPagination = document.querySelectorAll('.pagination-page')
-    
-    parentButtonPagination.forEach(item => {
-        item.remove()
-    })
-    
-    
-    for (let i = 1; i <= totalPage; i++) {
-                
-        const buttonPagination = document.createElement('button')
-        buttonPagination.classList.add('pagination-page')
-        buttonPagination.textContent = i
-        navPagination.insertBefore(buttonPagination, nextButtonPagination)
-    
-        if (buttonPagination.textContent === '1') {
-            
-            buttonPagination.classList.add('active')
-        }
+  parentButtonPagination.forEach((item) => {
+    item.remove();
+  });
+
+  for (let i = 1; i <= totalPage; i++) {
+    const buttonPagination = document.createElement("button");
+    buttonPagination.classList.add("pagination-page");
+    buttonPagination.textContent = i;
+    navPagination.insertBefore(buttonPagination, nextButtonPagination);
+
+    if (buttonPagination.textContent === "1") {
+      buttonPagination.classList.add("active");
     }
+  }
+};
 
-    
-}
+const inputElem = document.querySelector(".input-search");
 
-const inputElem = document.querySelector('.input-search')
+navPagination.addEventListener("click", (event) => {
+  let filterSearch = finallyProduct.filter((item) =>
+    item.title
+      .trim()
+      .toLowerCase()
+      .includes(inputElem.value.trim().toLowerCase()),
+  );
 
-navPagination.addEventListener('click', event => {
+  if (event.target.closest(".pagination-page")) {
+    const parentButtonPagination =
+      document.querySelectorAll(".pagination-page");
+    const itemActive = Array.from(parentButtonPagination).filter((item) => {
+      return item.classList.contains("active");
+    });
 
-    let filterSearch = finallyProduct.filter(item => item.title.trim().toLowerCase().includes(inputElem.value.trim().toLowerCase()))
+    itemActive[0].classList.remove("active");
+    event.target.closest(".pagination-page").classList.add("active");
+    currentPage = Number(event.target.textContent);
 
-        if (event.target.closest('.pagination-page')) {
+    let newRenderProduct = renderInformPage(currentPage, filterSearch);
+    renderProduct(newRenderProduct);
+  } else if (event.target.closest(".previous")) {
+    const parentButtonPagination =
+      document.querySelectorAll(".pagination-page");
+    const itemActive = Array.from(parentButtonPagination).filter((item) => {
+      return item.classList.contains("active");
+    });
 
-            const parentButtonPagination = document.querySelectorAll('.pagination-page')
-            const itemActive = Array.from(parentButtonPagination).filter(item => {
-            
-                return item.classList.contains('active')
-            })
+    if (Number(itemActive[0].textContent) === 1) {
+      return;
+    } else {
+      currentPage = Number(itemActive[0].previousElementSibling.textContent);
+      let newRenderProduct = renderInformPage(currentPage, filterSearch);
+      itemActive[0].classList.remove("active");
+      itemActive[0].previousElementSibling.classList.add("active");
+      renderProduct(newRenderProduct);
+    }
+  } else if (event.target.closest(".next")) {
+    const parentButtonPagination =
+      document.querySelectorAll(".pagination-page");
+    const itemActive = Array.from(parentButtonPagination).filter((item) => {
+      return item.classList.contains("active");
+    });
 
-            itemActive[0].classList.remove('active')
-            event.target.closest('.pagination-page').classList.add('active')
-            currentPage = Number(event.target.textContent)
+    if (Number(itemActive[0].textContent) === totalPage) {
+      return;
+    } else {
+      currentPage = Number(itemActive[0].nextElementSibling.textContent);
+      itemActive[0].classList.remove("active");
+      itemActive[0].nextElementSibling.classList.add("active");
+      let newRenderProduct = renderInformPage(currentPage, filterSearch);
+      renderProduct(newRenderProduct);
+    }
+  }
+});
 
-            let newRenderProduct = renderInformPage(currentPage, filterSearch)
-            renderProduct(newRenderProduct)
-            
-        } else if (event.target.closest('.previous')) {
-
-            const parentButtonPagination = document.querySelectorAll('.pagination-page')
-            const itemActive = Array.from(parentButtonPagination).filter(item => {
-            
-                return item.classList.contains('active')
-            })
-
-            
-            if (Number(itemActive[0].textContent) === 1) {
-                
-                return
-            } else {
-                
-                currentPage = Number(itemActive[0].previousElementSibling.textContent)
-                let newRenderProduct = renderInformPage(currentPage, filterSearch)
-                itemActive[0].classList.remove('active')
-                itemActive[0].previousElementSibling.classList.add('active')
-                renderProduct(newRenderProduct)
-
-
-            } 
-        } else if (event.target.closest('.next')) {
-
-            const parentButtonPagination = document.querySelectorAll('.pagination-page')
-            const itemActive = Array.from(parentButtonPagination).filter(item => {
-            
-                return item.classList.contains('active')
-            })
-
-            
-            if (Number(itemActive[0].textContent) === totalPage) {
-                
-                return
-            } else {
-                
-                currentPage = Number(itemActive[0].nextElementSibling.textContent)
-                itemActive[0].classList.remove('active')
-                itemActive[0].nextElementSibling.classList.add('active')
-                let newRenderProduct = renderInformPage(currentPage, filterSearch)
-                renderProduct(newRenderProduct)
-            } 
-            
-        }
-    })
-
-renderButtonPagination()
-
+renderButtonPagination();
 
 let renderProductPage = () => {
-    
-    productGrid.innerHTML = ''
-    
-    let renderProductsPage = renderInformPage(currentPage, finallyProduct)
-    renderProduct(renderProductsPage)
-    
-}
+  productGrid.innerHTML = "";
 
+  let renderProductsPage = renderInformPage(currentPage, finallyProduct);
+  renderProduct(renderProductsPage);
+};
 
-inputElem.addEventListener('input', event => {
+inputElem.addEventListener("input", (event) => {
+  let filterSearch = finallyProduct.filter((item) =>
+    item.title
+      .trim()
+      .toLowerCase()
+      .includes(inputElem.value.trim().toLowerCase()),
+  );
 
-    
-    
-    let filterSearch = finallyProduct.filter(item => item.title.trim().toLowerCase().includes(inputElem.value.trim().toLowerCase()))
-    
-    if (inputElem.value.trim().toLowerCase() !== '') {
-        
-        currentPage = 1 
-        totalPage = Math.ceil(filterSearch.length / itemPrePage)
-        const searchResult =  renderInformPage(currentPage, filterSearch)
-        
-        if (filterSearch.length === 0) {
-            
-            noProduct.classList.add('show')
-        } else {
-            noProduct.classList.remove('show')
-        }
+  if (inputElem.value.trim().toLowerCase() !== "") {
+    currentPage = 1;
+    totalPage = Math.ceil(filterSearch.length / itemPrePage);
+    const searchResult = renderInformPage(currentPage, filterSearch);
 
-        renderButtonPagination()
-        renderProduct(searchResult)
-        
+    if (filterSearch.length === 0) {
+      noProduct.classList.add("show");
     } else {
-        
-        currentPage = 1 
-        totalPage = Math.ceil(finallyProduct.length / itemPrePage)
-        const newRenderProduct = renderInformPage(currentPage, finallyProduct)
-        renderButtonPagination()
-        renderProduct(newRenderProduct)
-        noProduct.classList.remove('show')
-    
-    }    
-})
-
-buttonReset.addEventListener('click', event => {
-    inputElem.value = ''
-    currentPage = 1 
-    totalPage = Math.ceil(finallyProduct.length / itemPrePage)
-    const newRenderProduct = renderInformPage(currentPage, finallyProduct)
-    renderButtonPagination()
-    renderProduct(newRenderProduct)
-    noProduct.classList.remove('show')
-})
-
-renderProductPage()
-
-const sordSelect = document.querySelector('.sort-products')
-
-sordSelect.addEventListener('change', () => {
-    
-    const sordProduct = [...finallyProduct]
-    const valueOption = sordSelect.value
-    let renderSord;
-    if (valueOption === 'By rating') {
-        renderSord = sordProduct.sort((a, b) => {
-            return b.rating - a.rating
-        })
-    } else if (valueOption === 'Price: Low to High') {
-        renderSord = sordProduct.sort((a, b) => {
-            return a.price - b.price
-        })
-    } else if (valueOption === 'Price: High to Low') {
-        renderSord = sordProduct.sort((a, b) => {
-            return b.price - a.price
-        })
-    } else if (valueOption === 'By name') {
-        renderSord = sordProduct.sort((a, b) => {
-            return a.title.localeCompare(b.title)
-        })
-    } else if (valueOption === 'Sort By') {
-        renderSord = finallyProduct
+      noProduct.classList.remove("show");
     }
 
-    let renderProductsPage = renderInformPage(currentPage, renderSord)
-    renderProduct(renderProductsPage)
+    renderButtonPagination();
+    renderProduct(searchResult);
+  } else {
+    currentPage = 1;
+    totalPage = Math.ceil(finallyProduct.length / itemPrePage);
+    const newRenderProduct = renderInformPage(currentPage, finallyProduct);
+    renderButtonPagination();
+    renderProduct(newRenderProduct);
+    noProduct.classList.remove("show");
+  }
+});
 
-})
+buttonReset.addEventListener("click", (event) => {
+  inputElem.value = "";
+  currentPage = 1;
+  totalPage = Math.ceil(finallyProduct.length / itemPrePage);
+  const newRenderProduct = renderInformPage(currentPage, finallyProduct);
+  renderButtonPagination();
+  renderProduct(newRenderProduct);
+  noProduct.classList.remove("show");
+});
+
+renderProductPage();
+
+const sordSelect = document.querySelector(".sort-products");
+
+sordSelect.addEventListener("change", () => {
+  const sordProduct = [...finallyProduct];
+  const valueOption = sordSelect.value;
+  let renderSord;
+  if (valueOption === "By rating") {
+    renderSord = sordProduct.sort((a, b) => {
+      return b.rating - a.rating;
+    });
+  } else if (valueOption === "Price: Low to High") {
+    renderSord = sordProduct.sort((a, b) => {
+      return a.price - b.price;
+    });
+  } else if (valueOption === "Price: High to Low") {
+    renderSord = sordProduct.sort((a, b) => {
+      return b.price - a.price;
+    });
+  } else if (valueOption === "By name") {
+    renderSord = sordProduct.sort((a, b) => {
+      return a.title.localeCompare(b.title);
+    });
+  } else if (valueOption === "Sort By") {
+    renderSord = finallyProduct;
+  }
+
+  let renderProductsPage = renderInformPage(currentPage, renderSord);
+  renderProduct(renderProductsPage);
+});

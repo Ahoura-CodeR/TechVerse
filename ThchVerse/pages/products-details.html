@@ -1,112 +1,171 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="preconnect" href="https://rsms.me/">
-	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-	<link rel="stylesheet" href="../css/products-details/products-details.css">
-</head>
-<body>
-  <div class="page-loader">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link
+      rel="stylesheet"
+      href="../css/products-details/products-details.css"
+    />
+  </head>
+  <body>
+    <div class="page-loader">
+      <div class="loader-content">
+        <div class="loader-orbit">
+          <div class="orbit orbit-1"></div>
+          <div class="orbit orbit-2"></div>
+          <div class="orbit orbit-3"></div>
 
-        <div class="loader-content">
-    
-            <div class="loader-orbit">
-                <div class="orbit orbit-1"></div>
-                <div class="orbit orbit-2"></div>
-                <div class="orbit orbit-3"></div>
-    
-                <div class="loader-core">
-                    <span>TV</span>
-                </div>
-            </div>
-    
-            <div class="loader-brand">
-                TECH<span>VERSE</span>
-            </div>
-    
-            <div class="loader-status">
-                <span class="loader-line"></span>
-                <span class="loader-text">INITIALIZING SYSTEM</span>
-                <span class="loader-dots">...</span>
+          <div class="loader-core">
+            <span>TV</span>
+          </div>
         </div>
 
-    </div>
+        <div class="loader-brand">TECH<span>VERSE</span></div>
 
+        <div class="loader-status">
+          <span class="loader-line"></span>
+          <span class="loader-text">INITIALIZING SYSTEM</span>
+          <span class="loader-dots">...</span>
+        </div>
+      </div>
     </div>
     <div class="container">
-        <section>
-            <nav-bar></nav-bar>
-        </section>
+      <section>
+        <nav-bar></nav-bar>
+      </section>
     </div>
-        <main class="product-page">
+    <main class="product-page">
+      <products-detail></products-detail>
 
-            <products-detail></products-detail>
+      <!-- ================= SECTION 3: REVIEWS ================= -->
+      <section class="reviews-section animate-slide-up">
+        <h2>Reviews</h2>
 
-            <!-- ================= SECTION 3: REVIEWS ================= -->
-            <section class="reviews-section animate-slide-up">
-              <h2>Reviews</h2>
-              
-              <div class="reviews-summary">
-                <div class="rating-score-box">
-                  <span class="score">4.8</span>
-                  <span class="total-reviews">of 125 reviews</span>
+        <div class="reviews-summary">
+          <div class="rating-score-box">
+            <span class="score">4.8</span>
+            <span class="total-reviews">of 125 reviews</span>
+            <div class="stars">★★★★★</div>
+          </div>
+
+          <div class="rating-bars">
+            <div class="bar-item">
+              <span>Excellent</span>
+              <div class="bar-bg">
+                <div class="bar-fill" style="--width: 85%"></div>
+              </div>
+              <span>100</span>
+            </div>
+            <div class="bar-item">
+              <span>Good</span>
+              <div class="bar-bg">
+                <div class="bar-fill" style="--width: 50%"></div>
+              </div>
+              <span>11</span>
+            </div>
+            <div class="bar-item">
+              <span>Average</span>
+              <div class="bar-bg">
+                <div class="bar-fill" style="--width: 15%"></div>
+              </div>
+              <span>3</span>
+            </div>
+            <div class="bar-item">
+              <span>Below Average</span>
+              <div class="bar-bg">
+                <div class="bar-fill" style="--width: 30%"></div>
+              </div>
+              <span>8</span>
+            </div>
+            <div class="bar-item">
+              <span>Poor</span>
+              <div class="bar-bg">
+                <div class="bar-fill" style="--width: 5%"></div>
+              </div>
+              <span>1</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="comment-input-box">
+          <input
+            maxlength="80"
+            class="comment-input"
+            type="text"
+            placeholder="Leave Comment"
+          />
+          <button class="send-btn">Submit</button>
+        </div>
+
+        <div class="comments-list">
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="user-info">
+                <img
+                  src="https://i.pravatar.cc/100?img=32"
+                  alt="Grace Carey"
+                  class="avatar"
+                />
+                <div>
+                  <strong class="user-name">Grace Carey</strong>
                   <div class="stars">★★★★★</div>
                 </div>
-        
-                <div class="rating-bars">
-                  <div class="bar-item"><span>Excellent</span><div class="bar-bg"><div class="bar-fill" style="--width: 85%;"></div></div><span>100</span></div>
-                  <div class="bar-item"><span>Good</span><div class="bar-bg"><div class="bar-fill" style="--width: 50%;"></div></div><span>11</span></div>
-                  <div class="bar-item"><span>Average</span><div class="bar-bg"><div class="bar-fill" style="--width: 15%;"></div></div><span>3</span></div>
-                  <div class="bar-item"><span>Below Average</span><div class="bar-bg"><div class="bar-fill" style="--width: 30%;"></div></div><span>8</span></div>
-                  <div class="bar-item"><span>Poor</span><div class="bar-bg"><div class="bar-fill" style="--width: 5%;"></div></div><span>1</span></div>
+              </div>
+              <span class="comment-date">24 January 2023</span>
+            </div>
+            <p class="comment-text">
+              I was a bit nervous to be buying a secondhand phone from Amazon,
+              but I couldn't be happier with my purchase!
+            </p>
+          </div>
+
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="user-info">
+                <img
+                  src="https://i.pravatar.cc/100?img=47"
+                  alt="Darcy King"
+                  class="avatar"
+                />
+                <div>
+                  <strong class="user-name">Darcy King</strong>
+                  <div class="stars">★★★★★</div>
                 </div>
               </div>
-        
-              <div class="comment-input-box">
-                <input maxlength="80" class="comment-input" type="text" placeholder="Leave Comment">
-                <button class="send-btn">Submit</button>
-              </div>
-        
-              <div class="comments-list">
-                <div class="comment-card">
-                  <div class="comment-header">
-                    <div class="user-info">
-                      <img src="https://i.pravatar.cc/100?img=32" alt="Grace Carey" class="avatar">
-                      <div><strong class="user-name">Grace Carey</strong><div class="stars">★★★★★</div></div>
-                    </div>
-                    <span class="comment-date">24 January 2023</span>
-                  </div>
-                  <p class="comment-text">I was a bit nervous to be buying a secondhand phone from Amazon, but I couldn't be happier with my purchase!</p>
-                </div>
-        
-                <div class="comment-card">
-                  <div class="comment-header">
-                    <div class="user-info">
-                      <img src="https://i.pravatar.cc/100?img=47" alt="Darcy King" class="avatar">
-                      <div><strong class="user-name">Darcy King</strong><div class="stars">★★★★★</div></div>
-                    </div>
-                    <span class="comment-date">24 January 2023</span>
-                  </div>
-                  <p class="comment-text">I might be the only one to say this but the camera is a little funky. Hoping it will change with a software update!</p>
-                  <div class="comment-images">
-                    <img src="https://m.media-amazon.com/images/I/610pghkO81L._AC_SL1500_.jpg" alt="user photo 1" class="zoomable">
-                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-7inch-deeppurple?wid=200" alt="user photo 2" class="zoomable">
-                  </div>
-                </div>
-              </div>
-        
-              <div class="view-more-wrapper">
-                <button class="btn-view-more">
-                  View More <span class="arrow-icon">∨</span>
-                </button>
-              </div>
-            </section>
-          </main>
-      <footer-site></footer-site>
+              <span class="comment-date">24 January 2023</span>
+            </div>
+            <p class="comment-text">
+              I might be the only one to say this but the camera is a little
+              funky. Hoping it will change with a software update!
+            </p>
+            <div class="comment-images">
+              <img
+                src="https://m.media-amazon.com/images/I/610pghkO81L._AC_SL1500_.jpg"
+                alt="user photo 1"
+                class="zoomable"
+              />
+              <img
+                src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-7inch-deeppurple?wid=200"
+                alt="user photo 2"
+                class="zoomable"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="view-more-wrapper">
+          <button class="btn-view-more">
+            View More <span class="arrow-icon">∨</span>
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer-site></footer-site>
     <script type="module" defer src="../js/nav.js"></script>
     <script type="module" defer src="/ThchVerse/js/products-detail.js"></script>
-</body>
+  </body>
 </html>

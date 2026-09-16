@@ -1,4 +1,4 @@
-const template = document.createElement("template")
+const template = document.createElement("template");
 
 template.innerHTML = `
 
@@ -127,26 +127,26 @@ template.innerHTML = `
 
 </section>
 
-`
+`;
 
 class isCategory extends HTMLElement {
   constructor() {
-    super()
-    this.appendChild(template.content.cloneNode(true))
+    super();
+    this.appendChild(template.content.cloneNode(true));
   }
 
   connectedCallback() {
-    const grid = this.querySelector(".category-grid")
+    const grid = this.querySelector(".category-grid");
 
-    grid.addEventListener("click", e => {
-      const card = e.target.closest(".category-card")
+    grid.addEventListener("click", (e) => {
+      const card = e.target.closest(".category-card");
 
-      if (!card) return
+      if (!card) return;
 
-      const category = card.dataset.category
-      window.location.href = `/ThchVerse/pages/products.html?category=${category}`
-    })
+      const category = card.dataset.category;
+      window.location.href = `/ThchVerse/pages/products.html?category=${category}`;
+    });
   }
 }
 
-export { isCategory }
+export { isCategory };

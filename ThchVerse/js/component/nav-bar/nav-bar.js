@@ -1,8 +1,8 @@
-let template = document.createElement('template')
+let template = document.createElement("template");
 
 let eventSvgHandler = (page) => {
-  window.location.href = `/ThchVerse/pages/${page}`
-}
+  window.location.href = `/ThchVerse/pages/${page}`;
+};
 
 template.innerHTML = `
 <head>
@@ -191,26 +191,28 @@ template.innerHTML = `
 
 
 </nav>
-  `
+  `;
 
 class isNav extends HTMLElement {
-    constructor() {
-        super()
-        this.attachShadow({ mode: 'open' })
-        this.shadowRoot.appendChild(template.content.cloneNode(true))
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+  }
 
-    connectedCallback() {
-        const favIcon = this.shadowRoot.querySelector('.nav-action.favorite')
-        const buyIcon = this.shadowRoot.querySelector('.nav-action.cart')
-        const profileIcon = this.shadowRoot.querySelector('.nav-action.profile')
+  connectedCallback() {
+    const favIcon = this.shadowRoot.querySelector(".nav-action.favorite");
+    const buyIcon = this.shadowRoot.querySelector(".nav-action.cart");
+    const profileIcon = this.shadowRoot.querySelector(".nav-action.profile");
 
-        buyIcon?.addEventListener('click', () => eventSvgHandler('card.html'))
-        profileIcon?.addEventListener('click', () => eventSvgHandler('profile.html'))
-        favIcon?.addEventListener('click', () => {
-            favIcon.classList.toggle('liked')
-        })
-    }
+    buyIcon?.addEventListener("click", () => eventSvgHandler("card.html"));
+    profileIcon?.addEventListener("click", () =>
+      eventSvgHandler("profile.html"),
+    );
+    favIcon?.addEventListener("click", () => {
+      favIcon.classList.toggle("liked");
+    });
+  }
 }
 
-export {isNav}
+export { isNav };
