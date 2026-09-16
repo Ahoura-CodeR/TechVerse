@@ -188,13 +188,13 @@ template.innerHTML = `
             <ul>
 
                 <li>
-                    <a href="/pages/about.html">
+                    <a href="#">
                         About Us
                     </a>
                 </li>
 
                 <li>
-                    <a href="/pages/contact.html">
+                    <a href="#">
                         Contact
                     </a>
                 </li>
