@@ -1,0 +1,803 @@
+@import url("/css/variables.css");
+
+/* =========================================================
+   BASE
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: Inter, sans-serif;
+}
+
+.container {
+  width: min(var(--container), 90%);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   PRODUCTS PAGE
+========================================================= */
+
+.products-page {
+  width: min(var(--container), 90%);
+  margin: 0 auto;
+  padding: 45px 0 100px;
+}
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  margin-bottom: 35px;
+
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--text-primary);
+}
+
+.breadcrumb svg {
+  flex-shrink: 0;
+  color: var(--text-muted);
+}
+
+.breadcrumb span {
+  color: var(--text-secondary);
+}
+
+/* =========================================================
+   PRODUCTS TOP
+========================================================= */
+
+.products-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 30px;
+  padding-bottom: 24px;
+
+  border-bottom: 1px solid var(--border-light);
+}
+
+.products-top p {
+  margin: 0;
+
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.products-top strong {
+  margin-left: 5px;
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   SORT
+========================================================= */
+
+.sort-box {
+  position: relative;
+
+  width: 190px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.sort-products {
+  appearance: none;
+
+  width: 100%;
+  height: 44px;
+
+  padding: 0 40px 0 16px;
+
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+
+  outline: none;
+
+  background:
+    linear-gradient(135deg, rgba(139, 92, 246, 0.06), rgba(34, 211, 238, 0.02)),
+    rgba(255, 255, 255, 0.035);
+
+  color: var(--text-secondary);
+
+  font-family: inherit;
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.sort-products:hover {
+  background:
+    linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(34, 211, 238, 0.04)),
+    rgba(255, 255, 255, 0.05);
+
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.sort-products:focus {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 3px rgba(139, 92, 246, 0.1),
+    0 0 25px rgba(139, 92, 246, 0.08);
+}
+
+.sort-products option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.sort-box > svg {
+  position: absolute;
+  right: 16px;
+
+  color: var(--text-muted);
+
+  pointer-events: none;
+
+  transition: var(--transition-fast);
+}
+
+.sort-box:hover > svg {
+  color: var(--secondary);
+}
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.products-layout {
+  display: grid;
+  grid-template-columns: 235px minmax(0, 1fr);
+
+  gap: 45px;
+
+  align-items: start;
+}
+
+.products-area {
+  min-width: 0;
+}
+
+/* =========================================================
+   FILTER SIDEBAR
+========================================================= */
+
+.filter-sidebar {
+  position: sticky;
+  top: 25px;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border-light);
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(139, 92, 246, 0.06),
+      transparent 30%
+    ),
+    rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================
+   FILTER SECTION
+========================================================= */
+
+.filter-section {
+  position: relative;
+
+  padding: 19px 18px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.filter-section:last-child {
+  border-bottom: none;
+}
+
+/* =========================================================
+   FILTER HEADING
+========================================================= */
+
+.filter-heading {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition: color 0.25s ease;
+}
+
+.filter-heading span {
+  white-space: nowrap;
+}
+
+.filter-heading svg {
+  flex-shrink: 0;
+
+  color: var(--text-muted);
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Heading hover */
+
+.filter-heading:hover {
+  color: var(--primary-light);
+}
+
+.filter-heading:hover svg {
+  color: var(--secondary);
+}
+
+/* Open state */
+
+.filter-section.open .filter-heading {
+  color: var(--primary-light);
+}
+
+.filter-section.open .filter-heading svg {
+  color: var(--secondary);
+
+  transform: rotate(180deg);
+}
+
+/* =========================================================
+   FILTER CONTENT
+========================================================= */
+
+/*
+   Default:
+   hidden
+
+   JS only needs to add/remove:
+   .open
+*/
+
+.filter-options,
+.brand-list {
+  display: grid;
+  grid-template-rows: 0fr;
+
+  overflow: hidden;
+
+  height: 0;
+
+  margin-top: 0;
+
+  opacity: 0;
+
+  transform: translateY(-5px);
+
+  transition:
+    grid-template-rows 0.35s ease,
+    height 0.35s ease,
+    margin-top 0.35s ease,
+    opacity 0.25s ease,
+    transform 0.35s ease;
+}
+
+/*
+   Inner content needs this behaviour
+   for the grid-row animation.
+*/
+
+.filter-options > *,
+.brand-list > * {
+  min-height: 0;
+}
+
+/* Open */
+
+.filter-section.open .filter-options,
+.filter-section.open .brand-list {
+  display: grid;
+  grid-template-rows: 1fr;
+
+  height: auto;
+
+  margin-top: 17px;
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+  overflow: visible;
+}
+
+/* =========================================================
+   BRAND SEARCH
+========================================================= */
+
+.brand-search {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  margin-top: 17px;
+}
+
+.brand-search > svg {
+  position: absolute;
+
+  left: 13px;
+
+  color: var(--text-muted);
+
+  pointer-events: none;
+}
+
+.input-search {
+  width: 100%;
+  height: 39px;
+
+  padding: 0 12px 0 36px;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 11px;
+
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  color: var(--text-primary);
+
+  font-family: inherit;
+  font-size: 12px;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.input-search::placeholder {
+  color: var(--text-muted);
+}
+
+.input-search:hover {
+  border-color: rgba(139, 92, 246, 0.32);
+}
+
+.input-search:focus {
+  border-color: rgba(139, 92, 246, 0.65);
+
+  background: rgba(139, 92, 246, 0.05);
+
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.08);
+}
+
+/* =========================================================
+   FILTER OPTIONS
+========================================================= */
+
+.filter-option {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 15px minmax(0, 1fr) auto;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 5px 0;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.filter-option:hover {
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   CUSTOM CHECKBOX
+========================================================= */
+
+.filter-option-input {
+  appearance: none;
+
+  position: relative;
+
+  width: 15px;
+  height: 15px;
+
+  margin: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.filter-option-input:hover {
+  border-color: rgba(139, 92, 246, 0.55);
+}
+
+.filter-option-input:checked {
+  border-color: var(--primary);
+
+  background: var(--primary);
+
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.28);
+}
+
+.filter-option-input:checked::after {
+  content: "";
+
+  position: absolute;
+
+  left: 4px;
+  top: 2px;
+
+  width: 4px;
+  height: 7px;
+
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+
+  transform: rotate(45deg);
+}
+
+/* =========================================================
+   OPTION TEXT
+========================================================= */
+
+.filter-option span {
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.filter-option small {
+  color: var(--text-muted);
+
+  font-size: 9px;
+
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================================================
+   BRAND LIST
+========================================================= */
+
+.brand-list {
+  gap: 9px;
+}
+
+.brand-list .filter-option {
+  padding: 3px 0;
+}
+
+/* =========================================================
+   PRODUCTS AREA
+========================================================= */
+
+.products-area {
+  width: 100%;
+}
+
+/* =========================================================
+   PAGE LOADER
+========================================================= */
+
+.page-loader {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: var(--z-modal);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(139, 92, 246, 0.09),
+      transparent 34%
+    ),
+    var(--bg-primary);
+
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
+}
+
+.page-loader.hidden {
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 24px;
+}
+
+.loader-orbit {
+  position: relative;
+
+  width: 110px;
+  height: 110px;
+}
+
+.orbit {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid transparent;
+}
+
+.orbit-1 {
+  inset: 0;
+
+  border-top-color: var(--primary);
+
+  animation: rotate 1.5s linear infinite;
+}
+
+.orbit-2 {
+  inset: 12px;
+
+  border-right-color: var(--secondary);
+
+  animation: rotateReverse 2s linear infinite;
+}
+
+.orbit-3 {
+  inset: 25px;
+
+  border-bottom-color: var(--accent-pink);
+
+  animation: rotate 3s linear infinite;
+}
+
+.loader-core {
+  position: absolute;
+
+  inset: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--gradient-main);
+
+  color: white;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  box-shadow: var(--neon-glow);
+
+  animation: loaderPulse 2s ease-in-out infinite;
+}
+
+.loader-brand {
+  color: var(--text-primary);
+
+  font-size: 20px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.loader-brand span {
+  color: var(--primary-light);
+}
+
+.loader-status {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.loader-line {
+  width: 30px;
+  height: 1px;
+
+  background: var(--gradient-main);
+}
+
+.loader-dots {
+  color: var(--secondary);
+
+  animation: loaderDots 1.4s ease-in-out infinite;
+}
+
+/* =========================================================
+   LOADER ANIMATIONS
+========================================================= */
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes loaderPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes loaderDots {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+  .products-layout {
+    grid-template-columns: 205px minmax(0, 1fr);
+
+    gap: 28px;
+  }
+}
+
+@media (max-width: 800px) {
+  .products-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-sidebar {
+    position: relative;
+
+    top: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .products-page {
+    width: 92%;
+
+    padding-top: 30px;
+  }
+
+  .breadcrumb {
+    gap: 8px;
+
+    font-size: 12px;
+  }
+
+  .products-top {
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 18px;
+  }
+
+  .sort-box {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
