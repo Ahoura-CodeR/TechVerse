@@ -28,6 +28,12 @@ body {
   overflow: hidden;
 }
 
+
+nav-bar {
+    position: relative;
+    z-index: 9999;
+}
+
 .hero-bg {
   position: absolute;
 

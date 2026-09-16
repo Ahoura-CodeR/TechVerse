@@ -1,3 +1,4 @@
+import { getProducts } from "/js/component/product/product.js";
 let template = document.createElement("template");
 
 let eventSvgHandler = (page) => {
@@ -72,6 +73,31 @@ template.innerHTML = `
             class="input-nav"
             placeholder="Search products..."
         >
+        
+        <div class="search-result-box">
+
+    <div class="search-results"></div>
+
+
+    <div class="no-result">
+
+        <h3>
+            No Products Found
+        </h3>
+
+        <p>
+            Try another keyword
+        </p>
+
+    </div>
+
+
+    <button class="show-more-search">
+        Show More
+    </button>
+
+
+</div>
 
 
     </div>
@@ -196,22 +222,171 @@ template.innerHTML = `
 class isNav extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+
+    this.attachShadow({
+      mode: "open",
+    });
+
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+    this.state = {
+      products: [],
+
+      results: [],
+
+      searchValue: "",
+
+      visibleCount: 10,
+    };
   }
 
-  connectedCallback() {
-    const favIcon = this.shadowRoot.querySelector(".nav-action.favorite");
-    const buyIcon = this.shadowRoot.querySelector(".nav-action.cart");
-    const profileIcon = this.shadowRoot.querySelector(".nav-action.profile");
+  async connectedCallback() {
+    const favIcon = this.shadowRoot.querySelector(".favorite");
+
+    const buyIcon = this.shadowRoot.querySelector(".cart");
+
+    const profileIcon = this.shadowRoot.querySelector(".profile");
+
+    const input = this.shadowRoot.querySelector(".input-nav");
+
+    const showMore = this.shadowRoot.querySelector(".show-more-search");
+
+    await this.loadProducts();
 
     buyIcon?.addEventListener("click", () => eventSvgHandler("card.html"));
+
     profileIcon?.addEventListener("click", () =>
       eventSvgHandler("profile.html"),
     );
+
     favIcon?.addEventListener("click", () => {
       favIcon.classList.toggle("liked");
     });
+
+    input.addEventListener("input", () => {
+      this.state.searchValue = input.value.trim().toLowerCase();
+
+      this.state.visibleCount = 10;
+
+      this.searchProducts();
+    });
+
+    showMore.addEventListener("click", () => {
+      this.state.visibleCount += 10;
+
+      this.renderSearch();
+    });
+
+    this.shadowRoot
+      .querySelector(".search-results")
+      .addEventListener("click", (event) => {
+        const button = event.target.closest(".search-product-btn");
+
+        if (button) {
+          location.href = `/pages/products-details.html?id=${button.dataset.id}`;
+        }
+      });
+  }
+
+  async loadProducts() {
+    this.state.products = await getProducts();
+  }
+
+  searchProducts() {
+    const value = this.state.searchValue;
+
+    const box = this.shadowRoot.querySelector(".search-result-box");
+
+    if (!value) {
+      box.classList.remove("show");
+
+      return;
+    }
+
+    this.state.results = this.state.products.filter((product) => {
+      return (
+        product.title.toLowerCase().includes(value) ||
+        product.category.toLowerCase().includes(value)
+      );
+    });
+
+    this.renderSearch();
+  }
+
+  renderSearch() {
+    const box = this.shadowRoot.querySelector(".search-result-box");
+
+    const container = this.shadowRoot.querySelector(".search-results");
+
+    const noResult = this.shadowRoot.querySelector(".no-result");
+
+    const showMore = this.shadowRoot.querySelector(".show-more-search");
+
+    container.innerHTML = "";
+
+    if (this.state.results.length === 0) {
+      noResult.classList.add("show");
+
+      showMore.classList.remove("show");
+
+      box.classList.add("show");
+
+      return;
+    }
+
+    noResult.classList.remove("show");
+
+    const products = this.state.results.slice(0, this.state.visibleCount);
+
+    products.forEach((product) => {
+      const div = document.createElement("div");
+
+      div.className = "search-product";
+
+      div.innerHTML = `
+
+            <img 
+            src="${product.images[0]}"
+            >
+
+
+            <div class="search-product-info">
+
+                <h4>
+                ${product.title}
+                </h4>
+
+
+                <span>
+                $${product.price}
+                </span>
+
+            </div>
+
+
+
+            <button
+            class="search-product-btn"
+            data-id="${product.id}"
+            >
+
+            View
+
+            </button>
+
+
+        `;
+
+      container.appendChild(div);
+    });
+
+    if (this.state.visibleCount < this.state.results.length) {
+      showMore.classList.add("show");
+    } else {
+      showMore.classList.remove("show");
+    }
+
+    box.classList.add("show");
   }
 }
 
