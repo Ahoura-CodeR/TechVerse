@@ -6,7 +6,7 @@ template.innerHTML = `
 
 @import "../../../css/variables.css";
 @import "../../../css/global.css";
-@import "../../../js/component/category/category.css";
+@import "../../..js/component/category/category.css";
 
 </style>
 
