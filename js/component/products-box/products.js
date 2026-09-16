@@ -327,6 +327,8 @@ class productCategory extends HTMLElement {
         this.handleFilterChange(checkbox);
       }
     });
+
+    
   }
 
   /* =====================================================

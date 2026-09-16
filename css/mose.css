@@ -1,0 +1,51 @@
+.cursor-glow {
+  position: fixed;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 99999;
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 255, 0.55),
+    rgba(139, 92, 246, 0.45),
+    rgba(236, 72, 153, 0.35),
+    transparent 70%
+  );
+
+  filter: blur(25px);
+
+  transform: translate(-50%, -50%);
+
+  opacity: 0.8;
+
+  transition:
+    width 0.35s ease,
+    height 0.35s ease,
+    opacity 0.35s ease;
+
+  animation: pulseGlow 4s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from {
+    filter: blur(25px) hue-rotate(0deg);
+  }
+
+  to {
+    filter: blur(35px) hue-rotate(45deg);
+  }
+}
+
+
+.cursor-glow.active {
+  width: 280px;
+  height: 280px;
+
+  opacity: 1;
+}
