@@ -111,7 +111,7 @@ template.innerHTML = `
 
 
         <li>
-            <a href="../pages/home.html">
+            <a href="/index.html">
                 Home
             </a>
         </li>

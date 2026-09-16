@@ -24,7 +24,7 @@ template.innerHTML = `
         <div class="footer-brand">
 
 
-            <a href="/pages/home.html" class="footer-logo">
+            <a href="/index.html" class="footer-logo">
 
                 <span class="logo-tech">TECH</span>
                 <span class="logo-verse">VERSE</span>
@@ -102,7 +102,7 @@ template.innerHTML = `
             <ul>
 
                 <li>
-                    <a href="/pages/home.html">
+                    <a href="/index.html">
                         Home
                     </a>
                 </li>
