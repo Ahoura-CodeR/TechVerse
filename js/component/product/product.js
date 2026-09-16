@@ -278,7 +278,7 @@ View Product
       const productBtn = event.target.closest(".product-btn");
 
       if (productBtn) {
-        window.location.href = `/ThchVerse/pages/products-details.html?id=${productBtn.dataset.id}`;
+        window.location.href = `/pages/products-details.html?id=${productBtn.dataset.id}`;
       }
 
       const wishlist = event.target.closest(".wishlist-btn");

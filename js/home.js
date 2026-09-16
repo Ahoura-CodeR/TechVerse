@@ -13,7 +13,7 @@ window.customElements.define("product-data", isProducts);
 // ==========================
 
 const productPage = () => {
-  window.location.href = "/ThchVerse/pages/products.html";
+  window.location.href = "/pages/products.html";
 };
 
 const exploreButton = document.querySelector(".primary-btn");
