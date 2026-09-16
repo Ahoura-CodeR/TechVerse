@@ -92,7 +92,7 @@ template.innerHTML = `
 
 async function getProducts() {
   try {
-    const response = await fetch("/Data/products.json");
+    const response = await fetch("../../../Data/products.json");
 
     if (!response.ok) {
       throw new Error("Failed to fetch products.");
