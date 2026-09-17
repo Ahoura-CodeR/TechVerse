@@ -1,6 +1,6 @@
-import { isCategory } from "js/component/category/category.js";
-import { isFooter } from "js/component/footer/footer.js";
-import { isProducts } from "js/component/product/product.js";
+import { isCategory } from "./component/category/category.js";
+import { isFooter } from "./component/footer/footer.js";
+import { isProducts } from "./component/product/product.js";
 
 window.customElements.define("category-component", isCategory);
 
