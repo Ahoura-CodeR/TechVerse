@@ -1,11 +1,11 @@
-import { getProducts } from "/js/component/products-box/products.js";
+import { getProducts } from "js/component/products-box/products.js";
 
 const template = document.createElement("template");
 
 template.innerHTML = `
   <link
     rel="stylesheet"
-    href="/js/component/products-detail/detail.css"
+    href="js/component/products-detail/detail.css"
   >
 
   <div class="box-container"></div>
@@ -146,7 +146,7 @@ class productsDetail extends HTMLElement {
         </p>
 
         <a
-          href="/pages/products.html"
+          href="pages/products.html"
           class="back-to-products"
         >
           Back to Products

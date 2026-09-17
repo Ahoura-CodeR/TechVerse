@@ -4,9 +4,9 @@ template.innerHTML = `
 
 <style>
 
-@import "/css/variables.css";
-@import "/css/global.css";
-@import "/js/component/footer/footer.css";
+@import "css/variables.css";
+@import "css/global.css";
+@import "js/component/footer/footer.css";
 
 </style>
 
@@ -24,7 +24,7 @@ template.innerHTML = `
         <div class="footer-brand">
 
 
-            <a href="/index.html" class="footer-logo">
+            <a href="index.html" class="footer-logo">
 
                 <span class="logo-tech">TECH</span>
                 <span class="logo-verse">VERSE</span>
@@ -102,25 +102,25 @@ template.innerHTML = `
             <ul>
 
                 <li>
-                    <a href="/index.html">
+                    <a href="index.html">
                         Home
                     </a>
                 </li>
 
                 <li>
-                    <a href="/pages/products.html">
+                    <a href="pages/products.html">
                         Products
                     </a>
                 </li>
 
                 <li>
-                    <a href="/pages/profile.html">
+                    <a href="pages/profile.html">
                         Profile
                     </a>
                 </li>
 
                 <li>
-                    <a href="/pages/card.html">
+                    <a href="pages/card.html">
                         Shopping Cart
                     </a>
                 </li>
@@ -139,37 +139,37 @@ template.innerHTML = `
             <ul>
 
                 <li>
-                    <a href="/pages/products.html?category=Phones">
+                    <a href="pages/products.html?category=Phones">
                         Phones
                     </a>
                 </li>
 
                 <li>
-                    <a href="/pages/products.html?category=SmartWatches">
+                    <a href="pages/products.html?category=SmartWatches">
                         Smart Watches
                     </a>
                 </li>
 
                 <li>
-                    <a href="/pages/products.html?category=Cameras">
+                    <a href="pages/products.html?category=Cameras">
                         Cameras
                     </a>
                 </li>
 
                 <li>
-                    <a href="/pages/products.html?category=Headphones">
+                    <a href="pages/products.html?category=Headphones">
                         Headphones
                     </a>
                 </li>
 
                 <li>
-                    <a href="/pages/products.html?category=Computers">
+                    <a href="pages/products.html?category=Computers">
                         Computers
                     </a>
                 </li>
 
                 <li>
-                    <a href="/pages/products.html?category=Gaming">
+                    <a href="pages/products.html?category=Gaming">
                         Gaming
                     </a>
                 </li>

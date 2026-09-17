@@ -40,7 +40,7 @@ class ProfilePage {
       this.backButton.classList.add("clicked");
 
       setTimeout(() => {
-        window.location.href = "/index.html";
+        window.location.href = "index.html";
       }, 180);
     });
   }
@@ -105,7 +105,7 @@ class ProfilePage {
 
       switch (title) {
         case "My Cart":
-          window.location.href = "/pages/card.html";
+          window.location.href = "pages/card.html";
           break;
 
         case "Wishlist":

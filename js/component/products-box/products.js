@@ -2,7 +2,7 @@ const template = document.createElement("template");
 
 template.innerHTML = `
 
-<link rel="stylesheet" href="/js/component/products-box/products.css">
+<link rel="stylesheet" href="js/component/products-box/products.css">
 
 
 <div class="product-loader">
@@ -92,7 +92,7 @@ template.innerHTML = `
 
 async function getProducts() {
   try {
-    const response = await fetch("/Data/products.json");
+    const response = await fetch("Data/products.json");
 
     if (!response.ok) {
       throw new Error("Failed to fetch products.");
@@ -294,7 +294,7 @@ class productCategory extends HTMLElement {
       const product = event.target.closest(".product-button");
 
       if (product) {
-        location.href = `/pages/products-details.html?id=${product.dataset.id}`;
+        location.href = `pages/products-details.html?id=${product.dataset.id}`;
       }
     });
 
