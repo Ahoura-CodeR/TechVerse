@@ -1,4 +1,4 @@
-import { getProducts } from "./component/products-box/products.js";
+import { getProducts } from "../products-box/products.js";
 
 const template = document.createElement("template");
 

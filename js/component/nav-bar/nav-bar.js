@@ -1,4 +1,4 @@
-import { getProducts } from "./component/product/product.js";
+import { getProducts } from "../product/product.js";
 let template = document.createElement("template");
 
 let eventSvgHandler = (page) => {
