@@ -527,3 +527,18 @@
 
   border-radius: 10px;
 }
+
+
+@media (max-width: 481px) {
+
+  .search-result-box {
+      max-width: 346px;
+  }
+
+}
+@media (max-width: 402px) {
+
+  .search-result-box {
+      max-width: 290px;
+  }
+}
