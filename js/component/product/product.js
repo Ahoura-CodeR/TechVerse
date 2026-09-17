@@ -3,10 +3,10 @@ const template = document.createElement("template");
 template.innerHTML = `
 
 
-<link rel="stylesheet" href="../../../css/variables.css">
-<link rel="stylesheet" href="../../../css/global.css">
-<link rel="stylesheet" href="../../../css/animations.css">
-<link rel="stylesheet" href="../../../js/component/product/product.css">
+<link rel="stylesheet" href="/css/variables.css">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/animations.css">
+<link rel="stylesheet" href="/js/component/product/product.css">
 
 
 
@@ -95,7 +95,7 @@ INITIALIZING PRODUCTS
 
 let getProducts = async () => {
   try {
-    const response = await fetch("../../../Data/products.json");
+    const response = await fetch("/Data/products.json");
 
     if (!response.ok) throw new Error("Products not found");
 
@@ -278,7 +278,7 @@ View Product
       const productBtn = event.target.closest(".product-btn");
 
       if (productBtn) {
-        window.location.href = `../../../pages/products-details.html?id=${productBtn.dataset.id}`;
+        window.location.href = `/pages/products-details.html?id=${productBtn.dataset.id}`;
       }
 
       const wishlist = event.target.closest(".wishlist-btn");

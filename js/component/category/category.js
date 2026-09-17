@@ -4,9 +4,9 @@ template.innerHTML = `
 
 <style>
 
-@import "../../../css/variables.css";
-@import "../../../css/global.css";
-@import "../../../js/component/category/category.css";
+@import "/css/variables.css";
+@import "/css/global.css";
+@import "/js/component/category/category.css";
 
 </style>
 
@@ -144,7 +144,7 @@ class isCategory extends HTMLElement {
       if (!card) return;
 
       const category = card.dataset.category;
-      window.location.href = `../../../pages/products.html?category=${category}`;
+      window.location.href = `/pages/products.html?category=${category}`;
     });
   }
 }

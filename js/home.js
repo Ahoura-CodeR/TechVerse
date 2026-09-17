@@ -1,6 +1,6 @@
-import { isCategory } from "./component/category/category.js";
-import { isFooter } from "./component/footer/footer.js";
-import { isProducts } from "./component/product/product.js";
+import { isCategory } from "/js/component/category/category.js";
+import { isFooter } from "/js/component/footer/footer.js";
+import { isProducts } from "/js/component/product/product.js";
 
 window.customElements.define("category-component", isCategory);
 
@@ -13,7 +13,7 @@ window.customElements.define("product-data", isProducts);
 // ==========================
 
 const productPage = () => {
-  window.location.href = "../pages/products.html";
+  window.location.href = "/pages/products.html";
 };
 
 const exploreButton = document.querySelector(".primary-btn");
