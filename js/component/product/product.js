@@ -95,7 +95,7 @@ INITIALIZING PRODUCTS
 
 let getProducts = async () => {
   try {
-    const response = await fetch("/Data/products.json");
+    const response = await fetch("Data/products.json");
 
     if (!response.ok) throw new Error("Products not found");
 
