@@ -1,5 +1,7 @@
 # TechVerse
 
+[![CI](https://github.com/Ahoura-CodeR/TechVerse/actions/workflows/ci.yml/badge.svg)](https://github.com/Ahoura-CodeR/TechVerse/actions/workflows/ci.yml)
+
 A multi-page tech-store frontend built with **no framework and no build step for the app itself**: plain HTML, CSS and JavaScript modules, structured as **Web Components with Shadow DOM**.
 
 **[Live demo](https://ahoura-coder.github.io/TechVerse/)** · 600 products · 6 categories · no backend
