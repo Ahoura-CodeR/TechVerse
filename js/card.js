@@ -1,6 +1,4 @@
-/* =====================================================
-   CART PAGE
-===================================================== */
+/* Cart page */
 
 class ShoppingCart {
   constructor() {
@@ -12,9 +10,7 @@ class ShoppingCart {
 
     this.cartCount = document.querySelector(".cart-count strong");
 
-    this.summarySubtotal = document.querySelector(
-      ".summary-row:nth-child(1) strong",
-    );
+    this.summarySubtotal = document.querySelector(".summary-row:nth-child(1) strong");
 
     this.summaryTotal = document.querySelector(".summary-total strong");
 
@@ -29,9 +25,7 @@ class ShoppingCart {
     this.init();
   }
 
-  /* =====================================================
-     INIT
-  ===================================================== */
+  /* Init */
 
   init() {
     this.hideLoader();
@@ -49,9 +43,7 @@ class ShoppingCart {
     this.updateCart();
   }
 
-  /* =====================================================
-     PAGE LOADER
-  ===================================================== */
+  /* Page loader */
 
   hideLoader() {
     const loader = document.querySelector(".page-loader");
@@ -71,9 +63,7 @@ class ShoppingCart {
     });
   }
 
-  /* =====================================================
-     QUANTITY
-  ===================================================== */
+  /* Quantity */
 
   bindQuantityButtons() {
     const controls = document.querySelectorAll(".quantity-control");
@@ -115,7 +105,6 @@ class ShoppingCart {
         }
 
         quantityElement.textContent = quantity;
-
         const item = control.closest(".cart-item");
 
         if (item) {
@@ -127,9 +116,7 @@ class ShoppingCart {
     });
   }
 
-  /* =====================================================
-     ITEM PRICE
-  ===================================================== */
+  /* Item price */
 
   updateItemPrice(item) {
     const quantityElement = item.querySelector(".quantity-control span");
@@ -153,13 +140,10 @@ class ShoppingCart {
     }
 
     const totalPrice = basePrice * quantity;
-
     priceElement.textContent = `$${totalPrice.toLocaleString("en-US")}`;
   }
 
-  /* =====================================================
-     REMOVE ITEM
-  ===================================================== */
+  /* Remove item */
 
   bindRemoveButtons() {
     const buttons = document.querySelectorAll(".remove-item");
@@ -177,9 +161,7 @@ class ShoppingCart {
     });
   }
 
-  /* =====================================================
-     REMOVE ITEM ANIMATION
-  ===================================================== */
+  /* Remove item animation */
 
   removeItem(item) {
     item.classList.add("removing");
@@ -191,9 +173,7 @@ class ShoppingCart {
     }, 350);
   }
 
-  /* =====================================================
-     CLEAR CART
-  ===================================================== */
+  /* Clear cart */
 
   bindClearCart() {
     if (!this.clearCartButton) {
@@ -221,17 +201,13 @@ class ShoppingCart {
     });
   }
 
-  /* =====================================================
-     UPDATE CART
-  ===================================================== */
+  /* Update cart */
 
   updateCart() {
     const items = document.querySelectorAll(".cart-item");
 
     let totalItems = 0;
-
     let subtotal = 0;
-
     items.forEach((item) => {
       const quantityElement = item.querySelector(".quantity-control span");
 
@@ -243,16 +219,13 @@ class ShoppingCart {
 
       const quantity = Number(quantityElement.textContent);
 
-      const basePrice = Number(
-        item.dataset.price || priceElement.textContent.replace("$", ""),
-      );
+      const basePrice = Number(item.dataset.price || priceElement.textContent.replace("$", ""));
 
       if (Number.isNaN(quantity) || Number.isNaN(basePrice)) {
         return;
       }
 
       totalItems += quantity;
-
       subtotal += basePrice * quantity;
     });
 
@@ -263,9 +236,7 @@ class ShoppingCart {
     this.updateEmptyState(items.length);
   }
 
-  /* =====================================================
-     CART COUNT
-  ===================================================== */
+  /* Cart count */
 
   updateCount(count) {
     if (!this.cartCount) {
@@ -275,9 +246,7 @@ class ShoppingCart {
     this.cartCount.textContent = count;
   }
 
-  /* =====================================================
-     SUMMARY
-  ===================================================== */
+  /* Summary */
 
   updateSummary(subtotal) {
     if (this.summarySubtotal) {
@@ -289,9 +258,7 @@ class ShoppingCart {
     }
   }
 
-  /* =====================================================
-     EMPTY STATE
-  ===================================================== */
+  /* Empty state */
 
   updateEmptyState(itemCount) {
     if (!this.cartItemsSection || !this.emptyCart) {
@@ -307,9 +274,7 @@ class ShoppingCart {
     this.showCartState();
   }
 
-  /* =====================================================
-     SHOW EMPTY
-  ===================================================== */
+  /* Show empty */
 
   showEmptyState() {
     const itemsSection = document.querySelector(".cart-items-section");
@@ -333,9 +298,7 @@ class ShoppingCart {
     this.emptyCart.style.display = "flex";
   }
 
-  /* =====================================================
-     SHOW CART
-  ===================================================== */
+  /* Show cart */
 
   showCartState() {
     const itemsSection = document.querySelector(".cart-items-section");
@@ -359,9 +322,7 @@ class ShoppingCart {
     this.emptyCart.style.display = "none";
   }
 
-  /* =====================================================
-     CHECKOUT
-  ===================================================== */
+  /* Checkout */
 
   bindCheckout() {
     if (!this.checkoutButton) {
@@ -384,9 +345,7 @@ class ShoppingCart {
     });
   }
 
-  /* =====================================================
-     MESSAGE
-  ===================================================== */
+  /* Message */
 
   showMessage(message, type = "info") {
     const oldMessage = document.querySelector(".cart-message");
@@ -398,7 +357,6 @@ class ShoppingCart {
     const messageElement = document.createElement("div");
 
     messageElement.className = `cart-message cart-message-${type}`;
-
     messageElement.innerHTML = `
       <span class="message-icon">
         ${type === "warning" ? "!" : "✓"}
@@ -414,11 +372,9 @@ class ShoppingCart {
         ×
       </button>
     `;
-
     const text = messageElement.querySelector("p");
 
     text.textContent = message;
-
     document.body.appendChild(messageElement);
 
     requestAnimationFrame(() => {
@@ -436,9 +392,7 @@ class ShoppingCart {
     }, 4000);
   }
 
-  /* =====================================================
-     HIDE MESSAGE
-  ===================================================== */
+  /* Hide message */
 
   hideMessage(message) {
     if (!message) {
@@ -452,9 +406,7 @@ class ShoppingCart {
     }, 300);
   }
 
-  /* =====================================================
-     CONTINUE SHOPPING
-  ===================================================== */
+  /* Continue shopping */
 
   bindContinueShopping() {
     const link = document.querySelector(".continue-shopping");
@@ -469,13 +421,10 @@ class ShoppingCart {
   }
 }
 
-/* =====================================================
-   DEMO DATA PRICES
-===================================================== */
+/* Demo data prices */
 
 /*
   The current HTML is demo-based.
-
   We store the real base price in data-price
   instead of relying on the displayed price,
   because displayed price changes with quantity.
@@ -495,10 +444,7 @@ function initializeDemoPrices() {
       return;
     }
 
-    const rawPrice = priceElement.textContent
-      .replace("$", "")
-      .replaceAll(",", "")
-      .trim();
+    const rawPrice = priceElement.textContent.replace("$", "").replaceAll(",", "").trim();
 
     const price = Number(rawPrice);
 
@@ -508,9 +454,7 @@ function initializeDemoPrices() {
   });
 }
 
-/* =====================================================
-   INITIALIZE
-===================================================== */
+/* Initialize */
 
 document.addEventListener("DOMContentLoaded", () => {
   initializeDemoPrices();

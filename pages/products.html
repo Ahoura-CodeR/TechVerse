@@ -6,10 +6,8 @@
 
     <link rel="preconnect" href="https://rsms.me" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    <base href="/TechVerse/">
-    <link rel="icon" href="assets/icons/iconTech.webp">
-
-
+    <base href="/TechVerse/" />
+    <link rel="icon" href="assets/icons/iconTech.webp" />
 
     <link rel="stylesheet" href="css/variables.css" />
 
@@ -17,7 +15,7 @@
 
     <link rel="stylesheet" href="css/animations.css" />
 
-    <link rel="stylesheet" href="css/mose.css"/>
+    <link rel="stylesheet" href="css/cursor-glow.css" />
 
     <link rel="stylesheet" href="css/products/products.css" />
 
@@ -25,9 +23,7 @@
   </head>
 
   <body>
-    <!-- =====================================================
-       PAGE LOADER
-  ====================================================== -->
+    <!-- Page loader -->
 
     <div class="page-loader">
       <div class="loader-content">
@@ -53,34 +49,22 @@
       </div>
     </div>
 
-    <!-- =====================================================
-       CONTAINER
-  ====================================================== -->
+    <!-- Container -->
 
     <div class="container">
       <nav-bar></nav-bar>
 
       <hr />
 
-      <!-- ===================================================
-         MAIN
-    ==================================================== -->
+      <!-- Main -->
 
       <main class="products-page">
-        <!-- =================================================
-           BREADCRUMB
-      ================================================== -->
+        <!-- Breadcrumb -->
 
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="index.html"> Home </a>
 
-          <svg
-            width="7"
-            height="11"
-            viewBox="0 0 7 11"
-            fill="none"
-            aria-hidden="true"
-          >
+          <svg width="7" height="11" viewBox="0 0 7 11" fill="none" aria-hidden="true">
             <path
               d="M1 1L5.5 5.5L1 10"
               stroke="currentColor"
@@ -91,13 +75,7 @@
 
           <a href="#"> Catalog </a>
 
-          <svg
-            width="7"
-            height="11"
-            viewBox="0 0 7 11"
-            fill="none"
-            aria-hidden="true"
-          >
+          <svg width="7" height="11" viewBox="0 0 7 11" fill="none" aria-hidden="true">
             <path
               d="M1 1L5.5 5.5L1 10"
               stroke="currentColor"
@@ -109,9 +87,7 @@
           <span> Smartphones </span>
         </nav>
 
-        <!-- =================================================
-           TOP BAR
-      ================================================== -->
+        <!-- Top bar -->
 
         <div class="products-top">
           <p>
@@ -132,13 +108,7 @@
               <option value="By name">By name</option>
             </select>
 
-            <svg
-              width="8"
-              height="5"
-              viewBox="0 0 8 5"
-              fill="none"
-              aria-hidden="true"
-            >
+            <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true">
               <path
                 d="M1 1L4 4L7 1"
                 stroke="currentColor"
@@ -149,21 +119,15 @@
           </div>
         </div>
 
-        <!-- =================================================
-           PRODUCTS LAYOUT
-      ================================================== -->
+        <!-- Products layout -->
 
         <section class="products-layout">
-          <!-- ===============================================
-             FILTER SIDEBAR
-        ================================================ -->
+          <!-- Filter sidebar -->
 
           <aside class="filter-sidebar">
-            <!-- =============================================
-               BRAND
-          ============================================== -->
+            <!-- Brand -->
 
-            <div class="filter-section brand-section">
+            <div data-filter="brand" class="filter-section brand-section">
               <button class="filter-heading" type="button">
                 <span> Brand </span>
 
@@ -185,20 +149,10 @@
               </button>
 
               <div class="brand-search">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                  aria-hidden="true"
-                >
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                   <circle cx="6" cy="6" r="4.5" stroke="currentColor" />
 
-                  <path
-                    d="M9.5 9.5L13 13"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                  />
+                  <path d="M9.5 9.5L13 13" stroke="currentColor" stroke-linecap="round" />
                 </svg>
 
                 <input type="text" placeholder="Search" class="input-search" />
@@ -212,21 +166,13 @@
               <div class="brand-list"></div>
             </div>
 
-            <!-- =============================================
-               BATTERY
-          ============================================== -->
+            <!-- Battery -->
 
-            <div class="filter-section">
+            <div data-filter="battery" class="filter-section">
               <button class="filter-heading" type="button">
                 <span> Battery capacity </span>
 
-                <svg
-                  width="8"
-                  height="5"
-                  viewBox="0 0 8 5"
-                  fill="none"
-                  aria-hidden="true"
-                >
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true">
                   <path
                     d="M1 1L4 4L7 1"
                     stroke="currentColor"
@@ -239,21 +185,13 @@
               <div class="filter-options"></div>
             </div>
 
-            <!-- =============================================
-               SCREEN TYPE
-          ============================================== -->
+            <!-- Screen type -->
 
-            <div class="filter-section">
+            <div data-filter="screenType" class="filter-section">
               <button class="filter-heading" type="button">
                 <span> Screen type </span>
 
-                <svg
-                  width="8"
-                  height="5"
-                  viewBox="0 0 8 5"
-                  fill="none"
-                  aria-hidden="true"
-                >
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true">
                   <path
                     d="M1 1L4 4L7 1"
                     stroke="currentColor"
@@ -266,21 +204,13 @@
               <div class="filter-options"></div>
             </div>
 
-            <!-- =============================================
-               SCREEN DIAGONAL
-          ============================================== -->
+            <!-- Screen diagonal -->
 
-            <div class="filter-section">
+            <div data-filter="screenDiagonal" class="filter-section">
               <button class="filter-heading" type="button">
                 <span> Screen diagonal </span>
 
-                <svg
-                  width="8"
-                  height="5"
-                  viewBox="0 0 8 5"
-                  fill="none"
-                  aria-hidden="true"
-                >
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true">
                   <path
                     d="M1 1L4 4L7 1"
                     stroke="currentColor"
@@ -293,21 +223,13 @@
               <div class="filter-options"></div>
             </div>
 
-            <!-- =============================================
-               PROTECTION
-          ============================================== -->
+            <!-- Protection -->
 
-            <div class="filter-section">
+            <div data-filter="protection" class="filter-section">
               <button class="filter-heading" type="button">
                 <span> Protection class </span>
 
-                <svg
-                  width="8"
-                  height="5"
-                  viewBox="0 0 8 5"
-                  fill="none"
-                  aria-hidden="true"
-                >
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true">
                   <path
                     d="M1 1L4 4L7 1"
                     stroke="currentColor"
@@ -320,21 +242,13 @@
               <div class="filter-options"></div>
             </div>
 
-            <!-- =============================================
-               STORAGE
-          ============================================== -->
+            <!-- Storage -->
 
-            <div class="filter-section">
+            <div data-filter="storage" class="filter-section">
               <button class="filter-heading" type="button">
                 <span> Built-in memory </span>
 
-                <svg
-                  width="8"
-                  height="5"
-                  viewBox="0 0 8 5"
-                  fill="none"
-                  aria-hidden="true"
-                >
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true">
                   <path
                     d="M1 1L4 4L7 1"
                     stroke="currentColor"
@@ -348,9 +262,7 @@
             </div>
           </aside>
 
-          <!-- ===============================================
-             PRODUCTS AREA
-        ================================================ -->
+          <!-- Products area -->
 
           <div class="products-area">
             <product-category></product-category>
@@ -358,18 +270,14 @@
         </section>
       </main>
 
-      <!-- ===================================================
-         FOOTER
-    ==================================================== -->
+      <!-- Footer -->
 
       <footer-site></footer-site>
     </div>
 
-    <!-- =====================================================
-       SCRIPTS
-  ====================================================== -->
+    <!-- Scripts -->
     <div class="cursor-glow"></div>
-    <script type="module" src="js/mose.js"></script>
+    <script type="module" src="js/cursor-glow.js"></script>
 
     <script type="module" defer src="js/nav.js"></script>
 

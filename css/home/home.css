@@ -8,162 +8,117 @@ body {
 
 .container {
   width: min(1200px, 90%);
-
   margin: auto;
 }
 
-/* ================= HERO ================= */
+/* Hero */
 
 .hero {
   min-height: 650px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   position: relative;
-
   overflow: hidden;
 }
 
-
 nav-bar {
-    position: relative;
-    z-index: 9999;
+  position: relative;
+  z-index: 9999;
 }
 
 .hero-bg {
   position: absolute;
-
   inset: 0;
-
   z-index: -1;
 }
 
 .glow {
   position: absolute;
-
   border-radius: 50%;
-
   filter: blur(80px);
 }
 
 .glow-one {
   width: 350px;
-
   height: 350px;
-
-  background: rgba(139, 92, 246, 0.35);
-
+  background: rgba(255, 122, 26, 0.35);
   left: 10%;
-
   top: 20%;
 }
 
 .glow-two {
   width: 300px;
-
   height: 300px;
-
-  background: rgba(34, 211, 238, 0.25);
-
+  background: rgba(255, 176, 32, 0.25);
   right: 15%;
-
   bottom: 10%;
 }
 
 .hero-content {
   width: 50%;
-
   animation: fadeUp 0.8s ease;
 }
 
 .hero-tag {
   padding: 8px 18px;
-
   border-radius: 30px;
-
-  background: rgba(139, 92, 246, 0.15);
-
+  background: rgba(255, 122, 26, 0.15);
   border: 1px solid var(--border-glow);
-
   color: var(--primary-light);
-
   font-size: 13px;
-
   letter-spacing: 2px;
 }
 
 .hero h1 {
   font-size: 65px;
-
   line-height: 1.1;
-
   margin: 30px 0;
-
   font-weight: 800;
 }
 
 .hero h1 span {
   background: var(--gradient-main);
-
   -webkit-background-clip: text;
-
   color: transparent;
 }
 
 .hero p {
   color: var(--text-secondary);
-
   font-size: 18px;
-
   line-height: 1.8;
-
   max-width: 500px;
 }
 
 .hero-buttons {
   display: flex;
-
   gap: 20px;
-
   margin-top: 40px;
 }
 
 .primary-btn,
 .secondary-btn {
   padding: 15px 35px;
-
   border-radius: 40px;
-
   cursor: pointer;
-
   font-size: 15px;
-
   transition: var(--transition);
 }
 
 .primary-btn {
   border: none;
-
   background: var(--gradient-main);
-
   color: white;
 }
 
 .primary-btn:hover {
   box-shadow: var(--neon-glow);
-
   transform: translateY(-5px);
 }
 
 .secondary-btn {
   background: transparent;
-
   border: 1px solid var(--border-light);
-
   color: white;
 }
 
@@ -175,39 +130,26 @@ nav-bar {
 
 .hero-device {
   width: 45%;
-
   position: relative;
-
   display: flex;
-
   justify-content: center;
 }
 
 .hero-device img {
   width: 450px;
-
   position: relative;
-
   z-index: 2;
-
   animation: floating 4s ease-in-out infinite;
-
-  filter: drop-shadow(0 0 50px rgba(139, 92, 246, 0.4));
+  filter: drop-shadow(0 0 50px rgba(255, 122, 26, 0.4));
 }
 
 .device-ring {
   position: absolute;
-
   width: 420px;
-
   height: 420px;
-
   border-radius: 50%;
-
   background: var(--gradient-main);
-
   opacity: 0.2;
-
   filter: blur(40px);
 }
 
@@ -225,19 +167,14 @@ nav-bar {
 
 .section-header {
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   margin-bottom: 40px;
 }
 
 .section-header span {
   color: var(--secondary);
-
   letter-spacing: 3px;
-
   font-size: 13px;
 }
 
@@ -247,30 +184,22 @@ nav-bar {
 
 .product-tabs {
   display: flex;
-
   gap: 15px;
 }
 
 .product-tabs button {
   background: var(--glass);
-
   border: 1px solid var(--border-light);
-
   padding: 12px 25px;
-
   border-radius: 30px;
-
   color: white;
-
   cursor: pointer;
-
   transition: var(--transition);
 }
 
 .product-tabs button:hover,
 .product-tabs .active {
   background: var(--gradient-main);
-
   border-color: transparent;
 }
 
@@ -278,25 +207,13 @@ nav-bar {
 
 .sale-banner {
   margin: 120px 0;
-
   padding: 60px;
-
   border-radius: var(--radius-xl);
-
-  background: linear-gradient(
-    135deg,
-    rgba(139, 92, 246, 0.15),
-    rgba(34, 211, 238, 0.08)
-  );
-
+  background: linear-gradient(135deg, rgba(255, 122, 26, 0.15), rgba(255, 176, 32, 0.08));
   border: 1px solid var(--border-light);
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   overflow: hidden;
 }
 
@@ -310,29 +227,21 @@ nav-bar {
 
 .sale-content button {
   margin-top: 25px;
-
   padding: 14px 35px;
-
   border-radius: 30px;
-
   border: none;
-
-  background: var(--gradient-purple);
-
+  background: var(--gradient-accent);
   color: white;
-
   cursor: pointer;
 }
 
 .sale-images {
   display: flex;
-
   gap: 20px;
 }
 
 .sale-images img {
   width: 180px;
-
   animation: floating 5s infinite;
 }
 
@@ -345,13 +254,11 @@ nav-bar {
 @keyframes fadeUp {
   from {
     opacity: 0;
-
     transform: translateY(40px);
   }
 
   to {
     opacity: 1;
-
     transform: none;
   }
 }
@@ -359,9 +266,7 @@ nav-bar {
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
-
     text-align: center;
-
     padding: 80px 0;
   }
 
@@ -381,117 +286,79 @@ nav-bar {
   .section-header,
   .sale-banner {
     flex-direction: column;
-
     gap: 30px;
   }
 }
 .loader-container {
   position: fixed;
-
   inset: 0;
-
   z-index: 9999;
-
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
-
   background: var(--bg-primary);
-
   transition: 0.8s ease;
 }
 
 .loader-hide {
   opacity: 0;
-
   visibility: hidden;
 }
 
 .cyber-loader {
   width: 170px;
-
   height: 170px;
-
   position: relative;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 }
 
 .loader-ring {
   position: absolute;
-
   border-radius: 50%;
-
   border: 2px solid transparent;
 }
 
 .ring-one {
   width: 170px;
-
   height: 170px;
-
   border-top-color: var(--primary);
-
   animation: rotate 2s linear infinite;
 }
 
 .ring-two {
   width: 130px;
-
   height: 130px;
-
   border-right-color: var(--secondary);
-
   animation: rotateReverse 1.8s linear infinite;
 }
 
 .ring-three {
   width: 90px;
-
   height: 90px;
-
-  border-bottom-color: var(--accent-pink);
-
+  border-bottom-color: var(--accent-2);
   animation: rotate 1.4s linear infinite;
 }
 
 .loader-core {
   width: 60px;
-
   height: 60px;
-
   border-radius: 50%;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   background: var(--gradient-main);
-
   font-weight: 900;
-
   box-shadow: var(--neon-glow);
-
   animation: pulse 2s infinite;
 }
 
 .loader-text {
   margin-top: 35px;
-
   color: var(--text-secondary);
-
   letter-spacing: 3px;
-
   font-size: 13px;
 }
 
@@ -522,8 +389,7 @@ nav-bar {
 @keyframes pulse {
   50% {
     transform: scale(1.15);
-
-    box-shadow: 0 0 60px rgba(139, 92, 246, 0.8);
+    box-shadow: 0 0 60px rgba(255, 122, 26, 0.8);
   }
 }
 
@@ -543,7 +409,6 @@ nav-bar {
 
 .page-hidden {
   opacity: 0;
-
   transform: translateY(30px);
 }
 

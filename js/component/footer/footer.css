@@ -1,77 +1,53 @@
 .site-footer {
   position: relative;
-
   overflow: hidden;
-
   margin-top: 120px;
-
   padding: 80px 5% 25px;
-
-  background: linear-gradient(180deg, #080810 0%, #050509 100%);
-
+  background: linear-gradient(180deg, #0b0b0c 0%, #070708 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-
   color: var(--text-primary);
 }
 
-/* =========================
-   Ambient Glow
-========================= */
+/* Ambient glow */
 
 .footer-glow {
   position: absolute;
-
   width: 350px;
   height: 350px;
-
   border-radius: 50%;
-
   filter: blur(120px);
-
   pointer-events: none;
-
   opacity: 0.12;
 }
 
 .glow-one {
   top: -220px;
   left: 15%;
-
   background: var(--primary);
 }
 
 .glow-two {
   right: 5%;
   bottom: -250px;
-
   background: var(--secondary);
 }
 
-/* =========================
-   Footer Top
-========================= */
+/* Footer top */
 
 .footer-top {
   position: relative;
-
   width: min(var(--container), 90%);
-
   margin: 0 auto;
-
   display: grid;
-
   grid-template-columns:
     2fr
     1fr
     1fr
     1fr;
-
   gap: 70px;
 }
 
-/* =========================
-   Brand
-========================= */
+/* Brand */
 
 .footer-brand {
   max-width: 380px;
@@ -79,17 +55,11 @@
 
 .footer-logo {
   display: inline-flex;
-
   align-items: center;
-
   gap: 0;
-
   text-decoration: none;
-
   font-size: 28px;
-
   font-weight: 800;
-
   letter-spacing: -1px;
 }
 
@@ -103,139 +73,94 @@
 
 .brand-description {
   margin: 22px 0 28px;
-
   color: var(--text-secondary);
-
   line-height: 1.8;
-
   font-size: 14px;
 }
 
-/* =========================
-   Social
-========================= */
+/* Social */
 
 .social-icons {
   display: flex;
-
   gap: 12px;
 }
 
 .social-link {
   width: 42px;
   height: 42px;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   border-radius: 12px;
-
   color: var(--text-secondary);
-
   background: rgba(255, 255, 255, 0.04);
-
   border: 1px solid rgba(255, 255, 255, 0.08);
-
   transition: var(--transition);
 }
 
 .social-link svg {
   width: 18px;
   height: 18px;
-
   fill: currentColor;
 }
 
 .social-link:hover {
   color: var(--text-primary);
-
-  border-color: rgba(139, 92, 246, 0.55);
-
-  background: rgba(139, 92, 246, 0.12);
-
-  box-shadow: 0 0 25px rgba(139, 92, 246, 0.18);
-
+  border-color: rgba(255, 122, 26, 0.55);
+  background: rgba(255, 122, 26, 0.12);
+  box-shadow: 0 0 25px rgba(255, 122, 26, 0.18);
   transform: translateY(-5px);
 }
 
-/* =========================
-   Columns
-========================= */
+/* Columns */
 
 .footer-column h3 {
   margin: 0 0 22px;
-
   font-size: 14px;
-
   letter-spacing: 1px;
-
   text-transform: uppercase;
-
   color: var(--text-primary);
 }
 
 .footer-column h3::after {
   content: "";
-
   display: block;
-
   width: 25px;
-
   height: 2px;
-
   margin-top: 10px;
-
   background: var(--gradient-main);
-
   border-radius: 10px;
 }
 
 .footer-column ul {
   list-style: none;
-
   margin: 0;
   padding: 0;
-
   display: flex;
-
   flex-direction: column;
-
   gap: 13px;
 }
 
 .footer-column a {
   position: relative;
-
   display: inline-block;
-
   color: var(--text-muted);
-
   text-decoration: none;
-
   font-size: 14px;
-
   transition: var(--transition-fast);
 }
 
 .footer-column a::before {
   content: "›";
-
   position: absolute;
-
   left: -14px;
-
   opacity: 0;
-
   color: var(--secondary);
-
   transition: var(--transition-fast);
 }
 
 .footer-column a:hover {
   color: var(--text-primary);
-
   transform: translateX(8px);
 }
 
@@ -243,80 +168,49 @@
   opacity: 1;
 }
 
-/* =========================
-   Divider
-========================= */
+/* Divider */
 
 .footer-divider {
   width: min(var(--container), 90%);
-
   height: 1px;
-
   margin: 65px auto 25px;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.12),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
 }
 
-/* =========================
-   Bottom
-========================= */
+/* Bottom */
 
 .footer-bottom {
   width: min(var(--container), 90%);
-
   margin: 0 auto;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 20px;
 }
 
 .footer-bottom p {
   margin: 0;
-
   color: var(--text-muted);
-
   font-size: 12px;
 }
 
-/* =========================
-   System Status
-========================= */
+/* System status */
 
 .system-status {
   display: flex;
-
   align-items: center;
-
   gap: 9px;
-
   color: var(--text-muted);
-
   font-size: 11px;
-
   letter-spacing: 1.5px;
 }
 
 .status-dot {
   width: 7px;
-
   height: 7px;
-
   border-radius: 50%;
-
   background: var(--secondary);
-
   box-shadow: 0 0 12px var(--secondary);
-
   animation: statusPulse 2s infinite;
 }
 
@@ -324,33 +218,27 @@
   0%,
   100% {
     opacity: 0.4;
-
     transform: scale(0.8);
   }
 
   50% {
     opacity: 1;
-
     transform: scale(1.15);
   }
 }
 
-/* =========================
-   Responsive
-========================= */
+/* Responsive */
 
 @media (max-width: 900px) {
   .footer-top {
     grid-template-columns:
       1fr
       1fr;
-
     gap: 45px;
   }
 
   .footer-brand {
     grid-column: 1 / -1;
-
     max-width: 550px;
   }
 }
@@ -362,7 +250,6 @@
 
   .footer-top {
     grid-template-columns: 1fr;
-
     width: 90%;
   }
 
@@ -372,7 +259,6 @@
 
   .footer-bottom {
     flex-direction: column;
-
     align-items: flex-start;
   }
 }

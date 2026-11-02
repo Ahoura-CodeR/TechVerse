@@ -1,4 +1,4 @@
-import { getProducts } from "../product/product.js";
+import { getProducts } from "../../lib/products-api.js";
 let template = document.createElement("template");
 
 let eventSvgHandler = (page) => {
@@ -231,11 +231,8 @@ class isNav extends HTMLElement {
 
     this.state = {
       products: [],
-
       results: [],
-
       searchValue: "",
-
       visibleCount: 10,
     };
   }
@@ -255,9 +252,7 @@ class isNav extends HTMLElement {
 
     buyIcon?.addEventListener("click", () => eventSvgHandler("card.html"));
 
-    profileIcon?.addEventListener("click", () =>
-      eventSvgHandler("profile.html"),
-    );
+    profileIcon?.addEventListener("click", () => eventSvgHandler("profile.html"));
 
     favIcon?.addEventListener("click", () => {
       favIcon.classList.toggle("liked");
@@ -267,25 +262,21 @@ class isNav extends HTMLElement {
       this.state.searchValue = input.value.trim().toLowerCase();
 
       this.state.visibleCount = 10;
-
       this.searchProducts();
     });
 
     showMore.addEventListener("click", () => {
       this.state.visibleCount += 10;
-
       this.renderSearch();
     });
 
-    this.shadowRoot
-      .querySelector(".search-results")
-      .addEventListener("click", (event) => {
-        const button = event.target.closest(".search-product-btn");
+    this.shadowRoot.querySelector(".search-results").addEventListener("click", (event) => {
+      const button = event.target.closest(".search-product-btn");
 
-        if (button) {
-          location.href = `pages/products-details.html?id=${button.dataset.id}`;
-        }
-      });
+      if (button) {
+        location.href = `pages/products-details.html?id=${button.dataset.id}`;
+      }
+    });
   }
 
   async loadProducts() {
@@ -294,7 +285,6 @@ class isNav extends HTMLElement {
 
   searchProducts() {
     const value = this.state.searchValue;
-
     const box = this.shadowRoot.querySelector(".search-result-box");
 
     if (!value) {
@@ -323,7 +313,6 @@ class isNav extends HTMLElement {
     const showMore = this.shadowRoot.querySelector(".show-more-search");
 
     container.innerHTML = "";
-
     if (this.state.results.length === 0) {
       noResult.classList.add("show");
 
@@ -342,7 +331,6 @@ class isNav extends HTMLElement {
       const div = document.createElement("div");
 
       div.className = "search-product";
-
       div.innerHTML = `
 
             <img 
@@ -376,7 +364,6 @@ class isNav extends HTMLElement {
 
 
         `;
-
       container.appendChild(div);
     });
 

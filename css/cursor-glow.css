@@ -1,0 +1,38 @@
+.cursor-glow {
+  position: fixed;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  background: radial-gradient(
+    circle,
+    rgba(255, 122, 26, 0.3),
+    rgba(255, 176, 32, 0.12) 45%,
+    transparent 70%
+  );
+  filter: blur(24px);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition:
+    width 0.35s ease,
+    height 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.cursor-glow.visible {
+  opacity: 0.7;
+}
+
+.cursor-glow.visible.active {
+  width: 240px;
+  height: 240px;
+  opacity: 0.9;
+}
+
+/* No pointer, no glow. */
+@media (hover: none) {
+  .cursor-glow {
+    display: none;
+  }
+}

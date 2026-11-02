@@ -1,55 +1,36 @@
 .product-container {
   width: min(1200px, 90%);
-
   margin: 80px auto;
-
   display: grid;
-
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-
   gap: 30px;
 }
 
 .product-card {
   position: relative;
-
   overflow: hidden;
-
   padding: 20px;
-
   border-radius: var(--radius-lg);
-
   background: var(--glass);
-
   border: 1px solid var(--border-light);
-
   backdrop-filter: var(--blur);
-
   transition: var(--transition);
 }
 
 .product-card::before {
   content: "";
-
   position: absolute;
-
   inset: 0;
-
-  background: linear-gradient(135deg, transparent, rgba(139, 92, 246, 0.15));
-
+  background: linear-gradient(135deg, transparent, rgba(255, 122, 26, 0.15));
   opacity: 0;
-
   transition: var(--transition);
-
   pointer-events: none;
 }
 
 .product-card:hover {
   transform: translateY(-12px);
-
   border-color: var(--border-glow);
-
-  box-shadow: var(--shadow-purple);
+  box-shadow: var(--shadow-accent);
 }
 
 .product-card:hover::before {
@@ -58,29 +39,19 @@
 
 .product-image-box {
   height: 260px;
-
   position: relative;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   background: rgba(255, 255, 255, 0.03);
-
   border-radius: var(--radius-md);
-
   overflow: hidden;
 }
 
 .product-image-box img {
   width: 80%;
-
   height: 80%;
-
   object-fit: contain;
-
   transition: var(--transition);
 }
 
@@ -90,42 +61,28 @@
 
 .wishlist-btn {
   position: absolute;
-
   right: 15px;
-
   top: 15px;
-
   width: 42px;
-
   height: 42px;
-
   border-radius: 50%;
-
   border: none;
-
   background: rgba(255, 255, 255, 0.08);
-
   color: white;
-
   cursor: pointer;
-
   z-index: 2;
 }
 
 .wishlist-btn svg {
   width: 22px;
-
   fill: none;
-
   stroke: white;
-
   stroke-width: 1.5;
 }
 
 .wishlist-btn.active svg {
-  fill: var(--accent-pink);
-
-  stroke: var(--accent-pink);
+  fill: var(--accent-2);
+  stroke: var(--accent-2);
 }
 
 .product-info {
@@ -134,85 +91,55 @@
 
 .product-category {
   font-size: 12px;
-
   color: var(--secondary);
 }
 
 .product-info h3 {
   font-size: 18px;
-
   margin: 12px 0;
-
   color: var(--text-primary);
 }
 
 .product-rating {
   color: #facc15;
-
   letter-spacing: 3px;
-
   font-size: 14px;
 }
 
 .product-price {
   display: block;
-
   font-size: 24px;
-
   margin: 15px 0;
-
   background: var(--gradient-main);
-
   -webkit-background-clip: text;
-
   color: transparent;
 }
 
 .product-btn {
   width: 100%;
-
   padding: 13px;
-
   border-radius: 30px;
-
   border: none;
-
   cursor: pointer;
-
   background: var(--gradient-main);
-
   color: white;
-
   font-weight: 600;
-
   transition: var(--transition);
 }
 
 .product-btn:hover {
   box-shadow: var(--neon-glow);
-
   transform: scale(1.03);
 }
 
 .loader-container {
   position: absolute;
-
   inset: 0;
-
   display: none;
-
   align-items: center;
-
   justify-content: center;
-
   flex-direction: column;
-
-  background: radial-gradient(
-    circle,
-    rgba(139, 92, 246, 0.15),
-    transparent 60%
-  );
-
+  background: radial-gradient(circle, rgba(255, 122, 26, 0.15), transparent 60%);
   z-index: 10;
 }
 
@@ -222,91 +149,62 @@
 
 .cyber-loader {
   position: relative;
-
   width: 120px;
-
   height: 120px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 }
 
 .loader-ring {
   position: absolute;
-
   border-radius: 50%;
-
   border: 2px solid transparent;
 }
 
 .ring-one {
   width: 120px;
-
   height: 120px;
-
   border-top-color: var(--primary);
-
   animation: rotate 2s linear infinite;
 }
 
 .ring-two {
   width: 90px;
-
   height: 90px;
-
   border-right-color: var(--secondary);
-
   animation: rotateReverse 1.5s linear infinite;
 }
 
 .ring-three {
   width: 65px;
-
   height: 65px;
-
-  border-bottom-color: var(--accent-pink);
-
+  border-bottom-color: var(--accent-2);
   animation: rotate 1s linear infinite;
 }
 
 .loader-core {
   width: 45px;
-
   height: 45px;
-
   border-radius: 50%;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   background: var(--gradient-main);
-
   box-shadow: var(--neon-glow);
-
   animation: corePulse 1.5s infinite;
 }
 
 .loader-core span {
   font-weight: 800;
-
   font-size: 14px;
-
   color: white;
 }
 
 .loader-text {
   margin-top: 30px;
-
   font-size: 13px;
-
   letter-spacing: 3px;
-
   color: var(--text-secondary);
 }
 
@@ -337,8 +235,7 @@
 @keyframes corePulse {
   50% {
     transform: scale(1.15);
-
-    box-shadow: 0 0 50px rgba(139, 92, 246, 0.8);
+    box-shadow: 0 0 50px rgba(255, 122, 26, 0.8);
   }
 }
 
@@ -356,122 +253,77 @@
 
 .product-card {
   position: relative;
-
   overflow: hidden;
-
   padding: 20px;
-
   border-radius: var(--radius-lg);
-
   background: var(--glass);
-
   border: 1px solid var(--border-light);
-
   backdrop-filter: var(--blur);
-
   transition: var(--transition);
 }
 
 .product-card::before {
   content: "";
-
   position: absolute;
-
   inset: 0;
-
-  background: linear-gradient(135deg, transparent, rgba(139, 92, 246, 0.15));
-
+  background: linear-gradient(135deg, transparent, rgba(255, 122, 26, 0.15));
   opacity: 0;
-
   transition: var(--transition);
-
   pointer-events: none;
 }
 
 .product-image-box,
 .product-info {
   position: relative;
-
   z-index: 2;
 }
 .pagination {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 25px;
-
   margin-top: 50px;
 }
 
 .pagination-arrow {
   width: 45px;
-
   height: 45px;
-
   border-radius: 50%;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   cursor: pointer;
-
   border: 1px solid var(--border-light);
-
   background: var(--glass);
-
   color: white;
-
   backdrop-filter: blur(15px);
-
   transition: 0.35s;
 }
 
 .pagination-arrow svg {
   width: 18px;
-
   height: 18px;
-
   fill: none;
-
   stroke: currentColor;
-
   stroke-width: 2;
 }
 
 .pagination-arrow:hover {
   transform: translateY(-5px);
-
   border-color: var(--secondary);
-
-  box-shadow: var(--shadow-cyan);
-
+  box-shadow: var(--shadow-accent-soft);
   color: var(--secondary);
 }
 
 .page-number {
   min-width: 90px;
-
   height: 40px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   border-radius: 30px;
-
   background: var(--glass-heavy);
-
   border: 1px solid var(--border-light);
-
   font-weight: 700;
-
   color: var(--text-secondary);
 }

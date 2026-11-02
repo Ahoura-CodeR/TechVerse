@@ -8,10 +8,7 @@ window.customElements.define("footer-site", isFooter);
 
 window.customElements.define("product-data", isProducts);
 
-// ==========================
-// Hero Buttons
-// ==========================
-
+// Hero buttons
 const productPage = () => {
   window.location.href = "pages/products.html";
 };
@@ -34,10 +31,7 @@ if (saleButton) {
   saleButton.addEventListener("click", productPage);
 }
 
-// ==========================
-// Page Loader
-// ==========================
-
+// Page loader
 const loader = document.querySelector(".loader-container");
 
 const container = document.querySelector(".container");

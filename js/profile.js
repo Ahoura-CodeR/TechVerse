@@ -1,6 +1,4 @@
-/* =====================================================
-   PROFILE PAGE
-===================================================== */
+/* Profile page */
 
 class ProfilePage {
   constructor() {
@@ -13,9 +11,7 @@ class ProfilePage {
     this.init();
   }
 
-  /* =====================================================
-     INIT
-  ===================================================== */
+  /* Init */
 
   init() {
     this.bindBackButton();
@@ -27,9 +23,7 @@ class ProfilePage {
     this.hidePageLoader();
   }
 
-  /* =====================================================
-     BACK HOME
-  ===================================================== */
+  /* Back home */
 
   bindBackButton() {
     if (!this.backButton) {
@@ -45,9 +39,7 @@ class ProfilePage {
     });
   }
 
-  /* =====================================================
-     EDIT PROFILE
-  ===================================================== */
+  /* Edit profile */
 
   bindEditProfile() {
     if (!this.editButton) {
@@ -67,9 +59,7 @@ class ProfilePage {
     });
   }
 
-  /* =====================================================
-     DASHBOARD CARDS
-  ===================================================== */
+  /* Dashboard cards */
 
   bindDashboardCards() {
     this.dashboardCards.forEach((card) => {
@@ -85,9 +75,7 @@ class ProfilePage {
     });
   }
 
-  /* =====================================================
-     CARD ACTION
-  ===================================================== */
+  /* Card action */
 
   handleCardAction(card, button) {
     const titleElement = card.querySelector("h3");
@@ -107,46 +95,34 @@ class ProfilePage {
         case "My Cart":
           window.location.href = "pages/card.html";
           break;
-
         case "Wishlist":
           this.showMessage(
             "Wishlist is ready for the frontend UI, but persistent wishlist data needs the backend.",
           );
           break;
-
         case "Orders":
           this.showMessage(
             "There are no real orders yet. Order history will be connected to the backend later.",
           );
           break;
-
         case "Reviews":
           this.showMessage(
             "Review history will be available once user accounts and backend storage are connected.",
           );
           break;
-
         case "Settings":
-          this.showMessage(
-            "Settings will be connected to the user account system later.",
-          );
+          this.showMessage("Settings will be connected to the user account system later.");
           break;
-
         case "Security":
-          this.showMessage(
-            "Authentication and security services are not connected yet.",
-          );
+          this.showMessage("Authentication and security services are not connected yet.");
           break;
-
         default:
           this.showMessage("This feature is currently running in demo mode.");
       }
     }, 140);
   }
 
-  /* =====================================================
-     MESSAGE
-  ===================================================== */
+  /* Message */
 
   showMessage(message) {
     const existing = document.querySelector(".profile-message");
@@ -158,7 +134,6 @@ class ProfilePage {
     const messageBox = document.createElement("div");
 
     messageBox.className = "profile-message";
-
     messageBox.innerHTML = `
       <div class="profile-message-icon">
         ✓
@@ -180,11 +155,9 @@ class ProfilePage {
         ×
       </button>
     `;
-
     const text = messageBox.querySelector(".profile-message-content p");
 
     text.textContent = message;
-
     document.body.appendChild(messageBox);
 
     requestAnimationFrame(() => {
@@ -202,9 +175,7 @@ class ProfilePage {
     }, 4500);
   }
 
-  /* =====================================================
-     HIDE MESSAGE
-  ===================================================== */
+  /* Hide message */
 
   hideMessage(messageBox) {
     if (!messageBox) {
@@ -218,9 +189,7 @@ class ProfilePage {
     }, 300);
   }
 
-  /* =====================================================
-     PAGE LOADER
-  ===================================================== */
+  /* Page loader */
 
   hidePageLoader() {
     const loader = document.querySelector(".page-loader");
@@ -239,9 +208,7 @@ class ProfilePage {
   }
 }
 
-/* =====================================================
-   START
-===================================================== */
+/* Start */
 
 document.addEventListener("DOMContentLoaded", () => {
   new ProfilePage();

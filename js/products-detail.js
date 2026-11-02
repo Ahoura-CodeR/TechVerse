@@ -13,4 +13,4 @@ window.addEventListener("load", (event) => {
   animationLoad.style.display = "";
   pageLoader.style.display = "none";
 });
-pageLoader.style.display = 'none'
+pageLoader.style.display = "none";

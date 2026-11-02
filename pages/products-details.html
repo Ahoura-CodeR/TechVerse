@@ -4,20 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products | Detail</title>
-    <base href="/TechVerse/">
+    <base href="/TechVerse/" />
 
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    <link rel="icon" href="assets/icons/iconTech.webp">
+    <link rel="icon" href="assets/icons/iconTech.webp" />
 
-    
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/animations.css" />
-    <link rel="stylesheet" href="css/mose.css"/>
+    <link rel="stylesheet" href="css/cursor-glow.css" />
 
-
-    <link rel="stylesheet" href="css/products-details/products-details.css"/>
+    <link rel="stylesheet" href="css/products-details/products-details.css" />
   </head>
   <body>
     <div class="page-loader">
@@ -49,7 +47,7 @@
     <main class="product-page">
       <products-detail></products-detail>
 
-      <!-- ================= SECTION 3: REVIEWS ================= -->
+      <!-- Section 3: reviews -->
       <section class="reviews-section animate-slide-up">
         <h2>Reviews</h2>
 
@@ -100,12 +98,7 @@
         </div>
 
         <div class="comment-input-box">
-          <input
-            maxlength="80"
-            class="comment-input"
-            type="text"
-            placeholder="Leave Comment"
-          />
+          <input maxlength="80" class="comment-input" type="text" placeholder="Leave Comment" />
           <button class="send-btn">Submit</button>
         </div>
 
@@ -113,11 +106,7 @@
           <div class="comment-card">
             <div class="comment-header">
               <div class="user-info">
-                <img
-                  src="https://i.pravatar.cc/100?img=32"
-                  alt="Grace Carey"
-                  class="avatar"
-                />
+                <img src="https://i.pravatar.cc/100?img=32" alt="Grace Carey" class="avatar" />
                 <div>
                   <strong class="user-name">Grace Carey</strong>
                   <div class="stars">★★★★★</div>
@@ -126,19 +115,15 @@
               <span class="comment-date">24 January 2023</span>
             </div>
             <p class="comment-text">
-              I was a bit nervous to be buying a secondhand phone from Amazon,
-              but I couldn't be happier with my purchase!
+              I was a bit nervous to be buying a secondhand phone from Amazon, but I couldn't be
+              happier with my purchase!
             </p>
           </div>
 
           <div class="comment-card">
             <div class="comment-header">
               <div class="user-info">
-                <img
-                  src="https://i.pravatar.cc/100?img=47"
-                  alt="Darcy King"
-                  class="avatar"
-                />
+                <img src="https://i.pravatar.cc/100?img=47" alt="Darcy King" class="avatar" />
                 <div>
                   <strong class="user-name">Darcy King</strong>
                   <div class="stars">★★★★★</div>
@@ -147,8 +132,8 @@
               <span class="comment-date">24 January 2023</span>
             </div>
             <p class="comment-text">
-              I might be the only one to say this but the camera is a little
-              funky. Hoping it will change with a software update!
+              I might be the only one to say this but the camera is a little funky. Hoping it will
+              change with a software update!
             </p>
             <div class="comment-images">
               <img
@@ -166,15 +151,13 @@
         </div>
 
         <div class="view-more-wrapper">
-          <button class="btn-view-more">
-            View More <span class="arrow-icon">∨</span>
-          </button>
+          <button class="btn-view-more">View More <span class="arrow-icon">∨</span></button>
         </div>
       </section>
     </main>
     <footer-site></footer-site>
     <div class="cursor-glow"></div>
-    <script type="module" src="js/mose.js"></script>
+    <script type="module" src="js/cursor-glow.js"></script>
     <script type="module" defer src="js/nav.js"></script>
     <script type="module" defer src="js/products-detail.js"></script>
   </body>

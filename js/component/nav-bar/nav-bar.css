@@ -5,25 +5,16 @@
 .nav-container {
   width: 95%;
   margin: 25px auto;
-
   height: 75px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0 25px;
-
-  background: rgba(15, 10, 30, 0.65);
-
-  border: 1px solid rgba(168, 85, 247, 0.2);
-
+  background: rgba(18, 18, 20, 0.7);
+  border: 1px solid rgba(255, 122, 26, 0.2);
   border-radius: 25px;
-
   backdrop-filter: blur(20px);
-
-  box-shadow: 0 0 30px rgba(124, 58, 237, 0.15);
-
+  box-shadow: 0 0 30px rgba(255, 122, 26, 0.15);
   animation: navEnter 0.7s ease;
 }
 
@@ -32,27 +23,20 @@
 .brand-section {
   display: flex;
   align-items: center;
-
   gap: 12px;
 }
 
 .brand-core {
   width: 45px;
   height: 45px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 14px;
-
-  background: linear-gradient(135deg, #7c3aed, #c084fc);
-
+  background: linear-gradient(135deg, #e8650a, #ffa866);
   color: white;
-
   font-weight: 800;
-
-  box-shadow: 0 0 25px rgba(168, 85, 247, 0.7);
+  box-shadow: 0 0 25px rgba(255, 122, 26, 0.7);
 }
 
 .brand-info {
@@ -62,57 +46,40 @@
 
 .brand-info strong {
   color: white;
-
   font-size: 18px;
-
   letter-spacing: 2px;
 }
 
 .brand-info strong span {
-  color: #c084fc;
+  color: #ffa866;
 }
 
 .brand-info small {
   color: #888;
-
   font-size: 10px;
-
   letter-spacing: 2px;
 }
 
 /* SEARCH */
 
 .search-box {
-
   position: relative;
-
   z-index: 9999;
-
   width: 280px;
-
   display: flex;
-
   align-items: center;
-
   gap: 10px;
-
   padding: 12px 18px;
-
   border-radius: 30px;
-
   background: rgba(255, 255, 255, 0.05);
-
   border: 1px solid rgba(255, 255, 255, 0.1);
-
   transition: 0.35s;
 }
 
 .search-box:focus-within {
   width: 340px;
-
-  border-color: #a855f7;
-
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.35);
+  border-color: #ff8c3a;
+  box-shadow: 0 0 20px rgba(255, 122, 26, 0.35);
 }
 
 .search-icon {
@@ -121,15 +88,10 @@
 
 .input-nav {
   width: 100%;
-
   background: none;
-
   border: none;
-
   outline: none;
-
   color: white;
-
   font-size: 14px;
 }
 
@@ -137,39 +99,26 @@
 
 .nav-links {
   display: flex;
-
   gap: 25px;
-
   list-style: none;
 }
 
 .nav-links a {
   text-decoration: none;
-
   color: #aaa;
-
   font-size: 14px;
-
   transition: 0.3s;
-
   position: relative;
 }
 
 .nav-links a::after {
   content: "";
-
   position: absolute;
-
   bottom: -8px;
-
   left: 0;
-
   width: 0;
-
   height: 2px;
-
-  background: #c084fc;
-
+  background: #ffa866;
   transition: 0.3s;
 }
 
@@ -185,66 +134,48 @@
 
 .nav-actions {
   display: flex;
-
   gap: 12px;
 }
 
 .nav-action {
   width: 42px;
-
   height: 42px;
-
   border-radius: 50%;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   background: rgba(255, 255, 255, 0.05);
-
   border: 1px solid rgba(255, 255, 255, 0.1);
-
   cursor: pointer;
-
   transition: 0.35s;
 }
 
 .nav-action svg {
   width: 21px;
-
   height: 21px;
-
   fill: none;
-
   stroke: white;
-
   stroke-width: 1.5;
 }
 
 .nav-action:hover {
   transform: translateY(-5px);
-
-  border-color: #c084fc;
-
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+  border-color: #ffa866;
+  box-shadow: 0 0 20px rgba(255, 122, 26, 0.5);
 }
 
 .favorite:hover svg {
-  stroke: #ec4899;
+  stroke: #ffb020;
 }
 
 @keyframes navEnter {
   from {
     opacity: 0;
-
     transform: translateY(-20px);
   }
 
   to {
     opacity: 1;
-
     transform: none;
   }
 }
@@ -262,23 +193,17 @@
 @media (max-width: 700px) {
   .nav-container {
     height: auto;
-
     padding: 15px;
-
     flex-wrap: wrap;
-
     gap: 15px;
   }
 
   .search-box {
     order: 3;
-
     width: 100%;
   }
 }
-/* =====================================================
-   SEARCH RESULT DROPDOWN
-===================================================== */
+/* Search result dropdown */
 
 .search-box {
   position: relative;
@@ -286,179 +211,110 @@
 
 .search-result-box {
   position: absolute;
-
   top: calc(100% + 14px);
-
   left: 0;
-
   width: 420px;
-
   max-height: 520px;
-
   overflow-y: auto;
-
   padding: 14px;
-
-  background: linear-gradient(
-    145deg,
-    rgba(20, 20, 30, 0.96),
-    rgba(10, 10, 15, 0.96)
-  );
-
+  background: linear-gradient(145deg, rgba(24, 24, 27, 0.96), rgba(14, 14, 16, 0.96));
   border: 1px solid rgba(255, 255, 255, 0.08);
-
   border-radius: 18px;
-
   backdrop-filter: blur(18px);
-
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-
   opacity: 0;
-
   visibility: hidden;
-
   transform: translateY(-10px);
-
   transition: 0.3s ease;
-
   z-index: 99999;
 }
 
 .search-result-box.show {
   opacity: 1;
-
   visibility: visible;
-
   transform: translateY(0);
 }
 
-/* =====================================================
-   PRODUCT RESULT CARD
-===================================================== */
+/* Product result card */
 
 .search-product {
   display: flex;
-
   align-items: center;
-
   gap: 14px;
-
   padding: 12px;
-
   margin-bottom: 10px;
-
   border-radius: 14px;
-
   background: rgba(255, 255, 255, 0.04);
-
   border: 1px solid rgba(255, 255, 255, 0.06);
-
   transition: 0.25s ease;
 }
 
 .search-product:hover {
   background: rgba(255, 255, 255, 0.08);
-
   transform: translateX(4px);
 }
 
 .search-product img {
   width: 55px;
-
   height: 55px;
-
   object-fit: contain;
-
   border-radius: 10px;
-
   background: rgba(255, 255, 255, 0.05);
 }
 
 .search-product-info {
   flex: 1;
-
   min-width: 0;
 }
 
 .search-product-info h4 {
   margin: 0;
-
   color: #fff;
-
   font-size: 14px;
-
   font-weight: 500;
-
   white-space: nowrap;
-
   overflow: hidden;
-
   text-overflow: ellipsis;
 }
 
 .search-product-info span {
   display: block;
-
   margin-top: 5px;
-
-  color: #00eaff;
-
+  color: #ffb020;
   font-size: 13px;
 }
 
-/* =====================================================
-   VIEW BUTTON
-===================================================== */
+/* View button */
 
 .search-product-btn {
-  border: 1px solid rgba(0, 234, 255, 0.35);
-
-  background: rgba(0, 234, 255, 0.08);
-
-  color: #00eaff;
-
+  border: 1px solid rgba(255, 176, 32, 0.35);
+  background: rgba(255, 176, 32, 0.08);
+  color: #ffb020;
   padding: 7px 14px;
-
   border-radius: 10px;
-
   cursor: pointer;
-
   font-size: 12px;
-
   transition: 0.25s ease;
 }
 
 .search-product-btn:hover {
-  background: rgba(0, 234, 255, 0.18);
-
-  box-shadow: 0 0 15px rgba(0, 234, 255, 0.25);
+  background: rgba(255, 176, 32, 0.18);
+  box-shadow: 0 0 15px rgba(255, 176, 32, 0.25);
 }
 
-/* =====================================================
-   SHOW MORE
-===================================================== */
+/* Show more */
 
 .show-more-search {
   display: none;
-
   width: 100%;
-
   margin-top: 8px;
-
   padding: 12px;
-
   border-radius: 12px;
-
   cursor: pointer;
-
-  background: linear-gradient(135deg, #00eaff, #0066ff);
-
+  background: linear-gradient(135deg, #ffb020, #e8650a);
   border: none;
-
   color: white;
-
   font-weight: 600;
-
   transition: 0.25s ease;
 }
 
@@ -468,19 +324,14 @@
 
 .show-more-search:hover {
   transform: translateY(-2px);
-
-  box-shadow: 0 10px 25px rgba(0, 234, 255, 0.25);
+  box-shadow: 0 10px 25px rgba(255, 176, 32, 0.25);
 }
 
-/* =====================================================
-   NO RESULT
-===================================================== */
+/* No result */
 
 .no-result {
   display: none;
-
   text-align: center;
-
   padding: 35px 20px;
 }
 
@@ -490,55 +341,41 @@
 
 .no-result::before {
   content: "⌕";
-
   display: block;
-
   font-size: 42px;
-
-  color: #00eaff;
-
+  color: #ffb020;
   margin-bottom: 12px;
 }
 
 .no-result h3 {
   color: white;
-
   margin: 0 0 8px;
-
   font-size: 18px;
 }
 
 .no-result p {
   color: rgba(255, 255, 255, 0.55);
-
   font-size: 13px;
 }
 
-/* =====================================================
-   SCROLLBAR
-===================================================== */
+/* Scrollbar */
 
 .search-result-box::-webkit-scrollbar {
   width: 5px;
 }
 
 .search-result-box::-webkit-scrollbar-thumb {
-  background: rgba(0, 234, 255, 0.35);
-
+  background: rgba(255, 176, 32, 0.35);
   border-radius: 10px;
 }
 
-
 @media (max-width: 481px) {
-
   .search-result-box {
-      max-width: 346px;
+    max-width: 346px;
   }
-
 }
 @media (max-width: 402px) {
-
   .search-result-box {
-      max-width: 290px;
+    max-width: 290px;
   }
 }

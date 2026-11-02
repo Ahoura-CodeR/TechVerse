@@ -1,6 +1,4 @@
-/* =====================================================
-   AUTH PAGE
-===================================================== */
+/* Auth page */
 
 class AuthPage {
   constructor() {
@@ -22,18 +20,14 @@ class AuthPage {
 
     this.passwordInput = document.querySelector(".password-input");
 
-    this.confirmPasswordInput = document.querySelector(
-      ".confirm-password-input",
-    );
+    this.confirmPasswordInput = document.querySelector(".confirm-password-input");
 
     this.isRegisterPage = Boolean(this.usernameInput);
 
     this.init();
   }
 
-  /* =====================================================
-     INIT
-  ===================================================== */
+  /* Init */
 
   init() {
     this.bindForm();
@@ -43,9 +37,7 @@ class AuthPage {
     this.bindGoogleButton();
   }
 
-  /* =====================================================
-     FORM
-  ===================================================== */
+  /* Form */
 
   bindForm() {
     if (!this.form) {
@@ -63,9 +55,7 @@ class AuthPage {
     });
   }
 
-  /* =====================================================
-     LOGIN
-  ===================================================== */
+  /* Login */
 
   login() {
     const email = this.emailInput?.value.trim();
@@ -121,9 +111,7 @@ class AuthPage {
     );
   }
 
-  /* =====================================================
-     REGISTER
-  ===================================================== */
+  /* Register */
 
   register() {
     const username = this.usernameInput.value.trim();
@@ -138,9 +126,7 @@ class AuthPage {
 
     this.clearErrors();
 
-    /* -------------------------------------------------
-       USERNAME
-    ------------------------------------------------- */
+    /* Username */
 
     if (!username) {
       this.showError("Please enter a username.");
@@ -162,9 +148,7 @@ class AuthPage {
       return;
     }
 
-    /* -------------------------------------------------
-       EMAIL
-    ------------------------------------------------- */
+    /* Email */
 
     if (!email) {
       this.showError("Please enter your email address.");
@@ -186,9 +170,7 @@ class AuthPage {
       return;
     }
 
-    /* -------------------------------------------------
-       PASSWORD
-    ------------------------------------------------- */
+    /* Password */
 
     if (!password) {
       this.showError("Please create a password.");
@@ -210,9 +192,7 @@ class AuthPage {
       return;
     }
 
-    /* -------------------------------------------------
-       CONFIRM PASSWORD
-    ------------------------------------------------- */
+    /* Confirm password */
 
     if (!confirmPassword) {
       this.showError("Please confirm your password.");
@@ -234,18 +214,14 @@ class AuthPage {
       return;
     }
 
-    /* -------------------------------------------------
-       DEMO REGISTER
-    ------------------------------------------------- */
+    /* Demo register */
 
     this.startDemoProcess(
       "Account creation is not connected yet. Registration is currently running in demo mode.",
     );
   }
 
-  /* =====================================================
-     DEMO PROCESS
-  ===================================================== */
+  /* Demo process */
 
   startDemoProcess(message) {
     if (!this.authButton) {
@@ -253,27 +229,20 @@ class AuthPage {
     }
 
     const originalText = this.authButton.textContent;
-
     this.authButton.classList.add("loading");
 
     this.authButton.disabled = true;
-
     this.authButton.textContent = "Processing...";
-
     setTimeout(() => {
       this.authButton.classList.remove("loading");
 
       this.authButton.disabled = false;
-
       this.authButton.textContent = originalText;
-
       this.showInfo(message);
     }, 900);
   }
 
-  /* =====================================================
-     GOOGLE
-  ===================================================== */
+  /* Google */
 
   bindGoogleButton() {
     if (!this.googleButton) {
@@ -282,14 +251,10 @@ class AuthPage {
 
     this.googleButton.addEventListener("click", () => {
       this.googleButton.disabled = true;
-
       this.googleButton.textContent = "Connecting...";
-
       setTimeout(() => {
         this.googleButton.disabled = false;
-
         this.googleButton.textContent = "Continue with Google 🚀";
-
         this.showInfo(
           "Google authentication will be available after the backend authentication system is connected.",
         );
@@ -297,46 +262,33 @@ class AuthPage {
     });
   }
 
-  /* =====================================================
-     PASSWORD TOGGLES
-  ===================================================== */
+  /* Password toggles */
 
   bindPasswordToggles() {
     const toggles = document.querySelectorAll(".password-toggle");
 
     toggles.forEach((toggle, index) => {
       const input = this.passwordInputs[index];
-
       if (!input) {
         return;
       }
 
       toggle.addEventListener("click", () => {
         const shouldShow = input.type === "password";
-
         input.type = shouldShow ? "text" : "password";
-
         toggle.textContent = shouldShow ? "🙈" : "👁";
-
-        toggle.setAttribute(
-          "aria-label",
-          shouldShow ? "Hide password" : "Show password",
-        );
+        toggle.setAttribute("aria-label", shouldShow ? "Hide password" : "Show password");
       });
     });
   }
 
-  /* =====================================================
-     EMAIL VALIDATION
-  ===================================================== */
+  /* Email validation */
 
   isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
-  /* =====================================================
-     INPUT ERROR
-  ===================================================== */
+  /* Input error */
 
   markError(input) {
     if (!input) {
@@ -350,9 +302,7 @@ class AuthPage {
     }
   }
 
-  /* =====================================================
-     CLEAR ERRORS
-  ===================================================== */
+  /* Clear errors */
 
   clearErrors() {
     document.querySelectorAll(".input-group.error").forEach((group) => {
@@ -360,9 +310,7 @@ class AuthPage {
     });
   }
 
-  /* =====================================================
-     MESSAGES
-  ===================================================== */
+  /* Messages */
 
   showError(message) {
     this.showMessage(message, "error");
@@ -383,18 +331,14 @@ class AuthPage {
       box = document.createElement("div");
 
       box.className = "auth-message";
-
       this.form.appendChild(box);
     }
 
     box.textContent = message;
-
     box.className = `auth-message show ${type}`;
   }
 
-  /* =====================================================
-     CLEAR MESSAGE
-  ===================================================== */
+  /* Clear message */
 
   clearMessage() {
     const box = document.querySelector(".auth-message");
@@ -404,14 +348,11 @@ class AuthPage {
     }
 
     box.className = "auth-message";
-
     box.textContent = "";
   }
 }
 
-/* =====================================================
-   START
-===================================================== */
+/* Start */
 
 document.addEventListener("DOMContentLoaded", () => {
   new AuthPage();

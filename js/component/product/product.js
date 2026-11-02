@@ -1,3 +1,5 @@
+import { getProducts } from "../../lib/products-api.js";
+
 const template = document.createElement("template");
 
 template.innerHTML = `
@@ -93,22 +95,6 @@ INITIALIZING PRODUCTS
 
 `;
 
-let getProducts = async () => {
-  try {
-    const response = await fetch("Data/products.json");
-
-    if (!response.ok) throw new Error("Products not found");
-
-    const data = await response.json();
-
-    return data.products || [];
-  } catch (error) {
-    console.log(error);
-
-    return [];
-  }
-};
-
 class isProducts extends HTMLElement {
   constructor() {
     super();
@@ -121,11 +107,8 @@ class isProducts extends HTMLElement {
 
     this.state = {
       products: [],
-
       filteredProducts: [],
-
       currentPage: 1,
-
       itemsPerPage: 12,
     };
   }
@@ -138,10 +121,7 @@ class isProducts extends HTMLElement {
     this.state.products = await getProducts();
 
     this.state.filteredProducts = this.state.products;
-
-    this.totalPages = Math.ceil(
-      this.state.filteredProducts.length / this.state.itemsPerPage,
-    );
+    this.totalPages = Math.ceil(this.state.filteredProducts.length / this.state.itemsPerPage);
 
     this.renderProducts();
 
@@ -156,11 +136,8 @@ class isProducts extends HTMLElement {
     const container = this.shadowRoot.querySelector(".product-container");
 
     container.innerHTML = "";
-
     const start = (this.state.currentPage - 1) * this.state.itemsPerPage;
-
     const end = start + this.state.itemsPerPage;
-
     const products = this.state.filteredProducts.slice(start, end);
 
     const fragment = document.createDocumentFragment();
@@ -176,7 +153,6 @@ class isProducts extends HTMLElement {
     const card = document.createElement("article");
 
     card.className = "product-card";
-
     card.innerHTML = `
 
 
@@ -295,7 +271,6 @@ View Product
     next.addEventListener("click", () => {
       if (this.state.currentPage < this.totalPages) {
         this.state.currentPage++;
-
         this.renderProducts();
 
         this.renderPagination();
@@ -305,7 +280,6 @@ View Product
     previous.addEventListener("click", () => {
       if (this.state.currentPage > 1) {
         this.state.currentPage--;
-
         this.renderProducts();
 
         this.renderPagination();
@@ -314,4 +288,4 @@ View Product
   }
 }
 
-export { isProducts, getProducts };
+export { isProducts };

@@ -142,7 +142,6 @@ class isCategory extends HTMLElement {
       const card = e.target.closest(".category-card");
 
       if (!card) return;
-
       const category = card.dataset.category;
       window.location.href = `pages/products.html?category=${category}`;
     });
